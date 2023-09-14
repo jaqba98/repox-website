@@ -106,3 +106,33 @@ body {
     border-bottom: 1px solid #FFFFFF25;
     font-weight: bold;
 }
+
+@media only screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .top-nav-menu {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(0);
+        width: auto;
+        height: var(--top-nav-height);
+        transition: none;
+        gap: 0.25em;
+        background-color: inherit;
+    }
+
+    .top-nav-menu-link {
+        padding: 1em;
+        border-bottom: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .top-nav {
+        justify-content: space-around;
+    }
+}
