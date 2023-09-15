@@ -1,9 +1,11 @@
 /* variables */
 :root {
-    --primary-color-bright: #3626A7;
-    --primary-color-dark: #2E2091;
-    --font-light-color: #F0F0F0;
-    --top-nav-height: 4em;
+    --top-nav-height: 3em;
+    --primary-color: #373737;
+    --secondary-color: #E0E2DB;
+    --secondary-color25: #E0E2DB25;
+    --secondary-color95: #E0E2DB95;
+    --animation-speed: 0.25s;
 }
 
 /* reset */
@@ -44,7 +46,7 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    background-color: var(--primary-color-bright);
+    background-color: var(--primary-color);
     height: var(--top-nav-height);
 }
 
@@ -66,14 +68,14 @@ body {
 
 .hamburger-line {
     width: 100%;
-    height: 5px;
+    height: 4px;
     border-radius: 2px;
-    background-color: var(--font-light-color);
-    transition: transform 0.25s ease-in-out;
+    background-color: var(--secondary-color);
+    transition: transform var(--animation-speed) ease-in-out;
 }
 
 .top-nav-open .hamburger-line-top {
-    transform: translateY(1em) rotate(45deg);
+    transform: translateY(0.7em) rotate(45deg);
 }
 
 .top-nav-open .hamburger-line-middle {
@@ -81,7 +83,7 @@ body {
 }
 
 .top-nav-open .hamburger-line-bottom {
-    transform: translateY(-1em) rotate(-45deg);
+    transform: translateY(-0.7em) rotate(-45deg);
 }
 
 .top-nav-menu {
@@ -91,8 +93,12 @@ body {
     height: calc(100vh - var(--top-nav-height));
     transform: translateX(-100%);
     overflow-y: auto;
-    background-color: var(--primary-color-dark);
-    transition: transform 0.25s ease-in-out;
+    background-color: var(--primary-color);
+    transition: transform var(--animation-speed) ease-in-out;
+}
+
+.top-nav-menu > li:first-child {
+    border-top: 1px solid var(--secondary-color25);
 }
 
 .top-nav-open .top-nav-menu {
@@ -101,10 +107,9 @@ body {
 
 .top-nav-menu-link {
     display: block;
-    padding: 1.5em 1em;
-    color: var(--font-light-color);
-    border-bottom: 1px solid #FFFFFF25;
-    font-weight: bold;
+    padding: 1em;
+    color: var(--secondary-color);
+    border-bottom: 1px solid var(--secondary-color25);
 }
 
 @media only screen and (min-width: 768px) {
@@ -125,9 +130,24 @@ body {
         background-color: inherit;
     }
 
+    .top-nav-menu > li:first-child {
+        border-top: none;
+    }
+
     .top-nav-menu-link {
-        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--top-nav-height);
+        color: var(--secondary-color95);
         border-bottom: none;
+        transition: color var(--animation-speed) ease-in-out, background-color var(--animation-speed)ease-in-out;
+    }
+
+    .top-nav-menu-link:active,
+    .top-nav-menu-link:hover {
+        color: var(--secondary-color);
+        background-color: var(--secondary-color25);
     }
 }
 
