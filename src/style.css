@@ -38,6 +38,7 @@ a {
 
 body {
     font-family: 'Lato', sans-serif;
+    background-color: var(--secondary-color);
 }
 
 /* top nav */
@@ -75,7 +76,7 @@ body {
 }
 
 .top-nav-open .hamburger-line-top {
-    transform: translateY(0.7em) rotate(45deg);
+    transform: translateY(0.67em) rotate(45deg);
 }
 
 .top-nav-open .hamburger-line-middle {
@@ -83,7 +84,7 @@ body {
 }
 
 .top-nav-open .hamburger-line-bottom {
-    transform: translateY(-0.7em) rotate(-45deg);
+    transform: translateY(-0.67em) rotate(-45deg);
 }
 
 .top-nav-menu {
