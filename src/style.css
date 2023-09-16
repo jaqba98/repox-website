@@ -190,4 +190,6 @@ body {
 
 .documentation-content {
     margin-left: calc(0px + var(--top-nav-height));
+    height: calc(100vh - var(--top-nav-height));
+    overflow-y: auto;
 }
