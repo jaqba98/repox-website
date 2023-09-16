@@ -4,6 +4,7 @@ const topNavContainer = document.getElementById("top-nav-container");
 
 const documentationHamburger = document.getElementById("documentation-hamburger");
 const documentationContainer = document.getElementById("documentation-container");
+const documentationContentContainer = document.getElementById("documentation-content-container");
 
 // Add events
 topNavHamburgers.addEventListener("click", () => {
@@ -12,4 +13,8 @@ topNavHamburgers.addEventListener("click", () => {
 
 documentationHamburger.addEventListener("click", () => {
     documentationContainer.classList.toggle("top-nav-open");
+});
+
+documentationContentContainer.addEventListener("click", () => {
+    documentationContainer.classList.remove("top-nav-open");
 });
