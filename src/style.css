@@ -5,6 +5,7 @@
     --secondary-color: #E0E2DB;
     --secondary-color25: #E0E2DB25;
     --secondary-color95: #E0E2DB95;
+    --white-color: #FFFFFF;
     --animation-speed: 0.25s;
 }
 
@@ -41,21 +42,6 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* top nav */
-.top-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background-color: var(--primary-color);
-    height: var(--top-nav-height);
-}
-
-.top-nav-logo {
-    width: var(--top-nav-height);
-    padding: 0.5em;
-}
-
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -87,8 +73,30 @@ body {
     transform: translateY(-0.67em) rotate(-45deg);
 }
 
+@media only screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* top nav */
+.top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--primary-color);
+    height: var(--top-nav-height);
+}
+
+.top-nav-logo {
+    width: var(--top-nav-height);
+    padding: 0.5em;
+}
+
 .top-nav-menu {
     position: absolute;
+    z-index: 2;
     top: var(--top-nav-height);
     width: 100%;
     height: calc(100vh - var(--top-nav-height));
@@ -114,10 +122,6 @@ body {
 }
 
 @media only screen and (min-width: 768px) {
-    .hamburger {
-        display: none;
-    }
-
     .top-nav-menu {
         position: static;
         display: flex;
@@ -142,7 +146,7 @@ body {
         height: var(--top-nav-height);
         color: var(--secondary-color95);
         border-bottom: none;
-        transition: color var(--animation-speed) ease-in-out, background-color var(--animation-speed)ease-in-out;
+        transition: color var(--animation-speed) ease-in-out, background-color var(--animation-speed) ease-in-out;
     }
 
     .top-nav-menu-link:active,
@@ -156,4 +160,34 @@ body {
     .top-nav {
         justify-content: space-around;
     }
+}
+
+/* documentation */
+.documentation-nav {
+    position: absolute;
+    top: var(--top-nav-height);
+    width: 75%;
+    height: calc(100vh - var(--top-nav-height));
+    transform: translateX(-100%);
+    /*overflow-y: auto;*/
+    background-color: var(--white-color);
+    transition: transform var(--animation-speed) ease-in-out;
+}
+
+.top-nav-open .documentation-nav {
+    transform: translateX(0%);
+}
+
+.documentation-nav .hamburger {
+    position: absolute;
+    top: 0;
+    right: calc(0px - var(--top-nav-height));
+}
+
+.documentation-nav .hamburger-line {
+    background-color: var(--primary-color);
+}
+
+.documentation-content {
+    margin-left: calc(0px + var(--top-nav-height));
 }
