@@ -16,7 +16,7 @@
     box-sizing: border-box;
 }
 
-ol {
+ol, ul {
     list-style: none;
 }
 
@@ -162,6 +162,7 @@ body {
     }
 }
 
+/* todo: refactor the styles */
 /* documentation */
 .documentation-nav {
     position: absolute;
@@ -191,4 +192,9 @@ body {
     margin-left: calc(0px + var(--top-nav-height));
     height: calc(100vh - var(--top-nav-height));
     overflow-y: auto;
+}
+
+.documentation-nav-menu,
+.documentation-nav-menu-child {
+    margin: 10px;
 }
