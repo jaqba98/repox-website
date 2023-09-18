@@ -8,13 +8,13 @@ const documentationContentContainer = document.getElementById("documentation-con
 
 // Add events
 topNavHamburgers.addEventListener("click", () => {
-    topNavContainer.classList.toggle("top-nav-open");
+    topNavContainer.classList.toggle("hamburger-open");
 });
 
 documentationHamburger.addEventListener("click", () => {
-    documentationContainer.classList.toggle("top-nav-open");
+    documentationContainer.classList.toggle("hamburger-open");
 });
 
 documentationContentContainer.addEventListener("click", () => {
-    documentationContainer.classList.remove("top-nav-open");
+    documentationContainer.classList.remove("hamburger-open");
 });
