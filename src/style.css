@@ -229,7 +229,8 @@ body {
     padding: 1em;
     border-radius: 5px;
     margin: 1em;
-    overflow-x: auto;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .documentation-content > ul {
