@@ -163,7 +163,8 @@ body {
     }
 }
 
-/* documentation nav */
+/* todo: refactor the code */
+/* documentation */
 .documentation-nav {
     position: absolute;
     background-color: var(--white-color);
@@ -204,13 +205,15 @@ body {
     padding: 1em 2em;
 }
 
-
-/* documentation content */
 .documentation-content {
     margin-left: var(--top-nav-height);
     height: calc(100vh - var(--top-nav-height));
     overflow-y: auto;
     padding: 1em;
+}
+
+.hamburger-open .documentation-content {
+    overflow-y: hidden;
 }
 
 .documentation-content > h1,
