@@ -22,7 +22,7 @@
     <a href="index.html">
         <img src="images/repox-logo-small.png" alt="Repox logo small" class="top-nav-logo">
     </a>
-    <!-- hamburger for mobile device -->
+    <!-- top nav hamburger -->
     <div id="top-nav-hamburger" class="hamburger">
         <div class="hamburger-line hamburger-line-top"></div>
         <div class="hamburger-line hamburger-line-middle"></div>
@@ -38,11 +38,10 @@
     </ol>
 </nav>
 <main>
-    <!-- todo: refactor below html code / component -->
     <!-- documentation -->
     <section id="documentation-container" class="documentation">
         <!-- documentation nav -->
-        <div class="documentation-nav">
+        <section class="documentation-nav">
             <!-- documentation nav hamburger -->
             <div id="documentation-hamburger" class="hamburger">
                 <div class="hamburger-line hamburger-line-top"></div>
@@ -50,65 +49,77 @@
                 <div class="hamburger-line hamburger-line-bottom"></div>
             </div>
             <!-- documentation nav menu -->
-            <ol class="documentation-nav-menu">
-                <li>
-                    <a href="#" class="documentation-nav-menu-link">Link 1</a>
-                    <ul class="documentation-nav-menu-child">
-                        <li><a href="#" class="documentation-nav-menu-link">Link 1.1</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 1.2</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 1.3</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 1.4</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="documentation-nav-menu-link">Link 2</a>
-                    <ul class="documentation-nav-menu-child">
-                        <li><a href="#" class="documentation-nav-menu-link">Link 2.1</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 2.2</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 2.3</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 2.4</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" class="documentation-nav-menu-link">Link 3</a></li>
-                <li>
-                    <a href="#" class="documentation-nav-menu-link">Link 4</a>
-                    <ul class="documentation-nav-menu-child">
-                        <li><a href="#" class="documentation-nav-menu-link">Link 4.1</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 4.2</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 4.3</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 4.4</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" class="documentation-nav-menu-link">Link 5</a></li>
-                <li><a href="#" class="documentation-nav-menu-link">Link 6</a></li>
-                <li>
-                    <a href="#" class="documentation-nav-menu-link">Link 7</a>
-                    <ul class="documentation-nav-menu-child">
-                        <li><a href="#" class="documentation-nav-menu-link">Link 7.1</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 7.2</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 7.3</a></li>
-                        <li><a href="#" class="documentation-nav-menu-link">Link 7.4</a></li>
-                    </ul>
-                </li>
-            </ol>
-        </div>
+            <div class="documentation-nav-menu">
+                <ol>
+                    <li><a href="#">Link 1</a></li>
+                    <li>
+                        <a href="#">Link 2</a>
+                        <ul>
+                            <li><a href="#">Link 2.1</a></li>
+                            <li><a href="#">Link 2.2</a></li>
+                            <li><a href="#">Link 2.3</a></li>
+                            <li><a href="#">Link 2.4</a></li>
+                            <li><a href="#">Link 2.5</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Link 3</a></li>
+                    <li>
+                        <a href="#">Link 4</a>
+                        <ul>
+                            <li><a href="#">Link 4.1</a></li>
+                            <li><a href="#">Link 4.2</a></li>
+                            <li><a href="#">Link 4.3</a></li>
+                            <li><a href="#">Link 4.4</a></li>
+                            <li><a href="#">Link 4.5</a></li>
+                            <li><a href="#">Link 4.6</a></li>
+                            <li><a href="#">Link 4.7</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Link 5</a>
+                        <ul>
+                            <li><a href="#">Link 5.1</a></li>
+                            <li><a href="#">Link 5.2</a></li>
+                            <li><a href="#">Link 5.3</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Link 6</a></li>
+                    <li><a href="#">Link 7</a></li>
+                    <li>
+                        <a href="#">Link 8</a>
+                        <ul>
+                            <li><a href="#">Link 8.1</a></li>
+                            <li><a href="#">Link 8.2</a></li>
+                            <li><a href="#">Link 8.3</a></li>
+                            <li><a href="#">Link 8.4</a></li>
+                            <li><a href="#">Link 8.5</a></li>
+                            <li><a href="#">Link 8.6</a></li>
+                            <li><a href="#">Link 8.7</a></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
         <!-- documentation content -->
-        <div id="documentation-content-container" class="documentation-content">
+        <section id="documentation-content-container" class="documentation-content">
             <h1>Title 1</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid delectus dignissimos facilis maxime omnis placeat voluptatibus? A ad, error excepturi iusto magni maxime molestias natus nesciunt nostrum numquam pariatur.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias assumenda cupiditate deleniti dicta, dignissimos dolorum error eveniet explicabo facere harum iusto maiores possimus quam rem sint sit ullam, vel, veritatis?
             </p>
-            <code>
-                repox generate workspace --name=repox
-            </code>
+            <h2>Title 2</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores aut corporis dolor doloremque ducimus enim in molestiae necessitatibus nisi, omnis ratione reprehenderit rerum vel vitae, voluptas! Deleniti eveniet rerum voluptatem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam corporis culpa dignissimos dolorum et modi nihil optio quis reiciendis sequi!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti impedit ipsa magni quaerat quisquam ratione ullam unde. Accusantium delectus distinctio facilis harum, inventore ratione ullam. Aspernatur fuga obcaecati quae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa debitis iusto laudantium maxime quidem. Accusamus aliquid cum doloremque ex expedita fuga ipsum iusto odio quae, quos sequi similique sint totam? lorem
             </p>
-            <code>
-                repox build project --name=repox
-            </code>
+            <code>repox generate workspace --name=example</code>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis corporis culpa deserunt dolores ducimus eaque earum facilis id in, iusto nobis nostrum odio odit officia reiciendis, vel velit veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci assumenda, autem culpa dicta exercitationem explicabo facere harum id inventore magni maxime molestias natus nobis quas repellendus soluta, voluptates! Maxime!
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias autem commodi deserunt ducimus eius eum eveniet exercitationem explicabo id impedit iusto necessitatibus nemo odit, optio quas sapiente, ullam vitae! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eaque eius, facere magnam perferendis quos reprehenderit velit voluptate. Aperiam dolore facere inventore maiores porro. Cumque dignissimos nam nihil reiciendis unde!
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam ipsa quo vitae. Aliquam deserunt dolor eveniet harum impedit in ipsam iusto mollitia, nisi nostrum numquam placeat repudiandae saepe ut voluptatem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto aspernatur cum dolorem ea earum est ex explicabo facere harum, hic, impedit iusto labore mollitia, suscipit tenetur ut velit voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam amet assumenda deleniti deserunt dolor et ex harum hic, illum in laboriosam laudantium mollitia quaerat quasi quos tempora totam ullam veritatis.
+            </p>
+            <code>repox clean --force</code>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae nihil nulla possimus repellat. Aperiam ea earum eum ex id, quisquam tempore? Adipisci blanditiis ducimus incidunt nulla obcaecati quos soluta suscipit.
             </p>
             <ul>
                 <li>Element 1</li>
@@ -118,32 +129,29 @@
                 <li>Element 5</li>
             </ul>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolor doloribus eligendi eos eum expedita labore maxime neque, nulla obcaecati quaerat quam, reprehenderit saepe tempore tenetur ullam vel voluptas! Totam.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, aspernatur commodi delectus deserunt ea ex exercitationem expedita fugit libero mollitia nulla odit officia possimus quaerat sequi tempore unde, vel veritatis.
             </p>
             <table>
                 <tr>
-                    <td>Title 1</td>
-                    <td>Title 2</td>
-                    <td>Title 3</td>
+                    <th>Title 1</th>
+                    <th>Title 2</th>
+                    <th>Title 3</th>
                 </tr>
                 <tr>
-                    <td>Item 1</td>
-                    <td>Item 2</td>
-                    <td>Item 3</td>
+                    <td>Item 1.1</td>
+                    <td>Item 1.2</td>
+                    <td>Item 1.3</td>
                 </tr>
                 <tr>
-                    <td>Item 1</td>
-                    <td>Item 2</td>
-                    <td>Item 3</td>
+                    <td>Item 2.1</td>
+                    <td>Item 2.2</td>
+                    <td>Item 2.3</td>
                 </tr>
             </table>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae blanditiis culpa doloremque eaque eligendi est id illo, labore libero nesciunt perspiciatis porro quibusdam quod repellat sint tempore ullam voluptatem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, aut iste non reprehenderit sapiente sed vitae! Commodi delectus, deleniti dolorum error esse laudantium minima natus obcaecati optio quibusdam repellendus tempore? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex exercitationem hic impedit nobis optio. Alias aut exercitationem hic in minus molestias neque odit, perferendis placeat rem sapiente suscipit unde ut? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque deserunt explicabo iure minima quod suscipit unde? Aliquid delectus, dicta earum id ipsam, iusto, labore libero maxime natus quod rem.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi dolorum eius eos, esse fugiat fugit laboriosam nihil nisi numquam odit perspiciatis quae quam qui quia rem tempora totam ut, veniam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa dicta suscipit. Architecto aspernatur aut dignissimos ea eaque eligendi exercitationem harum, illum magni modi necessitatibus, quasi quo quod reiciendis ullam.
             </p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi exercitationem explicabo itaque qui? Consequatur minima pariatur quam quasi quis quo repellat sapiente vel! Ab, accusantium aliquid amet fuga iste quos?
-            </p>
-        </div>
+        </section>
     </section>
 </main>
 </body>
