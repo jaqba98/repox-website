@@ -80,8 +80,13 @@ body {
     }
 }
 
+main {
+    padding-top: var(--top-nav-height);
+}
+
 /* top nav */
 .top-nav {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
