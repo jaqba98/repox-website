@@ -93,6 +93,7 @@ main {
     width: 100%;
     background-color: var(--primary-color);
     height: var(--top-nav-height);
+    z-index: 1;
 }
 
 .top-nav-logo {
@@ -174,7 +175,7 @@ main {
     top: var(--top-nav-height);
     bottom: 0;
     width: 75%;
-    background-color: var(--white-color);
+    background-color: var(--white-color); /* todo: change the color */
     transform: translateX(-100%);
     transition: transform var(--animation-speed) ease-in-out;
 }
@@ -185,8 +186,17 @@ main {
 
 .documentation-nav .hamburger {
     position: absolute;
+    top: 0;
     right: calc(0px - var(--top-nav-height));
+    background-color: var(--primary-color); /* todo: change the color */
 }
+
+.documentation-content {
+    margin-left: var(--top-nav-height);
+    padding: 1em;
+}
+
+/* todo: I am here */
 
 /*.documentation-nav .hamburger {*/
 /*    background-color: var(--white-color);*/
