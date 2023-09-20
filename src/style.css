@@ -168,24 +168,27 @@ main {
     }
 }
 
-/* todo: refactor below styles */
 /* documentation */
-/*.documentation-nav {*/
-/*    position: absolute;*/
-/*    background-color: var(--white-color);*/
-/*    top: var(--top-nav-height);*/
-/*    width: 75%;*/
-/*    transform: translateX(-100%);*/
-/*    transition: transform var(--animation-speed) ease-in-out;*/
-/*}*/
+.documentation-nav {
+    position: fixed;
+    top: var(--top-nav-height);
+    bottom: 0;
+    width: 75%;
+    background-color: var(--white-color);
+    transform: translateX(-100%);
+    transition: transform var(--animation-speed) ease-in-out;
+}
 
-/*.hamburger-open .documentation-nav {*/
-/*    transform: translateX(0%);*/
-/*}*/
+.hamburger-open .documentation-nav {
+    transform: translateX(0%);
+}
+
+.documentation-nav .hamburger {
+    position: absolute;
+    right: calc(0px - var(--top-nav-height));
+}
 
 /*.documentation-nav .hamburger {*/
-/*    position: absolute;*/
-/*    right: calc(0px - var(--top-nav-height));*/
 /*    background-color: var(--white-color);*/
 /*    border-bottom-right-radius: 10px;*/
 /*}*/
