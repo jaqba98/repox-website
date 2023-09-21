@@ -273,3 +273,34 @@ main {
     background-color: var(--primary-color);
     color: var(--secondary-color);
 }
+
+@media only screen and (min-width: 768px) {
+    .documentation-nav {
+        transform: translateX(0%);
+        transition: none;
+        width: 300px;
+    }
+
+    .documentation-content {
+        margin-left: 300px;
+        padding: 2em;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .documentation-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .documentation-content {
+        width: 960px;
+    }
+
+    .documentation-content table,
+    .documentation-content th,
+    .documentation-content td {
+        width: 400px;
+    }
+}
