@@ -201,15 +201,16 @@ main {
     overflow-y: auto;
 }
 
-.documentation-nav-menu ul > li {
-    margin-left: 1em;
-}
-
 .documentation-nav-menu a {
     display: block;
     padding: 0.9em;
     color: var(--primary-color);
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid var(--primary-color25);
+}
+
+.documentation-nav-menu ul > li > a::before {
+    content: "";
+    margin-left: 1em;
 }
 
 .documentation-content {
@@ -217,7 +218,7 @@ main {
     padding: 1em;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.75em;
     color: var(--primary-color);
 }
 
@@ -245,7 +246,7 @@ main {
 }
 
 .documentation-content ul {
-    padding: 1em;
+    padding: 0 1em;
     list-style-type: disc;
 }
 
