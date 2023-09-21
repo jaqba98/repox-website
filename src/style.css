@@ -215,4 +215,60 @@ main {
 .documentation-content {
     margin-left: var(--top-nav-height);
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    color: var(--primary-color);
+}
+
+.documentation-content h1 {
+    font-size: 1.5em;
+}
+
+.documentation-content h2 {
+    font-size: 1.25em;
+}
+
+.documentation-content p {
+    font-size: 1em;
+    line-height: 1.75;
+}
+
+.documentation-content code {
+    font-size: 1em;
+    padding: 1.5em 1em;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    white-space: nowrap;
+    overflow-x: auto;
+    border-radius: 5px;
+}
+
+.documentation-content ul {
+    padding: 1em;
+    list-style-type: disc;
+}
+
+.documentation-content li {
+    padding: 0.5em;
+}
+
+.documentation-content table {
+    border-collapse: collapse;
+}
+
+.documentation-content table,
+.documentation-content th,
+.documentation-content td {
+    border: 1px solid var(--primary-color);
+}
+
+.documentation-content th,
+.documentation-content td {
+    padding: 0.5em;
+}
+
+.documentation-content th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
