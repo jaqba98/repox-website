@@ -6,7 +6,7 @@
     --secondary-color: #E1E1E1;
     --secondary-color25: #E1E1E125;
     --secondary-color95: #E1E1E195;
-    --white-color: #F5F5F5;
+    --body-color: #f0f0f0;
     --animation-speed: 0.5s;
 }
 
@@ -40,7 +40,7 @@ a {
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--secondary-color);
+    background-color: var(--body-color);
 }
 
 .hamburger {
@@ -169,36 +169,39 @@ main {
     }
 }
 
-/* documentation */
+/* documentation nav */
 .documentation-nav {
     position: fixed;
     top: var(--top-nav-height);
-    width: 75%;
-    height: calc(100vh - var(--top-nav-height));
-    background-color: var(--white-color);
-    transform: translateX(-100%);
-    transition: transform var(--animation-speed) ease-in-out;
-}
-
-.hamburger-open .documentation-nav {
-    transform: translateX(0%);
-}
-
-.documentation-nav .hamburger {
-    position: absolute;
-    top: 0;
-    right: calc(0px - var(--top-nav-height));
-    background-color: var(--white-color);
+    width: 100%;
+    height: var(--top-nav-height);
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
 }
 
 .documentation-nav .hamburger-line {
     background-color: var(--primary-color);
 }
 
+.documentation-title {
+    color: var(--primary-color);
+    margin: 0.5em;
+}
+
 .documentation-nav-menu {
+    position: fixed;
+    top: calc(2 * var(--top-nav-height));
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 2 * var(--top-nav-height));
+    background-color: var(--secondary-color);
     overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform var(--animation-speed) ease-in-out;
+}
+
+.hamburger-open .documentation-nav-menu {
+    transform: translateX(0);
 }
 
 .documentation-nav-menu a {
@@ -213,94 +216,68 @@ main {
     margin-left: 1em;
 }
 
+/* documentation content */
 .documentation-content {
-    margin-left: var(--top-nav-height);
-    padding: 1em;
+    margin-top: var(--top-nav-height);
+}
+
+.documentation-content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 0.75em;
+    gap: 1em;
+    padding: 2em;
     color: var(--primary-color);
 }
 
-.documentation-content h1 {
+.documentation-content-wrapper h1 {
     font-size: 1.5em;
 }
 
-.documentation-content h2 {
-    font-size: 1.25em;
-}
-
-.documentation-content p {
-    font-size: 1em;
+.documentation-content-wrapper p {
     line-height: 1.75;
 }
 
-.documentation-content code {
-    font-size: 1em;
-    padding: 1.5em 1em;
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    white-space: nowrap;
-    overflow-x: auto;
-    border-radius: 5px;
+.documentation-content-wrapper h2 {
+    font-size: 1.25em;
 }
 
-.documentation-content ul {
-    padding: 0 1em;
+.documentation-content-wrapper code {
+    margin: 1em 0;
+    padding: 2em;
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    white-space: nowrap;
+    overflow-x: auto;
+    border-radius: 0.5em;
+}
+
+.documentation-content-wrapper ul {
+    margin: 1em 0;
+    padding-left: 1.5em;
     list-style-type: disc;
 }
 
-.documentation-content li {
+.documentation-content-wrapper-content li {
     padding: 0.5em;
 }
 
-.documentation-content table {
+.documentation-content-wrapper table {
+    margin: 1em 0;
     border-collapse: collapse;
 }
 
-.documentation-content table,
-.documentation-content th,
-.documentation-content td {
+.documentation-content-wrapper table,
+.documentation-content-wrapper th,
+.documentation-content-wrapper td {
     border: 1px solid var(--primary-color);
 }
 
-.documentation-content th,
-.documentation-content td {
+.documentation-content-wrapper th,
+.documentation-content-wrapper td {
     padding: 0.5em;
 }
 
-.documentation-content th {
+.documentation-content-wrapper th {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-}
-
-@media only screen and (min-width: 768px) {
-    .documentation-nav {
-        transform: translateX(0%);
-        transition: none;
-        width: 300px;
-    }
-
-    .documentation-content {
-        margin-left: 300px;
-        padding: 2em;
-    }
-}
-
-@media only screen and (min-width: 1024px) {
-    .documentation-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .documentation-content {
-        width: 960px;
-    }
-
-    .documentation-content table,
-    .documentation-content th,
-    .documentation-content td {
-        width: 400px;
-    }
 }
