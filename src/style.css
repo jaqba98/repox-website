@@ -169,7 +169,7 @@ main {
     }
 }
 
-/* documentation nav */
+/* documentation */
 .documentation-nav {
     position: fixed;
     top: var(--top-nav-height);
@@ -216,7 +216,6 @@ main {
     margin-left: 1em;
 }
 
-/* documentation content */
 .documentation-content {
     margin-top: var(--top-nav-height);
 }
@@ -280,4 +279,34 @@ main {
 .documentation-content-wrapper th {
     background-color: var(--primary-color);
     color: var(--secondary-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .documentation-nav-menu {
+        width: 300px;
+        transform: translateX(0%);
+        transition: none;
+    }
+
+    .documentation-content {
+        margin-left: 300px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .documentation-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .documentation-content-wrapper {
+        width: 720px;
+    }
+}
+
+@media only screen and (min-width: 1320px) {
+    .documentation-content-wrapper {
+        width: 960px;
+    }
 }
