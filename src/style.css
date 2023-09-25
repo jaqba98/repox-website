@@ -1,12 +1,13 @@
 /* variables */
 :root {
     --top-nav-height: 3em;
-    --primary-color: #373737;
-    --primary-color25: #37373725;
+    --primary-color: #254E70;
+    --primary-color25: #254E7025;
     --secondary-color: #E1E1E1;
     --secondary-color25: #E1E1E125;
     --secondary-color95: #E1E1E195;
     --body-color: #f0f0f0;
+    --black-font-color: #373737;
     --animation-speed: 0.5s;
 }
 
@@ -207,7 +208,7 @@ main {
 .documentation-nav-menu a {
     display: block;
     padding: 0.9em;
-    color: var(--primary-color);
+    color: var(--black-font-color);
     border-bottom: 1px solid var(--primary-color25);
 }
 
@@ -234,6 +235,7 @@ main {
 
 .documentation-content-wrapper p {
     line-height: 1.75;
+    color: var(--black-font-color);
 }
 
 .documentation-content-wrapper h2 {
@@ -258,11 +260,13 @@ main {
 
 .documentation-content-wrapper li {
     padding: 0.3em;
+    color: var(--black-font-color);
 }
 
 .documentation-content-wrapper table {
     margin: 1em 0;
     border-collapse: collapse;
+    color: var(--black-font-color);
 }
 
 .documentation-content-wrapper table,
