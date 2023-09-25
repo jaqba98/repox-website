@@ -257,8 +257,8 @@ main {
     list-style-type: disc;
 }
 
-.documentation-content-wrapper-content li {
-    padding: 0.5em;
+.documentation-content-wrapper li {
+    padding: 0.3em;
 }
 
 .documentation-content-wrapper table {
