@@ -286,14 +286,19 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+    .documentation-nav,
     .documentation-nav-menu {
         width: 300px;
+    }
+
+    .documentation-nav-menu {
         transform: translateX(0%);
         transition: none;
     }
 
     .documentation-content {
         margin-left: 300px;
+        margin-top: 0;
     }
 }
 
@@ -302,10 +307,6 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
-
-    .documentation-content-wrapper {
-        width: 720px;
     }
 }
 
