@@ -285,6 +285,11 @@ main {
     color: var(--secondary-color);
 }
 
+.documentation-content-wrapper hr {
+    margin: 1em 0;
+    border-color: var(--primary-color25);
+}
+
 @media only screen and (min-width: 768px) {
     .documentation-nav,
     .documentation-nav-menu {

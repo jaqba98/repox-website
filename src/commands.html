@@ -16,7 +16,7 @@
     <script src="scripts/top-nav-hamburger.js" defer></script>
     <script src="scripts/documentation-hamburger.js" defer></script>
     <!-- title -->
-    <title>Repox: Documentation</title>
+    <title>Repox: Commands</title>
 </head>
 <body>
 <!-- top nav -->
@@ -64,10 +64,53 @@
         <!-- documentation content -->
         <section id="documentation-content-container" class="documentation-content">
             <div class="documentation-content-wrapper">
-                <h1>Introduction</h1>
+                <h1>Commands</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At eveniet in libero optio suscipit! Aspernatur beatae id laudantium magni neque nulla, porro quam qui quos voluptas? Dicta itaque nesciunt praesentium?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur corporis laborum nam nesciunt quam quia reiciendis repellendus? Amet blanditiis deleniti expedita illum impedit ipsa, neque perspiciatis praesentium quidem unde.
                 </p>
+                <!-- Current Version -->
+                <hr>
+                <h2>Check Version</h2>
+                <p>To check the currently installed version, you can use the command below.</p>
+                <code>repox --version</code>
+                <p>You can use an alias instead of an argument.</p>
+                <code>repox -v</code>
+                <!-- Generate Workspace -->
+                <hr>
+                <h2>Generate Workspace</h2>
+                <p>To generate an empty workspace, you can use the command below. This prepares an environment for coding, testing and building.</p>
+                <code>repox generate workspace --name=example</code>
+                <p>Arguments of generate workspace</p>
+                <table>
+                    <tr>
+                        <th>Argument</th>
+                        <th>Alias</th>
+                        <th>Required</th>
+                    </tr>
+                    <tr>
+                        <td>--name</td>
+                        <td>-n</td>
+                        <td>yes</td>
+                    </tr>
+                </table>
+                <!-- Regenerate Workspace -->
+                <hr>
+                <h2>Regenerate Workspace</h2>
+                <p>To regenerate an existing workspace, you can use the command below. This will re-generate all configuration files for that workspace from scratch.</p>
+                <code>repox regenerate workspace --force</code>
+                <p>Arguments of regenerate workspace</p>
+                <table>
+                    <tr>
+                        <th>Argument</th>
+                        <th>Alias</th>
+                        <th>Required</th>
+                    </tr>
+                    <tr>
+                        <td>--force</td>
+                        <td>-F</td>
+                        <td>yes</td>
+                    </tr>
+                </table>
             </div>
         </section>
     </section>
