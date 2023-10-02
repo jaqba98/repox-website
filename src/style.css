@@ -8,6 +8,7 @@
     --secondary-color95: #E1E1E195;
     --body-color: #f0f0f0;
     --black-font-color: #373737;
+    --black-font-color25: #37373725;
     --animation-speed: 0.5s;
 }
 
@@ -267,22 +268,21 @@ main {
     margin: 1em 0;
     border-collapse: collapse;
     color: var(--black-font-color);
-}
-
-.documentation-content-wrapper table,
-.documentation-content-wrapper th,
-.documentation-content-wrapper td {
-    border: 1px solid var(--primary-color);
+    border-radius: 0.5em;
+    overflow: hidden;
+    border: 1px solid var(--black-font-color25);
 }
 
 .documentation-content-wrapper th,
 .documentation-content-wrapper td {
-    padding: 0.5em;
+    padding: 0.75em;
 }
 
-.documentation-content-wrapper th {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+.documentation-content-wrapper th,
+.documentation-content-wrapper td {
+    background-color: var(--secondary-color);
+    color: var(--black-font-color);
+    border: 1px solid var(--black-font-color25);
 }
 
 .documentation-content-wrapper hr {
