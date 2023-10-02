@@ -9,21 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="images/repox-logo-favicon.png">
+    <link rel="icon" type="image/x-icon" href="../images/repox-logo-favicon.png">
     <!-- css link -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <!-- javascript link -->
-    <script src="scripts/top-nav-hamburger.js" defer></script>
-    <script src="scripts/documentation-hamburger.js" defer></script>
+    <script src="../scripts/top-nav-hamburger.js" defer></script>
+    <script src="../scripts/documentation-hamburger.js" defer></script>
     <!-- title -->
-    <title>Repox: Commands</title>
+    <title>Repox: Regenerate Workspace</title>
 </head>
 <body>
 <!-- top nav -->
 <nav id="top-nav-container" class="top-nav">
     <!-- top nav logo -->
-    <a href="index.html">
-        <img src="images/repox-logo-small.png" alt="Repox logo small" class="top-nav-logo">
+    <a href="../index.html">
+        <img src="../images/repox-logo-small.png" alt="Repox logo small" class="top-nav-logo">
     </a>
     <!-- top nav hamburger -->
     <div id="top-nav-hamburger" class="hamburger">
@@ -33,11 +33,11 @@
     </div>
     <!-- top nav menu options -->
     <ol class="top-nav-menu">
-        <li><a href="index.html" class="top-nav-menu-link">Home</a></li>
-        <li><a href="documentation.html" class="top-nav-menu-link">Documentation</a></li>
-        <li><a href="blog.html" class="top-nav-menu-link">Blog</a></li>
-        <li><a href="team.html" class="top-nav-menu-link">Team</a></li>
-        <li><a href="donation.html" class="top-nav-menu-link">Donation</a></li>
+        <li><a href="../index.html" class="top-nav-menu-link">Home</a></li>
+        <li><a href="introduction.html" class="top-nav-menu-link">Documentation</a></li>
+        <li><a href="../blog.html" class="top-nav-menu-link">Blog</a></li>
+        <li><a href="../team.html" class="top-nav-menu-link">Team</a></li>
+        <li><a href="../donation.html" class="top-nav-menu-link">Donation</a></li>
     </ol>
 </nav>
 <main>
@@ -56,46 +56,22 @@
             <!-- documentation nav menu -->
             <div class="documentation-nav-menu">
                 <ol>
-                    <li><a href="documentation.html">Introduction</a></li>
-                    <li><a href="commands.html">Commands</a></li>
+                    <li><a href="introduction.html">Introduction</a></li>
+                    <li>
+                        <a href="commands.html">Commands</a>
+                        <ul>
+                            <li><a href="check-version.html">Check Version</a></li>
+                            <li><a href="generate-workspace.html">Generate Workspace</a></li>
+                            <li><a href="regenerate-workspace.html">Regenerate Workspace</a></li>
+                        </ul>
+                    </li>
                 </ol>
             </div>
         </section>
         <!-- documentation content -->
         <section id="documentation-content-container" class="documentation-content">
             <div class="documentation-content-wrapper">
-                <h1>Commands</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consequatur corporis laborum nam nesciunt quam quia reiciendis repellendus? Amet blanditiis deleniti expedita illum impedit ipsa, neque perspiciatis praesentium quidem unde.
-                </p>
-                <!-- Current Version -->
-                <hr>
-                <h2>Check Version</h2>
-                <p>To check the currently installed version, you can use the command below.</p>
-                <code>repox --version</code>
-                <p>You can use an alias instead of an argument.</p>
-                <code>repox -v</code>
-                <!-- Generate Workspace -->
-                <hr>
-                <h2>Generate Workspace</h2>
-                <p>To generate an empty workspace, you can use the command below. This prepares an environment for coding, testing and building.</p>
-                <code>repox generate workspace --name=example</code>
-                <p>Arguments of generate workspace</p>
-                <table>
-                    <tr>
-                        <th>Argument</th>
-                        <th>Alias</th>
-                        <th>Required</th>
-                    </tr>
-                    <tr>
-                        <td>--name</td>
-                        <td>-n</td>
-                        <td>yes</td>
-                    </tr>
-                </table>
-                <!-- Regenerate Workspace -->
-                <hr>
-                <h2>Regenerate Workspace</h2>
+                <h1>Regenerate Workspace</h1>
                 <p>To regenerate an existing workspace, you can use the command below. This will re-generate all configuration files for that workspace from scratch.</p>
                 <code>repox regenerate workspace --force</code>
                 <p>Arguments of regenerate workspace</p>
