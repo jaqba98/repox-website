@@ -5,6 +5,7 @@ import {DocumentationComponent} from "./core/components/documentation/documentat
 import {DonationComponent} from "./core/components/donation/donation.component";
 import {HomeComponent} from "./core/components/home/home.component";
 import {TeamComponent} from "./core/components/team/team.component";
+import {PageNotFoundComponent} from "./core/components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: "documentation", component: DocumentationComponent },
   { path: "donation", component: DonationComponent },
   { path: "home", component: HomeComponent },
-  { path: "team", component: TeamComponent }
+  { path: "team", component: TeamComponent },
+  { path: "**", component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -5,6 +5,7 @@ import {DonationComponent} from "./components/donation/donation.component";
 import {NgModule} from "@angular/core";
 import {HomeComponent} from "./components/home/home.component";
 import {TeamComponent} from "./components/team/team.component";
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import {TeamComponent} from "./components/team/team.component";
     DocumentationComponent,
     DonationComponent,
     HomeComponent,
-    TeamComponent
+    TeamComponent,
+    PageNotFoundComponent
   ]
 })
 export class CoreModule {
