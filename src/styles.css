@@ -2,16 +2,17 @@
 
 /* variables */
 :root {
-  --top-nav-height: 3em;
-  --primary-color: #254E70;
-  --primary-color25: #254E7025;
-  --secondary-color: #E1E1E1;
-  --secondary-color25: #E1E1E125;
-  --secondary-color95: #E1E1E195;
-  --body-color: #f0f0f0;
-  --black-font-color: #373737;
-  --black-font-color25: #37373725;
+  --top-nav-height: 4rem;
+  --primary-color: #6F2DBD;
+  --white-color: #FFFFFF;
   --animation-speed: 0.5s;
+  /*--primary-color25: #254E7025;*/
+  /*--secondary-color: #E1E1E1;*/
+  /*--secondary-color25: #E1E1E125;*/
+  /*--secondary-color95: #E1E1E195;*/
+  /*--body-color: #f0f0f0;*/
+  /*--black-font-color: #373737;*/
+  /*--black-font-color25: #37373725;*/
 }
 
 /* reset */
@@ -44,5 +45,4 @@ a {
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: var(--body-color);
 }
