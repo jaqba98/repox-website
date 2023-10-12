@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {NavComponent} from "./components/nav/nav.component";
-import {NgFor} from "@angular/common";
+import {NgClass, NgFor} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
 @NgModule({
@@ -9,7 +9,8 @@ import {RouterLink} from "@angular/router";
   ],
   imports: [
     NgFor,
-    RouterLink
+    RouterLink,
+    NgClass
   ],
   exports: [
     NavComponent

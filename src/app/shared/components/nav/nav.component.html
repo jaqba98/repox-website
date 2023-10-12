@@ -1,11 +1,11 @@
 <!-- top nav -->
-<nav class="top-nav">
+<nav class="top-nav" [ngClass]="{ 'hamburger-open': menuIsOpen }">
   <!-- top nav logo -->
   <a routerLink="/home">
     <img src="assets/images/repox-logo-small.png" alt="Repox small logo" class="top-nav-logo">
   </a>
   <!-- hamburger for mobile device -->
-  <div class="hamburger">
+  <div class="hamburger" (click)="toggleMenu()">
     <div class="hamburger-line hamburger-line-top"></div>
     <div class="hamburger-line hamburger-line-middle"></div>
     <div class="hamburger-line hamburger-line-bottom"></div>

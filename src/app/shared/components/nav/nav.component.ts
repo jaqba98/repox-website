@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import {Component} from "@angular/core";
 
 @Component({
   selector: "repox-website-nav",
@@ -7,10 +7,16 @@ import {Component, OnInit} from "@angular/core";
 })
 export class NavComponent {
   links: Array<{ name: string; href: string; }> = [
-    { name: "Home", href: "/home" },
-    { name: "Documentation", href: "/documentation" },
-    { name: "Blog", href: "/blog" },
-    { name: "Team", href: "/team" },
-    { name: "Donation", href: "/donation" }
+    {name: "Home", href: "/home"},
+    {name: "Documentation", href: "/documentation"},
+    {name: "Blog", href: "/blog"},
+    {name: "Team", href: "/team"},
+    {name: "Donation", href: "/donation"}
   ];
+
+  menuIsOpen: boolean = false;
+
+  toggleMenu(): void {
+    this.menuIsOpen = !this.menuIsOpen;
+  }
 }
