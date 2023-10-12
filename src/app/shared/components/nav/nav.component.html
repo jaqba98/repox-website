@@ -1,1 +1,19 @@
-{{title}}
+<!-- top nav -->
+<nav id="top-nav-container" class="top-nav">
+  <!-- top nav logo -->
+  <a routerLink="/home">
+    <img src="assets/images/repox-logo-small.png" alt="Repox logo small" class="top-nav-logo">
+  </a>
+  <!-- hamburger for mobile device -->
+  <div id="top-nav-hamburger" class="hamburger">
+    <div class="hamburger-line hamburger-line-top"></div>
+    <div class="hamburger-line hamburger-line-middle"></div>
+    <div class="hamburger-line hamburger-line-bottom"></div>
+  </div>
+  <!-- top nav menu -->
+  <ol class="top-nav-menu">
+    <li *ngFor="let link of links;">
+      <a [routerLink]="link.href" class="top-nav-menu-link">{{link.name}}</a>
+    </li>
+  </ol>
+</nav>

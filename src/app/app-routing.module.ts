@@ -7,7 +7,7 @@ import {HomeComponent} from "./core/components/home/home.component";
 import {TeamComponent} from "./core/components/team/team.component";
 import {PageNotFoundComponent} from "./core/components/page-not-found/page-not-found.component";
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "blog", component: BlogComponent },
   { path: "documentation", component: DocumentationComponent },

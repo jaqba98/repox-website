@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: "repox-website-nav",
@@ -6,5 +6,11 @@ import {Component} from "@angular/core";
   styleUrls: ["./nav.component.css"]
 })
 export class NavComponent {
-  title: string = "nav";
+  links: Array<{ name: string; href: string; }> = [
+    { name: "Home", href: "/home" },
+    { name: "Documentation", href: "/documentation" },
+    { name: "Blog", href: "/blog" },
+    { name: "Team", href: "/team" },
+    { name: "Donation", href: "/donation" }
+  ];
 }
