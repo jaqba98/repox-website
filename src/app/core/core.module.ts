@@ -15,6 +15,14 @@ import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.
     HomeComponent,
     TeamComponent,
     PageNotFoundComponent
+  ],
+  exports: [
+    BlogComponent,
+    DocumentationComponent,
+    DonationComponent,
+    HomeComponent,
+    TeamComponent,
+    PageNotFoundComponent
   ]
 })
 export class CoreModule {
