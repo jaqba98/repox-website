@@ -16,6 +16,8 @@ export class NavComponent {
 
   menuIsOpen: boolean = false;
 
+  constructor() {}
+
   toggleMenu(): void {
     this.menuIsOpen = !this.menuIsOpen;
   }
