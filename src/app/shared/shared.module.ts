@@ -1,19 +1,18 @@
-import {NgModule} from "@angular/core";
 import {NavComponent} from "./components/nav/nav.component";
-import {NgClass, NgFor} from "@angular/common";
+import {HeaderComponent} from "./components/header/header.component";
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
-    NavComponent
+    NavComponent,
+    HeaderComponent
   ],
-  imports: [
-    NgFor,
-    RouterLink,
-    NgClass
-  ],
+  imports: [CommonModule, RouterLink],
   exports: [
-    NavComponent
+    NavComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule {

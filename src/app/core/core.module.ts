@@ -6,24 +6,28 @@ import {NgModule} from "@angular/core";
 import {HomeComponent} from "./components/home/home.component";
 import {TeamComponent} from "./components/team/team.component";
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
-  declarations: [
-    BlogComponent,
-    DocumentationComponent,
-    DonationComponent,
-    HomeComponent,
-    TeamComponent,
-    PageNotFoundComponent
-  ],
-  exports: [
-    BlogComponent,
-    DocumentationComponent,
-    DonationComponent,
-    HomeComponent,
-    TeamComponent,
-    PageNotFoundComponent
-  ]
+    declarations: [
+        BlogComponent,
+        DocumentationComponent,
+        DonationComponent,
+        HomeComponent,
+        TeamComponent,
+        PageNotFoundComponent
+    ],
+    imports: [
+        SharedModule
+    ],
+    exports: [
+        BlogComponent,
+        DocumentationComponent,
+        DonationComponent,
+        HomeComponent,
+        TeamComponent,
+        PageNotFoundComponent
+    ]
 })
 export class CoreModule {
 }
