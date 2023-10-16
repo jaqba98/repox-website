@@ -77,6 +77,7 @@
   padding: 2rem;
   color: var(--white-color);
   border-bottom: 1px solid var(--white-color25);
+  transition: all var(--animation-speed) ease-in-out;
 }
 
 .top-nav-menu > li:first-child {
@@ -86,6 +87,10 @@
 .top-nav-menu-link-active {
   background-color: var(--white-color);
   color: var(--primary-color);
+}
+
+.top-nav-menu-link-open {
+  background-color: var(--white-color25);
 }
 
 @media only screen and (min-width: 768px) {
