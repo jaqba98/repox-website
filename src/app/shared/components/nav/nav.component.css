@@ -24,6 +24,7 @@
   height: var(--top-nav-height);
   padding: 0.5rem;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .hamburger-line {
