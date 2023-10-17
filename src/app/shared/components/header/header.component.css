@@ -34,6 +34,30 @@
   font-weight: bold;
   position: absolute;
   left: calc(50% - 25%);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    gap: 3em;
+  }
+
+  .header-logo {
+    width: 16em;
+  }
+
+  .header-motto {
+    align-items: flex-start;
+  }
+
+  .header-try-button {
+    width: auto;
+    position: static;
+  }
 }

@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 ol, ul {
@@ -42,8 +43,4 @@ a {
   body {
     font-size: 125%;
   }
-}
-
-body {
-  font-family: 'Lato', sans-serif;
 }
