@@ -7,11 +7,6 @@
   background-color: var(--white-color);
 }
 
-.main-features-title {
-  margin-bottom: 2em;
-  color: var(--black-color);
-}
-
 .main-features-content {
   display: flex;
   flex-direction: column;
