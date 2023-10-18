@@ -7,30 +7,21 @@ import {MainFeaturesModel} from "../../models/main-features.model";
   styleUrls: ["./main-features.component.css"]
 })
 export class MainFeaturesComponent {
-  features: MainFeaturesModel[] = [
+  readonly features: MainFeaturesModel[] = [
     {
-      title: "Title 2",
-      img: {
-        url: "https://cdn-icons-png.flaticon.com/512/3439/3439971.png",
-        alt: "Computer"
-      },
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere justo sit amet purus scelerisque, et imperdiet augue fringilla. Maecenas commodo elit in placerat tempor."
+      title: "Reusability",
+      icon: "rebase",
+      description: "Create the code once and use it in all your products."
     },
     {
-      title: "Title 2",
-      img: {
-        url: "https://cdn-icons-png.flaticon.com/512/3439/3439971.png",
-        alt: "Computer"
-      },
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere justo sit amet purus scelerisque, et imperdiet augue fringilla. Maecenas commodo elit in placerat tempor."
+      title: "Automated",
+      icon: "precision_manufacturing",
+      description: "Automate the process of building, testing and publishing your products."
     },
     {
-      title: "Title 2",
-      img: {
-        url: "https://cdn-icons-png.flaticon.com/512/3439/3439971.png",
-        alt: "Computer"
-      },
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus posuere justo sit amet purus scelerisque, et imperdiet augue fringilla. Maecenas commodo elit in placerat tempor."
+      title: "Scalability",
+      icon: "monitoring",
+      description: "Successively increase the complexity of your products in a simple way."
     }
   ];
 }

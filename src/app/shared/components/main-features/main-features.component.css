@@ -1,0 +1,29 @@
+.main-features {
+  padding: 6em 2em;
+  text-align: center;
+}
+
+.main-features-title {
+  margin-bottom: 2em;
+  color: var(--black-color);
+}
+
+.main-features-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.main-feature-title {
+  color: var(--primary-color);
+}
+
+.main-feature-icon {
+  font-size: 6em;
+  margin: 0.25em;
+  color: var(--primary-color);
+}
+
+.main-feature-description {
+  color: var(--gray-color);
+}
