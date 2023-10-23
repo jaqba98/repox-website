@@ -9,8 +9,8 @@
 
 .main-features-title {
   color: var(--gray-color);
-  margin-bottom: 2em;
-  font-size: 1.5em;
+  margin-bottom: 1em;
+  font-weight: lighter;
 }
 
 .main-features-content {
