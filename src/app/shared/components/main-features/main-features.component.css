@@ -37,6 +37,10 @@
   .main-features-content {
     flex-direction: row;
   }
+
+  .main-feature {
+    flex: 1;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
