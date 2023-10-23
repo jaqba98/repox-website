@@ -17,6 +17,56 @@ export class TeamComponent {
         { label: "LinkedIn", link: "#" },
         { label: "Github", link: "#" }
       ]
+    },
+    {
+      avatar: "https://ournationalheroes.com/wp-content/uploads/2022/10/0x0.jpg",
+      name: "Jakub Olejarczyk",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere efficitur hendrerit. Fusce dictum, mauris nec ultricies faucibus, lorem mi feugiat magna, id varius risus mi ac arcu. Donec aliquam at lectus at iaculis.",
+      socialMedias: [
+        { label: "Website", link: "#" },
+        { label: "LinkedIn", link: "#" },
+        { label: "Github", link: "#" }
+      ]
+    },
+    {
+      avatar: "https://ournationalheroes.com/wp-content/uploads/2022/10/0x0.jpg",
+      name: "Jakub Olejarczyk",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere efficitur hendrerit. Fusce dictum, mauris nec ultricies faucibus, lorem mi feugiat magna, id varius risus mi ac arcu. Donec aliquam at lectus at iaculis.",
+      socialMedias: [
+        { label: "Website", link: "#" },
+        { label: "LinkedIn", link: "#" },
+        { label: "Github", link: "#" }
+      ]
+    },
+    {
+      avatar: "https://ournationalheroes.com/wp-content/uploads/2022/10/0x0.jpg",
+      name: "Jakub Olejarczyk",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere efficitur hendrerit. Fusce dictum, mauris nec ultricies faucibus, lorem mi feugiat magna, id varius risus mi ac arcu. Donec aliquam at lectus at iaculis.",
+      socialMedias: [
+        { label: "Website", link: "#" },
+        { label: "LinkedIn", link: "#" },
+        { label: "Github", link: "#" }
+      ]
+    },
+    {
+      avatar: "https://ournationalheroes.com/wp-content/uploads/2022/10/0x0.jpg",
+      name: "Jakub Olejarczyk",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere efficitur hendrerit. Fusce dictum, mauris nec ultricies faucibus, lorem mi feugiat magna, id varius risus mi ac arcu. Donec aliquam at lectus at iaculis.",
+      socialMedias: [
+        { label: "Website", link: "#" },
+        { label: "LinkedIn", link: "#" },
+        { label: "Github", link: "#" }
+      ]
+    },
+    {
+      avatar: "https://ournationalheroes.com/wp-content/uploads/2022/10/0x0.jpg",
+      name: "Jakub Olejarczyk",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque posuere efficitur hendrerit. Fusce dictum, mauris nec ultricies faucibus, lorem mi feugiat magna, id varius risus mi ac arcu. Donec aliquam at lectus at iaculis.",
+      socialMedias: [
+        { label: "Website", link: "#" },
+        { label: "LinkedIn", link: "#" },
+        { label: "Github", link: "#" }
+      ]
     }
   ];
 }
