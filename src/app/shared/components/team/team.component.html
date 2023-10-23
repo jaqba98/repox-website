@@ -1,0 +1,19 @@
+<section class="team">
+  <h1 class="team-title">Team</h1>
+  <div class="team-list">
+    <div class="person" *ngFor="let person of persons">
+      <div class="person-avatar">
+        <img src="{{person.avatar}}" alt="{{person.name}}">
+        <p>{{person.name}}</p>
+      </div>
+      <div class="person-detail">
+        <p>{{person.description}}</p>
+        <div class="person-social-media">
+          <a *ngFor="let socialMedia of person.socialMedias" href="{{socialMedia.link}}" target="_blank">
+            {{socialMedia.label}}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

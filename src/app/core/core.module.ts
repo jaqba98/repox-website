@@ -4,7 +4,6 @@ import {DonationComponent} from "./components/donation/donation.component";
 
 import {NgModule} from "@angular/core";
 import {HomeComponent} from "./components/home/home.component";
-import {TeamComponent} from "./components/team/team.component";
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import {SharedModule} from "../shared/shared.module";
 
@@ -14,7 +13,6 @@ import {SharedModule} from "../shared/shared.module";
         DocumentationComponent,
         DonationComponent,
         HomeComponent,
-        TeamComponent,
         PageNotFoundComponent
     ],
     imports: [
@@ -25,7 +23,6 @@ import {SharedModule} from "../shared/shared.module";
         DocumentationComponent,
         DonationComponent,
         HomeComponent,
-        TeamComponent,
         PageNotFoundComponent
     ]
 })

@@ -14,7 +14,6 @@ export class NavComponent {
     {name: "Home", href: "/home"},
     {name: "Documentation", href: "/documentation"},
     {name: "Blog", href: "/blog"},
-    {name: "Team", href: "/team"},
     {name: "Donation", href: "/donation"}
   ];
 
