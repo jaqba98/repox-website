@@ -6,6 +6,7 @@ import {NgModule} from "@angular/core";
 import {HomeComponent} from "./components/home/home.component";
 import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 import {SharedModule} from "../shared/shared.module";
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 @NgModule({
     declarations: [
@@ -15,9 +16,11 @@ import {SharedModule} from "../shared/shared.module";
         HomeComponent,
         PageNotFoundComponent
     ],
-    imports: [
-        SharedModule
-    ],
+  imports: [
+    SharedModule,
+    RouterOutlet,
+    RouterLink
+  ],
     exports: [
         BlogComponent,
         DocumentationComponent,
