@@ -2,6 +2,7 @@
   text-align: center;
   padding: 8em 4em;
   background-color: var(--primary-color);
+  position: relative;
 }
 
 .header-logo {
@@ -34,7 +35,6 @@
   font-weight: bold;
   position: absolute;
   left: calc(50% - 25%);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
