@@ -6,5 +6,4 @@ import { Component } from "@angular/core";
   styleUrls: ["./documentation.component.css"]
 })
 export class DocumentationComponent {
-  title: string = "documentation";
 }

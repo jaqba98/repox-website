@@ -6,6 +6,8 @@ import {RouterLink} from "@angular/router";
 import {MainFeaturesComponent} from "./components/main-features/main-features.component";
 import {FooterComponent} from "./components/footer/footer.component";
 import {TeamComponent} from "./components/team/team.component";
+import {DocumentationMenuComponent} from "./components/documentation-menu/documentation-menu.component";
+import {DocumentationContentComponent} from "./components/documentation-content/documentation-content.component";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import {TeamComponent} from "./components/team/team.component";
     HeaderComponent,
     MainFeaturesComponent,
     TeamComponent,
-    FooterComponent
+    FooterComponent,
+    DocumentationMenuComponent,
+    DocumentationContentComponent
   ],
   imports: [CommonModule, RouterLink],
   exports: [
@@ -21,7 +25,9 @@ import {TeamComponent} from "./components/team/team.component";
     HeaderComponent,
     MainFeaturesComponent,
     TeamComponent,
-    FooterComponent
+    FooterComponent,
+    DocumentationMenuComponent,
+    DocumentationContentComponent
   ]
 })
 export class SharedModule {
