@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, ElementRef} from "@angular/core";
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
 
@@ -19,7 +19,10 @@ export class NavComponent {
 
   menuIsOpen: boolean = false;
 
-  constructor(private readonly router: Router) {
+  constructor(
+    private readonly router: Router,
+    private readonly el: ElementRef
+  ) {
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => this.openLink = event.url === "/" ? "/home" : event.url);

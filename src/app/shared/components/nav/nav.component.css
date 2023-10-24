@@ -56,7 +56,6 @@
 .top-nav-menu {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: fixed;
   top: var(--top-nav-height);
   bottom: 0;
