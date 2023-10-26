@@ -11,6 +11,7 @@ import {FooterComponent} from "./component/footer/footer.component";
 import {RouterLink} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
+import {DocsNavComponent} from "./component/docs-nav/docs-nav.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {BrowserModule} from "@angular/platform-browser";
     VideoComponent,
     TeamComponent,
     SupportingComponent,
-    FooterComponent
+    FooterComponent,
+    DocsNavComponent
   ],
   imports: [
     CommonModule,
@@ -38,7 +40,8 @@ import {BrowserModule} from "@angular/platform-browser";
     VideoComponent,
     TeamComponent,
     SupportingComponent,
-    FooterComponent
+    FooterComponent,
+    DocsNavComponent
   ]
 })
 export class SharedModule {
