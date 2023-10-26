@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {NavComponent} from "./component/nav/nav.component";
+import {TopNavComponent} from "./component/top-nav/top-nav.component";
 import {HeaderComponent} from "./component/header/header.component";
 import {MainFeaturesComponent} from "./component/main-features/main-features.component";
 import {StatisticsComponent} from "./component/statistics/statistics.component";
@@ -15,7 +15,7 @@ import {DocsNavComponent} from "./component/docs-nav/docs-nav.component";
 
 @NgModule({
   declarations: [
-    NavComponent,
+    TopNavComponent,
     HeaderComponent,
     MainFeaturesComponent,
     StatisticsComponent,
@@ -32,7 +32,7 @@ import {DocsNavComponent} from "./component/docs-nav/docs-nav.component";
     RouterLink
   ],
   exports: [
-    NavComponent,
+    TopNavComponent,
     HeaderComponent,
     MainFeaturesComponent,
     StatisticsComponent,
