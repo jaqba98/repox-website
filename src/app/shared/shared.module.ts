@@ -8,6 +8,7 @@ import {VideoComponent} from "./component/video/video.component";
 import {TeamComponent} from "./component/team/team.component";
 import {SupportingComponent} from "./component/supporting/supporting.component";
 import {FooterComponent} from "./component/footer/footer.component";
+import {RouterLink} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,9 @@ import {FooterComponent} from "./component/footer/footer.component";
     TeamComponent,
     SupportingComponent,
     FooterComponent
+  ],
+  imports: [
+    RouterLink
   ],
   exports: [
     NavComponent,
