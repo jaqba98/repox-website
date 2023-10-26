@@ -1,4 +1,5 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
+import {NavOptionModel} from "../../model/nav-option.model";
 
 @Component({
   selector: "repox-website-nav",
@@ -6,4 +7,5 @@ import {Component} from "@angular/core";
   styleUrls: ["./nav.component.css"]
 })
 export class NavComponent {
+  @Input() navOptions: NavOptionModel[] = [];
 }

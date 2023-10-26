@@ -9,6 +9,8 @@ import {TeamComponent} from "./component/team/team.component";
 import {SupportingComponent} from "./component/supporting/supporting.component";
 import {FooterComponent} from "./component/footer/footer.component";
 import {RouterLink} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import {BrowserModule} from "@angular/platform-browser";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import {RouterLink} from "@angular/router";
     FooterComponent
   ],
   imports: [
+    CommonModule,
+    BrowserModule,
     RouterLink
   ],
   exports: [

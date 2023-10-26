@@ -1,6 +1,5 @@
 <ul>
-  <li><a routerLink="/home">Home</a></li>
-  <li><a routerLink="/docs">Docs</a></li>
-  <li><a routerLink="/support">Support</a></li>
-  <li><a routerLink="/blog">Blog</a></li>
+  <li *ngFor="let navOption of navOptions">
+    <a [routerLink]="navOption.link">{{navOption.label}}</a>
+  </li>
 </ul>
