@@ -5,6 +5,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {SharedModule} from "./shared/shared.module";
 import {CoreModule} from "./core/core.module";
+import {AppRoutingModule} from "./app-routing.module";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {CoreModule} from "./core/core.module";
     CommonModule,
     BrowserModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
