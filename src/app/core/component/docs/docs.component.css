@@ -1,0 +1,27 @@
+/* Mobile */
+.docs-content {
+  border: 1px solid red;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .docs {
+    display: flex;
+  }
+
+  .docs-nav {
+    flex: 1;
+  }
+
+  .docs-content {
+    flex: 3;
+  }
+}
+
+/* PC */
+@media only screen and (min-width: 1024px) {
+  .docs {
+    margin: auto;
+    width: 960px;
+  }
+}

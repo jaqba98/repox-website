@@ -1,2 +1,8 @@
-<repox-website-nav [navTitle]="docsNavTitle" [navListItems]="docsNavListItems"></repox-website-nav>
-<router-outlet></router-outlet>
+<section class="docs">
+  <div class="docs-nav">
+    <repox-website-nav [navTitle]="docsNavTitle" [navListItems]="docsNavListItems"></repox-website-nav>
+  </div>
+  <div class="docs-content">
+    <router-outlet></router-outlet>
+  </div>
+</section>
