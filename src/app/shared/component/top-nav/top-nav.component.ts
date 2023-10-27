@@ -7,5 +7,9 @@ import {NavOptionModel} from "../../model/nav-option.model";
   styleUrls: ["./top-nav.component.css"]
 })
 export class TopNavComponent {
-  @Input() navOptions: NavOptionModel[] = [];
+  @Input()
+  topNavTitle: string = "";
+
+  @Input()
+  topNavListItems: NavOptionModel[] = [];
 }

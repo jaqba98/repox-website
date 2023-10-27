@@ -1,5 +1,15 @@
-<ul>
-  <li *ngFor="let navOption of navOptions">
-    <a [routerLink]="navOption.link">{{navOption.label}}</a>
-  </li>
-</ul>
+<nav class="top-nav">
+  <h1 class="top-nav-title">{{topNavTitle}}</h1>
+  <div class="top-nav-hamburger">
+    <div class="top-nav-hamburger-line top-nav-hamburger-line-top"></div>
+    <div class="top-nav-hamburger-line top-nav-hamburger-line-middle"></div>
+    <div class="top-nav-hamburger-line top-nav-hamburger-line-bottom"></div>
+  </div>
+  <div class="top-nav-menu">
+    <ul class="top-nav-menu-list">
+      <li *ngFor="let topNavListItem of topNavListItems" class="top-nav-list-item">
+        <a [routerLink]="topNavListItem.link">{{topNavListItem.label}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>
