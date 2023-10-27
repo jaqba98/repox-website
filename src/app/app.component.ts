@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {NavOptionModel} from "./shared/model/nav-option.model";
+
+import {NavListItemModel} from "./shared/model/nav-list-item.model";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,9 @@ import {NavOptionModel} from "./shared/model/nav-option.model";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  appNavOptions: NavOptionModel[] = [
+  readonly appNavTitle: string = "Repox";
+
+  readonly appNavListItems: NavListItemModel[] = [
     { link: "/home", label: "Home" },
     { link: "/docs", label: "Docs" },
     { link: "/support", label: "Support" },
