@@ -12,7 +12,6 @@ import {VideoComponent} from "./component/video/video.component";
 import {TeamComponent} from "./component/team/team.component";
 import {SupportingComponent} from "./component/supporting/supporting.component";
 import {FooterComponent} from "./component/footer/footer.component";
-import {DocsNavComponent} from "./component/docs-nav/docs-nav.component";
 
 @NgModule({
   declarations: [
@@ -24,8 +23,7 @@ import {DocsNavComponent} from "./component/docs-nav/docs-nav.component";
     VideoComponent,
     TeamComponent,
     SupportingComponent,
-    FooterComponent,
-    DocsNavComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -41,8 +39,7 @@ import {DocsNavComponent} from "./component/docs-nav/docs-nav.component";
     VideoComponent,
     TeamComponent,
     SupportingComponent,
-    FooterComponent,
-    DocsNavComponent
+    FooterComponent
   ]
 })
 export class SharedModule {

@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+
 import {NavListItemModel} from "../../../shared/model/nav-list-item.model";
 
 @Component({
@@ -7,7 +8,9 @@ import {NavListItemModel} from "../../../shared/model/nav-list-item.model";
   styleUrls: ["./docs.component.css"]
 })
 export class DocsComponent {
-  docsNavOptions: NavListItemModel[] = [
+  readonly docsNavTitle: string = "";
+
+  readonly docsNavListItems: NavListItemModel[] = [
     { link: "example1", label: "Example 1" },
     { link: "example2", label: "Example 2" }
   ];
