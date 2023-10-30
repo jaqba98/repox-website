@@ -1,6 +1,4 @@
-/* ### Mobile ### */
-
-/* Top nav */
+/* top-nav mobile */
 .top-nav {
   display: flex;
   align-items: center;
@@ -11,7 +9,7 @@
 
 .top-nav > .nav-title {
   color: var(--white-color);
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   padding: 0.5em;
 }
 
@@ -26,7 +24,7 @@
 
 .top-nav > .nav-hamburger > .nav-hamburger-line {
   height: 0.4em;
-  border-radius: 3px;
+  border-radius: 2px;
   background-color: var(--white-color);
 }
 
@@ -34,6 +32,6 @@
   display: none;
 }
 
-/* Docs nav */
+/* docs-nav mobile */
 .docs-nav {
 }
