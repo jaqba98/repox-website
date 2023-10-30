@@ -1,7 +1,4 @@
 /* Mobile */
-.docs-content {
-  border: 1px solid red;
-}
 
 /* Tablet */
 @media only screen and (min-width: 768px) {
@@ -18,7 +15,7 @@
   }
 }
 
-/* PC */
+/* Pc */
 @media only screen and (min-width: 1024px) {
   .docs {
     margin: auto;

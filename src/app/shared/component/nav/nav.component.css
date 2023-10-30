@@ -1,3 +1,39 @@
-.nav {
-  border: 1px solid red;
+/* ### Mobile ### */
+
+/* Top nav */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--top-nav);
+  background-color: var(--primary-color);
+}
+
+.top-nav > .nav-title {
+  color: var(--white-color);
+  letter-spacing: 1px;
+  padding: 0.5em;
+}
+
+.top-nav > .nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: var(--top-nav);
+  height: var(--top-nav);
+  padding: 0.5em;
+}
+
+.top-nav > .nav-hamburger > .nav-hamburger-line {
+  height: 0.4em;
+  border-radius: 3px;
+  background-color: var(--white-color);
+}
+
+.top-nav > .nav-menu {
+  display: none;
+}
+
+/* Docs nav */
+.docs-nav {
 }

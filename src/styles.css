@@ -1,10 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* Variables */
+:root {
+  --top-nav: 4em;
+  --primary-color: #547AA5;
+  --white-color: #F5F5F5;
+}
+
 /* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
 }
 
 ul, ol {

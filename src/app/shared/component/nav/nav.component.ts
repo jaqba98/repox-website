@@ -13,4 +13,7 @@ export class NavComponent {
 
   @Input()
   navListItems: NavListItemModel[] = [];
+
+  @Input()
+  navClass: string = "";
 }

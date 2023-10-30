@@ -16,4 +16,6 @@ export class AppComponent {
     { link: "/support", label: "Support" },
     { link: "/blog", label: "Blog" }
   ];
+
+  readonly appClass: string = "top-nav";
 }

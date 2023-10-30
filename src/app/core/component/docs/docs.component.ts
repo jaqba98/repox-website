@@ -14,4 +14,6 @@ export class DocsComponent {
     { link: "example1", label: "Example 1" },
     { link: "example2", label: "Example 2" }
   ];
+
+  readonly docsClass: string = "docs-nav";
 }
