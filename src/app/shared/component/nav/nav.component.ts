@@ -16,4 +16,10 @@ export class NavComponent {
 
   @Input()
   navClass: string = "";
+
+  menuIsOpened: boolean = false;
+
+  onClickHamburger(): void {
+    this.menuIsOpened = !this.menuIsOpened;
+  }
 }

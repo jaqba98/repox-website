@@ -1,5 +1,3 @@
-/* general mobile */
-
 /* top-nav mobile */
 .top-nav {
   display: flex;
@@ -39,6 +37,11 @@
   width: 100%;
   height: calc(100vh - var(--top-nav));
   background-color: var(--primary-color);
+  transition: transform 0.25s ease-in-out;
+}
+
+.top-nav .nav-menu-hide {
+  transform: translateX(-100%);
 }
 
 .top-nav .nav-menu-list {
