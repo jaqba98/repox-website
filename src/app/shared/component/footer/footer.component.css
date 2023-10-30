@@ -1,0 +1,8 @@
+/* Mobile */
+.footer {
+  border: 1px solid blue;
+  height: var(--top-nav);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -62,6 +62,7 @@
 .docs-nav {
   background-color: var(--white-color);
   padding: 1em;
+  height: 100%;
 }
 
 .docs-nav > .nav-title {
@@ -84,9 +85,9 @@
 
 .docs-nav ol > .nav-list-item > a {
   font-weight: bold;
-  margin: 0.5em 0.5em;
+  margin: 0.25em 0.25em;
 }
 
 .docs-nav ul > .nav-list-item > a {
-  margin: 0.5em 1em;
+  margin: 0.25em 1em;
 }
