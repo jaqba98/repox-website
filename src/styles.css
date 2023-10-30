@@ -8,6 +8,7 @@
   --top-nav: 4em;
   --primary-color: #547AA5;
   --white-color: #F5F5F5;
+  --grey-color: grey;
 }
 
 /* Reset styles */
@@ -20,4 +21,11 @@
 
 ul, ol {
   list-style: none;
+}
+
+/* General */
+@media only screen and (max-width: 300px) {
+  body {
+    font-size: 5vw;
+  }
 }

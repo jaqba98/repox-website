@@ -6,10 +6,15 @@
     <div class="nav-hamburger-line nav-hamburger-line-bottom"></div>
   </div>
   <div class="nav-menu">
-    <ul class="nav-menu-list">
-      <li *ngFor="let navListItem of navListItems" class="nav-list-item">
+    <ol class="nav-menu-list" *ngFor="let navListItem of navListItems">
+      <li class="nav-list-item">
         <a [routerLink]="navListItem.link">{{navListItem.label}}</a>
       </li>
-    </ul>
+      <ul class="nav-menu-list" *ngFor="let child of navListItem.children">
+        <li class="nav-list-item">
+          <a [routerLink]="child.link">{{child.label}}</a>
+        </li>
+      </ul>
+    </ol>
   </div>
 </nav>

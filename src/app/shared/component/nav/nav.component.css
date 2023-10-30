@@ -1,3 +1,5 @@
+/* general mobile */
+
 /* top-nav mobile */
 .top-nav {
   display: flex;
@@ -9,7 +11,7 @@
 
 .top-nav > .nav-title {
   color: var(--white-color);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   padding: 0.5em;
 }
 
@@ -34,4 +36,33 @@
 
 /* docs-nav mobile */
 .docs-nav {
+  background-color: var(--white-color);
+  padding: 1em;
+}
+
+.docs-nav > .nav-title {
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+.docs-nav > .nav-hamburger {
+  display: none;
+}
+
+.docs-nav ol > .nav-list-item > a,
+.docs-nav ul > .nav-list-item > a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--grey-color);
+}
+
+.docs-nav ol > .nav-list-item > a {
+  font-weight: bold;
+  margin: 0.5em 0.5em;
+}
+
+.docs-nav ul > .nav-list-item > a {
+  margin: 0.5em 1em;
 }
