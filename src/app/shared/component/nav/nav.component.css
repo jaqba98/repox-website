@@ -117,7 +117,7 @@
 
 /* docs-nav mobile */
 .docs-nav {
-  background-color: var(--white-color);
+  /*background-color: var(--white-color);*/
   padding: 1em;
   height: 100%;
 }

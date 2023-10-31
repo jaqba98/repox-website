@@ -8,11 +8,11 @@
   <div class="nav-menu" [ngClass]="{ 'nav-menu-hide': !menuIsOpened }">
     <ol class="nav-menu-list" *ngFor="let navListItem of navListItems">
       <li class="nav-list-item">
-        <a [routerLink]="navListItem.link">{{navListItem.label}}</a>
+        <a [routerLink]="navListItem.link" (click)="onClickNavListItem()">{{navListItem.label}}</a>
       </li>
       <ul class="nav-menu-list" *ngFor="let child of navListItem.children">
         <li class="nav-list-item">
-          <a [routerLink]="child.link">{{child.label}}</a>
+          <a [routerLink]="child.link" (click)="onClickNavListItem()">{{child.label}}</a>
         </li>
       </ul>
     </ol>

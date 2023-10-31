@@ -22,4 +22,8 @@ export class NavComponent {
   onClickHamburger(): void {
     this.menuIsOpened = !this.menuIsOpened;
   }
+
+  onClickNavListItem(): void {
+    this.menuIsOpened = false;
+  }
 }

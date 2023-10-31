@@ -1,7 +1,7 @@
 /* Mobile */
 .docs-content {
-  border: 1px solid red;
   min-height: calc(100vh - 2 * var(--top-nav));
+  padding: 1em;
 }
 
 /* Tablet */
@@ -23,6 +23,6 @@
 @media only screen and (min-width: 1024px) {
   .docs {
     margin: auto;
-    width: 960px;
+    width: 1024px;
   }
 }
