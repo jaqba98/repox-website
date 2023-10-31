@@ -11,6 +11,7 @@
   --primary-darker-color: #436386;
   --white-color: #F5F5F5;
   --grey-color: grey;
+  --animation-speed: 0.25s;
 }
 
 /* Reset styles */
