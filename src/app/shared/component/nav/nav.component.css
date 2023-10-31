@@ -29,6 +29,19 @@
   height: 0.4em;
   border-radius: 2px;
   background-color: var(--white-color);
+  transition: transform 0.25s ease-in-out;
+}
+
+.top-nav .top-nav-open > .nav-hamburger-line-top {
+  transform: translateY(1em) rotate(45deg);
+}
+
+.top-nav .top-nav-open > .nav-hamburger-line-middle {
+  transform: translateX(100vh);
+}
+
+.top-nav .top-nav-open > .nav-hamburger-line-bottom {
+  transform: translateY(-1em) rotate(-45deg);
 }
 
 .top-nav > .nav-menu {

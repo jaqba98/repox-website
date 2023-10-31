@@ -1,6 +1,6 @@
 <nav class="nav" [ngClass]="navClass">
   <h1 class="nav-title">{{navTitle}}</h1>
-  <div class="nav-hamburger" (click)="onClickHamburger()">
+  <div class="nav-hamburger" (click)="onClickHamburger()" [ngClass]="{ 'top-nav-open': menuIsOpened }">
     <div class="nav-hamburger-line nav-hamburger-line-top"></div>
     <div class="nav-hamburger-line nav-hamburger-line-middle"></div>
     <div class="nav-hamburger-line nav-hamburger-line-bottom"></div>
