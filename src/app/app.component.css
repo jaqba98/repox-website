@@ -1,4 +1,5 @@
 .main {
   margin-top: var(--top-nav);
   background-color: var(--white-color);
+  padding: 1em;
 }

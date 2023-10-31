@@ -1,8 +1,35 @@
 /* Mobile */
 .footer {
-  height: var(--top-nav);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
   background-color: var(--white-darker-color);
+}
+
+.footer-copyright > p {
+  color: var(--grey-color);
+  text-align: center;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+  }
+}
+
+/* Pc */
+@media only screen and (min-width: 1024px) {
+  .footer {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-nav {
+    width: 960px;
+  }
 }
