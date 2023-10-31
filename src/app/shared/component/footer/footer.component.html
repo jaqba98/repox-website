@@ -1,22 +1,25 @@
 <footer class="footer">
   <div class="footer-nav">
-    <repox-website-nav
-      [navTitle]="docsNavTitle"
-      [navListItems]="docsNavListItems"
-      [navClass]="docsClass"
-    ></repox-website-nav>
-    <repox-website-nav
-      [navTitle]="docsNavTitle"
-      [navListItems]="docsNavListItems"
-      [navClass]="docsClass"
-    ></repox-website-nav>
-    <repox-website-nav
-      [navTitle]="docsNavTitle"
-      [navListItems]="docsNavListItems"
-      [navClass]="docsClass"
-    ></repox-website-nav>
+    <h1 class="footer-nav-logo">Repox</h1>
+    <div class="footer-nav-columns">
+      <repox-website-nav
+        [navTitle]="teamNavTitle"
+        [navListItems]="teamNavListItems"
+        [navClass]="footerClass"
+      ></repox-website-nav>
+      <repox-website-nav
+        [navTitle]="exploreMediaNavTitle"
+        [navListItems]="exploreNavListItems"
+        [navClass]="footerClass"
+      ></repox-website-nav>
+      <repox-website-nav
+        [navTitle]="socialMediaNavTitle"
+        [navListItems]="socialMediaNavListItems"
+        [navClass]="footerClass"
+      ></repox-website-nav>
+    </div>
   </div>
   <div class="footer-copyright">
-    <p>Copyright © 2023-2024 Jakub Olejarczyk</p>
+    <p>{{copyright}}</p>
   </div>
 </footer>

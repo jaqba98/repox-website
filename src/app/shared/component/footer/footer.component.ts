@@ -7,15 +7,26 @@ import {NavListItemModel} from "../../model/nav-list-item.model";
   styleUrls: ["./footer.component.css"]
 })
 export class FooterComponent {
-  readonly docsNavTitle: string = "Documentation";
+  readonly teamNavTitle: string = "Team";
+  readonly exploreMediaNavTitle: string = "Explore";
+  readonly socialMediaNavTitle: string = "Social Media";
 
-  readonly docsNavListItems: NavListItemModel[] = [
-    {link: "example1", label: "Example 1", children: []},
-    {link: "example2", label: "Example 2", children: []},
-    {link: "example3", label: "Example 3", children: []},
-    {link: "example4", label: "Example 4", children: []},
-    {link: "example5", label: "Example 5", children: []}
+  readonly teamNavListItems: NavListItemModel[] = [
+    {link: "#", label: "Jakub Olejarczyk", children: []}
+  ];
+  readonly exploreNavListItems: NavListItemModel[] = [
+    {link: "/home", label: "Home", children: []},
+    {link: "/docs", label: "Docs", children: []},
+    {link: "/support", label: "Support", children: []},
+    {link: "/blog", label: "Blog", children: []}
+  ];
+  readonly socialMediaNavListItems: NavListItemModel[] = [
+    {link: "#", label: "NPM", children: []},
+    {link: "#", label: "GitHub", children: []},
+    {link: "#", label: "Discord", children: []},
   ];
 
-  readonly docsClass: string = "docs-nav";
+  readonly footerClass: string = "docs-nav";
+
+  readonly copyright: string = "Copyright © 2023 Jakub Olejarczyk";
 }
