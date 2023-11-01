@@ -11,10 +11,10 @@ export class AppComponent {
   readonly appNavTitle: string = "Repox";
 
   readonly appNavListItems: NavListItemModel[] = [
-    { link: "/home", label: "Home", children: [] },
-    { link: "/docs", label: "Docs", children: [] },
-    { link: "/support", label: "Support", children: [] },
-    { link: "/blog", label: "Blog", children: [] }
+    { link: "/home", label: "Home", newTab: false, children: [] },
+    { link: "/docs", label: "Docs", newTab: false, children: [] },
+    { link: "/support", label: "Support", newTab: false, children: [] },
+    { link: "/blog", label: "Blog", newTab: false, children: [] }
   ];
 
   readonly appClass: string = "top-nav";

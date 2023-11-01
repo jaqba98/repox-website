@@ -12,18 +12,18 @@ export class FooterComponent {
   readonly socialMediaNavTitle: string = "Social Media";
 
   readonly teamNavListItems: NavListItemModel[] = [
-    {link: "#", label: "Jakub Olejarczyk", children: []}
+    {link: "#", label: "Jakub Olejarczyk", newTab: true, children: []}
   ];
   readonly exploreNavListItems: NavListItemModel[] = [
-    {link: "/home", label: "Home", children: []},
-    {link: "/docs", label: "Docs", children: []},
-    {link: "/support", label: "Support", children: []},
-    {link: "/blog", label: "Blog", children: []}
+    {link: "/home", label: "Home", newTab: false, children: []},
+    {link: "/docs", label: "Docs", newTab: false, children: []},
+    {link: "/support", label: "Support", newTab: false, children: []},
+    {link: "/blog", label: "Blog", newTab: false, children: []}
   ];
   readonly socialMediaNavListItems: NavListItemModel[] = [
-    {link: "#", label: "NPM", children: []},
-    {link: "#", label: "GitHub", children: []},
-    {link: "#", label: "Discord", children: []},
+    {link: "https://www.npmjs.com/package/repox", label: "NPM", newTab: true, children: []},
+    {link: "#", label: "GitHub", newTab: true, children: []},
+    {link: "#", label: "Discord", newTab: true, children: []},
   ];
 
   readonly footerClass: string = "docs-nav";

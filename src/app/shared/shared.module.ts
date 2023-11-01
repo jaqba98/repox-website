@@ -12,6 +12,7 @@ import {VideoComponent} from "./component/video/video.component";
 import {TeamComponent} from "./component/team/team.component";
 import {SupportingComponent} from "./component/supporting/supporting.component";
 import {FooterComponent} from "./component/footer/footer.component";
+import {CoreModule} from "../core/core.module";
 
 @NgModule({
   declarations: [

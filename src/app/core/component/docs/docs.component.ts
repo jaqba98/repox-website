@@ -14,15 +14,16 @@ export class DocsComponent {
     {
       link: "example1",
       label: "Example 1",
+      newTab: false,
       children: [
-        { link: "#", label: "Example 1.1" },
-        { link: "#", label: "Example 1.2" },
-        { link: "#", label: "Example 1.3" },
-        { link: "#", label: "Example 1.4" },
-        { link: "#", label: "Example 1.5" }
+        { link: "#", label: "Example 1.1", newTab: false },
+        { link: "#", label: "Example 1.2", newTab: false },
+        { link: "#", label: "Example 1.3", newTab: false },
+        { link: "#", label: "Example 1.4", newTab: false },
+        { link: "#", label: "Example 1.5", newTab: false }
       ]
     },
-    { link: "example2", label: "Example 2", children: [] }
+    { link: "example2", label: "Example 2", newTab: false, children: [] }
   ];
 
   readonly docsClass: string = "docs-nav";
