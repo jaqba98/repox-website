@@ -12,7 +12,7 @@ export class FooterComponent {
   readonly socialMediaNavTitle: string = "Social Media";
 
   readonly teamNavListItems: NavListItemModel[] = [
-    {link: "#", label: "Jakub Olejarczyk", newTab: true, children: []}
+    {link: "https://www.linkedin.com/in/jakub-olejarczyk", label: "Jakub Olejarczyk", newTab: true, children: []}
   ];
   readonly exploreNavListItems: NavListItemModel[] = [
     {link: "/home", label: "Home", newTab: false, children: []},
@@ -22,7 +22,7 @@ export class FooterComponent {
   ];
   readonly socialMediaNavListItems: NavListItemModel[] = [
     {link: "https://www.npmjs.com/package/repox", label: "NPM", newTab: true, children: []},
-    {link: "#", label: "GitHub", newTab: true, children: []},
+    {link: "https://github.com/jaqba98/repox", label: "GitHub", newTab: true, children: []},
     {link: "#", label: "Discord", newTab: true, children: []},
   ];
 
