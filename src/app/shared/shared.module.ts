@@ -12,7 +12,7 @@ import {VideoComponent} from "./component/video/video.component";
 import {TeamComponent} from "./component/team/team.component";
 import {SupportingComponent} from "./component/supporting/supporting.component";
 import {FooterComponent} from "./component/footer/footer.component";
-import {CoreModule} from "../core/core.module";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import {CoreModule} from "../core/core.module";
   imports: [
     CommonModule,
     BrowserModule,
-    RouterLink
+    RouterLink,
+    FontAwesomeModule
   ],
   exports: [
     NavComponent,

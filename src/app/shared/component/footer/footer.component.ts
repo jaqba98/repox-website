@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {NavListItemModel} from "../../model/nav-list-item.model";
+import {faDiscord, faGithub, faLinkedin, faNpm} from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: "repox-website-footer",
@@ -12,7 +13,13 @@ export class FooterComponent {
   readonly socialMediaNavTitle: string = "Social Media";
 
   readonly teamNavListItems: NavListItemModel[] = [
-    {link: "https://www.linkedin.com/in/jakub-olejarczyk", label: "Jakub Olejarczyk", newTab: true, children: []}
+    {
+      link: "https://www.linkedin.com/in/jakub-olejarczyk",
+      label: "Jakub Olejarczyk",
+      newTab: true,
+      icon: faLinkedin,
+      children: []
+    }
   ];
   readonly exploreNavListItems: NavListItemModel[] = [
     {link: "/home", label: "Home", newTab: false, children: []},
@@ -21,9 +28,27 @@ export class FooterComponent {
     {link: "/blog", label: "Blog", newTab: false, children: []}
   ];
   readonly socialMediaNavListItems: NavListItemModel[] = [
-    {link: "https://www.npmjs.com/package/repox", label: "NPM", newTab: true, children: []},
-    {link: "https://github.com/jaqba98/repox", label: "GitHub", newTab: true, children: []},
-    {link: "#", label: "Discord", newTab: true, children: []},
+    {
+      link: "https://www.npmjs.com/package/repox",
+      label: "NPM",
+      newTab: true,
+      icon: faNpm,
+      children: []
+    },
+    {
+      link: "https://github.com/jaqba98/repox",
+      label: "GitHub",
+      newTab: true,
+      icon: faGithub,
+      children: []
+    },
+    {
+      link: "#",
+      label: "Discord",
+      newTab: true,
+      icon: faDiscord,
+      children: []
+    },
   ];
 
   readonly footerClass: string = "docs-nav";

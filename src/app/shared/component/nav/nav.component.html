@@ -9,19 +9,31 @@
     <ol class="nav-menu-list" *ngFor="let navListItem of navListItems">
       <li class="nav-list-item">
         <ng-container *ngIf="navListItem.newTab; else elseBlock">
-          <a [href]="navListItem.link" (click)="onClickNavListItem()" target="_blank">{{navListItem.label}}</a>
+          <a [href]="navListItem.link" (click)="onClickNavListItem()" target="_blank">
+            <fa-icon *ngIf="navListItem.icon" [icon]="navListItem.icon"></fa-icon>
+            {{navListItem.label}}
+          </a>
         </ng-container>
         <ng-template #elseBlock>
-          <a [routerLink]="navListItem.link" (click)="onClickNavListItem()">{{navListItem.label}}</a>
+          <a [routerLink]="navListItem.link" (click)="onClickNavListItem()">
+            <fa-icon *ngIf="navListItem.icon" [icon]="navListItem.icon"></fa-icon>
+            {{navListItem.label}}
+          </a>
         </ng-template>
       </li>
       <ul class="nav-menu-list" *ngFor="let child of navListItem.children">
         <li class="nav-list-item">
           <ng-container *ngIf="child.newTab; else elseBlock">
-            <a [href]="child.link" (click)="onClickNavListItem()" target="_blank">{{child.label}}</a>
+            <a [href]="child.link" (click)="onClickNavListItem()" target="_blank">
+              <fa-icon *ngIf="child.icon" [icon]="child.icon"></fa-icon>
+              {{child.label}}
+            </a>
           </ng-container>
           <ng-template #elseBlock>
-            <a [routerLink]="child.link" (click)="onClickNavListItem()">{{child.label}}</a>
+            <a [routerLink]="child.link" (click)="onClickNavListItem()">
+              <fa-icon *ngIf="child.icon" [icon]="child.icon"></fa-icon>
+              {{child.label}}
+            </a>
           </ng-template>
         </li>
       </ul>
