@@ -25,5 +25,6 @@ export class NavComponent {
 
   onClickNavListItem(): void {
     this.menuIsOpened = false;
+    window.scrollTo(0, 0);
   }
 }
