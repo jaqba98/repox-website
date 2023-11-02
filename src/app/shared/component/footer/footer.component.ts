@@ -43,7 +43,7 @@ export class FooterComponent {
       children: []
     },
     {
-      link: "#",
+      link: "https://discord.gg/BEWU8amS",
       label: "Discord",
       newTab: true,
       icon: faDiscord,
