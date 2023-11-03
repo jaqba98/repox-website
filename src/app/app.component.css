@@ -1,6 +1,4 @@
 .main {
   margin-top: var(--top-nav);
-  min-height: 100vh;
   background-color: var(--white-color);
-  padding: 1em;
 }
