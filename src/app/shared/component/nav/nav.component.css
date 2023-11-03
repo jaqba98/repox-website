@@ -8,6 +8,7 @@
   background-color: var(--primary-color);
   position: fixed;
   top: 0;
+  z-index: 1;
 }
 
 .top-nav > .nav-title {
