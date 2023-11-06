@@ -15,7 +15,7 @@
 .main-features-items {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3em;
 }
 
 .main-feature-item {
@@ -23,8 +23,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 1em;
   flex: 1;
+  gap: 0.25em;
 }
 
 .main-feature-item-title {
