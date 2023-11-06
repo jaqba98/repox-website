@@ -1,1 +1,10 @@
-<p>main-features component</p>
+<section class="main-features">
+  <h1 class="main-features-title">Main features</h1>
+  <div class="main-features-items">
+    <div class="main-feature-item" *ngFor="let mainFeature of mainFeatures">
+      <h2 class="main-feature-item-title">{{mainFeature.title}}</h2>
+      <fa-icon [icon]="mainFeature.icon" class="main-feature-item-icon"></fa-icon>
+      <p class="main-feature-item-description">{{mainFeature.description}}</p>
+    </div>
+  </div>
+</section>
