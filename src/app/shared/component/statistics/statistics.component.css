@@ -32,6 +32,10 @@
   color: var(--white-color);
 }
 
+.statistic-item-downloads {
+  font-size: 3em;
+}
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .statistics-items {
