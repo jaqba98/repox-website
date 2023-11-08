@@ -147,3 +147,35 @@
 .docs-nav ul > .nav-list-item > a {
   margin: 0.25em 1em;
 }
+
+/* footer-nav */
+.footer-nav {
+  padding: 1em;
+  height: 100%;
+}
+
+.footer-nav > .nav-title {
+  color: var(--white-color);
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+.footer-nav > .nav-hamburger {
+  display: none;
+}
+
+.footer-nav ol > .nav-list-item > a,
+.footer-nav ul > .nav-list-item > a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--white-darker-color);
+}
+
+.footer-nav ol > .nav-list-item > a {
+  margin: 0.25em 0.25em;
+}
+
+.footer-nav ul > .nav-list-item > a {
+  margin: 0.25em 1em;
+}

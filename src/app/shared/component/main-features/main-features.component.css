@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 3em;
-  padding: 6em 2em;
-  background-color: var(--white-color);
+  padding: 6em 3em;
+  background-color: var(--white-darker-color);
 }
 
 .main-features-title {
@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: flex-start;
   flex: 1;
-  gap: 0.25em;
+  gap: 0.5em;
 }
 
 .main-feature-item-title {
@@ -38,7 +38,7 @@
 
 .main-feature-item-description {
   line-height: 2;
-  color: var(--grey-color);
+  color: var(--primary-color);
   text-align: center;
 }
 

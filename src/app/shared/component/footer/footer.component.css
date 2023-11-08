@@ -1,6 +1,6 @@
 /* Mobile */
 .footer {
-  background-color: var(--white-darker-color);
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -17,7 +17,7 @@
   margin-left: 0.5em;
   margin-top: 1em;
   margin-bottom: 1em;
-  color: var(--primary-color);
+  color: var(--white-color);
 }
 
 .footer-copyright {
@@ -26,7 +26,7 @@
 }
 
 .footer-copyright > p {
-  color: var(--grey-color);
+  color: var(--white-color);
   text-align: center;
 }
 
