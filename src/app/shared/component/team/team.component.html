@@ -2,8 +2,8 @@
   <h1 class="team-title">Team</h1>
   <div class="team-items">
     <div class="team-item" *ngFor="let team of teams">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Bill_Gates_2017_%28cropped%29.jpg" alt="Bill Gates">
-      <h2>Bill Gates</h2>
+      <img src="{{team.img}}" alt="{{team.name}}">
+      <h2>{{team.name}}</h2>
     </div>
   </div>
 </section>

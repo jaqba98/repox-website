@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import {MainFeaturesModel} from "../../model/main-features.model";
 import {faCodeBranch, faDiagramProject, faGaugeHigh} from "@fortawesome/free-solid-svg-icons";
+import {TeamModel} from "../../model/team.model";
 
 @Component({
   selector: "repox-website-team",
@@ -8,21 +9,10 @@ import {faCodeBranch, faDiagramProject, faGaugeHigh} from "@fortawesome/free-sol
   styleUrls: ["./team.component.css"]
 })
 export class TeamComponent {
-  readonly teams: MainFeaturesModel[] = [
+  readonly teams: TeamModel[] = [
     {
-      title: "Speed",
-      icon: faGaugeHigh,
-      description: "With our tool, increase the efficiency of designing, programming and deploying your projects."
-    },
-    {
-      title: "Single Responsibility",
-      icon: faDiagramProject,
-      description: "With single responsibility, you can achieve more maintainable code that is easy to develop."
-    },
-    {
-      title: "Many projects",
-      icon: faCodeBranch,
-      description: "Store all your projects in one git repository and reuse code between all your applications."
+      img: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Bill_Gates_2017_%28cropped%29.jpg",
+      name: "Jakub Olejarczyk"
     }
   ];
 }

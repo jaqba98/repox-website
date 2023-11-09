@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 3em;
   padding: 6em 2em;
-  background-color: var(--white-color);
+  background-color: var(--white-darker-color);
 }
 
 .team-title {
@@ -45,7 +45,7 @@
   }
 
   .team-item > img {
-    width: 100%;
+    width: 320px;
   }
 }
 
