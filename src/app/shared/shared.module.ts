@@ -9,7 +9,6 @@ import {MainFeaturesComponent} from "./component/main-features/main-features.com
 import {StatisticsComponent} from "./component/statistics/statistics.component";
 import {AboutComponent} from "./component/about/about.component";
 import {TeamComponent} from "./component/team/team.component";
-import {SupportingComponent} from "./component/supporting/supporting.component";
 import {FooterComponent} from "./component/footer/footer.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
@@ -21,7 +20,6 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     StatisticsComponent,
     AboutComponent,
     TeamComponent,
-    SupportingComponent,
     FooterComponent
   ],
   imports: [
@@ -37,7 +35,6 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     StatisticsComponent,
     AboutComponent,
     TeamComponent,
-    SupportingComponent,
     FooterComponent
   ]
 })
