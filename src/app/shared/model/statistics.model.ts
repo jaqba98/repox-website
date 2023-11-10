@@ -1,4 +1,4 @@
 export interface StatisticsModel {
-  downloads: string;
+  value: string;
   description: string;
 }

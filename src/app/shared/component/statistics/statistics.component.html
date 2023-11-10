@@ -1,9 +1,8 @@
-<section class="statistics">
-  <h1 class="statistics-title">Statistics</h1>
-  <div class="statistics-items">
-    <div class="statistic-item" *ngFor="let statistic of statistics">
-      <h2 class="statistic-item-downloads">{{statistic.downloads}}</h2>
-      <p class="statistic-item-description">{{statistic.description}}</p>
+<section class="statistics-container">
+  <div class="statistics">
+    <div class="statistic" *ngFor="let statistic of statistics">
+      <p class="statistic-value">{{statistic.value}}</p>
+      <p class="statistic-description">{{statistic.description}}</p>
     </div>
   </div>
 </section>

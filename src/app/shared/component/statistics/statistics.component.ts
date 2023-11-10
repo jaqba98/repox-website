@@ -1,6 +1,6 @@
 import {Component, OnInit} from "@angular/core";
 import {StatisticsModel} from "../../model/statistics.model";
-import {GetNpmDataService} from "../../services/get-npm-data.service";
+import {FetchApiDataService} from "../../services/fetch-api-data.service";
 import {NpmDataModel, NpmDownloadsModel} from "../../model/npm-data.model";
 
 @Component({
@@ -9,33 +9,35 @@ import {NpmDataModel, NpmDownloadsModel} from "../../model/npm-data.model";
   styleUrls: ["./statistics.component.css"]
 })
 export class StatisticsComponent implements OnInit {
-  statistics: StatisticsModel[] = [
-    {downloads: "0", description: "current version"},
-    {downloads: "0", description: "last month npm downloads"},
-    {downloads: "0", description: "total npm downloads"}
-  ];
+  statistics: StatisticsModel[] = [];
 
-  constructor(private readonly getNpmData: GetNpmDataService) {
+  constructor(private readonly fetchApiData: FetchApiDataService) {
+    this.statistics = this.getDefaultStatistics();
   }
 
-  async ngOnInit() {
-    const repox: NpmDataModel = await this.getNpmData.get("https://registry.npmjs.org/repox");
-    const lastWeek: NpmDownloadsModel = await this.getNpmData.get("https://api.npmjs.org/downloads/range/last-month/repox");
-    const totalWeek: NpmDownloadsModel = await this.getNpmData.get("https://api.npmjs.org/downloads/range/2000-01-01:2100-01-01/repox");
-    this.statistics[0] = {downloads: repox["dist-tags"].latest, description: "current version"};
-    this.statistics[1] = {
-      downloads: lastWeek.downloads.reduce((acc, curr): number => {
-        acc = acc + curr.downloads;
-        return acc;
-      }, 0).toString(),
-      description: "last month npm downloads"
-    };
-    this.statistics[2] = {
-      downloads: totalWeek.downloads.reduce((acc, curr): number => {
-        acc = acc + curr.downloads;
-        return acc;
-      }, 0).toString(),
-      description: "total npm downloads"
-    };
+  private getDefaultStatistics(): StatisticsModel[] {
+    return [
+      {value: "0", description: "current version"},
+      {value: "0", description: "last month npm downloads"},
+      {value: "0", description: "total npm downloads"}
+    ];
+  }
+
+  async ngOnInit(): Promise<void> {
+    const npmData: NpmDataModel = await this.fetchApiData
+      .fetch("https://registry.npmjs.org/repox");
+    const weekNpmDownloads: NpmDownloadsModel = await this.fetchApiData
+      .fetch("https://api.npmjs.org/downloads/range/last-month/repox");
+    const totalNpmDownloads: NpmDownloadsModel = await this.fetchApiData
+      .fetch("https://api.npmjs.org/downloads/range/2000-01-01:2100-01-01/repox");
+    this.statistics[0].value = npmData["dist-tags"].latest;
+    this.statistics[1].value = weekNpmDownloads.downloads.reduce((acc, curr): number => {
+      acc = acc + curr.downloads;
+      return acc;
+    }, 0).toString();
+    this.statistics[2].value = totalNpmDownloads.downloads.reduce((acc, curr): number => {
+      acc = acc + curr.downloads;
+      return acc;
+    }, 0).toString();
   }
 }

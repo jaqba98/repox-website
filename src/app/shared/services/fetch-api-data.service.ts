@@ -1,9 +1,9 @@
 import {Injectable} from "@angular/core";
 
 @Injectable({providedIn: "root"})
-export class GetNpmDataService {
-  async get(name: string) {
-    const res = await fetch(name);
+export class FetchApiDataService {
+  async fetch(url: string) {
+    const res = await fetch(url);
     return await res.json();
   }
 }
