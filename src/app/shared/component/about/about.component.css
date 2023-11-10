@@ -1,47 +1,50 @@
 /* Mobile */
-.about {
-  padding: 6em 2em;
+.about-container {
   background-color: var(--white-color);
 }
 
-.about-content {
+.about {
   display: flex;
-  justify-content: flex-start;
   flex-direction: column;
-  gap: 2em;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  padding: 6em 3em;
 }
 
 .about-title {
-  color: var(--grey-color);
+  font-size: 2em;
+  color: var(--primary-color);
 }
 
 .about-description {
   display: flex;
   flex-direction: column;
   gap: 1em;
+  text-align: justify;
 }
 
-.about-description > p {
+.about-description-paragraph {
   color: var(--grey-color);
-  line-height: 2;
+  line-height: 2em;
 }
 
 /* Tablet */
 @media only screen and (min-width: 768px) {
-  .about {
+  .about-container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .about-content {
+  .about {
     width: 768px;
   }
 }
 
 /* Pc */
 @media only screen and (min-width: 1024px) {
-  .about-content {
+  .about {
     width: 960px;
   }
 }
