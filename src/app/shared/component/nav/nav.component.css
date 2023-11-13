@@ -192,7 +192,7 @@
 }
 
 .team-nav ol > .nav-list-item > a,
-.team-navnav ul > .nav-list-item > a {
+.team-nav ul > .nav-list-item > a {
   display: inline-block;
   text-decoration: none;
   color: var(--grey-color);
