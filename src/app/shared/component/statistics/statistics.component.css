@@ -1,6 +1,6 @@
 /* Mobile */
 .statistics-container {
-  background: var(--primary-color);
+  background: var(--white-darker-color);
 }
 
 .statistics {
@@ -23,7 +23,7 @@
 .statistic-value,
 .statistic-description {
   text-align: center;
-  color: var(--white-color);
+  color: var(--grey-light-color);
 }
 
 .statistic-value {
