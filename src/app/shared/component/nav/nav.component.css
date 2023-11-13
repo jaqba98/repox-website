@@ -165,6 +165,11 @@
   display: none;
 }
 
+.footer-nav ol > .nav-list-item,
+.footer-nav ul > .nav-list-item {
+  margin-bottom: 0.4em;
+}
+
 .footer-nav ol > .nav-list-item > a,
 .footer-nav ul > .nav-list-item > a {
   display: inline-block;
