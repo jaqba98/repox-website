@@ -28,66 +28,6 @@ export class TeamComponent {
           children: []
         }
       ]
-    },
-    {
-      image: "assets/images/person.jpg",
-      name: "Jakub Olejarczyk",
-      navListItems: [
-        {
-          link: "https://www.linkedin.com/in/jakub-olejarczyk",
-          label: "Linkedin",
-          newTab: true,
-          icon: faLinkedin,
-          children: []
-        },
-        {
-          link: "https://github.com/jaqba98",
-          label: "GitHub",
-          newTab: true,
-          icon: faGithub,
-          children: []
-        }
-      ]
-    },
-    {
-      image: "assets/images/person.jpg",
-      name: "Jakub Olejarczyk",
-      navListItems: [
-        {
-          link: "https://www.linkedin.com/in/jakub-olejarczyk",
-          label: "Linkedin",
-          newTab: true,
-          icon: faLinkedin,
-          children: []
-        },
-        {
-          link: "https://github.com/jaqba98",
-          label: "GitHub",
-          newTab: true,
-          icon: faGithub,
-          children: []
-        }
-      ]
-    },
-    {
-      image: "assets/images/person.jpg",
-      name: "Jakub Olejarczyk",
-      navListItems: [
-        {
-          link: "https://www.linkedin.com/in/jakub-olejarczyk",
-          label: "Linkedin",
-          newTab: true,
-          icon: faLinkedin,
-          children: []
-        },
-        {
-          link: "https://github.com/jaqba98",
-          label: "GitHub",
-          newTab: true,
-          icon: faGithub,
-          children: []
-        }
-      ]
     }
   ];
 }

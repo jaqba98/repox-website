@@ -179,3 +179,26 @@
 .footer-nav ul > .nav-list-item > a {
   margin: 0.25em 1em;
 }
+
+/* team-nav */
+.team-nav > .nav-title {
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+
+.team-nav > .nav-hamburger {
+  display: none;
+}
+
+.team-nav ol > .nav-list-item > a,
+.team-navnav ul > .nav-list-item > a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--grey-color);
+}
+
+.team-nav ol > .nav-list-item > a {
+  margin-bottom: 0.25em;
+}
