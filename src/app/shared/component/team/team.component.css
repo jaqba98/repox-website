@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   gap: 2em;
-  padding: 4em 2em;
+  padding: 5em 2em;
 }
 
 .team-title {
@@ -52,7 +52,11 @@
 
 /* Pc */
 @media only screen and (min-width: 1024px) {
+  .team-person {
+    width: 30%;
+  }
+
   .team-people {
-    width: 960px;
+    width: 720px;
   }
 }
