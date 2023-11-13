@@ -1,9 +1,15 @@
-<section class="team">
-  <h1 class="team-title">Team</h1>
-  <div class="team-items">
-    <div class="team-item" *ngFor="let team of teams">
-      <img src="{{team.img}}" alt="{{team.name}}">
-      <h2>{{team.name}}</h2>
+<section class="team-container">
+  <div class="team">
+    <h2 class="team-title">Team</h2>
+    <div class="team-people">
+      <div class="team-person" *ngFor="let team of teams">
+        <img src="{{team.image}}" alt="{{team.name}}">
+        <repox-website-nav
+          [navTitle]="team.name"
+          [navListItems]="team.navListItems"
+          navClass="team-nav"
+        ></repox-website-nav>
+      </div>
     </div>
   </div>
 </section>

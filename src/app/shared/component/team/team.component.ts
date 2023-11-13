@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
-import {MainFeaturesModel} from "../../model/main-features.model";
-import {faCodeBranch, faDiagramProject, faGaugeHigh} from "@fortawesome/free-solid-svg-icons";
-import {TeamModel} from "../../model/team.model";
+import { TeamModel } from "../../model/team.model";
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
 
 @Component({
   selector: "repox-website-team",
@@ -11,8 +10,84 @@ import {TeamModel} from "../../model/team.model";
 export class TeamComponent {
   readonly teams: TeamModel[] = [
     {
-      img: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Bill_Gates_2017_%28cropped%29.jpg",
-      name: "Jakub Olejarczyk"
+      image: "assets/images/person.jpg",
+      name: "Jakub Olejarczyk",
+      navListItems: [
+        {
+          link: "https://www.linkedin.com/in/jakub-olejarczyk",
+          label: "Linkedin",
+          newTab: true,
+          icon: faLinkedin,
+          children: []
+        },
+        {
+          link: "https://github.com/jaqba98",
+          label: "GitHub",
+          newTab: true,
+          icon: faGithub,
+          children: []
+        }
+      ]
+    },
+    {
+      image: "assets/images/person.jpg",
+      name: "Jakub Olejarczyk",
+      navListItems: [
+        {
+          link: "https://www.linkedin.com/in/jakub-olejarczyk",
+          label: "Linkedin",
+          newTab: true,
+          icon: faLinkedin,
+          children: []
+        },
+        {
+          link: "https://github.com/jaqba98",
+          label: "GitHub",
+          newTab: true,
+          icon: faGithub,
+          children: []
+        }
+      ]
+    },
+    {
+      image: "assets/images/person.jpg",
+      name: "Jakub Olejarczyk",
+      navListItems: [
+        {
+          link: "https://www.linkedin.com/in/jakub-olejarczyk",
+          label: "Linkedin",
+          newTab: true,
+          icon: faLinkedin,
+          children: []
+        },
+        {
+          link: "https://github.com/jaqba98",
+          label: "GitHub",
+          newTab: true,
+          icon: faGithub,
+          children: []
+        }
+      ]
+    },
+    {
+      image: "assets/images/person.jpg",
+      name: "Jakub Olejarczyk",
+      navListItems: [
+        {
+          link: "https://www.linkedin.com/in/jakub-olejarczyk",
+          label: "Linkedin",
+          newTab: true,
+          icon: faLinkedin,
+          children: []
+        },
+        {
+          link: "https://github.com/jaqba98",
+          label: "GitHub",
+          newTab: true,
+          icon: faGithub,
+          children: []
+        }
+      ]
     }
   ];
 }
