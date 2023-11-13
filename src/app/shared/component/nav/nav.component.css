@@ -182,8 +182,7 @@
 
 /* team-nav */
 .team-nav > .nav-title {
-  color: var(--primary-color);
-  letter-spacing: 1px;
+  color: var(--grey-color);
   font-weight: normal;
   margin-bottom: 0.5em;
 }
@@ -200,5 +199,5 @@
 }
 
 .team-nav ol > .nav-list-item > a {
-  margin-bottom: 0.25em;
+  margin-bottom: 0.5em;
 }
