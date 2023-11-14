@@ -5,7 +5,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 2em;
-  padding: 5em 1em;
+  padding: 4em 1em;
+  min-height: 400px;
 }
 
 .footer-nav-logo {
