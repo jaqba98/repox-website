@@ -12,9 +12,7 @@
 }
 
 .top-nav > .nav-title {
-  color: var(--white-color);
-  padding: 0.5em;
-  cursor: pointer;
+  display: none;
 }
 
 .top-nav > .nav-hamburger {
