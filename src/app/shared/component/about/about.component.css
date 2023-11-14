@@ -14,14 +14,13 @@
 
 .about-title {
   font-size: 2em;
-  color: var(--grey-light-color);
+  color: var(--primary-color);
 }
 
 .about-description {
   display: flex;
   flex-direction: column;
   gap: 1em;
-  text-align: left;
 }
 
 .about-description-paragraph {

@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {faCodeBranch, faDiagramProject, faGaugeHigh, faHome} from "@fortawesome/free-solid-svg-icons";
+import {faCodeBranch, faDiagramProject, faGaugeHigh} from "@fortawesome/free-solid-svg-icons";
 import {MainFeaturesModel} from "../../model/main-features.model";
 
 @Component({
