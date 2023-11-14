@@ -1,5 +1,4 @@
 import {Component, Input} from "@angular/core";
-
 import {NavListItemModel} from "../../model/nav-list-item.model";
 
 @Component({

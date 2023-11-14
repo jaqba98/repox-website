@@ -13,8 +13,8 @@
 
 .top-nav > .nav-title {
   color: var(--white-color);
-  letter-spacing: 1px;
   padding: 0.5em;
+  cursor: pointer;
 }
 
 .top-nav > .nav-hamburger {
@@ -38,7 +38,7 @@
 }
 
 .top-nav .top-nav-open > .nav-hamburger-line-middle {
-  transform: translateX(100vh);
+  transform: translateX(-100vh);
 }
 
 .top-nav .top-nav-open > .nav-hamburger-line-bottom {
