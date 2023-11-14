@@ -15,4 +15,5 @@
 
 .page-not-found > p {
   color: var(--grey-color);
+  text-align: center;
 }
