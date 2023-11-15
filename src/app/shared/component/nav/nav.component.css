@@ -123,7 +123,7 @@
 /* documentation-nav mobile */
 .documentation-nav {
   padding: 2em;
-  background-color: var(--white-color);
+  background-color: var(--white-darker-color);
 }
 
 .documentation-nav > .nav-title {
@@ -144,7 +144,7 @@
 }
 
 .documentation-nav ol > .nav-list-item > a {
-  margin: 0.5em 0.25em;
+  margin: 0.5em 0;
 }
 
 .documentation-nav ul > .nav-list-item > a {

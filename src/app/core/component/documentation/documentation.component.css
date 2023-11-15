@@ -1,7 +1,6 @@
 /* Mobile */
 .documentation-nav {
-  background-color: var(--white-color);
-  border-bottom: 1px solid var(--white-darkerest-color);
+  background-color: var(--white-darker-color);
 }
 
 .documentation-content {
@@ -18,7 +17,6 @@
   .documentation-nav {
     flex: 1;
     border-bottom: none;
-    border-right: 1px solid var(--white-darkerest-color);
   }
 
   .documentation-content {
