@@ -1,5 +1,36 @@
 /* Mobile */
-.documentation-content {
-  padding: 2em;
+.documentation-nav {
   background-color: var(--white-color);
+  border-bottom: 1px solid var(--white-darkerest-color);
+}
+
+.documentation-content {
+  padding: 3em 2em;
+  background-color: var(--white-color);
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .documentation-container {
+    display: flex;
+  }
+
+  .documentation-nav {
+    flex: 1;
+    border-bottom: none;
+    border-right: 1px solid var(--white-darkerest-color);
+  }
+
+  .documentation-content {
+    flex: 3;
+    padding: 2em 3em;
+  }
+}
+
+/* Pc */
+@media only screen and (min-width: 1024px) {
+  .documentation-container {
+    margin: auto;
+    width: 960px;
+  }
 }
