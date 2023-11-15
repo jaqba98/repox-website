@@ -3,11 +3,11 @@ import {Component} from "@angular/core";
 import {NavListItemModel} from "../../../shared/model/nav-list-item.model";
 
 @Component({
-  selector: "repox-website-docs",
-  templateUrl: "./docs.component.html",
-  styleUrls: ["./docs.component.css"]
+  selector: "repox-website-documentation",
+  templateUrl: "./documentation.component.html",
+  styleUrls: ["./documentation.component.css"]
 })
-export class DocsComponent {
+export class DocumentationComponent {
   readonly docsNavTitle: string = "Documentation";
 
   readonly docsNavListItems: NavListItemModel[] = [
