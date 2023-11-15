@@ -1,28 +1,6 @@
 /* Mobile */
-.docs-content {
-  min-height: calc(100vh - 2 * var(--top-nav));
-  padding: 1em;
+.documentation-content {
+  padding: 2em;
+  background-color: var(--white-color);
 }
 
-/* Tablet */
-@media only screen and (min-width: 768px) {
-  .docs {
-    display: flex;
-  }
-
-  .docs-nav {
-    flex: 1;
-  }
-
-  .docs-content {
-    flex: 3;
-  }
-}
-
-/* Pc */
-@media only screen and (min-width: 1024px) {
-  .docs {
-    margin: auto;
-    width: 960px;
-  }
-}
