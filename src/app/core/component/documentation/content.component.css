@@ -2,7 +2,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  row-gap: 1.5em;
 }
 
 hr {
