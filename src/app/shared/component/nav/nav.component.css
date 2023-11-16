@@ -38,7 +38,7 @@
 }
 
 .top-nav .top-nav-open > .nav-hamburger-line-middle {
-  transform: translateX(-100vh);
+  transform: translateX(100vh);
 }
 
 .top-nav .top-nav-open > .nav-hamburger-line-bottom {
