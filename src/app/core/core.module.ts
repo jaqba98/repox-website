@@ -2,8 +2,6 @@ import {NgModule} from "@angular/core";
 import {HomeComponent} from "./component/home/home.component";
 import {SharedModule} from "../shared/shared.module";
 import {PageNotFoundComponent} from "./component/page-not-found/page-not-found.component";
-import {SupportComponent} from "./component/support/support.component";
-import {BlogComponent} from "./component/blog/blog.component";
 import {RouterOutlet} from "@angular/router";
 import {DocumentationComponent} from "./component/documentation/documentation.component";
 import {Example1Component} from "./component/documentation/example1/example1.component";
@@ -13,8 +11,6 @@ import {Example2Component} from "./component/documentation/example2/example2.com
   declarations: [
     HomeComponent,
     DocumentationComponent,
-    SupportComponent,
-    BlogComponent,
     Example1Component,
     Example2Component,
     PageNotFoundComponent
@@ -26,8 +22,6 @@ import {Example2Component} from "./component/documentation/example2/example2.com
   exports: [
     HomeComponent,
     DocumentationComponent,
-    SupportComponent,
-    BlogComponent,
     Example1Component,
     Example2Component,
     PageNotFoundComponent
