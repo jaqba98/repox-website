@@ -127,8 +127,7 @@
 }
 
 .documentation-nav > .nav-title {
-  color: var(--primary-color);
-  font-weight: normal;
+  color: var(--grey-color);
   margin-bottom: 0.5em;
 }
 
@@ -140,7 +139,7 @@
 .documentation-nav ul > .nav-list-item > a {
   display: inline-block;
   text-decoration: none;
-  color: var(--grey-color);
+  color: var(--grey-light-color);
 }
 
 .documentation-nav ol > .nav-list-item > a {
