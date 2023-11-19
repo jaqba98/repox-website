@@ -23,9 +23,7 @@ export class FooterComponent {
   ];
   readonly exploreNavListItems: NavListItemModel[] = [
     {link: "/home", label: "Home", newTab: false, children: []},
-    {link: "/documentation", label: "Documentation", newTab: false, children: []},
-    {link: "/support", label: "Support", newTab: false, children: []},
-    {link: "/blog", label: "Blog", newTab: false, children: []}
+    {link: "/documentation", label: "Documentation", newTab: false, children: []}
   ];
   readonly socialMediaNavListItems: NavListItemModel[] = [
     {
