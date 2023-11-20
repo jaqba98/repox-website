@@ -5,6 +5,7 @@ import {HomeComponent} from "./core/component/home/home.component";
 import {PageNotFoundComponent} from "./core/component/page-not-found/page-not-found.component";
 import {Example1Component} from "./core/component/documentation/example1/example1.component";
 import {InstallationComponent} from "./core/component/documentation/installation/installation.component";
+import {GenerateComponent} from "./core/component/documentation/generate/generate.component";
 import {DocumentationComponent} from "./core/component/documentation/documentation.component";
 
 export const routes: Routes = [
@@ -17,6 +18,7 @@ export const routes: Routes = [
       {path: "", redirectTo: "introduction", pathMatch: "full"},
       {path: "introduction", component: Example1Component},
       {path: "installation", component: InstallationComponent},
+      {path: "generate", component: GenerateComponent},
     ]
   },
   {path: "**", component: PageNotFoundComponent}

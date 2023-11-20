@@ -21,6 +21,18 @@ export class DocumentationComponent {
       label: "Installation",
       newTab: false,
       children: []
+    },
+    {
+      link: "generate",
+      label: "Generate",
+      newTab: false,
+      children: [
+        {
+          link: "generate/workspace",
+          label: "Generate Workspace",
+          newTab: false
+        }
+      ]
     }
   ];
 
