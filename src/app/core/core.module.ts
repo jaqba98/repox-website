@@ -4,14 +4,14 @@ import {SharedModule} from "../shared/shared.module";
 import {PageNotFoundComponent} from "./component/page-not-found/page-not-found.component";
 import {RouterOutlet} from "@angular/router";
 import {DocumentationComponent} from "./component/documentation/documentation.component";
-import {Example1Component} from "./component/documentation/example1/example1.component";
+import {GettingStartedComponent} from "./component/documentation/getting-started/getting-started.component";
 import {InstallationComponent} from "./component/documentation/installation/installation.component";
 
 @NgModule({
   declarations: [
     HomeComponent,
     DocumentationComponent,
-    Example1Component,
+    GettingStartedComponent,
     InstallationComponent,
     PageNotFoundComponent
   ],
@@ -22,7 +22,7 @@ import {InstallationComponent} from "./component/documentation/installation/inst
   exports: [
     HomeComponent,
     DocumentationComponent,
-    Example1Component,
+    GettingStartedComponent,
     InstallationComponent,
     PageNotFoundComponent
   ]
