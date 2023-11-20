@@ -3,7 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 
 import {HomeComponent} from "./core/component/home/home.component";
 import {PageNotFoundComponent} from "./core/component/page-not-found/page-not-found.component";
-import {Example1Component} from "./core/component/documentation/example1/example1.component";
+import {GettingStartedComponent} from "./core/component/documentation/getting-started/getting-started.component";
 import {InstallationComponent} from "./core/component/documentation/installation/installation.component";
 import {GenerateComponent} from "./core/component/documentation/generate/generate.component";
 import {GenerateWorkspaceComponent} from "./core/component/documentation/generate-workspace/generate-workspace.component";
@@ -16,8 +16,8 @@ export const routes: Routes = [
     path: "documentation",
     component: DocumentationComponent,
     children: [
-      {path: "", redirectTo: "introduction", pathMatch: "full"},
-      {path: "introduction", component: Example1Component},
+      {path: "", redirectTo: "getting-started", pathMatch: "full"},
+      {path: "getting-started", component: GettingStartedComponent},
       {path: "installation", component: InstallationComponent},
       {path: "generate", component: GenerateComponent},
       {path: "generate/workspace", component: GenerateWorkspaceComponent},

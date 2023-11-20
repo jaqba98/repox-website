@@ -11,8 +11,8 @@ export class DocumentationComponent {
 
   readonly documentationNavListItems: NavListItemModel[] = [
     {
-      link: "introduction",
-      label: "Introduction",
+      link: "getting-started",
+      label: "Getting Started",
       newTab: false,
       children: []
     },
