@@ -4,7 +4,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {HomeComponent} from "./core/component/home/home.component";
 import {PageNotFoundComponent} from "./core/component/page-not-found/page-not-found.component";
 import {Example1Component} from "./core/component/documentation/example1/example1.component";
-import {Example2Component} from "./core/component/documentation/example2/example2.component";
+import {InstallationComponent} from "./core/component/documentation/installation/installation.component";
 import {DocumentationComponent} from "./core/component/documentation/documentation.component";
 
 export const routes: Routes = [
@@ -14,9 +14,9 @@ export const routes: Routes = [
     path: "documentation",
     component: DocumentationComponent,
     children: [
-      {path: "", redirectTo: "example1", pathMatch: "full"},
-      {path: "example1", component: Example1Component},
-      {path: "example2", component: Example2Component}
+      {path: "", redirectTo: "introduction", pathMatch: "full"},
+      {path: "introduction", component: Example1Component},
+      {path: "installation", component: InstallationComponent},
     ]
   },
   {path: "**", component: PageNotFoundComponent}

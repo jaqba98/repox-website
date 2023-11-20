@@ -11,20 +11,14 @@ export class DocumentationComponent {
 
   readonly documentationNavListItems: NavListItemModel[] = [
     {
-      link: "example1",
-      label: "Example 1",
+      link: "introduction",
+      label: "Introduction",
       newTab: false,
-      children: [
-        {link: "#", label: "Example 1.1", newTab: false},
-        {link: "#", label: "Example 1.2", newTab: false},
-        {link: "#", label: "Example 1.3", newTab: false},
-        {link: "#", label: "Example 1.4", newTab: false},
-        {link: "#", label: "Example 1.5", newTab: false}
-      ]
+      children: []
     },
     {
-      link: "example2",
-      label: "Example 2",
+      link: "installation",
+      label: "Installation",
       newTab: false,
       children: []
     }

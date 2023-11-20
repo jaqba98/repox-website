@@ -5,14 +5,14 @@ import {PageNotFoundComponent} from "./component/page-not-found/page-not-found.c
 import {RouterOutlet} from "@angular/router";
 import {DocumentationComponent} from "./component/documentation/documentation.component";
 import {Example1Component} from "./component/documentation/example1/example1.component";
-import {Example2Component} from "./component/documentation/example2/example2.component";
+import {InstallationComponent} from "./component/documentation/installation/installation.component";
 
 @NgModule({
   declarations: [
     HomeComponent,
     DocumentationComponent,
     Example1Component,
-    Example2Component,
+    InstallationComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -23,7 +23,7 @@ import {Example2Component} from "./component/documentation/example2/example2.com
     HomeComponent,
     DocumentationComponent,
     Example1Component,
-    Example2Component,
+    InstallationComponent,
     PageNotFoundComponent
   ]
 })
