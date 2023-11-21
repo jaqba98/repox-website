@@ -8,6 +8,9 @@ import {GettingStartedComponent} from "./component/documentation/getting-started
 import {InstallationComponent} from "./component/documentation/installation/installation.component";
 import {RegenerateComponent} from "./component/documentation/regenerate/regenerate.component";
 import {GenerateWorkspaceComponent} from "./component/documentation/generate-workspace/generate-workspace.component";
+import {
+  RegenerateWorkspaceComponent
+} from "./component/documentation/regenerate-workspace/regenerate-workspace.component";
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import {GenerateWorkspaceComponent} from "./component/documentation/generate-wor
     InstallationComponent,
     PageNotFoundComponent,
     GenerateWorkspaceComponent,
-    RegenerateComponent
+    RegenerateComponent,
+    RegenerateWorkspaceComponent
   ],
   imports: [
     SharedModule,
@@ -30,7 +34,8 @@ import {GenerateWorkspaceComponent} from "./component/documentation/generate-wor
     InstallationComponent,
     PageNotFoundComponent,
     GenerateWorkspaceComponent,
-    RegenerateComponent
+    RegenerateComponent,
+    RegenerateWorkspaceComponent
   ]
 })
 export class CoreModule {

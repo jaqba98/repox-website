@@ -38,7 +38,13 @@ export class DocumentationComponent {
       link: "regenerate",
       label: "Regenerate",
       newTab: false,
-      children: []
+      children: [
+        {
+          link: "regenerate/workspace",
+          label: "Regenerate Workspace",
+          newTab: false
+        }
+      ]
     }
   ];
 
