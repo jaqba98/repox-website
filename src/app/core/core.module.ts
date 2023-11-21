@@ -7,6 +7,7 @@ import {DocumentationComponent} from "./component/documentation/documentation.co
 import {GettingStartedComponent} from "./component/documentation/getting-started/getting-started.component";
 import {InstallationComponent} from "./component/documentation/installation/installation.component";
 import {RegenerateComponent} from "./component/documentation/regenerate/regenerate.component";
+import {GenerateWorkspaceComponent} from "./component/documentation/generate-workspace/generate-workspace.component";
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {RegenerateComponent} from "./component/documentation/regenerate/regenera
     GettingStartedComponent,
     InstallationComponent,
     PageNotFoundComponent,
+    GenerateWorkspaceComponent,
     RegenerateComponent
   ],
   imports: [
@@ -27,6 +29,7 @@ import {RegenerateComponent} from "./component/documentation/regenerate/regenera
     GettingStartedComponent,
     InstallationComponent,
     PageNotFoundComponent,
+    GenerateWorkspaceComponent,
     RegenerateComponent
   ]
 })
