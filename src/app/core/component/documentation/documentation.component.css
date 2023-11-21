@@ -4,9 +4,9 @@
 }
 
 .documentation-content {
-  padding: 2em;
   background-color: var(--white-darkerest-color);
   min-height: calc(100vh - var(--top-nav) - 400px);
+  padding: 5em 2em;
 }
 
 /* Tablet */

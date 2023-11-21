@@ -33,6 +33,12 @@ export class DocumentationComponent {
           newTab: false
         }
       ]
+    },
+    {
+      link: "regenerate",
+      label: "Regenerate",
+      newTab: false,
+      children: []
     }
   ];
 

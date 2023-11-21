@@ -6,6 +6,7 @@ import {RouterOutlet} from "@angular/router";
 import {DocumentationComponent} from "./component/documentation/documentation.component";
 import {GettingStartedComponent} from "./component/documentation/getting-started/getting-started.component";
 import {InstallationComponent} from "./component/documentation/installation/installation.component";
+import {RegenerateComponent} from "./component/documentation/regenerate/regenerate.component";
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import {InstallationComponent} from "./component/documentation/installation/inst
     DocumentationComponent,
     GettingStartedComponent,
     InstallationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RegenerateComponent
   ],
   imports: [
     SharedModule,
@@ -24,7 +26,8 @@ import {InstallationComponent} from "./component/documentation/installation/inst
     DocumentationComponent,
     GettingStartedComponent,
     InstallationComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    RegenerateComponent
   ]
 })
 export class CoreModule {

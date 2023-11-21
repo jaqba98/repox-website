@@ -8,6 +8,7 @@ import {InstallationComponent} from "./core/component/documentation/installation
 import {GenerateComponent} from "./core/component/documentation/generate/generate.component";
 import {GenerateWorkspaceComponent} from "./core/component/documentation/generate-workspace/generate-workspace.component";
 import {DocumentationComponent} from "./core/component/documentation/documentation.component";
+import {RegenerateComponent} from "./core/component/documentation/regenerate/regenerate.component";
 
 export const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -21,6 +22,7 @@ export const routes: Routes = [
       {path: "installation", component: InstallationComponent},
       {path: "generate", component: GenerateComponent},
       {path: "generate/workspace", component: GenerateWorkspaceComponent},
+      {path: "regenerate", component: RegenerateComponent},
     ]
   },
   {path: "**", component: PageNotFoundComponent}
