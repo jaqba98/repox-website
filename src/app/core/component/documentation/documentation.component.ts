@@ -31,6 +31,11 @@ export class DocumentationComponent {
           link: "generate/workspace",
           label: "Generate Workspace",
           newTab: false
+        },
+        {
+          link: "generate/project",
+          label: "Generate Project",
+          newTab: false
         }
       ]
     },
