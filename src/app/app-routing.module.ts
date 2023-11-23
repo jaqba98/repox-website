@@ -12,6 +12,7 @@ import {RegenerateComponent} from "./core/component/documentation/regenerate/reg
 import {
   RegenerateWorkspaceComponent
 } from "./core/component/documentation/regenerate-workspace/regenerate-workspace.component";
+import {GenerateWorkspaceComponent} from "./core/component/documentation/generate-project/generate-workspace.component";
 
 export const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -24,7 +25,7 @@ export const routes: Routes = [
       {path: "getting-started", component: GettingStartedComponent},
       {path: "installation", component: InstallationComponent},
       {path: "generate", component: GenerateComponent},
-      {path: "generate/workspace", component: GenerateProjectComponent},
+      {path: "generate/workspace", component: GenerateWorkspaceComponent},
       {path: "generate/project", component: GenerateProjectComponent},
       {path: "regenerate", component: RegenerateComponent},
       {path: "regenerate/workspace", component: RegenerateWorkspaceComponent}
