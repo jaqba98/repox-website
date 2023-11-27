@@ -50,6 +50,18 @@ export class DocumentationComponent {
           newTab: false
         }
       ]
+    },
+    {
+      link: "build",
+      label: "Build",
+      newTab: false,
+      children: [
+        {
+          link: "build/project",
+          label: "Build Project",
+          newTab: false
+        }
+      ]
     }
   ];
 

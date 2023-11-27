@@ -12,6 +12,8 @@ import {
   RegenerateWorkspaceComponent
 } from "./component/documentation/regenerate-workspace/regenerate-workspace.component";
 import {GenerateWorkspaceComponent} from "./component/documentation/generate-project/generate-workspace.component";
+import {BuildComponent} from "./component/documentation/build/build.component";
+import {BuildProjectComponent} from "./component/documentation/build-project/build-project.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {GenerateWorkspaceComponent} from "./component/documentation/generate-pro
     GenerateProjectComponent,
     RegenerateComponent,
     RegenerateWorkspaceComponent,
-    GenerateWorkspaceComponent
+    GenerateWorkspaceComponent,
+    BuildComponent,
+    BuildProjectComponent
   ],
   imports: [
     SharedModule,
@@ -38,7 +42,9 @@ import {GenerateWorkspaceComponent} from "./component/documentation/generate-pro
     GenerateProjectComponent,
     RegenerateComponent,
     RegenerateWorkspaceComponent,
-    GenerateWorkspaceComponent
+    GenerateWorkspaceComponent,
+    BuildComponent,
+    BuildProjectComponent
   ]
 })
 export class CoreModule {

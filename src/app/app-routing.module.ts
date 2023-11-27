@@ -13,6 +13,8 @@ import {
   RegenerateWorkspaceComponent
 } from "./core/component/documentation/regenerate-workspace/regenerate-workspace.component";
 import {GenerateWorkspaceComponent} from "./core/component/documentation/generate-project/generate-workspace.component";
+import {BuildComponent} from "./core/component/documentation/build/build.component";
+import {BuildProjectComponent} from "./core/component/documentation/build-project/build-project.component";
 
 export const routes: Routes = [
   {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -28,7 +30,9 @@ export const routes: Routes = [
       {path: "generate/workspace", component: GenerateWorkspaceComponent},
       {path: "generate/project", component: GenerateProjectComponent},
       {path: "regenerate", component: RegenerateComponent},
-      {path: "regenerate/workspace", component: RegenerateWorkspaceComponent}
+      {path: "regenerate/workspace", component: RegenerateWorkspaceComponent},
+      {path: "build", component: BuildComponent},
+      {path: "build/project", component: BuildProjectComponent}
     ]
   },
   {path: "**", component: PageNotFoundComponent}
