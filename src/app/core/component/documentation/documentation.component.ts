@@ -62,6 +62,18 @@ export class DocumentationComponent {
           newTab: false
         }
       ]
+    },
+    {
+      link: "lint",
+      label: "Lint",
+      newTab: false,
+      children: [
+        {
+          link: "lint/project",
+          label: "Lint Project",
+          newTab: false
+        }
+      ]
     }
   ];
 

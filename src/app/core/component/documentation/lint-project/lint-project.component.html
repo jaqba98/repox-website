@@ -1,0 +1,45 @@
+<div class="content">
+  <div class="content-section">
+    <h2>Lint Project</h2>
+  </div>
+  <div class="content-section">
+    <p>
+      The `lint project` command in Repox allows you to lint all TypeScript projects within your monorepo without
+      specifying a project type. This command helps you maintain code quality and adhere to coding standards across all
+      projects. The `--fix` option is available to automatically fix some of the linting issues.
+    </p>
+  </div>
+  <div class="content-section">
+    <h3>Command Syntax</h3>
+    <code>repox lint project [--fix]</code>
+    <p>Parameters</p>
+    <p>--fix: Optional. When provided, the command will attempt to automatically fix some of the linting issues.</p>
+  </div>
+  <div class="content-section">
+    <h3>Usage Examples</h3>
+  </div>
+  <div class="content-section">
+    <h3>Basic Usage</h3>
+    <code>repox lint project</code>
+    <p>This command checks and reports linting issues in the TypeScript source code of all projects within the monorepo.</p>
+  </div>
+  <div class="content-section">
+    <h3>Using Aliases</h3>
+    <p>You can use shortcuts to make the command more concise:</p>
+    <code>repox l p</code>
+    <p>Here, l is an alias for lint, and p is an alias for project.</p>
+  </div>
+  <div class="content-section">
+    <h3>Automatic Fixes</h3>
+    <p>If you want Repox to automatically fix some of the linting issues for all projects, include the --fix option:</p>
+    <code>repox lint project --fix</code>
+    <p>This command not only identifies linting issues but also attempts to automatically fix them in all TypeScript projects within the monorepo.</p>
+  </div>
+  <div class="content-section">
+    <h3>Additional Information</h3>
+    <p>- The `lint project` command without specifying a project name is designed to lint all TypeScript projects within the monorepo.</p>
+    <p>- Linting issues that can be automatically fixed will be addressed when the --fix option is provided.</p>
+    <p>- It is recommended to review and test the changes made by the automatic fixing process to ensure they align with your project's requirements.</p>
+    <p>- Ensure you have backups or version control in place if necessary.</p>
+  </div>
+</div>

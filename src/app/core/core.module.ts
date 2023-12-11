@@ -14,6 +14,8 @@ import {
 import {GenerateWorkspaceComponent} from "./component/documentation/generate-project/generate-workspace.component";
 import {BuildComponent} from "./component/documentation/build/build.component";
 import {BuildProjectComponent} from "./component/documentation/build-project/build-project.component";
+import {LintComponent} from "./component/documentation/lint/lint.component";
+import {LintProjectComponent} from "./component/documentation/lint-project/lint-project.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {BuildProjectComponent} from "./component/documentation/build-project/bui
     RegenerateWorkspaceComponent,
     GenerateWorkspaceComponent,
     BuildComponent,
-    BuildProjectComponent
+    BuildProjectComponent,
+    LintComponent,
+    LintProjectComponent
   ],
   imports: [
     SharedModule,
@@ -44,7 +48,9 @@ import {BuildProjectComponent} from "./component/documentation/build-project/bui
     RegenerateWorkspaceComponent,
     GenerateWorkspaceComponent,
     BuildComponent,
-    BuildProjectComponent
+    BuildProjectComponent,
+    LintComponent,
+    LintProjectComponent
   ]
 })
 export class CoreModule {
