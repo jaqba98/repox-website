@@ -15,5 +15,5 @@ export class AppComponent {
     { link: "/documentation", label: "Documentation", newTab: false, children: [] }
   ];
 
-  readonly appClass: string = "top-nav";
+  readonly appClass: string = "top-main-nav";
 }

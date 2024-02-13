@@ -4,11 +4,6 @@
     <div class="team-people">
       <div class="team-person" *ngFor="let team of teams">
         <img src="{{team.image}}" alt="{{team.name}}">
-        <repox-website-nav
-          [navTitle]="team.name"
-          [navListItems]="team.navListItems"
-          navClass="team-nav"
-        ></repox-website-nav>
       </div>
     </div>
   </div>

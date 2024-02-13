@@ -77,5 +77,5 @@ export class DocumentationComponent {
     }
   ];
 
-  readonly documentationClass: string = "documentation-nav";
+  readonly documentationClass: string = "documentation-main-nav";
 }

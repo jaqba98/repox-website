@@ -3,7 +3,7 @@ import {RouterLink} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
 
-import {NavComponent} from "./component/nav/nav.component";
+import {MainNavComponent} from "./component/main-nav/main-nav.component";
 import {HeaderComponent} from "./component/header/header.component";
 import {MainFeaturesComponent} from "./component/main-features/main-features.component";
 import {StatisticsComponent} from "./component/statistics/statistics.component";
@@ -11,10 +11,12 @@ import {AboutComponent} from "./component/about/about.component";
 import {TeamComponent} from "./component/team/team.component";
 import {FooterComponent} from "./component/footer/footer.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import {MenubarModule} from 'primeng/menubar';
+import {InputTextModule} from "primeng/inputtext";
 
 @NgModule({
   declarations: [
-    NavComponent,
+    MainNavComponent,
     HeaderComponent,
     MainFeaturesComponent,
     StatisticsComponent,
@@ -26,10 +28,12 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     CommonModule,
     BrowserModule,
     RouterLink,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MenubarModule,
+    InputTextModule
   ],
   exports: [
-    NavComponent,
+    MainNavComponent,
     HeaderComponent,
     MainFeaturesComponent,
     StatisticsComponent,

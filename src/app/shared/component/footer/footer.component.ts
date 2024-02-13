@@ -49,7 +49,7 @@ export class FooterComponent {
     },
   ];
 
-  readonly footerClass: string = "footer-nav";
+  readonly footerClass: string = "footer-main-nav";
 
   readonly copyright: string = "Copyright © 2023 Jakub Olejarczyk";
 }
