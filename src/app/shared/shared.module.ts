@@ -1,6 +1,6 @@
 import {NgModule} from "@angular/core";
 import {RouterLink} from "@angular/router";
-import {CommonModule} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
@@ -24,14 +24,15 @@ import {InputTextModule} from "primeng/inputtext";
     TeamComponent,
     FooterComponent
   ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    RouterLink,
-    FontAwesomeModule,
-    MenubarModule,
-    InputTextModule
-  ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        RouterLink,
+        FontAwesomeModule,
+        MenubarModule,
+        InputTextModule,
+        NgOptimizedImage
+    ],
   exports: [
     MainNavComponent,
     HeaderComponent,
