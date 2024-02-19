@@ -13,6 +13,7 @@ import {FooterComponent} from "./component/footer/footer.component";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from "primeng/inputtext";
+import {ButtonModule} from "primeng/button";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {InputTextModule} from "primeng/inputtext";
         FontAwesomeModule,
         MenubarModule,
         InputTextModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        ButtonModule
     ],
   exports: [
     MainNavComponent,
