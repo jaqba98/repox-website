@@ -1,19 +1,9 @@
 import {Component} from "@angular/core";
 
-import {NavListItemModel} from "./shared/model/nav-list-item.model";
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  readonly appNavTitle: string = "Repox";
-
-  readonly appNavListItems: NavListItemModel[] = [
-    { link: "/home", label: "Home", newTab: false, children: [] },
-    { link: "/documentation", label: "Documentation", newTab: false, children: [] }
-  ];
-
-  readonly appClass: string = "top-main-nav";
 }

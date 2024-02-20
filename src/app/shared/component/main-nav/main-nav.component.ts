@@ -13,44 +13,57 @@ export class MainNavComponent {
     this.menuItems = [
       {
         label: "Home",
+        routerLink: "/home"
       },
       {
         label: "Docs",
+        routerLink: "docs",
         items: [
           {
-            label: "Getting started"
+            label: "Getting started",
+            routerLink: "/docs/getting-started"
           },
           {
-            label: "Features"
+            label: "Features",
+            routerLink: "/docs/features"
           },
           {
-            label: "Concepts"
+            label: "Concepts",
+            routerLink: "/docs/concepts"
           },
           {
-            label: "Extension"
+            label: "Extension",
+            routerLink: "/docs/extension"
           },
           {
-            label: "Plugins"
+            label: "Plugins",
+            routerLink: "/docs/plugins"
           },
           {
-            label: "API"
+            label: "API",
+            routerLink: "/docs/api"
           },
           {
-            label: "Changelog"
+            label: "Changelog",
+            routerLink: "/docs/changelog"
           }
         ]
       },
       {
-        label: "Blog"
+        label: "Blog",
+        routerLink: "/blog"
       },
       {
-        label: "Community"
+        label: "Community",
+        routerLink: "/community"
       },
       {
-        label: "Plugins registry"
+        label: "Plugins registry",
+        routerLink: "/plugins-registry"
       },
       {
-        label: "Sponsors"
+        label: "Sponsors",
+        routerLink: "/sponsors"
       }
     ];
   }
