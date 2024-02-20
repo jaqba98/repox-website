@@ -1,15 +1,10 @@
 <p-menubar [model]="menuItems">
   <ng-template pTemplate="start">
-    <img
-      ngSrc="https://primefaces.org/cdn/primeng/images/primeng.svg"
-      alt="Logo"
-      width="40"
-      height="40"
-      class="main-nav__logo">
+    <h1 class="main-nav__logo">REPOX</h1>
   </ng-template>
   <ng-template pTemplate="end">
-    <p-button icon="pi pi-download"></p-button>
-    <p-button icon="pi pi-github"></p-button>
-    <p-button icon="pi pi-discord"></p-button>
+    <p-button icon="pi pi-download" [text]="true" severity="secondary"></p-button>
+    <p-button icon="pi pi-github" [text]="true" severity="secondary"></p-button>
+    <p-button icon="pi pi-discord" [text]="true" severity="secondary"></p-button>
   </ng-template>
 </p-menubar>

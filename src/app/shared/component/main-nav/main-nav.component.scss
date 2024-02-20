@@ -1,5 +1,15 @@
+:host {
+  ::ng-deep {
+    .p-menubar {
+      border-radius: 0;
+    }
+  }
+}
+
 .main-nav {
   &__logo {
-    margin-right: 10px;
+    font-weight: bolder;
+    font-size: 1.5em;
+    margin: 0 10px 0 0;
   }
 }
