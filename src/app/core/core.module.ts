@@ -10,6 +10,7 @@ import {PluginsRegistryComponent} from "./plugins-registry/plugins-registry.comp
 import {SponsorsComponent} from "./sponsors/sponsors.component";
 import {GettingStartedComponent} from "./docs/getting-started/getting-started.component";
 import { FeaturesComponent } from './docs/features/features.component';
+import { ConceptsComponent } from './docs/concepts/concepts.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FeaturesComponent } from './docs/features/features.component';
     PluginsRegistryComponent,
     SponsorsComponent,
     GettingStartedComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    ConceptsComponent
   ],
   imports: [
     SharedModule,
