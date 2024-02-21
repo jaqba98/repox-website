@@ -13,6 +13,7 @@ import { FeaturesComponent } from './docs/features/features.component';
 import { ConceptsComponent } from './docs/concepts/concepts.component';
 import { ExtensionComponent } from './docs/extension/extension.component';
 import { PluginsComponent } from './docs/plugins/plugins.component';
+import { ApiComponent } from './docs/api/api.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PluginsComponent } from './docs/plugins/plugins.component';
     FeaturesComponent,
     ConceptsComponent,
     ExtensionComponent,
-    PluginsComponent
+    PluginsComponent,
+    ApiComponent
   ],
   imports: [
     SharedModule,
