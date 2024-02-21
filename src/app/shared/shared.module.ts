@@ -10,10 +10,12 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
+import { AsideNavComponent } from './component/aside-nav/aside-nav.component';
 
 @NgModule({
   declarations: [
-    MainNavComponent
+    MainNavComponent,
+    AsideNavComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import {MainNavComponent} from "./component/main-nav/main-nav.component";
     ButtonModule
   ],
   exports: [
-    MainNavComponent
+    MainNavComponent,
+    AsideNavComponent
   ]
 })
 export class SharedModule {

@@ -31,7 +31,42 @@ export const routes: Routes = [
   },
   {
     path: "docs",
-    component: DocsComponent
+    component: DocsComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: "getting-started",
+        pathMatch: "full"
+      },
+      {
+        path: "getting-started",
+        component: GettingStartedComponent
+      },
+      {
+        path: "features",
+        component: FeaturesComponent
+      },
+      {
+        path: "concepts",
+        component: ConceptsComponent
+      },
+      {
+        path: "extension",
+        component: ExtensionComponent
+      },
+      {
+        path: "plugins",
+        component: PluginsComponent
+      },
+      {
+        path: "api",
+        component: ApiComponent
+      },
+      {
+        path: "changelog",
+        component: ChangelogComponent
+      }
+    ]
   },
   {
     path: "blog",
@@ -48,34 +83,6 @@ export const routes: Routes = [
   {
     path: "sponsors",
     component: SponsorsComponent
-  },
-  {
-    path: "getting-started",
-    component: GettingStartedComponent
-  },
-  {
-    path: "features",
-    component: FeaturesComponent
-  },
-  {
-    path: "concepts",
-    component: ConceptsComponent
-  },
-  {
-    path: "extension",
-    component: ExtensionComponent
-  },
-  {
-    path: "plugins",
-    component: PluginsComponent
-  },
-  {
-    path: "api",
-    component: ApiComponent
-  },
-  {
-    path: "changelog",
-    component: ChangelogComponent
   }
 ];
 
