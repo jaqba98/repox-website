@@ -21,31 +21,31 @@ export class MainNavComponent {
         items: [
           {
             label: "Getting started",
-            routerLink: "/docs/getting-started"
+            routerLink: "getting-started"
           },
           {
             label: "Features",
-            routerLink: "/docs/features"
+            routerLink: "features"
           },
           {
             label: "Concepts",
-            routerLink: "/docs/concepts"
+            routerLink: "concepts"
           },
           {
             label: "Extension",
-            routerLink: "/docs/extension"
+            routerLink: "extension"
           },
           {
             label: "Plugins",
-            routerLink: "/docs/plugins"
+            routerLink: "plugins"
           },
           {
             label: "API",
-            routerLink: "/docs/api"
+            routerLink: "api"
           },
           {
             label: "Changelog",
-            routerLink: "/docs/changelog"
+            routerLink: "changelog"
           }
         ]
       },

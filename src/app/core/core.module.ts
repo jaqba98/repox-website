@@ -8,6 +8,7 @@ import {BlogComponent} from "./blog/blog.component";
 import {CommunityComponent} from "./community/community.component";
 import {PluginsRegistryComponent} from "./plugins-registry/plugins-registry.component";
 import {SponsorsComponent} from "./sponsors/sponsors.component";
+import {GettingStartedComponent} from "./docs/getting-started/getting-started.component";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {SponsorsComponent} from "./sponsors/sponsors.component";
     BlogComponent,
     CommunityComponent,
     PluginsRegistryComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    GettingStartedComponent
   ],
   imports: [
     SharedModule,
@@ -28,7 +30,8 @@ import {SponsorsComponent} from "./sponsors/sponsors.component";
     BlogComponent,
     CommunityComponent,
     PluginsRegistryComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    GettingStartedComponent
   ]
 })
 export class CoreModule {

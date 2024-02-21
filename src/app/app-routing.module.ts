@@ -9,6 +9,9 @@ import {
   PluginsRegistryComponent
 } from "./core/plugins-registry/plugins-registry.component";
 import {SponsorsComponent} from "./core/sponsors/sponsors.component";
+import {
+  GettingStartedComponent
+} from "./core/docs/getting-started/getting-started.component";
 
 export const routes: Routes = [
   {
@@ -39,6 +42,10 @@ export const routes: Routes = [
   {
     path: "sponsors",
     component: SponsorsComponent
+  },
+  {
+    path: "getting-started",
+    component: GettingStartedComponent
   }
 ];
 
