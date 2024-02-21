@@ -15,6 +15,7 @@ import {
 import {FeaturesComponent} from "./core/docs/features/features.component";
 import {ConceptsComponent} from "./core/docs/concepts/concepts.component";
 import {ExtensionComponent} from "./core/docs/extension/extension.component";
+import {PluginsComponent} from "./core/docs/plugins/plugins.component";
 
 export const routes: Routes = [
   {
@@ -61,6 +62,10 @@ export const routes: Routes = [
   {
     path: "extension",
     component: ExtensionComponent
+  },
+  {
+    path: "plugins",
+    component: PluginsComponent
   }
 ];
 

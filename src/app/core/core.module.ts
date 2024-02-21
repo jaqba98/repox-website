@@ -12,6 +12,7 @@ import {GettingStartedComponent} from "./docs/getting-started/getting-started.co
 import { FeaturesComponent } from './docs/features/features.component';
 import { ConceptsComponent } from './docs/concepts/concepts.component';
 import { ExtensionComponent } from './docs/extension/extension.component';
+import { PluginsComponent } from './docs/plugins/plugins.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ExtensionComponent } from './docs/extension/extension.component';
     GettingStartedComponent,
     FeaturesComponent,
     ConceptsComponent,
-    ExtensionComponent
+    ExtensionComponent,
+    PluginsComponent
   ],
   imports: [
     SharedModule,
