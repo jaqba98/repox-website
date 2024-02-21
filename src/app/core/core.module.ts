@@ -9,6 +9,7 @@ import {CommunityComponent} from "./community/community.component";
 import {PluginsRegistryComponent} from "./plugins-registry/plugins-registry.component";
 import {SponsorsComponent} from "./sponsors/sponsors.component";
 import {GettingStartedComponent} from "./docs/getting-started/getting-started.component";
+import { FeaturesComponent } from './docs/features/features.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {GettingStartedComponent} from "./docs/getting-started/getting-started.co
     CommunityComponent,
     PluginsRegistryComponent,
     SponsorsComponent,
-    GettingStartedComponent
+    GettingStartedComponent,
+    FeaturesComponent
   ],
   imports: [
     SharedModule,
@@ -31,7 +33,8 @@ import {GettingStartedComponent} from "./docs/getting-started/getting-started.co
     CommunityComponent,
     PluginsRegistryComponent,
     SponsorsComponent,
-    GettingStartedComponent
+    GettingStartedComponent,
+    FeaturesComponent
   ]
 })
 export class CoreModule {

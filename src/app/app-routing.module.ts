@@ -12,6 +12,7 @@ import {SponsorsComponent} from "./core/sponsors/sponsors.component";
 import {
   GettingStartedComponent
 } from "./core/docs/getting-started/getting-started.component";
+import {FeaturesComponent} from "./core/docs/features/features.component";
 
 export const routes: Routes = [
   {
@@ -46,6 +47,10 @@ export const routes: Routes = [
   {
     path: "getting-started",
     component: GettingStartedComponent
+  },
+  {
+    path: "features",
+    component: FeaturesComponent
   }
 ];
 
