@@ -14,6 +14,7 @@ import { ConceptsComponent } from './docs/concepts/concepts.component';
 import { ExtensionComponent } from './docs/extension/extension.component';
 import { PluginsComponent } from './docs/plugins/plugins.component';
 import { ApiComponent } from './docs/api/api.component';
+import { ChangelogComponent } from './docs/changelog/changelog.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ApiComponent } from './docs/api/api.component';
     ConceptsComponent,
     ExtensionComponent,
     PluginsComponent,
-    ApiComponent
+    ApiComponent,
+    ChangelogComponent
   ],
   imports: [
     SharedModule,

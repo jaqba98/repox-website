@@ -17,6 +17,7 @@ import {ConceptsComponent} from "./core/docs/concepts/concepts.component";
 import {ExtensionComponent} from "./core/docs/extension/extension.component";
 import {PluginsComponent} from "./core/docs/plugins/plugins.component";
 import {ApiComponent} from "./core/docs/api/api.component";
+import {ChangelogComponent} from "./core/docs/changelog/changelog.component";
 
 export const routes: Routes = [
   {
@@ -71,6 +72,10 @@ export const routes: Routes = [
   {
     path: "api",
     component: ApiComponent
+  },
+  {
+    path: "changelog",
+    component: ChangelogComponent
   }
 ];
 
