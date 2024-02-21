@@ -11,6 +11,7 @@ import {SponsorsComponent} from "./sponsors/sponsors.component";
 import {GettingStartedComponent} from "./docs/getting-started/getting-started.component";
 import { FeaturesComponent } from './docs/features/features.component';
 import { ConceptsComponent } from './docs/concepts/concepts.component';
+import { ExtensionComponent } from './docs/extension/extension.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConceptsComponent } from './docs/concepts/concepts.component';
     SponsorsComponent,
     GettingStartedComponent,
     FeaturesComponent,
-    ConceptsComponent
+    ConceptsComponent,
+    ExtensionComponent
   ],
   imports: [
     SharedModule,
