@@ -8,9 +8,10 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
+import {TreeModule} from 'primeng/tree';
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
-import { AsideNavComponent } from './component/aside-nav/aside-nav.component';
+import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AsideNavComponent } from './component/aside-nav/aside-nav.component';
     FontAwesomeModule,
     MenubarModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    TreeModule
   ],
   exports: [
     MainNavComponent,
