@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
+
 import {AsideNavService} from "./aside-nav.service";
-import {TreeNode} from "primeng/api";
 
 @Component({
   selector: 'repox-website-aside-nav',
@@ -8,11 +8,11 @@ import {TreeNode} from "primeng/api";
   styleUrl: './aside-nav.component.scss'
 })
 export class AsideNavComponent {
-  treeOptions: TreeNode[] = [];
-
   constructor(private readonly asideNav: AsideNavService) {
-    this.asideNav.asideNavOptions$.subscribe(asideNavOptions => {
-      this.treeOptions = asideNavOptions;
-    });
+    this.asideNav.asideNavOptions$.subscribe();
+  }
+
+  getTreeOptions() {
+    return this.asideNav.asideNavOptions$.getValue();
   }
 }
