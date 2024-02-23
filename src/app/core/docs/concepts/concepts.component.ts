@@ -15,11 +15,11 @@ export class ConceptsComponent implements OnInit {
 
   ngOnInit() {
     this.asideNav.asideNavOptions$.next([
-      {key: "0", label: "Concepts Option 0"},
-      {key: "1", label: "Concepts Option 1"},
-      {key: "2", label: "Concepts Option 2"},
-      {key: "3", label: "Concepts Option 3"},
-      {key: "4", label: "Concepts Option 4"}
+      {key: "0-0", label: "Concepts Option 0"},
+      {key: "0-1", label: "Concepts Option 1"},
+      {key: "0-2", label: "Concepts Option 2"},
+      {key: "0-3", label: "Concepts Option 3"},
+      {key: "0-4", label: "Concepts Option 4"}
     ]);
   }
 }

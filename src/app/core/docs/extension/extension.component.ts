@@ -15,11 +15,11 @@ export class ExtensionComponent implements OnInit {
 
   ngOnInit() {
     this.asideNav.asideNavOptions$.next([
-      {key: "0", label: "Extension Option 0"},
-      {key: "1", label: "Extension Option 1"},
-      {key: "2", label: "Extension Option 2"},
-      {key: "3", label: "Extension Option 3"},
-      {key: "4", label: "Extension Option 4"}
+      {key: "0-0", label: "Extension Option 0"},
+      {key: "0-1", label: "Extension Option 1"},
+      {key: "0-2", label: "Extension Option 2"},
+      {key: "0-3", label: "Extension Option 3"},
+      {key: "0-4", label: "Extension Option 4"}
     ]);
   }
 }

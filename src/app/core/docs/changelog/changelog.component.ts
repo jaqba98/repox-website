@@ -15,11 +15,11 @@ export class ChangelogComponent implements OnInit {
 
   ngOnInit() {
     this.asideNav.asideNavOptions$.next([
-      {key: "0", label: "Changelog Option 0"},
-      {key: "1", label: "Changelog Option 1"},
-      {key: "2", label: "Changelog Option 2"},
-      {key: "3", label: "Changelog Option 3"},
-      {key: "4", label: "Changelog Option 4"}
+      {key: "0-0", label: "Changelog Option 0"},
+      {key: "0-1", label: "Changelog Option 1"},
+      {key: "0-2", label: "Changelog Option 2"},
+      {key: "0-3", label: "Changelog Option 3"},
+      {key: "0-4", label: "Changelog Option 4"}
     ]);
   }
 }
