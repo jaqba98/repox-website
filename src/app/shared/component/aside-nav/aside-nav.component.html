@@ -1,1 +1,5 @@
-<p-tree class="w-full md:w-30rem" [value]="options"></p-tree>
+<p-tree class="w-full md:w-30rem" [value]="options">
+  <ng-template let-node pTemplate="default">
+    <a [routerLink]="node.data">{{ node.label }}</a>
+  </ng-template>
+</p-tree>

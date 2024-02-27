@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {RouterOutlet} from "@angular/router";
+import {RouterLink, RouterOutlet} from "@angular/router";
 
 import {SharedModule} from "../shared/shared.module";
 import {HomeComponent} from "./home/home.component";
@@ -15,6 +15,8 @@ import { ExtensionComponent } from './docs/extension/extension.component';
 import { PluginsComponent } from './docs/plugins/plugins.component';
 import { ApiComponent } from './docs/api/api.component';
 import { ChangelogComponent } from './docs/changelog/changelog.component';
+import { GenerateComponent } from './docs/api/generate/generate.component';
+import { RegenerateComponent } from './docs/api/regenerate/regenerate.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +32,15 @@ import { ChangelogComponent } from './docs/changelog/changelog.component';
     ExtensionComponent,
     PluginsComponent,
     ApiComponent,
-    ChangelogComponent
+    ChangelogComponent,
+    GenerateComponent,
+    RegenerateComponent
   ],
-  imports: [
-    SharedModule,
-    RouterOutlet
-  ],
+    imports: [
+        SharedModule,
+        RouterOutlet,
+        RouterLink
+    ],
   exports: [
     HomeComponent,
     DocsComponent,

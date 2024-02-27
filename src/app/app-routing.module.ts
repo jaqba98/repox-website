@@ -18,6 +18,8 @@ import {ExtensionComponent} from "./core/docs/extension/extension.component";
 import {PluginsComponent} from "./core/docs/plugins/plugins.component";
 import {ApiComponent} from "./core/docs/api/api.component";
 import {ChangelogComponent} from "./core/docs/changelog/changelog.component";
+import {GenerateComponent} from "./core/docs/api/generate/generate.component";
+import {RegenerateComponent} from "./core/docs/api/regenerate/regenerate.component";
 
 export const routes: Routes = [
   {
@@ -60,7 +62,22 @@ export const routes: Routes = [
       },
       {
         path: "api",
-        component: ApiComponent
+        component: ApiComponent,
+        children: [
+          {
+            path: "",
+            redirectTo: "generate",
+            pathMatch: "full"
+          },
+          {
+            path: "generate",
+            component: GenerateComponent
+          },
+          {
+            path: "regenerate",
+            component: RegenerateComponent
+          }
+        ]
       },
       {
         path: "changelog",
@@ -87,7 +104,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes, {useHash: false})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
