@@ -12,11 +12,13 @@ import {TreeModule} from 'primeng/tree';
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
 import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
+import { DocsContentComponent } from './component/docs-content/docs-content.component';
 
 @NgModule({
   declarations: [
     MainNavComponent,
-    AsideNavComponent
+    AsideNavComponent,
+    DocsContentComponent
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
   ],
   exports: [
     MainNavComponent,
-    AsideNavComponent
+    AsideNavComponent,
+    DocsContentComponent
   ]
 })
 export class SharedModule {

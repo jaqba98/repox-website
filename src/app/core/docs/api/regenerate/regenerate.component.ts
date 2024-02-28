@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './regenerate.component.scss'
 })
 export class RegenerateComponent {
-  title = "regenerate";
+  title = "Regenerate";
 }
