@@ -1,0 +1,25 @@
+:host {
+  ::ng-deep {
+    .p-panel-header,
+    .p-panel-content {
+      border-radius: 0;
+    }
+
+    .docs {
+      &-content {
+        &__header {
+          .p-panel-content {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.docs-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}

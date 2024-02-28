@@ -1,1 +1,10 @@
-<h1>{{title}}</h1>
+<section class="docs-content">
+  <p-panel [header]="title" class="docs-content__header"></p-panel>
+  <ng-container *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">
+    <p-panel header="Introduction" class="docs-content__content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.
+      </p>
+    </p-panel>
+  </ng-container>
+</section>

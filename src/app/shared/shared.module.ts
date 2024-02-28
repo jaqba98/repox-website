@@ -9,10 +9,11 @@ import {MenubarModule} from 'primeng/menubar';
 import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {TreeModule} from 'primeng/tree';
+import {PanelModule} from 'primeng/panel';
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
 import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
-import { DocsContentComponent } from './component/docs-content/docs-content.component';
+import {DocsContentComponent} from './component/docs-content/docs-content.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DocsContentComponent } from './component/docs-content/docs-content.comp
     MenubarModule,
     InputTextModule,
     ButtonModule,
-    TreeModule
+    TreeModule,
+    PanelModule
   ],
   exports: [
     MainNavComponent,
