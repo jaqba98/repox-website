@@ -16,13 +16,15 @@ import {MainNavComponent} from "./component/main-nav/main-nav.component";
 import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
 import {DocsContentComponent} from './component/docs-content/docs-content.component';
 import {BreadcrumbComponent} from "./component/breadcrumb/breadcrumb.component";
+import { DocsContainerComponent } from './component/docs-container/docs-container.component';
 
 @NgModule({
   declarations: [
     MainNavComponent,
     AsideNavComponent,
     DocsContentComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    DocsContainerComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import {BreadcrumbComponent} from "./component/breadcrumb/breadcrumb.component";
     MainNavComponent,
     AsideNavComponent,
     DocsContentComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    DocsContainerComponent
   ]
 })
 export class SharedModule {

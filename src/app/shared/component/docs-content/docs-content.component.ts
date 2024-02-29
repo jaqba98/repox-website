@@ -6,9 +6,5 @@ import {Component, Input} from '@angular/core';
   styleUrl: './docs-content.component.scss'
 })
 export class DocsContentComponent {
-  @Input() title: string;
-
-  constructor() {
-    this.title = "";
-  }
+  @Input() title: string = "";
 }
