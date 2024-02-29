@@ -10,16 +10,19 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {TreeModule} from 'primeng/tree';
 import {PanelModule} from 'primeng/panel';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
 import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
 import {DocsContentComponent} from './component/docs-content/docs-content.component';
+import {BreadcrumbComponent} from "./component/breadcrumb/breadcrumb.component";
 
 @NgModule({
   declarations: [
     MainNavComponent,
     AsideNavComponent,
-    DocsContentComponent
+    DocsContentComponent,
+    BreadcrumbComponent
   ],
   imports: [
     CommonModule,
@@ -31,12 +34,14 @@ import {DocsContentComponent} from './component/docs-content/docs-content.compon
     InputTextModule,
     ButtonModule,
     TreeModule,
-    PanelModule
+    PanelModule,
+    BreadcrumbModule
   ],
   exports: [
     MainNavComponent,
     AsideNavComponent,
-    DocsContentComponent
+    DocsContentComponent,
+    BreadcrumbComponent
   ]
 })
 export class SharedModule {
