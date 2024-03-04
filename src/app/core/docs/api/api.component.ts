@@ -13,8 +13,8 @@ export class ApiComponent implements OnInit {
 
   ngOnInit() {
     this.asideNav.asideNavOptions$.next([
-      {key: "0-0", label: "Generate", data: "api/generate"},
-      {key: "0-1", label: "Regenerate", data: "api/regenerate"}
+      {key: "0-0", label: "Generate", data: "/docs/api/generate"},
+      {key: "0-1", label: "Regenerate", data: "/docs/api/regenerate"}
     ]);
   }
 }

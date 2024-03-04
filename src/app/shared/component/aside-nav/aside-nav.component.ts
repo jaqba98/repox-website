@@ -1,7 +1,8 @@
 import {Component, HostListener} from '@angular/core';
+import {Router} from "@angular/router";
+import {TreeNode} from "primeng/api";
 
 import {AsideNavService} from "./aside-nav.service";
-import {TreeNode} from "primeng/api";
 
 @Component({
   selector: 'repox-website-aside-nav',
@@ -11,7 +12,10 @@ import {TreeNode} from "primeng/api";
 export class AsideNavComponent {
   options: TreeNode[] = [];
 
-  constructor(private readonly asideNav: AsideNavService) {
+  constructor(
+    private readonly asideNav: AsideNavService,
+    private readonly router: Router
+  ) {
     this.asideNav.asideNavOptions$.subscribe(() => {
       this.getOptions();
     });
@@ -20,6 +24,20 @@ export class AsideNavComponent {
   @HostListener("window:resize")
   getTreeOptions(): void {
     this.getOptions();
+  }
+
+  onSelect(event: any) {
+    this.router.navigate([event.node.data]);
+    this.options.forEach((node) => this.expandRecursive(node, false));
+  }
+
+  private expandRecursive(node: TreeNode, isExpand: boolean) {
+    node.expanded = isExpand;
+    if (node.children) {
+      node.children.forEach((childNode) => {
+        this.expandRecursive(childNode, isExpand);
+      });
+    }
   }
 
   private getOptions(): void {

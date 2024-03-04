@@ -3,7 +3,11 @@
     .p-tree {
       height: 100%;
       border-radius: 0;
-      padding: 0.5rem;
+      padding: 0.25rem;
+    }
+
+    .p-tree-toggler {
+      margin-right: 5px;
     }
 
     @media screen and (max-width: 768px) {
@@ -11,6 +15,7 @@
         border-top: none;
         border-left: none;
         border-right: none;
+        padding: 0;
       }
     }
 
