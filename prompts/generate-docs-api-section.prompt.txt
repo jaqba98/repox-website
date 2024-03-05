@@ -1,0 +1,47 @@
+Assumption:
+>>>
+I'm creating documentation for my own software called "Repox".
+That software is responsible for managing monorepo project.
+Monorepo project contains many projects inside one git repository.
+My project is similar to nx.dev but it is my own implementation of it.
+
+I'm creating documentation section for `generate workspace`.
+`generate` is a program, we can use `g` alias instead of full program name
+`workspace` is a command, we can use `w` alias instead of full command name
+
+The command is a part of program.
+
+Syntax:
+repox [program] [...arguments] [command] [...arguments]
+Example:
+repox program --arg1=aaa command -b=test
+
+Requirements:
+- repox word is required
+- argument with values required = sign between argument name and argument value
+<<<
+
+Program arguments: lack
+
+Command arguments:
+>>>
+* --name (argument) or -n (alias)
+  Description: That argument defines name of the workspace
+  Required: true
+  Value: string
+<<<
+
+Sections:
+>>>
+(order 1) Title of the section
+(order 2) Description of the section
+(order 3) Example command with full command
+(order 4) Example command with full alias
+(order 5) Information about program arguments
+(order 6) Information about command arguments
+<<<
+
+Task:
+>>>
+Create a documentation section for this command. Please respect the order given before each sections.
+<<<
