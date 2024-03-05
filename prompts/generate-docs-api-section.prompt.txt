@@ -1,47 +1,35 @@
-Assumption:
->>>
-I'm creating documentation for my own software called "Repox".
+>>> Introduction <<<
+I am creating a documentation of my own software named "Repox".
 That software is responsible for managing monorepo project.
-Monorepo project contains many projects inside one git repository.
-My project is similar to nx.dev but it is my own implementation of it.
+Monorepo project is a specific type of project which contains many projects inside one git repository.
+My software is similar to NX (www.nx.dev).
+I am creating documentation section for "generate workspace" command.
 
-I'm creating documentation section for `generate workspace`.
-`generate` is a program, we can use `g` alias instead of full program name
-`workspace` is a command, we can use `w` alias instead of full command name
 
-The command is a part of program.
+>>> Dictionary <<<
+"generate" is a program, we can use "g" alias instead of "generate"
+"workspace" is a command, we can use "w" alias instead of "workspace", it must not exist without generate program
 
-Syntax:
-repox [program] [...arguments] [command] [...arguments]
-Example:
-repox program --arg1=aaa command -b=test
+>>> Program arguments <<<
+lack
 
-Requirements:
-- repox word is required
-- argument with values required = sign between argument name and argument value
-<<<
-
-Program arguments: lack
-
-Command arguments:
->>>
+>>> Command arguments <<<
 * --name (argument) or -n (alias)
-  Description: That argument defines name of the workspace
+  Description: That argument defines name of the workspace. It is a folder name which will be created on the disk.
   Required: true
   Value: string
-<<<
 
-Sections:
->>>
-(order 1) Title of the section
-(order 2) Description of the section
-(order 3) Example command with full command
-(order 4) Example command with full alias
-(order 5) Information about program arguments
-(order 6) Information about command arguments
-<<<
+>>> Argument syntax with value <<<
+--${argument-name}=${value} <-- for arguments
+-${alias-name}=${value} <-- for aliases
 
-Task:
->>>
-Create a documentation section for this command. Please respect the order given before each sections.
-<<<
+>>> Section structure <<<
+1) Title
+2) Description
+3) Syntax
+4) Arguments
+5) Example
+6) Note
+
+>>> Question <<<
+Could you create such a documentation section?
