@@ -1,10 +1,43 @@
 <section class="docs">
   <div class="docs-content">
-    <p-panel [header]="content?.title" class="docs-content__header"></p-panel>
     <ng-container *ngFor="let section of content?.sections">
-      <p-panel [header]="section.title" class="docs-content__content">
-        <p>{{section.message}}</p>
-      </p-panel>
+      <!-- header -->
+      <ng-container *ngIf="section.type === 'header'">
+        <h1 class="docs-content__header">{{section.header}}</h1>
+      </ng-container>
+      <!-- message -->
+      <ng-container *ngIf="section.type === 'message'">
+        <p-panel [header]="section.header" class="docs-content__content">
+          <p>{{ section.message }}</p>
+        </p-panel>
+      </ng-container>
+      <!-- command -->
+      <ng-container *ngIf="section.type === 'command'">
+        <p-panel [header]="section.command" class="docs-content__comment"></p-panel>
+      </ng-container>
+      <!-- array -->
+      <ng-container *ngIf="section.type === 'array'">
+        <p-table [value]="section.value">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Argument</th>
+              <th>Alias</th>
+              <th>Description</th>
+              <th>Require</th>
+              <th>Value</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-value>
+            <tr>
+              <td>{{ value.argument }}</td>
+              <td>{{ value.alias }}</td>
+              <td>{{ value.description }}</td>
+              <td>{{ value.require }}</td>
+              <td>{{ value.value }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </ng-container>
     </ng-container>
   </div>
 </section>

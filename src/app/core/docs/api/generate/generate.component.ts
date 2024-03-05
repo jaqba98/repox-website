@@ -9,43 +9,48 @@ import {DocsContentModel} from "../../../../shared/component/docs-content/docs-c
 })
 export class GenerateComponent {
   content: DocsContentModel = {
-    title: "Generate",
     sections: [
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "header",
+        header: "Generate"
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "header",
+        header: "Generate Workspace"
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "message",
+        header: "Description",
+        message: "The generate workspace command allows you to create a new workspace within a monorepo project managed by Repox."
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "header",
+        header: "Example"
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "command",
+        command: "repox generate workspace --name=myworkspace"
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "command",
+        command: "repox g w -n=myworkspace"
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "header",
+        header: "Arguments"
       },
       {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
-      },
-      {
-        title: "Title",
-        message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor."
+        type: "array",
+        value: [
+          {
+            id: '1000',
+            argument: '--name',
+            alias: '-n',
+            description: 'This argument defines the name of the workspace.',
+            require: 'yes',
+            value: 'String',
+          }
+        ]
       }
     ]
   };

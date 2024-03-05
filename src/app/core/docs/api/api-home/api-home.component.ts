@@ -8,7 +8,7 @@ import {DocsContentModel} from "../../../../shared/component/docs-content/docs-c
 })
 export class ApiHomeComponent {
   content: DocsContentModel = {
-    title: "Api",
+    // title: "Api",
     sections: []
   };
 }

@@ -15,6 +15,24 @@
             display: none;
           }
         }
+
+        &__comment {
+          .p-panel-header {
+            background-color: #ffffff;
+          }
+
+          .p-panel-title {
+            font-weight: normal;
+          }
+
+          .p-panel-title::before {
+            content: "> "
+          }
+
+          .p-panel-content {
+            display: none;
+          }
+        }
       }
     }
   }

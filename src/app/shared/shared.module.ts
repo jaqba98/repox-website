@@ -17,6 +17,9 @@ import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
 import {DocsContentComponent} from './component/docs-content/docs-content.component';
 import {BreadcrumbComponent} from "./component/breadcrumb/breadcrumb.component";
 import { DocsContainerComponent } from './component/docs-container/docs-container.component';
+import {FieldsetModule} from "primeng/fieldset";
+import {CardModule} from "primeng/card";
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { DocsContainerComponent } from './component/docs-container/docs-containe
     ButtonModule,
     TreeModule,
     PanelModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    FieldsetModule,
+    CardModule,
+    TableModule
   ],
   exports: [
     MainNavComponent,
