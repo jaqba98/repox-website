@@ -1,42 +1,38 @@
 <section class="docs">
   <div class="docs-content">
     <ng-container *ngFor="let section of content?.sections">
-      <!-- header -->
-      <ng-container *ngIf="section.type === 'header'">
-        <h1 class="docs-content__header">{{section.header}}</h1>
+      <!-- Header h1 -->
+      <ng-container *ngIf="section.type === 'h1'">
+        <h1 class="docs-content__header-h1">{{section.value}}</h1>
       </ng-container>
-      <!-- message -->
-      <ng-container *ngIf="section.type === 'message'">
-        <p-panel [header]="section.header" class="docs-content__content">
-          <p>{{ section.message }}</p>
-        </p-panel>
+      <!-- Header h2 -->
+      <ng-container *ngIf="section.type === 'h2'">
+        <h2 class="docs-content__header-h2">{{section.value}}</h2>
       </ng-container>
-      <!-- command -->
+      <!-- Paragraph p -->
+      <ng-container *ngIf="section.type === 'p'">
+        <p class="docs-content__paragraph-p">{{section.value}}</p>
+      </ng-container>
+      <!-- Command code -->
       <ng-container *ngIf="section.type === 'command'">
-        <p-panel [header]="section.command" class="docs-content__comment"></p-panel>
+        <code class="docs-content__command">{{section.value}}</code>
       </ng-container>
-      <!-- array -->
-      <ng-container *ngIf="section.type === 'array'">
-        <p-table [value]="section.value">
-          <ng-template pTemplate="header">
-            <tr>
-              <th>Argument</th>
-              <th>Alias</th>
-              <th>Description</th>
-              <th>Require</th>
-              <th>Value</th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-value>
-            <tr>
-              <td>{{ value.argument }}</td>
-              <td>{{ value.alias }}</td>
-              <td>{{ value.description }}</td>
-              <td>{{ value.require }}</td>
-              <td>{{ value.value }}</td>
-            </tr>
-          </ng-template>
-        </p-table>
+      <!-- Newline -->
+      <ng-container *ngIf="section.type === 'newline'">
+        <div class="docs-content__newline"></div>
+      </ng-container>
+      <!-- Array -->
+      <ng-container *ngIf="section.type === 'arguments'">
+        <ul class="docs-content__arguments">
+          <li *ngFor="let value of section.value">
+            <span class="docs-content__arguments-title">{{value.argument}}=value or {{value.alias}}=value</span>
+            <ul class="docs-content__arguments">
+              <li>{{value.description}}</li>
+              <li>Is required: <b>{{value.require}}</b></li>
+              <li>Value type: <b>{{value.value}}</b></li>
+            </ul>
+          </li>
+        </ul>
       </ng-container>
     </ng-container>
   </div>

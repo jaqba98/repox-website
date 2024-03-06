@@ -1,29 +1,39 @@
-export interface DocsContentHeaderSectionModel {
-  type: "header";
-  header: string;
+export interface DocsContentH1SectionModel {
+  type: "h1";
+  value: string;
 }
 
-export interface DocsContentMessageSectionModel {
-  type: "message";
-  header: string;
-  message: string;
+export interface DocsContentH2SectionModel {
+  type: "h2";
+  value: string;
+}
+
+export interface DocsContentPSectionModel {
+  type: "p";
+  value: string;
 }
 
 export interface DocsContentCommandSectionModel {
   type: "command";
-  command: string;
+  value: string;
 }
 
 export interface DocsContentArraySectionModel {
-  type: "array";
-  value: any;
+  type: "arguments";
+  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];
+}
+
+export interface DocsContentNewlineSectionModel {
+  type: "newline";
 }
 
 export type DocsContentSectionModel =
-  | DocsContentHeaderSectionModel
-  | DocsContentMessageSectionModel
+  | DocsContentH1SectionModel
+  | DocsContentH2SectionModel
+  | DocsContentPSectionModel
   | DocsContentCommandSectionModel
-  | DocsContentArraySectionModel;
+  | DocsContentArraySectionModel
+  | DocsContentNewlineSectionModel;
 
 export interface DocsContentModel {
   sections: DocsContentSectionModel[];

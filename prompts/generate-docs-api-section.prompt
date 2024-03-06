@@ -5,7 +5,6 @@ Monorepo project is a specific type of project which contains many projects insi
 My software is similar to NX (www.nx.dev).
 I am creating documentation section for "generate workspace" command.
 
-
 >>> Dictionary <<<
 "generate" is a program, we can use "g" alias instead of "generate"
 "workspace" is a command, we can use "w" alias instead of "workspace", it must not exist without generate program

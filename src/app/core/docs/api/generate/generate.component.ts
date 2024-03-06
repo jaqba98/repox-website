@@ -11,46 +11,86 @@ export class GenerateComponent {
   content: DocsContentModel = {
     sections: [
       {
-        type: "header",
-        header: "Generate"
+        type: "h1",
+        value: "Generate"
+      },
+      { type: "newline" },
+      {
+        type: "h2",
+        value: "Generate Workspace"
       },
       {
-        type: "header",
-        header: "Generate Workspace"
+        type: "p",
+        value: "The generate workspace command creates a new workspace within the monorepo project managed by Repox. A workspace serves as a container for projects within the monorepo."
       },
+      { type: "newline" },
       {
-        type: "message",
-        header: "Description",
-        message: "The generate workspace command allows you to create a new workspace within a monorepo project managed by Repox."
-      },
-      {
-        type: "header",
-        header: "Example"
-      },
-      {
-        type: "command",
-        command: "repox generate workspace --name=myworkspace"
+        type: "h2",
+        value: "Syntax"
       },
       {
         type: "command",
-        command: "repox g w -n=myworkspace"
+        value: "repox generate workspace [options]"
       },
       {
-        type: "header",
-        header: "Arguments"
+        type: "p",
+        value: "or"
       },
       {
-        type: "array",
+        type: "command",
+        value: "repox g w [options]"
+      },
+      { type: "newline" },
+      {
+        type: "h2",
+        value: "Program arguments"
+      },
+      {
+        type: "p",
+        value: "None"
+      },
+      { type: "newline" },
+      {
+        type: "h2",
+        value: "Command arguments"
+      },
+      {
+        type: "arguments",
         value: [
           {
-            id: '1000',
-            argument: '--name',
-            alias: '-n',
-            description: 'This argument defines the name of the workspace.',
-            require: 'yes',
-            value: 'String',
+            argument: "--name",
+            alias: "-n",
+            description: "Defines the name of the workspace. It specifies the folder name that will be created on the disk.",
+            require: true,
+            value: "string",
           }
         ]
+      },
+      { type: "newline" },
+      {
+        type: "h2",
+        value: "Example"
+      },
+      {
+        type: "command",
+        value: "repox generate workspace --name=my-workspace"
+      },
+      {
+        type: "p",
+        value: "or"
+      },
+      {
+        type: "command",
+        value: "repox g w -n=my-workspace"
+      },
+      { type: "newline" },
+      {
+        type: "h2",
+        value: "Note"
+      },
+      {
+        type: "p",
+        value: "Ensure that the workspace name is unique and adheres to file system naming conventions."
       }
     ]
   };
