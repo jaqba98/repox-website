@@ -15,6 +15,6 @@ export class TerminalComponent {
 
   onClick(command: string) {
     navigator.clipboard.writeText(command);
-    this.messageService.add({severity: "success", detail: "Copied"});
+    this.messageService.add({severity: "info", detail: "Copied"});
   }
 }
