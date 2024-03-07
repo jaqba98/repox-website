@@ -6,5 +6,5 @@ import {Component, Input} from '@angular/core';
   styleUrl: './terminal.component.scss'
 })
 export class TerminalComponent {
-  @Input() command: string | undefined;
+  @Input() command: string = "";
 }
