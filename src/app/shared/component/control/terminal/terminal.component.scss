@@ -1,3 +1,15 @@
 .terminal {
-  border: 1px solid red;
+  background-color: #4b5563;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow-x: auto;
+
+  &__command {
+    color: #ffffff;
+    white-space: nowrap;
+
+    &::before {
+      content: "> "
+    }
+  }
 }

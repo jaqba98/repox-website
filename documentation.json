@@ -2529,7 +2529,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TerminalComponent>",
-                "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs'],\r\n}"
+                "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs']\r\n}"
             },
             {
                 "name": "preview",
@@ -2588,7 +2588,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TerminalComponent>",
-                    "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs'],\r\n}"
+                    "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs']\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
