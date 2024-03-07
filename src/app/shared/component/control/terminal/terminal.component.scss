@@ -3,6 +3,7 @@
   padding: 1rem;
   border-radius: 10px;
   overflow-x: auto;
+  cursor: pointer;
 
   &__command {
     color: #ffffff;
@@ -11,5 +12,9 @@
     &::before {
       content: "> "
     }
+  }
+
+  &:active {
+    background-color: #424c59;
   }
 }

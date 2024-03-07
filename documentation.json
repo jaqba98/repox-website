@@ -1956,13 +1956,18 @@
         },
         {
             "name": "TerminalComponent",
-            "id": "component-TerminalComponent-1dba5c1530c2b83a7e4c93c448483f0c6c42f720e0d39f7c9c17b04d4dfa2665a7bbd05a915976b23c05c9467e05504c8c7e38d83317092766043ca7701313c6",
+            "id": "component-TerminalComponent-38303d9cc2a8874311f9a09aeb8b3040bcef29c27ca70f6abf8e7999c46473ba342996885c94967cf16b720f40e80488c6f3344d985af83e76e0f0b48bad8582",
             "file": "src/app/shared/component/control/terminal/terminal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
-            "providers": [],
+            "providers": [
+                {
+                    "name": "MessageService",
+                    "type": "injectable"
+                }
+            ],
             "selector": "repox-website-terminal",
             "styleUrls": [],
             "styles": [],
@@ -1977,14 +1982,25 @@
                     "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1994,13 +2010,39 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-terminal',\r\n  templateUrl: './terminal.component.html',\r\n  styleUrl: './terminal.component.scss'\r\n})\r\nexport class TerminalComponent {\r\n  @Input() command: string = \"\";\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: 'repox-website-terminal',\r\n  templateUrl: './terminal.component.html',\r\n  styleUrl: './terminal.component.scss',\r\n  providers: [MessageService]\r\n})\r\nexport class TerminalComponent {\r\n  @Input() command: string = \"\";\r\n\r\n  constructor(private messageService: MessageService) {}\r\n\r\n  onClick() {\r\n    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });\r\n  }\r\n}\r\n",
             "styleUrl": "./terminal.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "extends": [],
-            "templateData": "<div class=\"terminal\">\r\n  <code class=\"terminal__command\">{{ command }}</code>\r\n</div>\r\n"
+            "templateData": "<div class=\"terminal\">\r\n  <p-toast></p-toast>\r\n  <code class=\"terminal__command\" (click)=\"onClick()\">{{ command }}</code>\r\n</div>\r\n"
         },
         {
             "name": "WorkspaceComponent",
@@ -2223,13 +2265,13 @@
         },
         {
             "name": "ControlModule",
-            "id": "module-ControlModule-056ea1a31650a242c299f3a312ea7c8929b1d499c4a3aee1b913f6e7d0ddf1ddb0487a06516d5f23b6837115a3ce3ac7ecf09b98b1672ed0e003a82a5466a2be",
+            "id": "module-ControlModule-fdf6918d240251baa8c5a75ffff01853dc21ca2872c4205609e8a5164a01fca88c90852f779b21bfcc26b35e1fba7ad863c037dca43b664dcc37b308ad34fce9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/control/control.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent\r\n  ],\r\n  imports: [\r\n    PanelModule\r\n  ],\r\n  exports: [\r\n    TerminalComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent\r\n  ],\r\n    imports: [\r\n        PanelModule,\r\n        ToastModule\r\n    ],\r\n  exports: [\r\n    TerminalComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2898,7 +2940,7 @@
                 "linktype": "component",
                 "name": "TerminalComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
