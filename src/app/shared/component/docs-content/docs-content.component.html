@@ -3,7 +3,7 @@
     <ng-container *ngFor="let section of content?.sections">
       <!-- Header h1 -->
       <ng-container *ngIf="section.type === 'h1'">
-        <h1 class="docs-content__header-h1">{{section.value}}</h1>
+        <repox-website-h1 [value]="section.value"></repox-website-h1>
       </ng-container>
       <!-- Header h2 -->
       <ng-container *ngIf="section.type === 'h2'">
