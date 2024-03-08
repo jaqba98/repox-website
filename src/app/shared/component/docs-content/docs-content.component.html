@@ -7,7 +7,7 @@
       </ng-container>
       <!-- Header h2 -->
       <ng-container *ngIf="section.type === 'h2'">
-        <h2 class="docs-content__header-h2">{{section.value}}</h2>
+        <repox-website-h2 [value]="section.value"></repox-website-h2>
       </ng-container>
       <!-- Paragraph p -->
       <ng-container *ngIf="section.type === 'p'">

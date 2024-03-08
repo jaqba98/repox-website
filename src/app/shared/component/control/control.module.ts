@@ -4,11 +4,13 @@ import {TerminalComponent} from "./terminal/terminal.component";
 import {PanelModule} from "primeng/panel";
 import {ToastModule} from "primeng/toast";
 import {ParagraphComponent} from './paragraph/paragraph.component';
+import { H2Component } from './h2/h2.component';
 
 @NgModule({
   declarations: [
     TerminalComponent,
-    ParagraphComponent
+    ParagraphComponent,
+    H2Component
   ],
   imports: [
     PanelModule,
@@ -16,7 +18,8 @@ import {ParagraphComponent} from './paragraph/paragraph.component';
   ],
   exports: [
     TerminalComponent,
-    ParagraphComponent
+    ParagraphComponent,
+    H2Component
   ]
 })
 export class ControlModule {
