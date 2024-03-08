@@ -8,13 +8,13 @@ import {MessageService} from "primeng/api";
   providers: [MessageService]
 })
 export class TerminalComponent {
-  @Input() command: string = "";
+  @Input() command?: string;
 
   constructor(private messageService: MessageService) {
   }
 
-  onClick(command: string) {
-    navigator.clipboard.writeText(command);
+  onClick() {
+    navigator.clipboard.writeText(this.command ?? "");
     this.messageService.add({severity: "info", detail: "Copied"});
   }
 }

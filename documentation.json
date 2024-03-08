@@ -1233,7 +1233,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'h1'\">\r\n        <h1 class=\"docs-content__header-h1\">{{section.value}}</h1>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'h2'\">\r\n        <h2 class=\"docs-content__header-h2\">{{section.value}}</h2>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'p'\">\r\n        <p class=\"docs-content__paragraph-p\">{{section.value}}</p>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <repox-website-terminal [command]=\"section.value\"></repox-website-terminal>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <ul class=\"docs-content__arguments\">\r\n          <li *ngFor=\"let value of section.value\">\r\n            <span class=\"docs-content__arguments-title\">{{value.argument}}=value or {{value.alias}}=value</span>\r\n            <ul class=\"docs-content__arguments\">\r\n              <li>{{value.description}}</li>\r\n              <li>Is required: <b>{{value.require}}</b></li>\r\n              <li>Value type: <b>{{value.value}}</b></li>\r\n            </ul>\r\n          </li>\r\n        </ul>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'h1'\">\r\n        <h1 class=\"docs-content__header-h1\">{{section.value}}</h1>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'h2'\">\r\n        <h2 class=\"docs-content__header-h2\">{{section.value}}</h2>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'p'\">\r\n        <repox-website-paragraph [value]=\"section.value\"></repox-website-paragraph>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <repox-website-terminal [command]=\"section.value\"></repox-website-terminal>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <ul class=\"docs-content__arguments\">\r\n          <li *ngFor=\"let value of section.value\">\r\n            <span class=\"docs-content__arguments-title\">{{value.argument}}=value or {{value.alias}}=value</span>\r\n            <ul class=\"docs-content__arguments\">\r\n              <li>{{value.description}}</li>\r\n              <li>Is required: <b>{{value.require}}</b></li>\r\n              <li>Value type: <b>{{value.value}}</b></li>\r\n            </ul>\r\n          </li>\r\n        </ul>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "ExtensionComponent",
@@ -1708,7 +1708,7 @@
         },
         {
             "name": "ParagraphComponent",
-            "id": "component-ParagraphComponent-5e989cec9c423dfdf85b933723e2a02ac94f4e2802a4772f700409c37f589f78508a8bee65b30d9442e702df13b2f53f2ac34e69a858e43f3aaa2bb8941c5dc3",
+            "id": "component-ParagraphComponent-5fb385f68ab13c94fb966fd9a5fd150c1621da0189f299bdb8aab922bef85cb30f9318ee49ed57cdf011b974dbbc44cd7c5c4ec4bbda512f686a5b7fbd652135",
             "file": "src/app/shared/component/control/paragraph/paragraph.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1723,7 +1723,16 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -1736,13 +1745,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-paragraph',\r\n  templateUrl: './paragraph.component.html',\r\n  styleUrl: './paragraph.component.scss'\r\n})\r\nexport class ParagraphComponent {\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-paragraph',\r\n  templateUrl: './paragraph.component.html',\r\n  styleUrl: './paragraph.component.scss'\r\n})\r\nexport class ParagraphComponent {\r\n  @Input() value?: string;\r\n}\r\n",
             "styleUrl": "./paragraph.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>paragraph works!</p>\r\n"
+            "templateData": "<p>{{value}}</p>\r\n"
         },
         {
             "name": "PluginsComponent",
@@ -2321,13 +2330,13 @@
         },
         {
             "name": "ControlModule",
-            "id": "module-ControlModule-eda223c31948f9fb4747f40ed8edb22108e2ae3ef02588b3660efe18538d5b6d10cf94f334088be4cfec585149398a622698571909c9b3d145981e8bebbc4c4a",
+            "id": "module-ControlModule-38f3fba10a6d4c59b24ec87c5dbfa06e4791615b3d9103ee5ef47668de2a5a4f5593f44d64cd455cfdf38ba7ef76b98a5b24639ea61ae47e7a01ded29c811dcb",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/control/control.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ParagraphComponent} from './paragraph/paragraph.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent,\r\n    ParagraphComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule\r\n  ],\r\n  exports: [\r\n    TerminalComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ParagraphComponent} from './paragraph/paragraph.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent,\r\n    ParagraphComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule\r\n  ],\r\n  exports: [\r\n    TerminalComponent,\r\n    ParagraphComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2351,6 +2360,9 @@
                 {
                     "type": "exports",
                     "elements": [
+                        {
+                            "name": "ParagraphComponent"
+                        },
                         {
                             "name": "TerminalComponent"
                         }
@@ -2616,16 +2628,6 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {}\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2633,14 +2635,14 @@
                 "defaultValue": "{\r\n  args: {\r\n    command: \"repox generate workspace\"\r\n  }\r\n}"
             },
             {
-                "name": "meta",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ParagraphComponent>",
-                "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -2651,6 +2653,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<TerminalComponent>",
                 "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs']\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ParagraphComponent>",
+                "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
             },
             {
                 "name": "preview",
@@ -2680,8 +2692,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ParagraphComponent>",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "rawtype": "StoryObj<TerminalComponent>",
+                "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2691,8 +2703,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<TerminalComponent>",
-                "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
+                "rawtype": "StoryObj<ParagraphComponent>",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2701,28 +2713,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {}\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ParagraphComponent>",
-                    "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
-                }
-            ],
             "src/app/shared/component/control/terminal/terminal.stories.ts": [
                 {
                     "name": "Default",
@@ -2743,6 +2733,28 @@
                     "deprecationMessage": "",
                     "type": "Meta<TerminalComponent>",
                     "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs']\r\n}"
+                }
+            ],
+            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ParagraphComponent>",
+                    "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2774,19 +2786,6 @@
                     "kind": 192
                 }
             ],
-            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ParagraphComponent>",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/shared/component/control/terminal/terminal.stories.ts": [
                 {
                     "name": "Story",
@@ -2794,6 +2793,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TerminalComponent>",
                     "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ParagraphComponent>",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3065,7 +3077,7 @@
                 "linktype": "component",
                 "name": "ParagraphComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
