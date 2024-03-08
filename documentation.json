@@ -1707,6 +1707,44 @@
             "templateData": "<p-menubar [model]=\"menuItems\">\r\n  <ng-template pTemplate=\"start\">\r\n    <h1 class=\"main-nav__logo\">REPOX</h1>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"end\">\r\n    <p-button icon=\"pi pi-download\" [text]=\"true\" severity=\"secondary\"></p-button>\r\n    <p-button icon=\"pi pi-github\" [text]=\"true\" severity=\"secondary\"></p-button>\r\n    <p-button icon=\"pi pi-discord\" [text]=\"true\" severity=\"secondary\"></p-button>\r\n  </ng-template>\r\n</p-menubar>\r\n"
         },
         {
+            "name": "ParagraphComponent",
+            "id": "component-ParagraphComponent-5e989cec9c423dfdf85b933723e2a02ac94f4e2802a4772f700409c37f589f78508a8bee65b30d9442e702df13b2f53f2ac34e69a858e43f3aaa2bb8941c5dc3",
+            "file": "src/app/shared/component/control/paragraph/paragraph.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "repox-website-paragraph",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./paragraph.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-paragraph',\r\n  templateUrl: './paragraph.component.html',\r\n  styleUrl: './paragraph.component.scss'\r\n})\r\nexport class ParagraphComponent {\r\n}\r\n",
+            "styleUrl": "./paragraph.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>paragraph works!</p>\r\n"
+        },
+        {
             "name": "PluginsComponent",
             "id": "component-PluginsComponent-1829e6e621fae0b9d24ba1d6c3d31a4112d76d1cfa554fed2ddd2be3cb11a691da3b1179dc4aad742f5b2947d3fb2977ee6e905807cbb1ec47e6ce7c148ce191",
             "file": "src/app/core/docs/plugins/plugins.component.ts",
@@ -1956,7 +1994,7 @@
         },
         {
             "name": "TerminalComponent",
-            "id": "component-TerminalComponent-38303d9cc2a8874311f9a09aeb8b3040bcef29c27ca70f6abf8e7999c46473ba342996885c94967cf16b720f40e80488c6f3344d985af83e76e0f0b48bad8582",
+            "id": "component-TerminalComponent-6068aed99306b92278402c65ce0c129f2d344417cd146faf968ebcfb12a489b50ad29c6d2970422c72f2b110f66cc33318a76ffc489f1f759686056db15c4737",
             "file": "src/app/shared/component/control/terminal/terminal.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1992,13 +2030,31 @@
             "methodsClass": [
                 {
                     "name": "onClick",
-                    "args": [],
+                    "args": [
+                        {
+                            "name": "command",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 16,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "command",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -2010,7 +2066,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: 'repox-website-terminal',\r\n  templateUrl: './terminal.component.html',\r\n  styleUrl: './terminal.component.scss',\r\n  providers: [MessageService]\r\n})\r\nexport class TerminalComponent {\r\n  @Input() command: string = \"\";\r\n\r\n  constructor(private messageService: MessageService) {}\r\n\r\n  onClick() {\r\n    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: 'repox-website-terminal',\r\n  templateUrl: './terminal.component.html',\r\n  styleUrl: './terminal.component.scss',\r\n  providers: [MessageService]\r\n})\r\nexport class TerminalComponent {\r\n  @Input() command: string = \"\";\r\n\r\n  constructor(private messageService: MessageService) {\r\n  }\r\n\r\n  onClick(command: string) {\r\n    navigator.clipboard.writeText(command);\r\n    this.messageService.add({severity: \"info\", detail: \"Copied\"});\r\n  }\r\n}\r\n",
             "styleUrl": "./terminal.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2042,7 +2098,7 @@
                 ]
             },
             "extends": [],
-            "templateData": "<div class=\"terminal\">\r\n  <p-toast></p-toast>\r\n  <code class=\"terminal__command\" (click)=\"onClick()\">{{ command }}</code>\r\n</div>\r\n"
+            "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\r\n<div class=\"terminal\" (click)=\"onClick(command)\">\r\n  <code class=\"terminal__command\">{{ command }}</code>\r\n</div>\r\n"
         },
         {
             "name": "WorkspaceComponent",
@@ -2265,13 +2321,13 @@
         },
         {
             "name": "ControlModule",
-            "id": "module-ControlModule-fdf6918d240251baa8c5a75ffff01853dc21ca2872c4205609e8a5164a01fca88c90852f779b21bfcc26b35e1fba7ad863c037dca43b664dcc37b308ad34fce9",
+            "id": "module-ControlModule-eda223c31948f9fb4747f40ed8edb22108e2ae3ef02588b3660efe18538d5b6d10cf94f334088be4cfec585149398a622698571909c9b3d145981e8bebbc4c4a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/control/control.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent\r\n  ],\r\n    imports: [\r\n        PanelModule,\r\n        ToastModule\r\n    ],\r\n  exports: [\r\n    TerminalComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ParagraphComponent} from './paragraph/paragraph.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent,\r\n    ParagraphComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule\r\n  ],\r\n  exports: [\r\n    TerminalComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2280,6 +2336,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "ParagraphComponent"
+                        },
                         {
                             "name": "TerminalComponent"
                         }
@@ -2557,11 +2616,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {}\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    command: \"repox generate workspace\"\r\n  }\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ParagraphComponent>",
+                "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
             },
             {
                 "name": "meta",
@@ -2581,7 +2660,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
             }
         ],
         "functions": [],
@@ -2601,6 +2680,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ParagraphComponent>",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TerminalComponent>",
                 "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
                 "deprecated": false,
@@ -2611,6 +2701,28 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {}\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ParagraphComponent>",
+                    "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
+                }
+            ],
             "src/app/shared/component/control/terminal/terminal.stories.ts": [
                 {
                     "name": "Default",
@@ -2642,7 +2754,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\r\n  parameters: {\r\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\r\n    controls: {\r\n      matchers: {\r\n        color: /(background|color)$/i,\r\n        date: /Date$/i,\r\n      },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: \"^on[A-Z].*\" },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n}"
                 }
             ]
         },
@@ -2660,6 +2772,19 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 192
+                }
+            ],
+            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ParagraphComponent>",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
                 }
             ],
             "src/app/shared/component/control/terminal/terminal.stories.ts": [
@@ -2932,6 +3057,35 @@
                 "name": "BreadcrumbComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/control/paragraph/paragraph.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ParagraphComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

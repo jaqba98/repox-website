@@ -11,7 +11,7 @@
       </ng-container>
       <!-- Paragraph p -->
       <ng-container *ngIf="section.type === 'p'">
-        <p class="docs-content__paragraph-p">{{section.value}}</p>
+        <repox-website-paragraph [value]="section.value"></repox-website-paragraph>
       </ng-container>
       <!-- Command code -->
       <ng-container *ngIf="section.type === 'command'">

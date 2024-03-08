@@ -3,17 +3,20 @@ import {NgModule} from "@angular/core";
 import {TerminalComponent} from "./terminal/terminal.component";
 import {PanelModule} from "primeng/panel";
 import {ToastModule} from "primeng/toast";
+import {ParagraphComponent} from './paragraph/paragraph.component';
 
 @NgModule({
   declarations: [
-    TerminalComponent
+    TerminalComponent,
+    ParagraphComponent
   ],
-    imports: [
-        PanelModule,
-        ToastModule
-    ],
+  imports: [
+    PanelModule,
+    ToastModule
+  ],
   exports: [
-    TerminalComponent
+    TerminalComponent,
+    ParagraphComponent
   ]
 })
 export class ControlModule {
