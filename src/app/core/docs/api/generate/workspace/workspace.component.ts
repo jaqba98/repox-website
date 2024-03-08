@@ -56,7 +56,7 @@ export class WorkspaceComponent {
           {
             argument: "--name",
             alias: "-n",
-            description: "Defines the name of the workspace. It specifies the folder name that will be created on the disk.",
+            description: "The name of the workspace.",
             require: true,
             value: "string",
           }

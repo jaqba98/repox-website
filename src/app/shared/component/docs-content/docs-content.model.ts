@@ -20,7 +20,7 @@ export interface DocsContentCommandSectionModel {
 
 export interface DocsContentArraySectionModel {
   type: "arguments";
-  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];
+  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];
 }
 
 export interface DocsContentNewlineSectionModel {

@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "DocsContentArraySectionModel",
-            "id": "interface-DocsContentArraySectionModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentArraySectionModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -36,12 +36,12 @@
         },
         {
             "name": "DocsContentCommandSectionModel",
-            "id": "interface-DocsContentCommandSectionModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentCommandSectionModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -69,12 +69,12 @@
         },
         {
             "name": "DocsContentH1SectionModel",
-            "id": "interface-DocsContentH1SectionModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentH1SectionModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -102,12 +102,12 @@
         },
         {
             "name": "DocsContentH2SectionModel",
-            "id": "interface-DocsContentH2SectionModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentH2SectionModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -135,12 +135,12 @@
         },
         {
             "name": "DocsContentModel",
-            "id": "interface-DocsContentModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "sections",
@@ -159,12 +159,12 @@
         },
         {
             "name": "DocsContentNewlineSectionModel",
-            "id": "interface-DocsContentNewlineSectionModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentNewlineSectionModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -183,12 +183,12 @@
         },
         {
             "name": "DocsContentPSectionModel",
-            "id": "interface-DocsContentPSectionModel-d239db45eb6b5f536dfbbf653a86cfe93a11f972e8b970a8b1854cf75715af76e17a79737923d2728dfa2f97619bc9f9e7864eb8d2df58f592031b29eaeedaab",
+            "id": "interface-DocsContentPSectionModel-05245bd06ec2272c4e3d5ced448b7e551e7c79b166c32ce63e1d486809b32c3aa353bda686b80d735618b264aebba7689bee25d8e822f0ab8c4de1b6fce73b8a",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string, }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentH1SectionModel {\r\n  type: \"h1\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"h2\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"p\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentH1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -417,6 +417,54 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<repox-website-main-nav></repox-website-main-nav>\r\n<router-outlet></router-outlet>\r\n"
+        },
+        {
+            "name": "ArgumentsComponent",
+            "id": "component-ArgumentsComponent-8f1c2faf524f7731596d8c1a7d66144cbf33382b941ebf3aff8de1d801ff03ad1ad0c115173e07d99c9875f09afeacda6b3bc6ed7e0c8a03e3f6f0b3a876a5d4",
+            "file": "src/app/shared/component/control/arguments/arguments.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "repox-website-arguments",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./arguments.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "values",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "literal type[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-arguments',\r\n  templateUrl: './arguments.component.html',\r\n  styleUrl: './arguments.component.scss'\r\n})\r\nexport class ArgumentsComponent {\r\n  @Input() values: { argument: string, alias: string, description: string, require: boolean, value: string }[] = [];\r\n}\r\n",
+            "styleUrl": "./arguments.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-table [value]=\"values\" styleClass=\"p-datatable-gridlines\" [tableStyle]=\"{ 'min-width': '100%' }\">\r\n  <ng-template pTemplate=\"header\">\r\n    <tr>\r\n      <th>Argument</th>\r\n      <th>Alias</th>\r\n      <th>Description</th>\r\n      <th>Require</th>\r\n      <th>value</th>\r\n    </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-value>\r\n    <tr>\r\n      <td>{{ value['argument'] }}</td>\r\n      <td>{{ value['alias'] }}</td>\r\n      <td>{{ value['description'] }}</td>\r\n      <td>{{ value['require'] }}</td>\r\n      <td>{{ value['value'] }}</td>\r\n    </tr>\r\n  </ng-template>\r\n</p-table>\r\n"
         },
         {
             "name": "AsideNavComponent",
@@ -1233,7 +1281,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'h1'\">\r\n        <h1 class=\"docs-content__header-h1\">{{section.value}}</h1>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'h2'\">\r\n        <repox-website-h2 [value]=\"section.value\"></repox-website-h2>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'p'\">\r\n        <repox-website-paragraph [value]=\"section.value\"></repox-website-paragraph>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <repox-website-terminal [command]=\"section.value\"></repox-website-terminal>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <ul class=\"docs-content__arguments\">\r\n          <li *ngFor=\"let value of section.value\">\r\n            <span class=\"docs-content__arguments-title\">{{value.argument}}=value or {{value.alias}}=value</span>\r\n            <ul class=\"docs-content__arguments\">\r\n              <li>{{value.description}}</li>\r\n              <li>Is required: <b>{{value.require}}</b></li>\r\n              <li>Value type: <b>{{value.value}}</b></li>\r\n            </ul>\r\n          </li>\r\n        </ul>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'h1'\">\r\n        <h1 class=\"docs-content__header-h1\">{{section.value}}</h1>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'h2'\">\r\n        <repox-website-h2 [value]=\"section.value\"></repox-website-h2>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'p'\">\r\n        <repox-website-paragraph [value]=\"section.value\"></repox-website-paragraph>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <repox-website-terminal [command]=\"section.value\"></repox-website-terminal>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <repox-website-arguments [values]=\"section.value\"></repox-website-arguments>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "ExtensionComponent",
@@ -2358,13 +2406,13 @@
         },
         {
             "name": "ControlModule",
-            "id": "module-ControlModule-fd9151236546db086567baac6548517d55c8ec4c0f49968b307572140e11b51ebf7ab526259651e91e6b17a9c4542d08e10a61d499a32c7b15fbca768fde39cf",
+            "id": "module-ControlModule-b3b02b57dd68bafd06155d836d7e28fb97b5c740cfcc61682b015bb5816f37e6541ea2ec2f01257b3c4b47f8dd6bd4519147973d5ac799c67d86cb507d3636ce",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/control/control.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ParagraphComponent} from './paragraph/paragraph.component';\r\nimport { H2Component } from './h2/h2.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent,\r\n    ParagraphComponent,\r\n    H2Component\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule\r\n  ],\r\n  exports: [\r\n    TerminalComponent,\r\n    ParagraphComponent,\r\n    H2Component\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {TerminalComponent} from \"./terminal/terminal.component\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ParagraphComponent} from './paragraph/paragraph.component';\r\nimport { H2Component } from './h2/h2.component';\r\nimport { ArgumentsComponent } from './arguments/arguments.component';\r\nimport {TableModule} from \"primeng/table\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    TerminalComponent,\r\n    ParagraphComponent,\r\n    H2Component,\r\n    ArgumentsComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule,\r\n    TableModule\r\n  ],\r\n  exports: [\r\n    TerminalComponent,\r\n    ParagraphComponent,\r\n    H2Component,\r\n    ArgumentsComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2373,6 +2421,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "ArgumentsComponent"
+                        },
                         {
                             "name": "H2Component"
                         },
@@ -2391,6 +2442,9 @@
                 {
                     "type": "exports",
                     "elements": [
+                        {
+                            "name": "ArgumentsComponent"
+                        },
                         {
                             "name": "H2Component"
                         },
@@ -2662,11 +2716,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    values: [\r\n      {\r\n        argument: \"--name\",\r\n        alias: \"-n\",\r\n        description: \"Defines the name of the workspace. It specifies the folder name that will be created on the disk.\",\r\n        require: true,\r\n        value: \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/control/h2/h2.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    value: \"Title\"\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    command: \"repox generate workspace\"\r\n  }\r\n}"
             },
             {
                 "name": "Default",
@@ -2679,14 +2753,14 @@
                 "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
             },
             {
-                "name": "Default",
+                "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
+                "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    command: \"repox generate workspace\"\r\n  }\r\n}"
+                "type": "Meta<ArgumentsComponent>",
+                "defaultValue": "{\r\n  title: \"arguments\",\r\n  component: ArgumentsComponent,\r\n  tags: ['autodocs']\r\n}"
             },
             {
                 "name": "meta",
@@ -2702,21 +2776,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ParagraphComponent>",
-                "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TerminalComponent>",
                 "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs']\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ParagraphComponent>",
+                "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
             },
             {
                 "name": "preview",
@@ -2746,8 +2820,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<H2Component>",
-                "file": "src/app/shared/component/control/h2/h2.stories.ts",
+                "rawtype": "StoryObj<ArgumentsComponent>",
+                "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2757,8 +2831,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ParagraphComponent>",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "rawtype": "StoryObj<H2Component>",
+                "file": "src/app/shared/component/control/h2/h2.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2774,10 +2848,43 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ParagraphComponent>",
+                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             }
         ],
         "enumerations": [],
         "groupedVariables": {
+            "src/app/shared/component/control/arguments/arguments.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    values: [\r\n      {\r\n        argument: \"--name\",\r\n        alias: \"-n\",\r\n        description: \"Defines the name of the workspace. It specifies the folder name that will be created on the disk.\",\r\n        require: true,\r\n        value: \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ArgumentsComponent>",
+                    "defaultValue": "{\r\n  title: \"arguments\",\r\n  component: ArgumentsComponent,\r\n  tags: ['autodocs']\r\n}"
+                }
+            ],
             "src/app/shared/component/control/h2/h2.stories.ts": [
                 {
                     "name": "Default",
@@ -2800,28 +2907,6 @@
                     "defaultValue": "{\r\n  title: \"h2\",\r\n  component: H2Component,\r\n  tags: ['autodocs']\r\n}"
                 }
             ],
-            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ParagraphComponent>",
-                    "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
-                }
-            ],
             "src/app/shared/component/control/terminal/terminal.stories.ts": [
                 {
                     "name": "Default",
@@ -2842,6 +2927,28 @@
                     "deprecationMessage": "",
                     "type": "Meta<TerminalComponent>",
                     "defaultValue": "{\r\n  title: \"Terminal\",\r\n  component: TerminalComponent,\r\n  tags: ['autodocs']\r\n}"
+                }
+            ],
+            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ParagraphComponent>",
+                    "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2873,6 +2980,19 @@
                     "kind": 192
                 }
             ],
+            "src/app/shared/component/control/arguments/arguments.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ArgumentsComponent>",
+                    "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/shared/component/control/h2/h2.stories.ts": [
                 {
                     "name": "Story",
@@ -2886,19 +3006,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ParagraphComponent>",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/shared/component/control/terminal/terminal.stories.ts": [
                 {
                     "name": "Story",
@@ -2906,6 +3013,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TerminalComponent>",
                     "file": "src/app/shared/component/control/terminal/terminal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ParagraphComponent>",
+                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3169,6 +3289,35 @@
                 "name": "BreadcrumbComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/control/arguments/arguments.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ArgumentsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

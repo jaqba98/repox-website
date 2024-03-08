@@ -23,16 +23,7 @@
       </ng-container>
       <!-- Array -->
       <ng-container *ngIf="section.type === 'arguments'">
-        <ul class="docs-content__arguments">
-          <li *ngFor="let value of section.value">
-            <span class="docs-content__arguments-title">{{value.argument}}=value or {{value.alias}}=value</span>
-            <ul class="docs-content__arguments">
-              <li>{{value.description}}</li>
-              <li>Is required: <b>{{value.require}}</b></li>
-              <li>Value type: <b>{{value.value}}</b></li>
-            </ul>
-          </li>
-        </ul>
+        <repox-website-arguments [values]="section.value"></repox-website-arguments>
       </ng-container>
     </ng-container>
   </div>
