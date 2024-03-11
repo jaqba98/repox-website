@@ -19,8 +19,6 @@ export class GenerateWorkspaceComponent {
       {type: "newline"},
       {type: "secondLevelHeader", value: "Syntax"},
       {type: "command", value: "repox generate workspace [options]"},
-      {type: "paragraph", value: "or"},
-      {type: "command", value: "repox g w [options]"},
       {type: "newline"},
       {type: "secondLevelHeader", value: "Program arguments"},
       {type: "paragraph", value: "None"},
@@ -35,8 +33,6 @@ export class GenerateWorkspaceComponent {
       {type: "newline"},
       {type: "secondLevelHeader", value: "Example"},
       {type: "command", value: "repox generate workspace --name=my-workspace"},
-      {type: "paragraph", value: "or"},
-      {type: "command", value: "repox g w -n=my-workspace"},
       {type: "newline"},
       {type: "secondLevelHeader", value: "Note"},
       {
