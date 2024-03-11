@@ -1,8 +1,8 @@
-import {Component} from '@angular/core';
+import {Component} from "@angular/core";
 
 @Component({
-  selector: 'repox-website-generate',
-  templateUrl: './generate.component.html'
+  selector: "rw-generate",
+  template: "<router-outlet></router-outlet>"
 })
 export class GenerateComponent {
 }

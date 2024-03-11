@@ -1,6 +1,6 @@
 import {Component} from "@angular/core";
 
-import {DocsContentModel} from "@shared/component";
+import {DocsContentModel} from "@shared";
 
 @Component({
   selector: "rw-generate-introduction",
