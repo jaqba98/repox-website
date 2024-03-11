@@ -1,10 +1,16 @@
-import {Meta, StoryObj} from "@storybook/angular";
+import {Meta, moduleMetadata, StoryObj} from "@storybook/angular";
 import {ArgumentsComponent} from "./arguments.component";
+import {TableModule} from "primeng/table";
 
 const meta: Meta<ArgumentsComponent> = {
   title: "arguments",
   component: ArgumentsComponent,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  decorators: [
+    moduleMetadata({
+      imports: [TableModule]
+    })
+  ]
 };
 
 export default meta;
