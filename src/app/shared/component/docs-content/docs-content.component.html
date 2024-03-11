@@ -2,15 +2,15 @@
   <div class="docs-content">
     <ng-container *ngFor="let section of content?.sections">
       <!-- Header h1 -->
-      <ng-container *ngIf="section.type === 'h1'">
+      <ng-container *ngIf="section.type === 'firstLevelHeader'">
         <repox-website-h1 [value]="section.value"></repox-website-h1>
       </ng-container>
       <!-- Header h2 -->
-      <ng-container *ngIf="section.type === 'h2'">
+      <ng-container *ngIf="section.type === 'secondLevelHeader'">
         <repox-website-h2 [value]="section.value"></repox-website-h2>
       </ng-container>
       <!-- Paragraph p -->
-      <ng-container *ngIf="section.type === 'p'">
+      <ng-container *ngIf="section.type === 'paragraph'">
         <repox-website-paragraph [value]="section.value"></repox-website-paragraph>
       </ng-container>
       <!-- Command code -->

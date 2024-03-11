@@ -1,15 +1,15 @@
-export interface DocsContentH1SectionModel {
-  type: "h1";
+export interface DocsContentHeaderLevel1SectionModel {
+  type: "firstLevelHeader";
   value: string;
 }
 
 export interface DocsContentH2SectionModel {
-  type: "h2";
+  type: "secondLevelHeader";
   value: string;
 }
 
 export interface DocsContentPSectionModel {
-  type: "p";
+  type: "paragraph";
   value: string;
 }
 
@@ -28,7 +28,7 @@ export interface DocsContentNewlineSectionModel {
 }
 
 export type DocsContentSectionModel =
-  | DocsContentH1SectionModel
+  | DocsContentHeaderLevel1SectionModel
   | DocsContentH2SectionModel
   | DocsContentPSectionModel
   | DocsContentCommandSectionModel
