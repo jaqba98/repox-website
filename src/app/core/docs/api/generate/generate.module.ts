@@ -1,20 +1,20 @@
 import {NgModule} from "@angular/core";
 
 import {GenerateIntroductionComponent} from "./generate-introduction/generate-introduction.component";
-import {WorkspaceComponent} from "./workspace/workspace.component";
 import {SharedModule} from "../../../../shared/shared.module";
+import {GenerateWorkspaceComponent} from "./generate-workspace/generate-workspace.component";
 
 @NgModule({
   declarations: [
     GenerateIntroductionComponent,
-    WorkspaceComponent
+    GenerateWorkspaceComponent
   ],
   imports: [
     SharedModule
   ],
   exports: [
     GenerateIntroductionComponent,
-    WorkspaceComponent
+    GenerateWorkspaceComponent
   ]
 })
 export class GenerateModule {

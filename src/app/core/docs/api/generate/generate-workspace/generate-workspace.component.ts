@@ -4,10 +4,9 @@ import {DocsContentModel} from "../../../../../shared/component/docs-content/doc
 
 @Component({
   selector: 'repox-website-workspace',
-  templateUrl: './workspace.component.html',
-  styleUrl: './workspace.component.scss'
+  templateUrl: './generate-workspace.component.html'
 })
-export class WorkspaceComponent {
+export class GenerateWorkspaceComponent {
   content: DocsContentModel = {
     sections: [
       {
