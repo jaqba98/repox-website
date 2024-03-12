@@ -21,6 +21,7 @@ import {CardModule} from "primeng/card";
 import {TableModule} from "primeng/table";
 import {ControlModule} from "./component/control/control.module";
 import {DumbModule} from "./component/dumb/dumb.module";
+import {ComponentModule} from "./component/component.module";
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import {DumbModule} from "./component/dumb/dumb.module";
     CardModule,
     TableModule,
     ControlModule,
-    DumbModule
+    DumbModule,
+    ComponentModule
   ],
   exports: [
     MainNavComponent,

@@ -1,5 +1,9 @@
 :host {
   ::ng-deep {
+    .p-breadcrumb {
+      margin: 10px;
+    }
+
     .p-breadcrumb-list {
       > .p-element:last-child {
         padding-right: 15px;

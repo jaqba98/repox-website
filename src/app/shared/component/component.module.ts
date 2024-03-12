@@ -1,11 +1,10 @@
 import {NgModule} from "@angular/core";
 
-import {DumbModule} from "./dumb/dumb.module";
+import {SmartModule} from "./smart/smart.module";
 
 @NgModule({
-  imports: [
-    DumbModule
-  ]
+  imports: [SmartModule],
+  exports: [SmartModule]
 })
 export class ComponentModule {
 }
