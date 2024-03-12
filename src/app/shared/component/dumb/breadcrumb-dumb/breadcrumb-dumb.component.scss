@@ -1,10 +1,13 @@
 :host {
   ::ng-deep {
-    .p-breadcrumb {
-      border-radius: 0;
-      border-top: 0;
-      border-left: 0;
-      border-right: 0;
+    .p-breadcrumb-list {
+      > .p-element:last-child {
+        padding-right: 15px;
+      }
+    }
+
+    .p-menuitem-text {
+      cursor: pointer;
     }
   }
 }

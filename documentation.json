@@ -729,14 +729,14 @@
         },
         {
             "name": "BreadcrumbDumbComponent",
-            "id": "component-BreadcrumbDumbComponent-42e699be89f4f8f3076dc0185092cf8e2b8ccebad141e03c6150a82c1e39135707a9409d7d73b2ee52b132254be909183838ea2a92df5eb56c0ce4b453b6caed",
+            "id": "component-BreadcrumbDumbComponent-f2b2ba0763bddadcbcc0cd9f3da159b27703cbc36d480d41e80182c2ee11cd2966e93d143fa5323e430a7c9977a86b105807a5794dbbbf0d56a0f37b38685a74",
             "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-breadcrumb",
+            "selector": "rw-breadcrumb-dump",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -747,18 +747,20 @@
             "inputsClass": [
                 {
                     "name": "home",
+                    "defaultValue": "{}",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 14,
-                    "type": "MenuItem | undefined",
+                    "type": "MenuItem",
                     "decorators": []
                 },
                 {
                     "name": "items",
+                    "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 11,
-                    "type": "MenuItem[] | undefined",
+                    "type": "MenuItem[]",
                     "decorators": []
                 }
             ],
@@ -774,13 +776,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: 'repox-website-breadcrumb',\r\n  templateUrl: './breadcrumb-dumb.component.html',\r\n  styleUrl: './breadcrumb-dumb.component.scss'\r\n})\r\nexport class BreadcrumbDumbComponent {\r\n  @Input()\r\n  items: MenuItem[] | undefined;\r\n\r\n  @Input()\r\n  home: MenuItem | undefined;\r\n\r\n  // constructor(private readonly router: Router) {\r\n    // const routerUrl = this.getRouterUrl();\r\n    // this.items = routerUrl.map(url => ({label: url.currentPart, routerLink: url.currentHref}));\r\n    // this.home = {icon: 'pi pi-home', routerLink: '/'};\r\n  // }\r\n\r\n  // private getRouterUrl(): { currentPart: string, currentHref: string }[] {\r\n  //   const urlParts = this.router.url\r\n  //     .split(\"/\")\r\n  //     .filter((_, index) => index !== 0);\r\n  //   return urlParts.map((currentPart, index) => ({\r\n  //     currentPart: this.getCurrentPath(currentPart),\r\n  //     currentHref: this.getCurrentHref(urlParts, index)\r\n  //   }));\r\n  // }\r\n\r\n  // private getCurrentPath(currentPart: string): string {\r\n  //   return currentPart.charAt(0).toUpperCase() + currentPart.slice(1).toLowerCase();\r\n  // }\r\n\r\n  // private getCurrentHref(urlParts: string[], index: number): string {\r\n  //   return \"/\".concat(urlParts.slice(0, index + 1).join(\"/\"));\r\n  // }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-dump\",\r\n  templateUrl: \"./breadcrumb-dumb.component.html\",\r\n  styleUrl: \"./breadcrumb-dumb.component.scss\"\r\n})\r\nexport class BreadcrumbDumbComponent {\r\n  @Input()\r\n  items: MenuItem[] = [];\r\n\r\n  @Input()\r\n  home: MenuItem = {};\r\n}\r\n",
             "styleUrl": "./breadcrumb-dumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p-breadcrumb class=\"max-w-full\" [model]=\"items\" [home]=\"home\"></p-breadcrumb>\r\n"
+            "templateData": "<p-breadcrumb [model]=\"items\" [home]=\"home\"></p-breadcrumb>\r\n"
         },
         {
             "name": "ChangelogComponent",
@@ -2589,13 +2591,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-9724c1d98c5405f4cdd305584bd79c8ec709e1983588c78f900765d1d3cb00a39afb94bfde63a4904a81f36e9b627b993afdf63051211b8784660d85fa983c15",
+            "id": "module-DumbModule-b10fc717e43624f3fa118ac567546cf4c28f8b9080f54495d5ae890517283f6193cf91779442dffc8420fe4d00f645a5532bfbca9484ab5051cab9476bcdf786",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2615,7 +2617,11 @@
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "BreadcrumbDumbComponent"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2816,7 +2822,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    home: {icon: 'pi pi-home', routerLink: '/'},\r\n    items: [\r\n      {label: \"aaa\"},\r\n      {label: \"bbb\"},\r\n      {label: \"ccc\"},\r\n      {label: \"ddd\"}\r\n    ]\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link 1\", routerLink: \"/\"},\r\n      {label: \"Link 2\", routerLink: \"/\"},\r\n      {label: \"Link 3\", routerLink: \"/\"},\r\n      {label: \"Link 4\", routerLink: \"/\"},\r\n      {label: \"Link 5\", routerLink: \"/\"},\r\n      {label: \"Link 6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -3090,7 +3096,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    home: {icon: 'pi pi-home', routerLink: '/'},\r\n    items: [\r\n      {label: \"aaa\"},\r\n      {label: \"bbb\"},\r\n      {label: \"ccc\"},\r\n      {label: \"ddd\"}\r\n    ]\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link 1\", routerLink: \"/\"},\r\n      {label: \"Link 2\", routerLink: \"/\"},\r\n      {label: \"Link 3\", routerLink: \"/\"},\r\n      {label: \"Link 4\", routerLink: \"/\"},\r\n      {label: \"Link 5\", routerLink: \"/\"},\r\n      {label: \"Link 6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",

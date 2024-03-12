@@ -1,8 +1,8 @@
 import {NgModule} from "@angular/core";
 
-import {BreadcrumbModule} from "primeng/breadcrumb";
-
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
+
+import {BreadcrumbModule} from "primeng/breadcrumb";
 
 @NgModule({
   declarations: [
@@ -10,6 +10,9 @@ import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.compone
   ],
   imports: [
     BreadcrumbModule
+  ],
+  exports: [
+    BreadcrumbDumbComponent
   ]
 })
 export class DumbModule {
