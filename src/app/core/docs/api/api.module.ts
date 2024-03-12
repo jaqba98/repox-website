@@ -6,23 +6,22 @@ import {GenerateModule} from "./generate/generate.module";
 
 import {ApiComponent} from './api.component';
 import {ApiHomeComponent} from './api-home/api-home.component';
-import {RegenerateComponent} from './regenerate/regenerate.component';
+import {RegenerateModule} from "./regenerate/regenerate.module";
 
 @NgModule({
   declarations: [
     ApiComponent,
-    RegenerateComponent,
     ApiHomeComponent,
   ],
   imports: [
     SharedModule,
     RouterOutlet,
     RouterLink,
-    GenerateModule
+    GenerateModule,
+    RegenerateModule
   ],
   exports: [
     ApiComponent,
-    RegenerateComponent,
     ApiHomeComponent
   ]
 })
