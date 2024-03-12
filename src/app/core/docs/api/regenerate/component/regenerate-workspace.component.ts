@@ -9,7 +9,42 @@ import {DocsContentModel} from "@shared";
 export class RegenerateWorkspaceComponent {
   content: DocsContentModel = {
     sections: [
-      {type: "firstLevelHeader", value: "Regenerate Workspace"}
+      {type: "firstLevelHeader", value: "Regenerate Workspace"},
+      {type: "newline"},
+      {
+        type: "paragraph",
+        value: "The regenerate workspace command is used to regenerate the workspace configuration for a " +
+          "monorepo project managed by Repox. This command is essential for updating the project structure or " +
+          "resolving any inconsistencies within the workspace."
+      },
+      {type: "newline"},
+      {type: "secondLevelHeader", value: "Syntax"},
+      {type: "command", value: "repox regenerate workspace [options]"},
+      {type: "newline"},
+      {type: "secondLevelHeader", value: "Program arguments"},
+      {type: "paragraph", value: "None"},
+      {type: "newline"},
+      {type: "secondLevelHeader", value: "Command arguments"},
+      {
+        type: "arguments",
+        value: [
+          {argument: "force", alias: "f", description: "Force mode.", require: true, value: "boolean"}
+        ]
+      },
+      {type: "newline"},
+      {type: "secondLevelHeader", value: "Example"},
+      {type: "command", value: "repox regenerate workspace --force"},
+      {type: "newline"},
+      {type: "secondLevelHeader", value: "Note"},
+      {
+        type: "paragraph",
+        value: "Running this command will regenerate the workspace configuration based on the current state of the monorepo project. " +
+          "Use with caution as it may overwrite existing configurations."
+      },
+      {
+        type: "paragraph",
+        value: "Ensure all changes are committed before executing this command to prevent data loss."
+      }
     ]
   };
 }
