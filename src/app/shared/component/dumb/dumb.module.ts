@@ -1,8 +1,7 @@
 import {NgModule} from "@angular/core";
+import {BreadcrumbModule} from "primeng/breadcrumb";
 
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
-
-import {BreadcrumbModule} from "primeng/breadcrumb";
 
 @NgModule({
   declarations: [
