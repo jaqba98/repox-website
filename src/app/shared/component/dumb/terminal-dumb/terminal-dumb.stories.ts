@@ -5,6 +5,8 @@ import {PanelModule} from "primeng/panel";
 import {ButtonModule} from "primeng/button";
 
 import {TerminalDumbComponent} from "./terminal-dumb.component";
+import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
 
 const meta: Meta<TerminalDumbComponent> = {
   title: "Shared/Component/Dumb/TerminalDumbComponent",
@@ -15,7 +17,11 @@ const meta: Meta<TerminalDumbComponent> = {
       imports: [
         BrowserAnimationsModule,
         PanelModule,
-        ButtonModule
+        ButtonModule,
+        ToastModule
+      ],
+      providers: [
+        MessageService
       ]
     })
   ]

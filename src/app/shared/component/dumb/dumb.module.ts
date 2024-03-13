@@ -6,6 +6,7 @@ import {ButtonModule} from "primeng/button";
 
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
 import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
   imports: [
     BreadcrumbModule,
     PanelModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule
   ],
   exports: [
     BreadcrumbDumbComponent,

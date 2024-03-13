@@ -1,6 +1,7 @@
+<p-toast [breakpoints]="{'920px': {width: '90%', left: '5%'}}"></p-toast>
 <p-panel header="Terminal">
   <p>{{ content }}</p>
   <ng-template pTemplate="icons">
-    <p-button icon="pi pi-copy" severity="secondary" [text]="true"></p-button>
+    <p-button icon="pi pi-copy" severity="secondary" [text]="true" (click)="copy()"></p-button>
   </ng-template>
 </p-panel>
