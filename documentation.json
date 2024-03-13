@@ -4,7 +4,7 @@
         {
             "name": "BreadcrumbItem",
             "id": "interface-BreadcrumbItem-c0c57c5299f58e37a96795005e6cc116443e836cef312df6d12df5faec83994c9e3dad7320b7e23cddbcb212a1bdb59b757c7c3b48e36d03af18034aa1cd8ac0",
-            "file": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+            "file": "src/app/shared/component/smart/component/breadcrumb-smart.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -802,7 +802,7 @@
         {
             "name": "BreadcrumbSmartComponent",
             "id": "component-BreadcrumbSmartComponent-c0c57c5299f58e37a96795005e6cc116443e836cef312df6d12df5faec83994c9e3dad7320b7e23cddbcb212a1bdb59b757c7c3b48e36d03af18034aa1cd8ac0",
-            "file": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+            "file": "src/app/shared/component/smart/component/breadcrumb-smart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2434,7 +2434,7 @@
         },
         {
             "name": "TerminalDumbComponent",
-            "id": "component-TerminalDumbComponent-112353afd51d6c6df2b1a047e30feb42621dc3ed2aae85eb297bf32f33a9e0030de4079f8dd31966016de389ff72b42050a3ba9234a388b63100e263fb2d09ba",
+            "id": "component-TerminalDumbComponent-f18a51d1f773f02c0221c19092e5f44262d366faef9f45e0249c3a06dfc4cc889e1ffe684dfb17aeda5fbe771483232f689ec16140075d3e27213a0c493dd095",
             "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2455,12 +2455,87 @@
                     "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
-                },
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
                 {
-                    "name": "header",
+                    "name": "copy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n  @Input()\r\n  content: string = \"\";\r\n\r\n  constructor(private messageService: MessageService) {\r\n  }\r\n\r\n  copy() {\r\n    navigator.clipboard.writeText(this.content);\r\n    this.messageService.add({severity: \"info\", detail: \"Copied\"});\r\n  }\r\n}\r\n",
+            "styleUrl": "./terminal-dumb.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\r\n<p-panel header=\"Terminal\">\r\n  <p>{{ content }}</p>\r\n  <ng-template pTemplate=\"icons\">\r\n    <p-button icon=\"pi pi-copy\" severity=\"secondary\" [text]=\"true\" (click)=\"copy()\"></p-button>\r\n  </ng-template>\r\n</p-panel>\r\n"
+        },
+        {
+            "name": "TerminalSmartComponent",
+            "id": "component-TerminalSmartComponent-fb4b1bc48bdaa642d8d5c47ac274e5a5e88d6629e62d0626318e97735a92c72020bd3295bed669b85379b17b8e635973264aa257c7b91478e79de1d8ab056a59",
+            "file": "src/app/shared/component/smart/component/terminal-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-terminal-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-terminal-dumb [content]='content'></rw-terminal-dumb>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "content",
                     "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -2481,13 +2556,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n  @Input()\r\n  header: string = \"\";\r\n\r\n  @Input()\r\n  content: string = \"\";\r\n}\r\n",
-            "styleUrl": "./terminal-dumb.component.scss",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n\r\n@Component({\r\n  selector: \"rw-terminal-smart\",\r\n  template: \"<rw-terminal-dumb [content]='content'></rw-terminal-dumb>\"\r\n})\r\nexport class TerminalSmartComponent {\r\n  @Input()\r\n  content: string = \"\";\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<p-panel [header]=\"header\">\r\n  <p>{{ content }}</p>\r\n</p-panel>\r\n"
+            "extends": []
         }
     ],
     "modules": [
@@ -2926,13 +2999,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-0bb49763c65e2b7dece1a2c94bb76c9524ea27d72124b9c0914e176724c23f67d5abd44945d488c07992e468f1a622cd7559467e14160beb78a556d562ebdc97",
+            "id": "module-DumbModule-49197194bbf919b86b1feb2a3195d30e07f1e68856f0d339f8eb0c5d92145d22c99067052c695ae7c6f8c8681959205b4de1ff649cf35e1b599122beaccd36c4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule,\r\n    PanelModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {ToastModule} from \"primeng/toast\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3157,13 +3230,13 @@
         },
         {
             "name": "SmartModule",
-            "id": "module-SmartModule-7da94a2e7f1c82b17cf3f2a1b30cea47872a0ce815163cf597d73583cea6fd471fd57afa88948fb937044d2c832582021b9b10809ae3eeda234f8e595eb42f82",
+            "id": "module-SmartModule-39059deb336e91c59120524479b0eff2169f287c45fe8ac6caf38ff08c5220ad52424c4681728a78ebeacfc5c05ef6841cdebc40780ab7970afc67797d49fce9",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/smart/smart.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbSmartComponent} from \"./breadcrumb-smart/breadcrumb-smart.component\";\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\n\r\n@NgModule({\r\n  declarations: [BreadcrumbSmartComponent],\r\n  imports: [DumbModule],\r\n  exports: [BreadcrumbSmartComponent]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3174,6 +3247,9 @@
                     "elements": [
                         {
                             "name": "BreadcrumbSmartComponent"
+                        },
+                        {
+                            "name": "TerminalSmartComponent"
                         }
                     ]
                 },
@@ -3190,6 +3266,9 @@
                     "elements": [
                         {
                             "name": "BreadcrumbSmartComponent"
+                        },
+                        {
+                            "name": "TerminalSmartComponent"
                         }
                     ]
                 },
@@ -3274,7 +3353,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    header: \"Header\",\r\n    content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt \" +\r\n      \"ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \" +\r\n      \"nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \" +\r\n      \"esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in \" +\r\n      \"culpa qui officia deserunt mollit anim id est laborum.\"\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    content: \"repox program --arg1 -a command --arg2 -b\"\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -3344,7 +3423,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TerminalDumbComponent>",
-                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule,\r\n        ButtonModule,\r\n        ToastModule\r\n      ],\r\n      providers: [\r\n        MessageService\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "preview",
@@ -3591,7 +3670,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    header: \"Header\",\r\n    content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt \" +\r\n      \"ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \" +\r\n      \"nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \" +\r\n      \"esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in \" +\r\n      \"culpa qui officia deserunt mollit anim id est laborum.\"\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    content: \"repox program --arg1 -a command --arg2 -b\"\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -3601,7 +3680,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TerminalDumbComponent>",
-                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule,\r\n        ButtonModule,\r\n        ToastModule\r\n      ],\r\n      providers: [\r\n        MessageService\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -4253,7 +4332,7 @@
                 "linktype": "component",
                 "name": "TerminalDumbComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -4286,7 +4365,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+                "filePath": "src/app/shared/component/smart/component/breadcrumb-smart.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BreadcrumbSmartComponent",
@@ -4295,12 +4374,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+                "filePath": "src/app/shared/component/smart/component/breadcrumb-smart.component.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "BreadcrumbItem",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/component/terminal-smart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TerminalSmartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             }
         ]

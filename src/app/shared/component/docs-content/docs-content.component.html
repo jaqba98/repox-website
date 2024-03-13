@@ -15,7 +15,7 @@
       </ng-container>
       <!-- Command code -->
       <ng-container *ngIf="section.type === 'command'">
-        <repox-website-terminal [command]="section.value"></repox-website-terminal>
+        <rw-terminal-smart [content]="section.value"></rw-terminal-smart>
       </ng-container>
       <!-- Newline -->
       <ng-container *ngIf="section.type === 'newline'">

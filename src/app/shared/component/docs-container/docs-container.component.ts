@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {DocsContentModel} from "@shared";
 
-import {DocsContentModel} from "../docs-content/docs-content.model";
 
 @Component({
   selector: 'repox-website-docs-container',
