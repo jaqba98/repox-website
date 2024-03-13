@@ -1,12 +1,12 @@
 :host {
   ::ng-deep {
     .p-breadcrumb {
-      margin: 10px;
-    }
+      margin: 1rem;
+      padding: 0;
 
-    .p-breadcrumb-list {
-      > .p-element:last-child {
-        padding-right: 15px;
+      &-list {
+        padding: 1rem;
+        overflow-x: auto;
       }
     }
 

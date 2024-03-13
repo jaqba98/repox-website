@@ -2,6 +2,21 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "BreadcrumbItem",
+            "id": "interface-BreadcrumbItem-c0c57c5299f58e37a96795005e6cc116443e836cef312df6d12df5faec83994c9e3dad7320b7e23cddbcb212a1bdb59b757c7c3b48e36d03af18034aa1cd8ac0",
+            "file": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {Router} from \"@angular/router\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\ninterface BreadcrumbItem extends Pick<MenuItem, \"label\" | \"routerLink\"> {\r\n}\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-smart\",\r\n  template: \"<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>\"\r\n})\r\nexport class BreadcrumbSmartComponent {\r\n  items: MenuItem[];\r\n\r\n  home: MenuItem;\r\n\r\n  constructor(private readonly router: Router) {\r\n    this.items = this.getRouterUrl();\r\n    this.home = {icon: \"pi pi-home\", routerLink: \"/\"};\r\n  }\r\n\r\n  private getRouterUrl(): BreadcrumbItem[] {\r\n    const parts = this.getRouterUrlParts();\r\n    return parts.map((part, index) => ({\r\n      label: this.getRouterLabel(part),\r\n      routerLink: this.getRouterLink(parts, index)\r\n    }));\r\n  }\r\n\r\n  private getRouterUrlParts(): string[] {\r\n    return this.router.url\r\n      .split(\"/\")\r\n      .filter((_, index) => index > 0);\r\n  }\r\n\r\n  private getRouterLabel(label: string): string {\r\n    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();\r\n  }\r\n\r\n  private getRouterLink(parts: string[], index: number): string {\r\n    return \"/\".concat(parts.slice(0, index + 1).join(\"/\"));\r\n  }\r\n}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "Pick"
+            ]
+        },
+        {
             "name": "DocsContentArraySectionModel",
             "id": "interface-DocsContentArraySectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
@@ -249,7 +264,7 @@
     "components": [
         {
             "name": "ApiComponent",
-            "id": "component-ApiComponent-befd8895ecff048537b3f73a226cde3e6eddf60b04c066255aca85c4beb48d230060be464a9dd269d15d4910087f28c7f0311ef3fd8f86ca2d4228f9a8306bec",
+            "id": "component-ApiComponent-cb79643a41d2bd96d41648df66ffdc8e0c8d2ce4487916de022b2667d25e2da9d285628f16ecdcbbf8d158d2f348d61db0c0c5165bb38d58d9f1ba4c440d6297",
             "file": "src/app/core/docs/api/api.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -288,7 +303,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, OnInit} from '@angular/core';\r\n\r\nimport {AsideNavService} from \"../../../shared/component/aside-nav/aside-nav.service\";\r\n\r\n@Component({\r\n  selector: 'repox-website-api',\r\n  templateUrl: './api.component.html',\r\n  styleUrl: './api.component.scss'\r\n})\r\nexport class ApiComponent implements OnInit {\r\n  constructor(private readonly asideNav: AsideNavService) {\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.asideNav.asideNavOptions$.next([\r\n      {\r\n        key: \"0-0\",\r\n        label: \"Generate\",\r\n        data: \"/docs/api/generate\",\r\n        children: [\r\n          {key: \"0-0-1\", label: \"Workspace\", data: \"/docs/api/generate/workspace\"},\r\n        ]\r\n      },\r\n      {key: \"0-1\", label: \"Regenerate\", data: \"/docs/api/regenerate\"}\r\n    ]);\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, OnInit} from '@angular/core';\r\n\r\nimport {AsideNavService} from \"../../../shared/component/aside-nav/aside-nav.service\";\r\n\r\n@Component({\r\n  selector: 'repox-website-api',\r\n  templateUrl: './api.component.html',\r\n  styleUrl: './api.component.scss'\r\n})\r\nexport class ApiComponent implements OnInit {\r\n  constructor(private readonly asideNav: AsideNavService) {\r\n  }\r\n\r\n  ngOnInit() {\r\n    this.asideNav.asideNavOptions$.next([\r\n      {\r\n        key: \"0-0\",\r\n        label: \"Generate\",\r\n        data: \"/docs/api/generate\",\r\n        children: [\r\n          {key: \"0-0-1\", label: \"Workspace\", data: \"/docs/api/generate/workspace\"},\r\n        ]\r\n      },\r\n      {\r\n        key: \"0-1\",\r\n        label: \"Regenerate\",\r\n        data: \"/docs/api/regenerate\",\r\n        children: [\r\n          {key: \"0-1-1\", label: \"Workspace\", data: \"/docs/api/regenerate/workspace\"},\r\n        ]\r\n      }\r\n    ]);\r\n  }\r\n}\r\n",
             "styleUrl": "./api.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -785,6 +800,190 @@
             "templateData": "<p-breadcrumb [model]=\"items\" [home]=\"home\"></p-breadcrumb>\r\n"
         },
         {
+            "name": "BreadcrumbSmartComponent",
+            "id": "component-BreadcrumbSmartComponent-c0c57c5299f58e37a96795005e6cc116443e836cef312df6d12df5faec83994c9e3dad7320b7e23cddbcb212a1bdb59b757c7c3b48e36d03af18034aa1cd8ac0",
+            "file": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-breadcrumb-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "home",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MenuItem",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "items",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MenuItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "getRouterLabel",
+                    "args": [
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "label",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getRouterLink",
+                    "args": [
+                        {
+                            "name": "parts",
+                            "type": "string[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "parts",
+                            "type": "string[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getRouterUrl",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "BreadcrumbItem[]",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "getRouterUrlParts",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "string[]",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {Router} from \"@angular/router\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\ninterface BreadcrumbItem extends Pick<MenuItem, \"label\" | \"routerLink\"> {\r\n}\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-smart\",\r\n  template: \"<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>\"\r\n})\r\nexport class BreadcrumbSmartComponent {\r\n  items: MenuItem[];\r\n\r\n  home: MenuItem;\r\n\r\n  constructor(private readonly router: Router) {\r\n    this.items = this.getRouterUrl();\r\n    this.home = {icon: \"pi pi-home\", routerLink: \"/\"};\r\n  }\r\n\r\n  private getRouterUrl(): BreadcrumbItem[] {\r\n    const parts = this.getRouterUrlParts();\r\n    return parts.map((part, index) => ({\r\n      label: this.getRouterLabel(part),\r\n      routerLink: this.getRouterLink(parts, index)\r\n    }));\r\n  }\r\n\r\n  private getRouterUrlParts(): string[] {\r\n    return this.router.url\r\n      .split(\"/\")\r\n      .filter((_, index) => index > 0);\r\n  }\r\n\r\n  private getRouterLabel(label: string): string {\r\n    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();\r\n  }\r\n\r\n  private getRouterLink(parts: string[], index: number): string {\r\n    return \"/\".concat(parts.slice(0, index + 1).join(\"/\"));\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": []
+        },
+        {
             "name": "ChangelogComponent",
             "id": "component-ChangelogComponent-60ef829f80f43aec3bf11ef0eb7b4407f501fcd8b3c44a9279d153cffb2f4b18433d57ba0854100fe0fb8155521d361b265c66fa0f00e4d80fc206853280fe23",
             "file": "src/app/core/docs/changelog/changelog.component.ts",
@@ -1117,7 +1316,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<repox-website-breadcrumb></repox-website-breadcrumb>\r\n<repox-website-docs-content [content]=\"content\"></repox-website-docs-content>\r\n"
+            "templateData": "<rw-breadcrumb-smart></rw-breadcrumb-smart>\r\n<repox-website-docs-content [content]=\"content\"></repox-website-docs-content>\r\n"
         },
         {
             "name": "DocsContentComponent",
@@ -1964,19 +2163,53 @@
         },
         {
             "name": "RegenerateComponent",
-            "id": "component-RegenerateComponent-c2dfc7a3db58219d4f27a89a28b8bf67a03f57a65adbd21670f2754524cd39fb25022defe7321f8e1d99771423c0366c1b2b66a341830ed3763c06438d314dbe",
-            "file": "src/app/core/docs/api/regenerate/regenerate.component.ts",
+            "id": "component-RegenerateComponent-4423dfdeacea0632aabd3f29040af23ca235e7244edb0816520d5293ac7e2265275691097a0223bb6fbeb718d0be3d9879d4c3bb6070124afd432ec52e6f8da6",
+            "file": "src/app/core/docs/api/regenerate/component/regenerate.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-regenerate",
+            "selector": "rw-regenerate",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./regenerate.component.html"
-            ],
+            "template": "<router-outlet></router-outlet>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate\",\r\n  template: \"<router-outlet></router-outlet>\"\r\n})\r\nexport class RegenerateComponent {\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "RegenerateIntroductionComponent",
+            "id": "component-RegenerateIntroductionComponent-96c6710f2c4b55c40b0174295a3a5b1a7c180475ba097d3027ac821ca40886a1db9e52339e642707e63d1705266d7277c0f0b994ebedd5fc5e1f6fe90fa68ada",
+            "file": "src/app/core/docs/api/regenerate/component/regenerate-introduction.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-regenerate-introduction",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
@@ -1984,13 +2217,13 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\r\n    // title: \"Regenerate\",\r\n    sections: [\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // }\r\n    ]\r\n  }",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate\"}\r\n    ]\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentModel",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 10
                 }
             ],
             "methodsClass": [],
@@ -2003,13 +2236,57 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from '@angular/core';\r\n\r\nimport {DocsContentModel} from \"../../../../shared/component/docs-content/docs-content.model\";\r\n\r\n@Component({\r\n  selector: 'repox-website-regenerate',\r\n  templateUrl: './regenerate.component.html',\r\n  styleUrl: './regenerate.component.scss'\r\n})\r\nexport class RegenerateComponent {\r\n  content: DocsContentModel = {\r\n    // title: \"Regenerate\",\r\n    sections: [\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // },\r\n      // {\r\n      //   title: \"Title\",\r\n      //   message: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis condimentum mauris, a dictum ipsum. Pellentesque sit amet luctus dolor. Etiam dapibus nisl sed hendrerit feugiat. Suspendisse lobortis, eros ac ultricies interdum, nulla sapien malesuada urna, at posuere leo felis ut justo. Nullam a neque felis. Nam finibus magna vitae vulputate posuere. Nulla neque purus, aliquet id lacus vitae, viverra viverra nunc. Suspendisse quis faucibus turpis, eget viverra justo. Sed eu posuere purus. Suspendisse cursus, risus in porta placerat, odio nisi hendrerit elit, ut euismod lorem risus et tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer fermentum rhoncus sapien vel tempor.\"\r\n      // }\r\n    ]\r\n  };\r\n}\r\n",
-            "styleUrl": "./regenerate.component.scss",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate-introduction\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class RegenerateIntroductionComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate\"}\r\n    ]\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<repox-website-docs-container [content]=\"content\"></repox-website-docs-container>\r\n"
+            "extends": []
+        },
+        {
+            "name": "RegenerateWorkspaceComponent",
+            "id": "component-RegenerateWorkspaceComponent-d8ca1d0e369cb98af8b882bcc01190d7bfa7bb20de7e1f1d675b08f3554860bfbd755f7b2cd99adc6db813cefc7ae5c2d3eba2f22f69c8771bd4102f703f27a0",
+            "file": "src/app/core/docs/api/regenerate/component/regenerate-workspace.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-regenerate-workspace",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate Workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The regenerate workspace command is used to regenerate the workspace configuration for a \" +\r\n          \"monorepo project managed by Repox. This command is essential for updating the project structure or \" +\r\n          \"resolving any inconsistencies within the workspace.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\"},\r\n      {type: \"command\", value: \"repox regenerate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"force\", alias: \"f\", description: \"Force mode.\", require: true, value: \"boolean\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\"},\r\n      {type: \"command\", value: \"repox regenerate workspace --force\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Running this command will regenerate the workspace configuration based on the current state of the monorepo project. \" +\r\n          \"Use with caution as it may overwrite existing configurations.\"\r\n      },\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure all changes are committed before executing this command to prevent data loss.\"\r\n      }\r\n    ]\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DocsContentModel",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class RegenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate Workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The regenerate workspace command is used to regenerate the workspace configuration for a \" +\r\n          \"monorepo project managed by Repox. This command is essential for updating the project structure or \" +\r\n          \"resolving any inconsistencies within the workspace.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\"},\r\n      {type: \"command\", value: \"repox regenerate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"force\", alias: \"f\", description: \"Force mode.\", require: true, value: \"boolean\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\"},\r\n      {type: \"command\", value: \"repox regenerate workspace --force\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Running this command will regenerate the workspace configuration based on the current state of the monorepo project. \" +\r\n          \"Use with caution as it may overwrite existing configurations.\"\r\n      },\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure all changes are committed before executing this command to prevent data loss.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "SponsorsComponent",
@@ -2159,13 +2436,13 @@
     "modules": [
         {
             "name": "ApiModule",
-            "id": "module-ApiModule-442e0fd717132e659a7c0597f03ba6cf098d48a7e265838053a4ee26ee64f44dfd393eecd23efbf88c07d74f629b0bc49dcc9455363af1ed6916bc298d793483",
+            "id": "module-ApiModule-4f92c2e78feeb480930b87e0dfc72d849779b405e23ba3f9712dececc916d150dfd144d47b0ea9e2280399b86567e60acf400c21621da670c0d3b5b60c88575c",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/core/docs/api/api.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterLink, RouterOutlet} from \"@angular/router\";\r\n\r\nimport {SharedModule} from \"../../../shared/shared.module\";\r\nimport {GenerateModule} from \"./generate/generate.module\";\r\n\r\nimport {ApiComponent} from './api.component';\r\nimport {ApiHomeComponent} from './api-home/api-home.component';\r\nimport {RegenerateComponent} from './regenerate/regenerate.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ApiComponent,\r\n    RegenerateComponent,\r\n    ApiHomeComponent,\r\n  ],\r\n  imports: [\r\n    SharedModule,\r\n    RouterOutlet,\r\n    RouterLink,\r\n    GenerateModule\r\n  ],\r\n  exports: [\r\n    ApiComponent,\r\n    RegenerateComponent,\r\n    ApiHomeComponent\r\n  ]\r\n})\r\nexport class ApiModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterLink, RouterOutlet} from \"@angular/router\";\r\n\r\nimport {SharedModule} from \"../../../shared/shared.module\";\r\nimport {GenerateModule} from \"./generate/generate.module\";\r\n\r\nimport {ApiComponent} from './api.component';\r\nimport {ApiHomeComponent} from './api-home/api-home.component';\r\nimport {RegenerateModule} from \"./regenerate/regenerate.module\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ApiComponent,\r\n    ApiHomeComponent,\r\n  ],\r\n  imports: [\r\n    SharedModule,\r\n    RouterOutlet,\r\n    RouterLink,\r\n    GenerateModule,\r\n    RegenerateModule\r\n  ],\r\n  exports: [\r\n    ApiComponent,\r\n    ApiHomeComponent\r\n  ]\r\n})\r\nexport class ApiModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2179,9 +2456,6 @@
                         },
                         {
                             "name": "ApiHomeComponent"
-                        },
-                        {
-                            "name": "RegenerateComponent"
                         }
                     ]
                 },
@@ -2190,6 +2464,9 @@
                     "elements": [
                         {
                             "name": "GenerateModule"
+                        },
+                        {
+                            "name": "RegenerateModule"
                         },
                         {
                             "name": "RouterLink"
@@ -2210,9 +2487,6 @@
                         },
                         {
                             "name": "ApiHomeComponent"
-                        },
-                        {
-                            "name": "RegenerateComponent"
                         }
                     ]
                 },
@@ -2318,13 +2592,13 @@
         },
         {
             "name": "ComponentModule",
-            "id": "module-ComponentModule-c5d30de1db9a85c983a54400a0734109e3e2cfa18db4ea4667916abd8b7fc731db00c0e1c6a77bd9d826d0c898891458e2e29e70566432cf20880496d6655fb7",
+            "id": "module-ComponentModule-291d28c80143ba301bf485eaa4885b5198aa60a44327de8a279785935d1bcaccceb22795f9b87a0d73195071a89d1facbcee94fbe541df20f4de974f62e60cb4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/component.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"./dumb/dumb.module\";\r\n\r\n@NgModule({\r\n  imports: [\r\n    DumbModule\r\n  ]\r\n})\r\nexport class ComponentModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {SmartModule} from \"./smart/smart.module\";\r\n\r\n@NgModule({\r\n  imports: [SmartModule],\r\n  exports: [SmartModule]\r\n})\r\nexport class ComponentModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2338,13 +2612,17 @@
                     "type": "imports",
                     "elements": [
                         {
-                            "name": "DumbModule"
+                            "name": "SmartModule"
                         }
                     ]
                 },
                 {
                     "type": "exports",
-                    "elements": []
+                    "elements": [
+                        {
+                            "name": "SmartModule"
+                        }
+                    ]
                 },
                 {
                     "type": "bootstrap",
@@ -2591,13 +2869,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-b10fc717e43624f3fa118ac567546cf4c28f8b9080f54495d5ae890517283f6193cf91779442dffc8420fe4d00f645a5532bfbca9484ab5051cab9476bcdf786",
+            "id": "module-DumbModule-55ab0756379076927597e2a0440f87f505e87b794abbfb2433f5173065d81cec66aaf366649bb41f94a6ddeba33708c1789632c8464cc43c4b534aeea08833c8",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2687,14 +2965,67 @@
             ]
         },
         {
+            "name": "RegenerateModule",
+            "id": "module-RegenerateModule-94a4e30b8cc619f8e0fdc8f9d64b94aec9f69a1e878743b9e164679f3004bb345d7a16e8efc1949d55a315cf7db15f90eb649589803dc91eba0d8194e445bd98",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/core/docs/api/regenerate/regenerate.module.ts",
+            "methods": [],
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterOutlet} from \"@angular/router\";\r\n\r\nimport {SharedModule} from \"@shared\";\r\n\r\nimport {RegenerateComponent} from \"./component/regenerate.component\";\r\nimport {RegenerateIntroductionComponent} from \"./component/regenerate-introduction.component\";\r\nimport {RegenerateWorkspaceComponent} from \"./component/regenerate-workspace.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    RegenerateComponent,\r\n    RegenerateIntroductionComponent,\r\n    RegenerateWorkspaceComponent\r\n  ],\r\n  imports: [\r\n    RouterOutlet,\r\n    SharedModule\r\n  ]\r\n})\r\nexport class RegenerateModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "RegenerateComponent"
+                        },
+                        {
+                            "name": "RegenerateIntroductionComponent"
+                        },
+                        {
+                            "name": "RegenerateWorkspaceComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "RouterOutlet"
+                        },
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "SharedModule",
-            "id": "module-SharedModule-a88c4802bdcc36c1833a95ff9ba900418e5e7ccdf02811dec3ba280d8dc8909ad50216669deaa6e75491a851c3387933ad02b4ecb092997d3e93f1bd79128526",
+            "id": "module-SharedModule-096cbae77df8775a1dd0a2046b24f4e92dd83465ffa79de148a9a0591d5dc8e51026719a160fc21b2d8b58e677bdb013ef71d697b807604b27d7cd29decba96b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterLink} from \"@angular/router\";\r\nimport {CommonModule, NgOptimizedImage} from \"@angular/common\";\r\nimport {BrowserModule} from \"@angular/platform-browser\";\r\n\r\nimport {FontAwesomeModule} from \"@fortawesome/angular-fontawesome\";\r\n\r\nimport {MenubarModule} from 'primeng/menubar';\r\nimport {InputTextModule} from \"primeng/inputtext\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {TreeModule} from 'primeng/tree';\r\nimport {PanelModule} from 'primeng/panel';\r\nimport {BreadcrumbModule} from 'primeng/breadcrumb';\r\n\r\nimport {MainNavComponent} from \"./component/main-nav/main-nav.component\";\r\nimport {AsideNavComponent} from './component/aside-nav/aside-nav.component';\r\nimport {DocsContentComponent} from './component/docs-content/docs-content.component';\r\nimport {DocsContainerComponent} from './component/docs-container/docs-container.component';\r\nimport {FieldsetModule} from \"primeng/fieldset\";\r\nimport {CardModule} from \"primeng/card\";\r\nimport {TableModule} from \"primeng/table\";\r\nimport {ControlModule} from \"./component/control/control.module\";\r\nimport {DumbModule} from \"./component/dumb/dumb.module\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    RouterLink,\r\n    NgOptimizedImage,\r\n    FontAwesomeModule,\r\n    MenubarModule,\r\n    InputTextModule,\r\n    ButtonModule,\r\n    TreeModule,\r\n    PanelModule,\r\n    BreadcrumbModule,\r\n    FieldsetModule,\r\n    CardModule,\r\n    TableModule,\r\n    ControlModule,\r\n    DumbModule\r\n  ],\r\n  exports: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ]\r\n})\r\nexport class SharedModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterLink} from \"@angular/router\";\r\nimport {CommonModule, NgOptimizedImage} from \"@angular/common\";\r\nimport {BrowserModule} from \"@angular/platform-browser\";\r\n\r\nimport {FontAwesomeModule} from \"@fortawesome/angular-fontawesome\";\r\n\r\nimport {MenubarModule} from 'primeng/menubar';\r\nimport {InputTextModule} from \"primeng/inputtext\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {TreeModule} from 'primeng/tree';\r\nimport {PanelModule} from 'primeng/panel';\r\nimport {BreadcrumbModule} from 'primeng/breadcrumb';\r\n\r\nimport {MainNavComponent} from \"./component/main-nav/main-nav.component\";\r\nimport {AsideNavComponent} from './component/aside-nav/aside-nav.component';\r\nimport {DocsContentComponent} from './component/docs-content/docs-content.component';\r\nimport {DocsContainerComponent} from './component/docs-container/docs-container.component';\r\nimport {FieldsetModule} from \"primeng/fieldset\";\r\nimport {CardModule} from \"primeng/card\";\r\nimport {TableModule} from \"primeng/table\";\r\nimport {ControlModule} from \"./component/control/control.module\";\r\nimport {DumbModule} from \"./component/dumb/dumb.module\";\r\nimport {ComponentModule} from \"./component/component.module\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    RouterLink,\r\n    NgOptimizedImage,\r\n    FontAwesomeModule,\r\n    MenubarModule,\r\n    InputTextModule,\r\n    ButtonModule,\r\n    TreeModule,\r\n    PanelModule,\r\n    BreadcrumbModule,\r\n    FieldsetModule,\r\n    CardModule,\r\n    TableModule,\r\n    ControlModule,\r\n    DumbModule,\r\n    ComponentModule\r\n  ],\r\n  exports: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ]\r\n})\r\nexport class SharedModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2748,6 +3079,54 @@
                         },
                         {
                             "name": "MainNavComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SmartModule",
+            "id": "module-SmartModule-7da94a2e7f1c82b17cf3f2a1b30cea47872a0ce815163cf597d73583cea6fd471fd57afa88948fb937044d2c832582021b9b10809ae3eeda234f8e595eb42f82",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/shared/component/smart/smart.module.ts",
+            "methods": [],
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbSmartComponent} from \"./breadcrumb-smart/breadcrumb-smart.component\";\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\n\r\n@NgModule({\r\n  declarations: [BreadcrumbSmartComponent],\r\n  imports: [DumbModule],\r\n  exports: [BreadcrumbSmartComponent]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "BreadcrumbSmartComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "DumbModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "BreadcrumbSmartComponent"
                         }
                     ]
                 },
@@ -2822,7 +3201,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link 1\", routerLink: \"/\"},\r\n      {label: \"Link 2\", routerLink: \"/\"},\r\n      {label: \"Link 3\", routerLink: \"/\"},\r\n      {label: \"Link 4\", routerLink: \"/\"},\r\n      {label: \"Link 5\", routerLink: \"/\"},\r\n      {label: \"Link 6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link_1\", routerLink: \"/\"},\r\n      {label: \"Link_2\", routerLink: \"/\"},\r\n      {label: \"Link_3\", routerLink: \"/\"},\r\n      {label: \"Link_4\", routerLink: \"/\"},\r\n      {label: \"Link_5\", routerLink: \"/\"},\r\n      {label: \"Link_6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -3096,7 +3475,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link 1\", routerLink: \"/\"},\r\n      {label: \"Link 2\", routerLink: \"/\"},\r\n      {label: \"Link 3\", routerLink: \"/\"},\r\n      {label: \"Link 4\", routerLink: \"/\"},\r\n      {label: \"Link 5\", routerLink: \"/\"},\r\n      {label: \"Link 6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link_1\", routerLink: \"/\"},\r\n      {label: \"Link_2\", routerLink: \"/\"},\r\n      {label: \"Link_3\", routerLink: \"/\"},\r\n      {label: \"Link_4\", routerLink: \"/\"},\r\n      {label: \"Link_5\", routerLink: \"/\"},\r\n      {label: \"Link_6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -3350,12 +3729,30 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/core/docs/api/regenerate/regenerate.component.ts",
+                "filePath": "src/app/core/docs/api/regenerate/component/regenerate-introduction.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegenerateIntroductionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/docs/api/regenerate/component/regenerate-workspace.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RegenerateWorkspaceComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/docs/api/regenerate/component/regenerate.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "RegenerateComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3728,6 +4125,24 @@
                 "name": "MainNavComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BreadcrumbSmartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/breadcrumb-smart/breadcrumb-smart.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BreadcrumbItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
