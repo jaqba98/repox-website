@@ -2487,7 +2487,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!--<p-panel [header]=\"header\">-->\r\n<!--  <p>{{ content }}</p>-->\r\n<!--</p-panel>-->\r\naaa\r\n"
+            "templateData": "<p-panel [header]=\"header\">\r\n  <p>{{ content }}</p>\r\n</p-panel>\r\n"
         }
     ],
     "modules": [
@@ -2926,13 +2926,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-2ae05b9316f4be0cc174e646dc7a6a56dac92bba676f9b7dec9ae6ed00f474b7d5d0184c4968be862d952df7052670c8da89dccd1049c4e9575c51ba070177d0",
+            "id": "module-DumbModule-0bb49763c65e2b7dece1a2c94bb76c9524ea27d72124b9c0914e176724c23f67d5abd44945d488c07992e468f1a622cd7559467e14160beb78a556d562ebdc97",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from './terminal-dumb/terminal-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule,\r\n    PanelModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule,\r\n    PanelModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3344,7 +3344,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TerminalDumbComponent>",
-                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    // moduleMetadata({\r\n    //   imports: [\r\n    //     BrowserAnimationsModule,\r\n    //     PanelModule\r\n    //   ]\r\n    // })\r\n  ]\r\n}"
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "preview",
@@ -3601,7 +3601,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TerminalDumbComponent>",
-                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    // moduleMetadata({\r\n    //   imports: [\r\n    //     BrowserAnimationsModule,\r\n    //     PanelModule\r\n    //   ]\r\n    // })\r\n  ]\r\n}"
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
             ".storybook/preview.ts": [

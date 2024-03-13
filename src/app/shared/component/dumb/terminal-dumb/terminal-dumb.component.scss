@@ -1,0 +1,28 @@
+:host {
+  ::ng-deep {
+    .p-panel {
+      &-header {
+        padding: 5px;
+      }
+
+      &-title {
+        margin-left: 15px;
+      }
+
+      &-content {
+        padding: 0;
+
+        > p {
+          margin: 0;
+          padding: 20px;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+
+        > p:before {
+          content: "> "
+        }
+      }
+    }
+  }
+}
