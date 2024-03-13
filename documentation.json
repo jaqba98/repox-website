@@ -2431,6 +2431,44 @@
             },
             "extends": [],
             "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\r\n<div class=\"terminal\" (click)=\"onClick()\">\r\n  <code class=\"terminal__command\">{{ command }}</code>\r\n</div>\r\n"
+        },
+        {
+            "name": "TerminalDumbComponent",
+            "id": "component-TerminalDumbComponent-e775aab75681b2ecb45901c83870f2e568b16519b0eb8ba8b4647ec23af9a6d5fae90fca5a91de945a6bd7752c3a6583be23b085df6a9566e6fab4dd4cfd70eb",
+            "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-terminal-dumb",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./terminal-dumb.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n}\r\n",
+            "styleUrl": "./terminal-dumb.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>terminal-dumb works!</p>\r\n"
         }
     ],
     "modules": [
@@ -2869,13 +2907,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-55ab0756379076927597e2a0440f87f505e87b794abbfb2433f5173065d81cec66aaf366649bb41f94a6ddeba33708c1789632c8464cc43c4b534aeea08833c8",
+            "id": "module-DumbModule-547452915ca8081dfe49ab28e232d7d370b81321d907e22b5b55b8f7615e6b52301e9012ac14e138f4be638ad5e7efd2df74e76a433fab3ddad470cc0c5c80b3",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from './terminal-dumb/terminal-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2886,6 +2924,9 @@
                     "elements": [
                         {
                             "name": "BreadcrumbDumbComponent"
+                        },
+                        {
+                            "name": "TerminalDumbComponent"
                         }
                     ]
                 },
@@ -2898,6 +2939,9 @@
                     "elements": [
                         {
                             "name": "BreadcrumbDumbComponent"
+                        },
+                        {
+                            "name": "TerminalDumbComponent"
                         }
                     ]
                 },
@@ -3204,6 +3248,16 @@
                 "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link_1\", routerLink: \"/\"},\r\n      {label: \"Link_2\", routerLink: \"/\"},\r\n      {label: \"Link_3\", routerLink: \"/\"},\r\n      {label: \"Link_4\", routerLink: \"/\"},\r\n      {label: \"Link_5\", routerLink: \"/\"},\r\n      {label: \"Link_6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
             },
             {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {}\r\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3262,6 +3316,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<BreadcrumbDumbComponent>",
                 "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/BreadcrumbDumbComponent\",\r\n  component: BreadcrumbDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BreadcrumbModule,\r\n        RouterTestingModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TerminalDumbComponent>",
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
             },
             {
                 "name": "preview",
@@ -3348,6 +3412,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<BreadcrumbDumbComponent>",
                 "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TerminalDumbComponent>",
+                "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3488,6 +3563,28 @@
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/BreadcrumbDumbComponent\",\r\n  component: BreadcrumbDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BreadcrumbModule,\r\n        RouterTestingModule\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
+            "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {}\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TerminalDumbComponent>",
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
+                }
+            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -3589,6 +3686,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<BreadcrumbDumbComponent>",
                     "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TerminalDumbComponent>",
+                    "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4110,6 +4220,35 @@
             },
             {
                 "filePath": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TerminalDumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
