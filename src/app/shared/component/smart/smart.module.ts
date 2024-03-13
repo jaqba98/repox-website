@@ -1,12 +1,19 @@
 import {NgModule} from "@angular/core";
 
-import {BreadcrumbSmartComponent} from "./breadcrumb-smart/breadcrumb-smart.component";
 import {DumbModule} from "../dumb/dumb.module";
+import {BreadcrumbSmartComponent} from "./component/breadcrumb-smart.component";
+import {TerminalSmartComponent} from "./component/terminal-smart.component";
 
 @NgModule({
-  declarations: [BreadcrumbSmartComponent],
+  declarations: [
+    BreadcrumbSmartComponent,
+    TerminalSmartComponent
+  ],
   imports: [DumbModule],
-  exports: [BreadcrumbSmartComponent]
+  exports: [
+    BreadcrumbSmartComponent,
+    TerminalSmartComponent
+  ]
 })
 export class SmartModule {
 }

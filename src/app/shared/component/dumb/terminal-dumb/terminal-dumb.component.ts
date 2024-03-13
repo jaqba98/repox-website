@@ -7,8 +7,5 @@ import {Component, Input} from "@angular/core";
 })
 export class TerminalDumbComponent {
   @Input()
-  header: string = "";
-
-  @Input()
   content: string = "";
 }

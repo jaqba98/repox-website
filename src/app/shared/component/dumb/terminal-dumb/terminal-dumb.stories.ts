@@ -26,7 +26,6 @@ type Story = StoryObj<TerminalDumbComponent>;
 
 export const Default: Story = {
   args: {
-    header: "Terminal",
     content: "repox program --arg1 -a command --arg2 -b"
   }
 };
