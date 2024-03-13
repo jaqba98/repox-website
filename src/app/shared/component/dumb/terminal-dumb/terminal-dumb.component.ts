@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
   selector: "rw-terminal-dumb",
@@ -6,4 +6,9 @@ import {Component} from "@angular/core";
   styleUrl: "./terminal-dumb.component.scss"
 })
 export class TerminalDumbComponent {
+  @Input()
+  header: string = "";
+
+  @Input()
+  content: string = "";
 }

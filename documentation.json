@@ -2434,7 +2434,7 @@
         },
         {
             "name": "TerminalDumbComponent",
-            "id": "component-TerminalDumbComponent-e775aab75681b2ecb45901c83870f2e568b16519b0eb8ba8b4647ec23af9a6d5fae90fca5a91de945a6bd7752c3a6583be23b085df6a9566e6fab4dd4cfd70eb",
+            "id": "component-TerminalDumbComponent-112353afd51d6c6df2b1a047e30feb42621dc3ed2aae85eb297bf32f33a9e0030de4079f8dd31966016de389ff72b42050a3ba9234a388b63100e263fb2d09ba",
             "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2449,7 +2449,26 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "header",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -2462,13 +2481,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n  @Input()\r\n  header: string = \"\";\r\n\r\n  @Input()\r\n  content: string = \"\";\r\n}\r\n",
             "styleUrl": "./terminal-dumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>terminal-dumb works!</p>\r\n"
+            "templateData": "<!--<p-panel [header]=\"header\">-->\r\n<!--  <p>{{ content }}</p>-->\r\n<!--</p-panel>-->\r\naaa\r\n"
         }
     ],
     "modules": [
@@ -2907,13 +2926,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-547452915ca8081dfe49ab28e232d7d370b81321d907e22b5b55b8f7615e6b52301e9012ac14e138f4be638ad5e7efd2df74e76a433fab3ddad470cc0c5c80b3",
+            "id": "module-DumbModule-2ae05b9316f4be0cc174e646dc7a6a56dac92bba676f9b7dec9ae6ed00f474b7d5d0184c4968be862d952df7052670c8da89dccd1049c4e9575c51ba070177d0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from './terminal-dumb/terminal-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from './terminal-dumb/terminal-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ],\r\n  imports: [\r\n    BreadcrumbModule,\r\n    PanelModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3255,7 +3274,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {}\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    header: \"Header\",\r\n    content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt \" +\r\n      \"ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \" +\r\n      \"nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \" +\r\n      \"esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in \" +\r\n      \"culpa qui officia deserunt mollit anim id est laborum.\"\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -3325,7 +3344,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TerminalDumbComponent>",
-                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    // moduleMetadata({\r\n    //   imports: [\r\n    //     BrowserAnimationsModule,\r\n    //     PanelModule\r\n    //   ]\r\n    // })\r\n  ]\r\n}"
             },
             {
                 "name": "preview",
@@ -3572,7 +3591,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {}\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    header: \"Header\",\r\n    content: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt \" +\r\n      \"ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris \" +\r\n      \"nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit \" +\r\n      \"esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in \" +\r\n      \"culpa qui officia deserunt mollit anim id est laborum.\"\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -3582,7 +3601,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TerminalDumbComponent>",
-                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    // moduleMetadata({\r\n    //   imports: [\r\n    //     BrowserAnimationsModule,\r\n    //     PanelModule\r\n    //   ]\r\n    // })\r\n  ]\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -4234,7 +4253,7 @@
                 "linktype": "component",
                 "name": "TerminalDumbComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

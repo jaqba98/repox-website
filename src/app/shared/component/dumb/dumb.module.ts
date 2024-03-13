@@ -1,8 +1,10 @@
 import {NgModule} from "@angular/core";
+
 import {BreadcrumbModule} from "primeng/breadcrumb";
+import {PanelModule} from "primeng/panel";
 
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
-import {TerminalDumbComponent} from './terminal-dumb/terminal-dumb.component';
+import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
 
 @NgModule({
   declarations: [
@@ -10,7 +12,8 @@ import {TerminalDumbComponent} from './terminal-dumb/terminal-dumb.component';
     TerminalDumbComponent
   ],
   imports: [
-    BreadcrumbModule
+    BreadcrumbModule,
+    PanelModule
   ],
   exports: [
     BreadcrumbDumbComponent,
