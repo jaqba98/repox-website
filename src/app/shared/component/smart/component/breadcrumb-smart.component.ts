@@ -21,10 +21,12 @@ export class BreadcrumbSmartComponent {
 
   private getRouterUrl(): BreadcrumbItem[] {
     const parts = this.getRouterUrlParts();
-    return parts.map((part, index) => ({
-      label: this.getRouterLabel(part),
-      routerLink: this.getRouterLink(parts, index)
-    }));
+    return parts
+      .map(part => part.split("#")[0])
+      .map((part, index) => ({
+        label: this.getRouterLabel(part),
+        routerLink: this.getRouterLink(parts, index)
+      }));
   }
 
   private getRouterUrlParts(): string[] {
