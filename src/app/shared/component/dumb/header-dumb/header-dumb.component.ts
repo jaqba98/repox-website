@@ -1,5 +1,4 @@
-import {Component, HostListener, Input} from "@angular/core";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
   selector: "rw-header-dumb",
@@ -16,32 +15,13 @@ export class HeaderDumbComponent {
   @Input()
   headerLink: string = "";
 
+  @Input()
   isHovered: boolean = false;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    setTimeout(() => this.goToFragmentInstant(), 1);
-  }
-
-  @HostListener("mouseenter")
-  onMouseEnter() {
-    this.isHovered = true;
-  }
-
-  @HostListener("mouseleave")
-  onMouseLeave() {
-    this.isHovered = false;
-  }
+  @Output()
+  event = new EventEmitter();
 
   onClick() {
-    this.router.navigate([], {fragment: this.headerLink, relativeTo: this.route});
-    this.goToFragmentInstant();
-  }
-
-  private goToFragmentInstant() {
-    const currentFragment = this.router.url.split("#")[1];
-    const element = document.getElementById(currentFragment);
-    if (element) {
-      element.scrollIntoView({behavior: "smooth"});
-    }
+    this.event.emit();
   }
 }
