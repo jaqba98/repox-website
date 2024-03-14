@@ -4,6 +4,7 @@ import {DumbModule} from "../dumb/dumb.module";
 import {BreadcrumbSmartComponent} from "./component/breadcrumb-smart.component";
 import {TerminalSmartComponent} from "./component/terminal-smart.component";
 import {HeaderSmartComponent} from "./component/header-smart.component";
+import {MessageService} from "primeng/api";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,9 @@ import {HeaderSmartComponent} from "./component/header-smart.component";
     BreadcrumbSmartComponent,
     TerminalSmartComponent,
     HeaderSmartComponent
+  ],
+  providers: [
+    MessageService
   ]
 })
 export class SmartModule {

@@ -1,5 +1,4 @@
-import {Component, Input} from "@angular/core";
-import {MessageService} from "primeng/api";
+import {Component, EventEmitter, Input, Output} from "@angular/core";
 
 @Component({
   selector: "rw-terminal-dumb",
@@ -10,11 +9,10 @@ export class TerminalDumbComponent {
   @Input()
   content: string = "";
 
-  constructor(private messageService: MessageService) {
-  }
+  @Output()
+  event = new EventEmitter();
 
-  copy() {
-    navigator.clipboard.writeText(this.content);
-    this.messageService.add({severity: "info", detail: "Copied"});
+  onClick() {
+    this.event.emit();
   }
 }
