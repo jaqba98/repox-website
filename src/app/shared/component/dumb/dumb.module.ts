@@ -5,28 +5,33 @@ import {BreadcrumbModule} from "primeng/breadcrumb";
 import {PanelModule} from "primeng/panel";
 import {ButtonModule} from "primeng/button";
 import {ToastModule} from "primeng/toast";
+import {MessagesModule} from "primeng/messages";
 
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
 import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
 import {HeaderDumbComponent} from "./header-dumb/header-dumb.component";
+import {InfoMessageDumbComponent} from "./info-message-dumb/info-message-dumb.component";
 
 @NgModule({
   declarations: [
     BreadcrumbDumbComponent,
     TerminalDumbComponent,
-    HeaderDumbComponent
+    HeaderDumbComponent,
+    InfoMessageDumbComponent
   ],
   imports: [
     CommonModule,
     BreadcrumbModule,
     PanelModule,
     ButtonModule,
-    ToastModule
+    ToastModule,
+    MessagesModule
   ],
   exports: [
     BreadcrumbDumbComponent,
     TerminalDumbComponent,
-    HeaderDumbComponent
+    HeaderDumbComponent,
+    InfoMessageDumbComponent
   ]
 })
 export class DumbModule {

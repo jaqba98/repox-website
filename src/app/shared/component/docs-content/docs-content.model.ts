@@ -10,6 +10,11 @@ export interface DocsContentH2SectionModel {
   link: string;
 }
 
+export interface DocsContentInfoSectionModel {
+  type: "info";
+  value: string;
+}
+
 export interface DocsContentPSectionModel {
   type: "paragraph";
   value: string;
@@ -35,7 +40,8 @@ export type DocsContentSectionModel =
   | DocsContentPSectionModel
   | DocsContentCommandSectionModel
   | DocsContentArraySectionModel
-  | DocsContentNewlineSectionModel;
+  | DocsContentNewlineSectionModel
+  | DocsContentInfoSectionModel;
 
 export interface DocsContentModel {
   sections: DocsContentSectionModel[];

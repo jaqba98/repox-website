@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "BreadcrumbItem",
-            "id": "interface-BreadcrumbItem-c0c57c5299f58e37a96795005e6cc116443e836cef312df6d12df5faec83994c9e3dad7320b7e23cddbcb212a1bdb59b757c7c3b48e36d03af18034aa1cd8ac0",
+            "id": "interface-BreadcrumbItem-0b22617fcac91e22bee840d7cb32bea43097d0d9c78abb3a866e2f617742fe49564d18906ecda21276d68dce71c8f8cab20fc38c11641e97db8e971c6765515a",
             "file": "src/app/shared/component/smart/component/breadcrumb-smart.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {Router} from \"@angular/router\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\ninterface BreadcrumbItem extends Pick<MenuItem, \"label\" | \"routerLink\"> {\r\n}\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-smart\",\r\n  template: \"<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>\"\r\n})\r\nexport class BreadcrumbSmartComponent {\r\n  items: MenuItem[];\r\n\r\n  home: MenuItem;\r\n\r\n  constructor(private readonly router: Router) {\r\n    this.items = this.getRouterUrl();\r\n    this.home = {icon: \"pi pi-home\", routerLink: \"/\"};\r\n  }\r\n\r\n  private getRouterUrl(): BreadcrumbItem[] {\r\n    const parts = this.getRouterUrlParts();\r\n    return parts.map((part, index) => ({\r\n      label: this.getRouterLabel(part),\r\n      routerLink: this.getRouterLink(parts, index)\r\n    }));\r\n  }\r\n\r\n  private getRouterUrlParts(): string[] {\r\n    return this.router.url\r\n      .split(\"/\")\r\n      .filter((_, index) => index > 0);\r\n  }\r\n\r\n  private getRouterLabel(label: string): string {\r\n    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();\r\n  }\r\n\r\n  private getRouterLink(parts: string[], index: number): string {\r\n    return \"/\".concat(parts.slice(0, index + 1).join(\"/\"));\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {Router} from \"@angular/router\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\ninterface BreadcrumbItem extends Pick<MenuItem, \"label\" | \"routerLink\"> {\r\n}\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-smart\",\r\n  template: \"<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>\"\r\n})\r\nexport class BreadcrumbSmartComponent {\r\n  items: MenuItem[];\r\n\r\n  home: MenuItem;\r\n\r\n  constructor(private readonly router: Router) {\r\n    this.items = this.getRouterUrl();\r\n    this.home = {icon: \"pi pi-home\", routerLink: \"/\"};\r\n  }\r\n\r\n  private getRouterUrl(): BreadcrumbItem[] {\r\n    const parts = this.getRouterUrlParts();\r\n    return parts\r\n      .map(part => part.split(\"#\")[0])\r\n      .map((part, index) => ({\r\n        label: this.getRouterLabel(part),\r\n        routerLink: this.getRouterLink(parts, index)\r\n      }));\r\n  }\r\n\r\n  private getRouterUrlParts(): string[] {\r\n    return this.router.url\r\n      .split(\"/\")\r\n      .filter((_, index) => index > 0);\r\n  }\r\n\r\n  private getRouterLabel(label: string): string {\r\n    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();\r\n  }\r\n\r\n  private getRouterLink(parts: string[], index: number): string {\r\n    return \"/\".concat(parts.slice(0, index + 1).join(\"/\"));\r\n  }\r\n}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -18,12 +18,12 @@
         },
         {
             "name": "DocsContentArraySectionModel",
-            "id": "interface-DocsContentArraySectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentArraySectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -32,7 +32,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 24
                 },
                 {
                     "name": "value",
@@ -41,7 +41,7 @@
                     "type": "literal type[]",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 25
                 }
             ],
             "indexSignatures": [],
@@ -51,12 +51,12 @@
         },
         {
             "name": "DocsContentCommandSectionModel",
-            "id": "interface-DocsContentCommandSectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentCommandSectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -65,7 +65,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 19
                 },
                 {
                     "name": "value",
@@ -74,7 +74,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 20
                 }
             ],
             "indexSignatures": [],
@@ -84,13 +84,22 @@
         },
         {
             "name": "DocsContentH2SectionModel",
-            "id": "interface-DocsContentH2SectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentH2SectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
                 {
                     "name": "type",
                     "deprecated": false,
@@ -98,7 +107,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 7
+                    "line": 8
                 },
                 {
                     "name": "value",
@@ -107,7 +116,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 8
+                    "line": 9
                 }
             ],
             "indexSignatures": [],
@@ -117,13 +126,22 @@
         },
         {
             "name": "DocsContentHeaderLevel1SectionModel",
-            "id": "interface-DocsContentHeaderLevel1SectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentHeaderLevel1SectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
+                {
+                    "name": "link",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
                 {
                     "name": "type",
                     "deprecated": false,
@@ -150,12 +168,12 @@
         },
         {
             "name": "DocsContentModel",
-            "id": "interface-DocsContentModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "sections",
@@ -164,7 +182,7 @@
                     "type": "DocsContentSectionModel[]",
                     "optional": false,
                     "description": "",
-                    "line": 39
+                    "line": 41
                 }
             ],
             "indexSignatures": [],
@@ -174,12 +192,12 @@
         },
         {
             "name": "DocsContentNewlineSectionModel",
-            "id": "interface-DocsContentNewlineSectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentNewlineSectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -188,7 +206,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 29
                 }
             ],
             "indexSignatures": [],
@@ -198,12 +216,12 @@
         },
         {
             "name": "DocsContentPSectionModel",
-            "id": "interface-DocsContentPSectionModel-5c778cb572c5c8a8d926084594d20f8ef0ce7dcdd91dcf39751aa6db2052aaaa34c7b370389b7af597e213ab7a29a969f1ddda8191d7000ef745deb750093476",
+            "id": "interface-DocsContentPSectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -212,7 +230,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 14
                 },
                 {
                     "name": "value",
@@ -221,7 +239,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
+                    "line": 15
                 }
             ],
             "indexSignatures": [],
@@ -801,7 +819,7 @@
         },
         {
             "name": "BreadcrumbSmartComponent",
-            "id": "component-BreadcrumbSmartComponent-c0c57c5299f58e37a96795005e6cc116443e836cef312df6d12df5faec83994c9e3dad7320b7e23cddbcb212a1bdb59b757c7c3b48e36d03af18034aa1cd8ac0",
+            "id": "component-BreadcrumbSmartComponent-0b22617fcac91e22bee840d7cb32bea43097d0d9c78abb3a866e2f617742fe49564d18906ecda21276d68dce71c8f8cab20fc38c11641e97db8e971c6765515a",
             "file": "src/app/shared/component/smart/component/breadcrumb-smart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -851,7 +869,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -888,7 +906,7 @@
                     "optional": false,
                     "returnType": "string",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -934,7 +952,7 @@
                     "optional": false,
                     "returnType": "string[]",
                     "typeParameters": [],
-                    "line": 30,
+                    "line": 32,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -951,7 +969,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {Router} from \"@angular/router\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\ninterface BreadcrumbItem extends Pick<MenuItem, \"label\" | \"routerLink\"> {\r\n}\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-smart\",\r\n  template: \"<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>\"\r\n})\r\nexport class BreadcrumbSmartComponent {\r\n  items: MenuItem[];\r\n\r\n  home: MenuItem;\r\n\r\n  constructor(private readonly router: Router) {\r\n    this.items = this.getRouterUrl();\r\n    this.home = {icon: \"pi pi-home\", routerLink: \"/\"};\r\n  }\r\n\r\n  private getRouterUrl(): BreadcrumbItem[] {\r\n    const parts = this.getRouterUrlParts();\r\n    return parts.map((part, index) => ({\r\n      label: this.getRouterLabel(part),\r\n      routerLink: this.getRouterLink(parts, index)\r\n    }));\r\n  }\r\n\r\n  private getRouterUrlParts(): string[] {\r\n    return this.router.url\r\n      .split(\"/\")\r\n      .filter((_, index) => index > 0);\r\n  }\r\n\r\n  private getRouterLabel(label: string): string {\r\n    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();\r\n  }\r\n\r\n  private getRouterLink(parts: string[], index: number): string {\r\n    return \"/\".concat(parts.slice(0, index + 1).join(\"/\"));\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\nimport {Router} from \"@angular/router\";\r\nimport {MenuItem} from \"primeng/api\";\r\n\r\ninterface BreadcrumbItem extends Pick<MenuItem, \"label\" | \"routerLink\"> {\r\n}\r\n\r\n@Component({\r\n  selector: \"rw-breadcrumb-smart\",\r\n  template: \"<rw-breadcrumb-dump [items]='items' [home]='home'></rw-breadcrumb-dump>\"\r\n})\r\nexport class BreadcrumbSmartComponent {\r\n  items: MenuItem[];\r\n\r\n  home: MenuItem;\r\n\r\n  constructor(private readonly router: Router) {\r\n    this.items = this.getRouterUrl();\r\n    this.home = {icon: \"pi pi-home\", routerLink: \"/\"};\r\n  }\r\n\r\n  private getRouterUrl(): BreadcrumbItem[] {\r\n    const parts = this.getRouterUrlParts();\r\n    return parts\r\n      .map(part => part.split(\"#\")[0])\r\n      .map((part, index) => ({\r\n        label: this.getRouterLabel(part),\r\n        routerLink: this.getRouterLink(parts, index)\r\n      }));\r\n  }\r\n\r\n  private getRouterUrlParts(): string[] {\r\n    return this.router.url\r\n      .split(\"/\")\r\n      .filter((_, index) => index > 0);\r\n  }\r\n\r\n  private getRouterLabel(label: string): string {\r\n    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();\r\n  }\r\n\r\n  private getRouterLink(parts: string[], index: number): string {\r\n    return \"/\".concat(parts.slice(0, index + 1).join(\"/\"));\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1363,7 +1381,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'firstLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h1'\" [headerValue]=\"section.value\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'secondLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h2'\" [headerValue]=\"section.value\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'paragraph'\">\r\n        <repox-website-paragraph [value]=\"section.value\"></repox-website-paragraph>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <rw-terminal-smart [content]=\"section.value\"></rw-terminal-smart>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <repox-website-arguments [values]=\"section.value\"></repox-website-arguments>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'firstLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h1'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'secondLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h2'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'paragraph'\">\r\n        <repox-website-paragraph [value]=\"section.value\"></repox-website-paragraph>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <rw-terminal-smart [content]=\"section.value\"></rw-terminal-smart>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <repox-website-arguments [values]=\"section.value\"></repox-website-arguments>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "ExtensionComponent",
@@ -1580,7 +1598,7 @@
         },
         {
             "name": "GenerateIntroductionComponent",
-            "id": "component-GenerateIntroductionComponent-89fc435f1b0b17c614ec0de9e0fa7d936ab4841e4791928f5b852b1ce941f470fbfaf25ab1ebee6d5efb4da8eb84a6144289ffd5183dd7729850d70201c58cc3",
+            "id": "component-GenerateIntroductionComponent-49e56877359b98c0daf15c6235d87ca368fb131d1b6ab2879aa7fbe69c0a0c191c8b1fd5f0fecaa9d97bd328a3ea487de0a1640b0ea587c38a9c5d44de723f86",
             "file": "src/app/core/docs/api/generate/component/generate-introduction.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1599,7 +1617,7 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate command in Repox serves as a fundamental tool for efficiently managing monorepo projects. \" +\r\n          \"As a key feature, it enables developers to automate the creation of new projects, modules, or components \" +\r\n          \"within the monorepo structure. This command streamlines the development process by eliminating manual setup \" +\r\n          \"tasks and ensuring consistency across project artifacts.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"At its core, the generate command operates by utilizing predefined templates or blueprints tailored to \" +\r\n          \"various project needs. These templates encapsulate best practices, conventions, and project standards, \" +\r\n          \"providing developers with a solid foundation for their work. By leveraging these templates, developers \" +\r\n          \"can quickly scaffold out new features or components with minimal effort, thereby accelerating development cycles.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Moreover, the generate command promotes collaboration and code reuse within the monorepo environment. \" +\r\n          \"By abstracting common patterns and functionalities into reusable templates, developers can maintain \" +\r\n          \"a consistent architecture across multiple projects within the monorepo. This not only enhances code \" +\r\n          \"quality but also fosters a cohesive development ecosystem where teams can easily share and leverage each other's work.\"\r\n      }\r\n    ]\r\n  }",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate\", link: \"generate\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate command in Repox serves as a fundamental tool for efficiently managing monorepo projects. \" +\r\n          \"As a key feature, it enables developers to automate the creation of new projects, modules, or components \" +\r\n          \"within the monorepo structure. This command streamlines the development process by eliminating manual setup \" +\r\n          \"tasks and ensuring consistency across project artifacts.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"At its core, the generate command operates by utilizing predefined templates or blueprints tailored to \" +\r\n          \"various project needs. These templates encapsulate best practices, conventions, and project standards, \" +\r\n          \"providing developers with a solid foundation for their work. By leveraging these templates, developers \" +\r\n          \"can quickly scaffold out new features or components with minimal effort, thereby accelerating development cycles.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Moreover, the generate command promotes collaboration and code reuse within the monorepo environment. \" +\r\n          \"By abstracting common patterns and functionalities into reusable templates, developers can maintain \" +\r\n          \"a consistent architecture across multiple projects within the monorepo. This not only enhances code \" +\r\n          \"quality but also fosters a cohesive development ecosystem where teams can easily share and leverage each other's work.\"\r\n      }\r\n    ]\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentModel",
@@ -1618,7 +1636,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-generate-introduction\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class GenerateIntroductionComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate command in Repox serves as a fundamental tool for efficiently managing monorepo projects. \" +\r\n          \"As a key feature, it enables developers to automate the creation of new projects, modules, or components \" +\r\n          \"within the monorepo structure. This command streamlines the development process by eliminating manual setup \" +\r\n          \"tasks and ensuring consistency across project artifacts.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"At its core, the generate command operates by utilizing predefined templates or blueprints tailored to \" +\r\n          \"various project needs. These templates encapsulate best practices, conventions, and project standards, \" +\r\n          \"providing developers with a solid foundation for their work. By leveraging these templates, developers \" +\r\n          \"can quickly scaffold out new features or components with minimal effort, thereby accelerating development cycles.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Moreover, the generate command promotes collaboration and code reuse within the monorepo environment. \" +\r\n          \"By abstracting common patterns and functionalities into reusable templates, developers can maintain \" +\r\n          \"a consistent architecture across multiple projects within the monorepo. This not only enhances code \" +\r\n          \"quality but also fosters a cohesive development ecosystem where teams can easily share and leverage each other's work.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-generate-introduction\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class GenerateIntroductionComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate\", link: \"generate\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate command in Repox serves as a fundamental tool for efficiently managing monorepo projects. \" +\r\n          \"As a key feature, it enables developers to automate the creation of new projects, modules, or components \" +\r\n          \"within the monorepo structure. This command streamlines the development process by eliminating manual setup \" +\r\n          \"tasks and ensuring consistency across project artifacts.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"At its core, the generate command operates by utilizing predefined templates or blueprints tailored to \" +\r\n          \"various project needs. These templates encapsulate best practices, conventions, and project standards, \" +\r\n          \"providing developers with a solid foundation for their work. By leveraging these templates, developers \" +\r\n          \"can quickly scaffold out new features or components with minimal effort, thereby accelerating development cycles.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Moreover, the generate command promotes collaboration and code reuse within the monorepo environment. \" +\r\n          \"By abstracting common patterns and functionalities into reusable templates, developers can maintain \" +\r\n          \"a consistent architecture across multiple projects within the monorepo. This not only enhances code \" +\r\n          \"quality but also fosters a cohesive development ecosystem where teams can easily share and leverage each other's work.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1626,7 +1644,7 @@
         },
         {
             "name": "GenerateWorkspaceComponent",
-            "id": "component-GenerateWorkspaceComponent-33736764a71b30b2564ff5f52ba5f7e87ca7ca5600283acb3962ef588ae60811f398fcdcef6f7b7f085df0cde99d85bd6a3fa329d63d50b12ef01b5e92d45316",
+            "id": "component-GenerateWorkspaceComponent-c4d8bcc749234ddcf98a0b59a8d0eafa7fcae157e729a1adb83472137a6dd561cb35ebf91bc03637e35553b8af2ce0493c64d28fe9cd0e4b7063c5eec54e3a7f",
             "file": "src/app/core/docs/api/generate/component/generate-workspace.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1645,7 +1663,7 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  }",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\", link: \"generate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentModel",
@@ -1664,7 +1682,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-generate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class GenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-generate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class GenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\", link: \"generate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1761,7 +1779,7 @@
         },
         {
             "name": "HeaderDumbComponent",
-            "id": "component-HeaderDumbComponent-b115c254f21b52cb8a0dcf5a5e38a631b8e2d4bd08431ab55bbfeda99436a74f3ad7239463a7c7f703ee9c8a32f3905ac031d59000095142f206f0fef30ff5f9",
+            "id": "component-HeaderDumbComponent-dd7ba7b8896b14d2a93ac1c079ee4a922a28ebb69078972442080db5e58002c058e639a88c843264e0ecc6aade45d2d4cf82e3207679d800cf8bbb373e07324e",
             "file": "src/app/shared/component/dumb/header-dumb/header-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1777,6 +1795,15 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "headerLink",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
                 {
                     "name": "headerType",
                     "defaultValue": "\"h1\"",
@@ -1794,11 +1821,40 @@
                     "line": 13,
                     "type": "string",
                     "decorators": []
+                },
+                {
+                    "name": "isHovered",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "event",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1808,17 +1864,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-header-dumb\",\r\n  templateUrl: \"./header-dumb.component.html\",\r\n  styleUrl: \"./header-dumb.component.scss\"\r\n})\r\nexport class HeaderDumbComponent {\r\n  @Input()\r\n  headerType: \"h1\" | \"h2\" = \"h1\";\r\n\r\n  @Input()\r\n  headerValue: string = \"\";\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-header-dumb\",\r\n  templateUrl: \"./header-dumb.component.html\",\r\n  styleUrl: \"./header-dumb.component.scss\"\r\n})\r\nexport class HeaderDumbComponent {\r\n  @Input()\r\n  headerType: \"h1\" | \"h2\" = \"h1\";\r\n\r\n  @Input()\r\n  headerValue: string = \"\";\r\n\r\n  @Input()\r\n  headerLink: string = \"\";\r\n\r\n  @Input()\r\n  isHovered: boolean = false;\r\n\r\n  @Output()\r\n  event = new EventEmitter();\r\n\r\n  onClick() {\r\n    this.event.emit();\r\n  }\r\n}\r\n",
             "styleUrl": "./header-dumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<ng-container [ngSwitch]=\"headerType\">\r\n  <h1 *ngSwitchCase=\"'h1'\" class=\"header\">{{ headerValue }}</h1>\r\n  <h2 *ngSwitchCase=\"'h2'\" class=\"header\">{{ headerValue }}</h2>\r\n</ng-container>\r\n<span class=\"pi pi-link\"></span>\r\n"
+            "templateData": "<div class=\"header\" [id]=\"headerLink\">\r\n  <ng-container [ngSwitch]=\"headerType\">\r\n    <h1 *ngSwitchCase=\"'h1'\">{{ headerValue }}</h1>\r\n    <h2 *ngSwitchCase=\"'h2'\">{{ headerValue }}</h2>\r\n  </ng-container>\r\n  <span\r\n    class=\"pi pi-link header__link\"\r\n    [ngClass]=\"{ header__hidden: !isHovered }\"\r\n    (click)=\"onClick()\"></span>\r\n</div>\r\n"
         },
         {
             "name": "HeaderSmartComponent",
-            "id": "component-HeaderSmartComponent-cd055282f3aaf31ee63bb62176ab330f6fb4b919b6203708783acc3bc54f225b6302b2cd8c4d2d7471610dba523345af2caf693912bb138c3925f517010f507a",
+            "id": "component-HeaderSmartComponent-aaf240b94a4bcd1705f62e71065d2b8cdfe35d7259bf3f98610d8cf927994da4133a2f9ca295aa5a85b8192dd5e05fd2c05c2c7b4d25f2e894eef774b401c828",
             "file": "src/app/shared/component/smart/component/header-smart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1828,17 +1884,26 @@
             "selector": "rw-header-smart",
             "styleUrls": [],
             "styles": [],
-            "template": "<rw-header-dumb [headerType]='headerType' [headerValue]='headerValue'></rw-header-dumb>",
+            "template": "<rw-header-dumb    [headerType]='headerType'\n    [headerValue]='headerValue'\n    [headerLink]='headerLink'\n    [isHovered]=\"isHovered\"\n    (event)=\"onClick()\"\n  ></rw-header-dumb>",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "headerLink",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
                     "name": "headerType",
                     "defaultValue": "\"h1\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 9,
+                    "line": 16,
                     "type": "\"h1\" | \"h2\"",
                     "decorators": []
                 },
@@ -1847,27 +1912,158 @@
                     "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 19,
                     "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isHovered",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "goToFragmentInstant",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onMouseEnter",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseenter'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "onMouseLeave",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'mouseleave'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "mouseenter",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31
+                },
+                {
+                    "name": "mouseleave",
+                    "args": [],
+                    "argsDecorator": [],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36
+                }
+            ],
             "standalone": false,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-header-smart\",\r\n  template: \"<rw-header-dumb [headerType]='headerType' [headerValue]='headerValue'></rw-header-dumb>\"\r\n})\r\nexport class HeaderSmartComponent {\r\n  @Input()\r\n  headerType: \"h1\" | \"h2\" = \"h1\";\r\n\r\n  @Input()\r\n  headerValue: string = \"\";\r\n}\r\n",
+            "sourceCode": "import {Component, HostListener, Input} from \"@angular/core\";\r\nimport {ActivatedRoute, Router} from \"@angular/router\";\r\n\r\n@Component({\r\n  selector: \"rw-header-smart\",\r\n  template: `<rw-header-dumb\r\n    [headerType]='headerType'\r\n    [headerValue]='headerValue'\r\n    [headerLink]='headerLink'\r\n    [isHovered]=\"isHovered\"\r\n    (event)=\"onClick()\"\r\n  ></rw-header-dumb>`\r\n})\r\nexport class HeaderSmartComponent {\r\n  @Input()\r\n  headerType: \"h1\" | \"h2\" = \"h1\";\r\n\r\n  @Input()\r\n  headerValue: string = \"\";\r\n\r\n  @Input()\r\n  headerLink: string = \"\";\r\n\r\n  isHovered: boolean = false;\r\n\r\n  constructor(private router: Router, private route: ActivatedRoute) {\r\n    setTimeout(() => this.goToFragmentInstant(), 1);\r\n  }\r\n\r\n  @HostListener(\"mouseenter\")\r\n  onMouseEnter() {\r\n    this.isHovered = true;\r\n  }\r\n\r\n  @HostListener(\"mouseleave\")\r\n  onMouseLeave() {\r\n    this.isHovered = false;\r\n  }\r\n\r\n  onClick() {\r\n    this.router.navigate([], {fragment: this.headerLink, relativeTo: this.route});\r\n    this.goToFragmentInstant();\r\n  }\r\n\r\n  private goToFragmentInstant() {\r\n    const currentFragment = this.router.url.split(\"#\")[1];\r\n    const element = document.getElementById(currentFragment);\r\n    if (element) {\r\n      element.scrollIntoView({behavior: \"smooth\"});\r\n    }\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 24,
+                "jsdoctags": [
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "extends": []
         },
         {
@@ -1924,6 +2120,110 @@
             "stylesData": "",
             "extends": [],
             "templateData": "{{title}}\r\n"
+        },
+        {
+            "name": "InfoMessageDumbComponent",
+            "id": "component-InfoMessageDumbComponent-4eafb0ad0afb354fcc4f641b28a6b8cc4c6e7b23b7bd8fd2addf736c8817ff96d0faba8d8745f6236ab2b0466b6d1fbb30956efdecf7596b28aa54a26089424b",
+            "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-info-message-dumb",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./info-message-dumb.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "messages",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "Message[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {Message} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-info-message-dumb\",\r\n  templateUrl: \"./info-message-dumb.component.html\",\r\n  styleUrl: \"./info-message-dumb.component.scss\"\r\n})\r\nexport class InfoMessageDumbComponent {\r\n  @Input()\r\n  messages: Message[] = [];\r\n}\r\n",
+            "styleUrl": "./info-message-dumb.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-messages [(value)]=\"messages\" [enableService]=\"false\" [closable]=\"false\"></p-messages>\r\n"
+        },
+        {
+            "name": "InfoMessageSmartComponent",
+            "id": "component-InfoMessageSmartComponent-3e864a191f0a9831a8c5f6dfadbd908c866c880ad9282ae6988d2011df93c7eea5de05d57345eda67992ada0166137647ce98f67ce77021be812c8f4f4d8b10c",
+            "file": "src/app/shared/component/smart/component/info-message-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-info-message-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-info-message-dumb [messages]='buildMessages()'></rw-info-message-dumb>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "messages",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildMessages",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "Message[]",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {Message} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-info-message-smart\",\r\n  template: \"<rw-info-message-dumb [messages]='buildMessages()'></rw-info-message-dumb>\"\r\n})\r\nexport class InfoMessageSmartComponent {\r\n  @Input()\r\n  messages: string[] = [];\r\n\r\n  buildMessages(): Message[] {\r\n    return this.messages.map(message => ({ severity: \"info\", summary: \"Info\", detail: message }))\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "MainNavComponent",
@@ -2215,7 +2515,7 @@
         },
         {
             "name": "RegenerateIntroductionComponent",
-            "id": "component-RegenerateIntroductionComponent-96c6710f2c4b55c40b0174295a3a5b1a7c180475ba097d3027ac821ca40886a1db9e52339e642707e63d1705266d7277c0f0b994ebedd5fc5e1f6fe90fa68ada",
+            "id": "component-RegenerateIntroductionComponent-a2b35ed1785d5527bb53aac4c012701c36405a8d98b28ceadf8b51b612e755ba315115103d880032501071cb54e38ac2794b6912e5acd7fe5bda6d9c5dfd0f35",
             "file": "src/app/core/docs/api/regenerate/component/regenerate-introduction.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2234,7 +2534,7 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate\"}\r\n    ]\r\n  }",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate\", link: \"regenerate\"}\r\n    ]\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentModel",
@@ -2253,7 +2553,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate-introduction\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class RegenerateIntroductionComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate\"}\r\n    ]\r\n  };\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate-introduction\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class RegenerateIntroductionComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate\", link: \"regenerate\"}\r\n    ]\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2261,7 +2561,7 @@
         },
         {
             "name": "RegenerateWorkspaceComponent",
-            "id": "component-RegenerateWorkspaceComponent-d8ca1d0e369cb98af8b882bcc01190d7bfa7bb20de7e1f1d675b08f3554860bfbd755f7b2cd99adc6db813cefc7ae5c2d3eba2f22f69c8771bd4102f703f27a0",
+            "id": "component-RegenerateWorkspaceComponent-c5cbce10b4e6afa34ee95a12ee1f3b22c2c85ddca973a74c04b42785985741bb2ba347aa5bcb19fe506556344633b94b19b7f6b44bd2ce440a85bf9a58d7d882",
             "file": "src/app/core/docs/api/regenerate/component/regenerate-workspace.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2280,7 +2580,7 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate Workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The regenerate workspace command is used to regenerate the workspace configuration for a \" +\r\n          \"monorepo project managed by Repox. This command is essential for updating the project structure or \" +\r\n          \"resolving any inconsistencies within the workspace.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\"},\r\n      {type: \"command\", value: \"repox regenerate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"force\", alias: \"f\", description: \"Force mode.\", require: true, value: \"boolean\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\"},\r\n      {type: \"command\", value: \"repox regenerate workspace --force\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Running this command will regenerate the workspace configuration based on the current state of the monorepo project. \" +\r\n          \"Use with caution as it may overwrite existing configurations.\"\r\n      },\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure all changes are committed before executing this command to prevent data loss.\"\r\n      }\r\n    ]\r\n  }",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate Workspace\", link: \"regenerate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The regenerate workspace command is used to regenerate the workspace configuration for a \" +\r\n          \"monorepo project managed by Repox. This command is essential for updating the project structure or \" +\r\n          \"resolving any inconsistencies within the workspace.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox regenerate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"force\", alias: \"f\", description: \"Force mode.\", require: true, value: \"boolean\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox regenerate workspace --force\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Running this command will regenerate the workspace configuration based on the current state of the monorepo project. \" +\r\n          \"Use with caution as it may overwrite existing configurations.\"\r\n      },\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure all changes are committed before executing this command to prevent data loss.\"\r\n      }\r\n    ]\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentModel",
@@ -2299,7 +2599,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class RegenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate Workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The regenerate workspace command is used to regenerate the workspace configuration for a \" +\r\n          \"monorepo project managed by Repox. This command is essential for updating the project structure or \" +\r\n          \"resolving any inconsistencies within the workspace.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\"},\r\n      {type: \"command\", value: \"repox regenerate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"force\", alias: \"f\", description: \"Force mode.\", require: true, value: \"boolean\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\"},\r\n      {type: \"command\", value: \"repox regenerate workspace --force\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Running this command will regenerate the workspace configuration based on the current state of the monorepo project. \" +\r\n          \"Use with caution as it may overwrite existing configurations.\"\r\n      },\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure all changes are committed before executing this command to prevent data loss.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-regenerate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class RegenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Regenerate Workspace\", link: \"regenerate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The regenerate workspace command is used to regenerate the workspace configuration for a \" +\r\n          \"monorepo project managed by Repox. This command is essential for updating the project structure or \" +\r\n          \"resolving any inconsistencies within the workspace.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox regenerate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"force\", alias: \"f\", description: \"Force mode.\", require: true, value: \"boolean\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox regenerate workspace --force\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Running this command will regenerate the workspace configuration based on the current state of the monorepo project. \" +\r\n          \"Use with caution as it may overwrite existing configurations.\"\r\n      },\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure all changes are committed before executing this command to prevent data loss.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2362,7 +2662,7 @@
         },
         {
             "name": "TerminalDumbComponent",
-            "id": "component-TerminalDumbComponent-f18a51d1f773f02c0221c19092e5f44262d366faef9f45e0249c3a06dfc4cc889e1ffe684dfb17aeda5fbe771483232f689ec16140075d3e27213a0c493dd095",
+            "id": "component-TerminalDumbComponent-dfd6c6a7392c3de6f7108a2ad88495f32d105c2578f2855c43c96702a4f92f3b398f5240257243fc0605275c12a17dc5b010fbb1946ef8013c5bc9b00d98c537",
             "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2383,21 +2683,30 @@
                     "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 11,
+                    "line": 10,
                     "type": "string",
                     "decorators": []
                 }
             ],
-            "outputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "event",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter"
+                }
+            ],
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "copy",
+                    "name": "onClick",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2411,8 +2720,65 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n  @Input()\r\n  content: string = \"\";\r\n\r\n  constructor(private messageService: MessageService) {\r\n  }\r\n\r\n  copy() {\r\n    navigator.clipboard.writeText(this.content);\r\n    this.messageService.add({severity: \"info\", detail: \"Copied\"});\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-dumb\",\r\n  templateUrl: \"./terminal-dumb.component.html\",\r\n  styleUrl: \"./terminal-dumb.component.scss\"\r\n})\r\nexport class TerminalDumbComponent {\r\n  @Input()\r\n  content: string = \"\";\r\n\r\n  @Output()\r\n  event = new EventEmitter();\r\n\r\n  onClick() {\r\n    this.event.emit();\r\n  }\r\n}\r\n",
             "styleUrl": "./terminal-dumb.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\r\n<p-panel header=\"Terminal\">\r\n  <p>{{ content }}</p>\r\n  <ng-template pTemplate=\"icons\">\r\n    <p-button icon=\"pi pi-copy\" severity=\"secondary\" [text]=\"true\" (click)=\"onClick()\"></p-button>\r\n  </ng-template>\r\n</p-panel>\r\n"
+        },
+        {
+            "name": "TerminalSmartComponent",
+            "id": "component-TerminalSmartComponent-4e0348327c3f18e3cf24db5b4488f52cf78b4eade02d5bdd3f6bda3a5221380ce328e33a09841af68e97e609ffb12829e1181e878643b2add11fec939fefcea0",
+            "file": "src/app/shared/component/smart/component/terminal-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-terminal-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-terminal-dumb [content]='content' (event)='copy()'></rw-terminal-dumb>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "copy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-smart\",\r\n  template: \"<rw-terminal-dumb [content]='content' (event)='copy()'></rw-terminal-dumb>\"\r\n})\r\nexport class TerminalSmartComponent {\r\n  @Input()\r\n  content: string = \"\";\r\n\r\n  constructor(private messageService: MessageService) {\r\n  }\r\n\r\n  copy() {\r\n    navigator.clipboard.writeText(this.content);\r\n    this.messageService.add({severity: \"info\", detail: \"Copied\"});\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2429,7 +2795,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 11,
+                "line": 10,
                 "jsdoctags": [
                     {
                         "name": "messageService",
@@ -2442,52 +2808,6 @@
                     }
                 ]
             },
-            "extends": [],
-            "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\r\n<p-panel header=\"Terminal\">\r\n  <p>{{ content }}</p>\r\n  <ng-template pTemplate=\"icons\">\r\n    <p-button icon=\"pi pi-copy\" severity=\"secondary\" [text]=\"true\" (click)=\"copy()\"></p-button>\r\n  </ng-template>\r\n</p-panel>\r\n"
-        },
-        {
-            "name": "TerminalSmartComponent",
-            "id": "component-TerminalSmartComponent-0d21a97ea8eafa31da6d21165347d1841469948781220e98c1309bfb2d1098582783c33b5618ef9531c847a80f0ff24e6c7d25d4f1eb990283dadf0ffccfae63",
-            "file": "src/app/shared/component/smart/component/terminal-smart.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "rw-terminal-smart",
-            "styleUrls": [],
-            "styles": [],
-            "template": "<rw-terminal-dumb [content]='content'></rw-terminal-dumb>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "content",
-                    "defaultValue": "\"\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 9,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-terminal-smart\",\r\n  template: \"<rw-terminal-dumb [content]='content'></rw-terminal-dumb>\"\r\n})\r\nexport class TerminalSmartComponent {\r\n  @Input()\r\n  content: string = \"\";\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
             "extends": []
         }
     ],
@@ -2909,13 +3229,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-7112d2faafd573daa4a1c9bcd8f0116c1f22d2e87ac763d60a8c52fe723ddb7b8389bea330d06ade65bea2f075043c0093cb72797bf5ed8e0dfc00ad78872e3f",
+            "id": "module-DumbModule-8382aca20ed34605d6ed8434f235ce98319d25ee7bb3c06e8d10d8bf19c4eed60a7281443c44e06f72cbfb76dee491f8e4dbb1e16094761776d9ded4f1f7cde5",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {CommonModule} from \"@angular/common\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {MessageService} from \"primeng/api\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent\r\n  ],\r\n  providers: [\r\n    MessageService\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {CommonModule} from \"@angular/common\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {MessagesModule} from \"primeng/messages\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\r\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule,\r\n    MessagesModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2929,6 +3249,9 @@
                         },
                         {
                             "name": "HeaderDumbComponent"
+                        },
+                        {
+                            "name": "InfoMessageDumbComponent"
                         },
                         {
                             "name": "TerminalDumbComponent"
@@ -2947,6 +3270,9 @@
                         },
                         {
                             "name": "HeaderDumbComponent"
+                        },
+                        {
+                            "name": "InfoMessageDumbComponent"
                         },
                         {
                             "name": "TerminalDumbComponent"
@@ -3146,13 +3472,13 @@
         },
         {
             "name": "SmartModule",
-            "id": "module-SmartModule-cc045ab6e236b3c7f919fc7201651908288f95117deb436764b2fc9d58d3290c5cff703c8ff6e4abd5bc13d3de464e7381e9a1e94ca2040672f5ef473a6aff1a",
+            "id": "module-SmartModule-f141c3a6cbd912e15d8189e152fe385ddcc2608d2906581238a345e9cb42b50e9f2a75328417dc9a4b704bc26dcff190e51f56c032656503af615296a5746942",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/smart/smart.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\r\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent\r\n  ],\r\n  providers: [\r\n    MessageService\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3166,6 +3492,9 @@
                         },
                         {
                             "name": "HeaderSmartComponent"
+                        },
+                        {
+                            "name": "InfoMessageSmartComponent"
                         },
                         {
                             "name": "TerminalSmartComponent"
@@ -3188,6 +3517,9 @@
                         },
                         {
                             "name": "HeaderSmartComponent"
+                        },
+                        {
+                            "name": "InfoMessageSmartComponent"
                         },
                         {
                             "name": "TerminalSmartComponent"
@@ -3241,11 +3573,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    messages: [\r\n      { severity: \"info\", summary: \"Info\", detail: \"Message Content\" }\r\n    ]\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/header-dumb/header-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    headerType: \"h1\",\r\n    headerValue: \"Title\"\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    headerType: \"h1\",\r\n    headerValue: \"Title\",\r\n    headerLink: \"title\"\r\n  }\r\n}"
             },
             {
                 "name": "Default",
@@ -3286,6 +3628,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<BreadcrumbDumbComponent>",
                 "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/BreadcrumbDumbComponent\",\r\n  component: BreadcrumbDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BreadcrumbModule,\r\n        RouterTestingModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InfoMessageDumbComponent>",
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ErrorMessageDumbComponent\",\r\n  component: InfoMessageDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        MessagesModule\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -3359,6 +3711,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<BreadcrumbDumbComponent>",
                 "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InfoMessageDumbComponent>",
+                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3455,6 +3818,28 @@
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/BreadcrumbDumbComponent\",\r\n  component: BreadcrumbDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BreadcrumbModule,\r\n        RouterTestingModule\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
+            "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    messages: [\r\n      { severity: \"info\", summary: \"Info\", detail: \"Message Content\" }\r\n    ]\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InfoMessageDumbComponent>",
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ErrorMessageDumbComponent\",\r\n  component: InfoMessageDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        MessagesModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+                }
+            ],
             "src/app/shared/component/dumb/header-dumb/header-dumb.stories.ts": [
                 {
                     "name": "Default",
@@ -3464,7 +3849,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    headerType: \"h1\",\r\n    headerValue: \"Title\"\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    headerType: \"h1\",\r\n    headerValue: \"Title\",\r\n    headerLink: \"title\"\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
@@ -3561,6 +3946,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<BreadcrumbDumbComponent>",
                     "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InfoMessageDumbComponent>",
+                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3961,7 +4359,7 @@
                 "linktype": "interface",
                 "name": "DocsContentH2SectionModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -3970,7 +4368,7 @@
                 "linktype": "interface",
                 "name": "DocsContentHeaderLevel1SectionModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -4035,7 +4433,7 @@
                 "linktype": "component",
                 "name": "HeaderDumbComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -4050,6 +4448,35 @@
             },
             {
                 "filePath": "src/app/shared/component/dumb/header-dumb/header-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InfoMessageDumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4120,6 +4547,15 @@
                 "linktype": "component",
                 "name": "HeaderSmartComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/component/info-message-smart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InfoMessageSmartComponent",
+                "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
             },
@@ -4129,7 +4565,7 @@
                 "linktype": "component",
                 "name": "TerminalSmartComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
                 "status": "low"
             }
         ]

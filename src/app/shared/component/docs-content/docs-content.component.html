@@ -25,6 +25,10 @@
       <ng-container *ngIf="section.type === 'arguments'">
         <repox-website-arguments [values]="section.value"></repox-website-arguments>
       </ng-container>
+      <!-- Info -->
+      <ng-container *ngIf="section.type === 'info'">
+        <rw-info-message-smart [messages]="[section.value]"></rw-info-message-smart>
+      </ng-container>
     </ng-container>
   </div>
 </section>
