@@ -8,11 +8,13 @@ import {MessageService} from "primeng/api";
 
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
 import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
+import {HeaderComponent} from "./header/header.component";
 
 @NgModule({
   declarations: [
     BreadcrumbDumbComponent,
-    TerminalDumbComponent
+    TerminalDumbComponent,
+    HeaderComponent
   ],
   imports: [
     BreadcrumbModule,
@@ -22,7 +24,8 @@ import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
   ],
   exports: [
     BreadcrumbDumbComponent,
-    TerminalDumbComponent
+    TerminalDumbComponent,
+    HeaderComponent
   ],
   providers: [
     MessageService
