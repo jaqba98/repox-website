@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, HostListener, Input} from "@angular/core";
+import {Component, HostListener, Input} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
