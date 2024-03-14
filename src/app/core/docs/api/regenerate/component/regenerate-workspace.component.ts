@@ -9,7 +9,7 @@ import {DocsContentModel} from "@shared";
 export class RegenerateWorkspaceComponent {
   content: DocsContentModel = {
     sections: [
-      {type: "firstLevelHeader", value: "Regenerate Workspace"},
+      {type: "firstLevelHeader", value: "Regenerate Workspace", link: "regenerate-workspace"},
       {type: "newline"},
       {
         type: "paragraph",
@@ -18,13 +18,13 @@ export class RegenerateWorkspaceComponent {
           "resolving any inconsistencies within the workspace."
       },
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Syntax"},
+      {type: "secondLevelHeader", value: "Syntax", link: "syntax"},
       {type: "command", value: "repox regenerate workspace [options]"},
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Program arguments"},
+      {type: "secondLevelHeader", value: "Program arguments", link: "program-arguments"},
       {type: "paragraph", value: "None"},
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Command arguments"},
+      {type: "secondLevelHeader", value: "Command arguments", link: "command-arguments"},
       {
         type: "arguments",
         value: [
@@ -32,10 +32,10 @@ export class RegenerateWorkspaceComponent {
         ]
       },
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Example"},
+      {type: "secondLevelHeader", value: "Example", link: "example"},
       {type: "command", value: "repox regenerate workspace --force"},
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Note"},
+      {type: "secondLevelHeader", value: "Note", link: "note"},
       {
         type: "paragraph",
         value: "Running this command will regenerate the workspace configuration based on the current state of the monorepo project. " +

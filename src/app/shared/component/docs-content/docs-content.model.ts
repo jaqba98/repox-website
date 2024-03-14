@@ -1,11 +1,13 @@
 export interface DocsContentHeaderLevel1SectionModel {
   type: "firstLevelHeader";
   value: string;
+  link: string;
 }
 
 export interface DocsContentH2SectionModel {
   type: "secondLevelHeader";
   value: string;
+  link: string;
 }
 
 export interface DocsContentPSectionModel {

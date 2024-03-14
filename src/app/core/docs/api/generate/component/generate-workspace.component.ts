@@ -9,7 +9,7 @@ import {DocsContentModel} from "@shared";
 export class GenerateWorkspaceComponent {
   content: DocsContentModel = {
     sections: [
-      {type: "firstLevelHeader", value: "Generate Workspace"},
+      {type: "firstLevelHeader", value: "Generate Workspace", link: "generate-workspace"},
       {type: "newline"},
       {
         type: "paragraph",
@@ -17,13 +17,13 @@ export class GenerateWorkspaceComponent {
           "A workspace serves as a container for projects within the monorepo."
       },
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Syntax"},
+      {type: "secondLevelHeader", value: "Syntax", link: "syntax"},
       {type: "command", value: "repox generate workspace [options]"},
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Program arguments"},
+      {type: "secondLevelHeader", value: "Program arguments", link: "program-arguments"},
       {type: "paragraph", value: "None"},
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Command arguments"},
+      {type: "secondLevelHeader", value: "Command arguments", link: "command-arguments"},
       {
         type: "arguments",
         value: [
@@ -31,10 +31,10 @@ export class GenerateWorkspaceComponent {
         ]
       },
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Example"},
+      {type: "secondLevelHeader", value: "Example", link: "example"},
       {type: "command", value: "repox generate workspace --name=my-workspace"},
       {type: "newline"},
-      {type: "secondLevelHeader", value: "Note"},
+      {type: "secondLevelHeader", value: "Note", link: "note"},
       {
         type: "paragraph",
         value: "Ensure that the workspace name is unique and adheres to file system naming conventions."

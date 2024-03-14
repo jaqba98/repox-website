@@ -9,7 +9,7 @@ import {DocsContentModel} from "@shared";
 export class RegenerateIntroductionComponent {
   content: DocsContentModel = {
     sections: [
-      {type: "firstLevelHeader", value: "Regenerate"}
+      {type: "firstLevelHeader", value: "Regenerate", link: "regenerate"}
     ]
   };
 }

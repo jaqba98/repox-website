@@ -1,0 +1,10 @@
+<div class="header" [id]="headerLink">
+  <ng-container [ngSwitch]="headerType">
+    <h1 *ngSwitchCase="'h1'">{{ headerValue }}</h1>
+    <h2 *ngSwitchCase="'h2'">{{ headerValue }}</h2>
+  </ng-container>
+  <span
+    class="pi pi-link header__link"
+    [ngClass]="{ header__hidden: !isHovered }"
+    (click)="onClick(headerLink)"></span>
+</div>

@@ -1,4 +1,5 @@
 import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
 
 import {BreadcrumbModule} from "primeng/breadcrumb";
 import {PanelModule} from "primeng/panel";
@@ -8,15 +9,16 @@ import {MessageService} from "primeng/api";
 
 import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.component";
 import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
-import {HeaderComponent} from "./header/header.component";
+import {HeaderDumbComponent} from "./header-dumb/header-dumb.component";
 
 @NgModule({
   declarations: [
     BreadcrumbDumbComponent,
     TerminalDumbComponent,
-    HeaderComponent
+    HeaderDumbComponent
   ],
   imports: [
+    CommonModule,
     BreadcrumbModule,
     PanelModule,
     ButtonModule,
@@ -25,7 +27,7 @@ import {HeaderComponent} from "./header/header.component";
   exports: [
     BreadcrumbDumbComponent,
     TerminalDumbComponent,
-    HeaderComponent
+    HeaderDumbComponent
   ],
   providers: [
     MessageService

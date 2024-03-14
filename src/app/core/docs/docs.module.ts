@@ -8,7 +8,7 @@ import {ExtensionComponent} from './extension/extension.component';
 import {PluginsComponent} from './plugins/plugins.component';
 import {ChangelogComponent} from './changelog/changelog.component';
 import {ApiModule} from "./api/api.module";
-import {SharedModule} from "../../shared/shared.module";
+import {SharedModule} from "@shared";
 import {RouterLink, RouterOutlet} from "@angular/router";
 
 @NgModule({

@@ -9,7 +9,7 @@ import {DocsContentModel} from "@shared";
 export class GenerateIntroductionComponent {
   content: DocsContentModel = {
     sections: [
-      {type: "firstLevelHeader", value: "Generate"},
+      {type: "firstLevelHeader", value: "Generate", link: "generate"},
       {type: "newline"},
       {
         type: "paragraph",

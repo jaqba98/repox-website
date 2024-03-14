@@ -1,0 +1,30 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+
+
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+    color: #4b5563;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  &__link {
+    color: #4b5563;
+    cursor: pointer;
+  }
+
+  &__hidden {
+    display: none;
+  }
+}

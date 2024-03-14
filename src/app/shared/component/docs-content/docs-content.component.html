@@ -3,11 +3,11 @@
     <ng-container *ngFor="let section of content?.sections">
       <!-- Header h1 -->
       <ng-container *ngIf="section.type === 'firstLevelHeader'">
-        <repox-website-h1 [value]="section.value"></repox-website-h1>
+        <rw-header-smart [headerType]="'h1'" [headerValue]="section.value" [headerLink]="section.link"></rw-header-smart>
       </ng-container>
       <!-- Header h2 -->
       <ng-container *ngIf="section.type === 'secondLevelHeader'">
-        <repox-website-h2 [value]="section.value"></repox-website-h2>
+        <rw-header-smart [headerType]="'h2'" [headerValue]="section.value" [headerLink]="section.link"></rw-header-smart>
       </ng-container>
       <!-- Paragraph p -->
       <ng-container *ngIf="section.type === 'paragraph'">
