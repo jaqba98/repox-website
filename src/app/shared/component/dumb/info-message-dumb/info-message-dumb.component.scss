@@ -1,8 +1,12 @@
 :host {
   ::ng-deep {
-    .p-message-wrapper {
-      overflow-x: auto;
-      white-space: nowrap;
+    .p-message {
+      margin: 0;
+
+      &-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
     }
   }
 }

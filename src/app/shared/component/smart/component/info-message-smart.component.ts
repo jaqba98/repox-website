@@ -10,6 +10,6 @@ export class InfoMessageSmartComponent {
   messages: string[] = [];
 
   buildMessages(): Message[] {
-    return this.messages.map(message => ({ severity: "info", summary: "Info", detail: message }))
+    return this.messages.map(message => ({ severity: "info", detail: message }))
   }
 }

@@ -21,7 +21,7 @@ export class GenerateWorkspaceComponent {
       {type: "command", value: "repox generate workspace [options]"},
       {type: "newline"},
       {type: "secondLevelHeader", value: "Program arguments", link: "program-arguments"},
-      {type: "info", value: "No arguments for the program"},
+      {type: "info", value: "No arguments"},
       {type: "newline"},
       {type: "secondLevelHeader", value: "Command arguments", link: "command-arguments"},
       {
