@@ -5,8 +5,8 @@ import {Component, Input} from "@angular/core";
   template: `<rw-header-dumb
     [headerType]='headerType'
     [headerValue]='headerValue'
-    [headerLink]='headerLink'>
-  </rw-header-dumb>`
+    [headerLink]='headerLink'
+  ></rw-header-dumb>`
 })
 export class HeaderSmartComponent {
   @Input()

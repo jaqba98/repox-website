@@ -1,4 +1,4 @@
-import {Component, HostListener, Input} from "@angular/core";
+import {AfterViewInit, Component, HostListener, Input} from "@angular/core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -19,7 +19,7 @@ export class HeaderDumbComponent {
   isHovered: boolean = false;
 
   constructor(private router: Router, private route: ActivatedRoute) {
-    this.goToFragment(this.headerLink);
+    setTimeout(() => this.goToFragmentInstant(), 1);
   }
 
   @HostListener("mouseenter")
@@ -32,15 +32,16 @@ export class HeaderDumbComponent {
     this.isHovered = false;
   }
 
-  onClick(fragment: string) {
-    this.router.navigate([], { fragment: fragment, relativeTo: this.route });
-    this.goToFragment(fragment);
+  onClick() {
+    this.router.navigate([], {fragment: this.headerLink, relativeTo: this.route});
+    this.goToFragmentInstant();
   }
 
-  private goToFragment(fragment: string) {
-    const element = document.getElementById(fragment);
+  private goToFragmentInstant() {
+    const currentFragment = this.router.url.split("#")[1];
+    const element = document.getElementById(currentFragment);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({behavior: "smooth"});
     }
   }
 }
