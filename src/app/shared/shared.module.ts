@@ -19,7 +19,6 @@ import {DocsContainerComponent} from './component/docs-container/docs-container.
 import {FieldsetModule} from "primeng/fieldset";
 import {CardModule} from "primeng/card";
 import {TableModule} from "primeng/table";
-import {ControlModule} from "./component/control/control.module";
 import {DumbModule} from "./component/dumb/dumb.module";
 import {ComponentModule} from "./component/component.module";
 
@@ -45,7 +44,6 @@ import {ComponentModule} from "./component/component.module";
     FieldsetModule,
     CardModule,
     TableModule,
-    ControlModule,
     DumbModule,
     ComponentModule
   ],
