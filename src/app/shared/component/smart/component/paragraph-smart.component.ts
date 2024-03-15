@@ -2,7 +2,7 @@ import {Component, Input} from "@angular/core";
 
 @Component({
   selector: "rw-paragraph-smart",
-  template: "<rw-paragraph-dumb [value]='value'></rw-paragraph-dumb>"
+  template: "<rw-paragraph-smart [value]='value'></rw-paragraph-smart>"
 })
 export class ParagraphSmartComponent {
   @Input()
