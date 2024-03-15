@@ -18,12 +18,45 @@
         },
         {
             "name": "DocsContentArraySectionModel",
-            "id": "interface-DocsContentArraySectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
+            "id": "interface-DocsContentArraySectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "DocsContentCommandSectionModel",
+            "id": "interface-DocsContentCommandSectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
+            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -38,7 +71,7 @@
                     "name": "value",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "literal type[]",
+                    "type": "string",
                     "optional": false,
                     "description": "",
                     "line": 25
@@ -50,46 +83,13 @@
             "extends": []
         },
         {
-            "name": "DocsContentCommandSectionModel",
-            "id": "interface-DocsContentCommandSectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
-            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "type",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                },
-                {
-                    "name": "value",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "DocsContentH2SectionModel",
-            "id": "interface-DocsContentH2SectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
+            "id": "interface-DocsContentH2SectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "link",
@@ -126,12 +126,12 @@
         },
         {
             "name": "DocsContentHeaderLevel1SectionModel",
-            "id": "interface-DocsContentHeaderLevel1SectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
+            "id": "interface-DocsContentHeaderLevel1SectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "link",
@@ -167,61 +167,13 @@
             "extends": []
         },
         {
-            "name": "DocsContentModel",
-            "id": "interface-DocsContentModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
+            "name": "DocsContentInfoSectionModel",
+            "id": "interface-DocsContentInfoSectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
             "file": "src/app/shared/component/docs-content/docs-content.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "sections",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "DocsContentSectionModel[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 41
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
-            "name": "DocsContentNewlineSectionModel",
-            "id": "interface-DocsContentNewlineSectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
-            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "type",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 29
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
-            "name": "DocsContentPSectionModel",
-            "id": "interface-DocsContentPSectionModel-bc5ccee8f959b1a6c56b7d86b5c0105ad501b7266c3584b04de0550d7b3ac8ab05859d9d7fc5c2bb7dbe39300781eca5d7843dce6ef1c5ffc850a9733fba7358",
-            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -240,6 +192,87 @@
                     "optional": false,
                     "description": "",
                     "line": 15
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "DocsContentModel",
+            "id": "interface-DocsContentModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
+            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "sections",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DocsContentSectionModel[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 47
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "DocsContentNewlineSectionModel",
+            "id": "interface-DocsContentNewlineSectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
+            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "DocsContentPSectionModel",
+            "id": "interface-DocsContentPSectionModel-813a990536cfc35dee280328c369fe5b9f57c0e6065252f99ada99440262d889171e2c8aa8df2ef81ededbb58dfa81fa55b04d13b80d3e98ed5fc2b597a56336",
+            "file": "src/app/shared/component/docs-content/docs-content.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DocsContentHeaderLevel1SectionModel {\r\n  type: \"firstLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentH2SectionModel {\r\n  type: \"secondLevelHeader\";\r\n  value: string;\r\n  link: string;\r\n}\r\n\r\nexport interface DocsContentInfoSectionModel {\r\n  type: \"info\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentPSectionModel {\r\n  type: \"paragraph\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentCommandSectionModel {\r\n  type: \"command\";\r\n  value: string;\r\n}\r\n\r\nexport interface DocsContentArraySectionModel {\r\n  type: \"arguments\";\r\n  value: { argument: string, alias: string, description: string, require: boolean, value: string }[];\r\n}\r\n\r\nexport interface DocsContentNewlineSectionModel {\r\n  type: \"newline\";\r\n}\r\n\r\nexport type DocsContentSectionModel =\r\n  | DocsContentHeaderLevel1SectionModel\r\n  | DocsContentH2SectionModel\r\n  | DocsContentPSectionModel\r\n  | DocsContentCommandSectionModel\r\n  | DocsContentArraySectionModel\r\n  | DocsContentNewlineSectionModel\r\n  | DocsContentInfoSectionModel;\r\n\r\nexport interface DocsContentModel {\r\n  sections: DocsContentSectionModel[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "type",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
                 }
             ],
             "indexSignatures": [],
@@ -1381,7 +1414,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'firstLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h1'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'secondLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h2'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'paragraph'\">\r\n        <repox-website-paragraph [value]=\"section.value\"></repox-website-paragraph>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <rw-terminal-smart [content]=\"section.value\"></rw-terminal-smart>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <repox-website-arguments [values]=\"section.value\"></repox-website-arguments>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'firstLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h1'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'secondLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h2'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'paragraph'\">\r\n        <rw-paragraph-smart [value]=\"section.value\"></rw-paragraph-smart>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <rw-terminal-smart [content]=\"section.value\"></rw-terminal-smart>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <repox-website-arguments [values]=\"section.value\"></repox-website-arguments>\r\n      </ng-container>\r\n      <!-- Info -->\r\n      <ng-container *ngIf=\"section.type === 'info'\">\r\n        <rw-info-message-smart [messages]=\"[section.value]\"></rw-info-message-smart>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "ExtensionComponent",
@@ -1644,7 +1677,7 @@
         },
         {
             "name": "GenerateWorkspaceComponent",
-            "id": "component-GenerateWorkspaceComponent-c4d8bcc749234ddcf98a0b59a8d0eafa7fcae157e729a1adb83472137a6dd561cb35ebf91bc03637e35553b8af2ce0493c64d28fe9cd0e4b7063c5eec54e3a7f",
+            "id": "component-GenerateWorkspaceComponent-1fc496c57759bbe90e35eea3493482f3f2d4e6bca6f3a8a92507b10ab3a593fb6e3df75f25db32a1d07fbbf98085398c327df6198554e9ff1a6fbcf34aa65aff",
             "file": "src/app/core/docs/api/generate/component/generate-workspace.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1663,7 +1696,7 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\", link: \"generate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  }",
+                    "defaultValue": "{\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\", link: \"generate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"info\", value: \"No arguments\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentModel",
@@ -1682,7 +1715,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-generate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class GenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\", link: \"generate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"paragraph\", value: \"None\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
+            "sourceCode": "import {Component} from \"@angular/core\";\r\n\r\nimport {DocsContentModel} from \"@shared\";\r\n\r\n@Component({\r\n  selector: \"rw-generate-workspace\",\r\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\r\n})\r\nexport class GenerateWorkspaceComponent {\r\n  content: DocsContentModel = {\r\n    sections: [\r\n      {type: \"firstLevelHeader\", value: \"Generate Workspace\", link: \"generate-workspace\"},\r\n      {type: \"newline\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"The generate workspace command creates a new workspace within the monorepo project managed by Repox. \" +\r\n          \"A workspace serves as a container for projects within the monorepo.\"\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Syntax\", link: \"syntax\"},\r\n      {type: \"command\", value: \"repox generate workspace [options]\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Program arguments\", link: \"program-arguments\"},\r\n      {type: \"info\", value: \"No arguments\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Command arguments\", link: \"command-arguments\"},\r\n      {\r\n        type: \"arguments\",\r\n        value: [\r\n          {argument: \"name\", alias: \"n\", description: \"The name of the workspace.\", require: true, value: \"string\"}\r\n        ]\r\n      },\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Example\", link: \"example\"},\r\n      {type: \"command\", value: \"repox generate workspace --name=my-workspace\"},\r\n      {type: \"newline\"},\r\n      {type: \"secondLevelHeader\", value: \"Note\", link: \"note\"},\r\n      {\r\n        type: \"paragraph\",\r\n        value: \"Ensure that the workspace name is unique and adheres to file system naming conventions.\"\r\n      }\r\n    ]\r\n  };\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2167,11 +2200,11 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p-messages [(value)]=\"messages\" [enableService]=\"false\" [closable]=\"false\"></p-messages>\r\n"
+            "templateData": "<p-messages\r\n  [(value)]=\"messages\"\r\n  [showTransitionOptions]=\"'0ms'\"\r\n  [hideTransitionOptions]=\"'0ms'\"\r\n  [enableService]=\"false\"\r\n  [closable]=\"false\"\r\n></p-messages>\r\n"
         },
         {
             "name": "InfoMessageSmartComponent",
-            "id": "component-InfoMessageSmartComponent-3e864a191f0a9831a8c5f6dfadbd908c866c880ad9282ae6988d2011df93c7eea5de05d57345eda67992ada0166137647ce98f67ce77021be812c8f4f4d8b10c",
+            "id": "component-InfoMessageSmartComponent-0e24cec2829ba31a6effc9530a20e94d628ab0de3ad70e8e476e6d075afb58500810698ddda23255756f725df21d5eabf2460018d04f436ffed53f4c6d1ab088",
             "file": "src/app/shared/component/smart/component/info-message-smart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2219,7 +2252,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {Message} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-info-message-smart\",\r\n  template: \"<rw-info-message-dumb [messages]='buildMessages()'></rw-info-message-dumb>\"\r\n})\r\nexport class InfoMessageSmartComponent {\r\n  @Input()\r\n  messages: string[] = [];\r\n\r\n  buildMessages(): Message[] {\r\n    return this.messages.map(message => ({ severity: \"info\", summary: \"Info\", detail: message }))\r\n  }\r\n}\r\n",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\nimport {Message} from \"primeng/api\";\r\n\r\n@Component({\r\n  selector: \"rw-info-message-smart\",\r\n  template: \"<rw-info-message-dumb [messages]='buildMessages()'></rw-info-message-dumb>\"\r\n})\r\nexport class InfoMessageSmartComponent {\r\n  @Input()\r\n  messages: string[] = [];\r\n\r\n  buildMessages(): Message[] {\r\n    return this.messages.map(message => ({ severity: \"info\", detail: message }))\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2288,25 +2321,73 @@
             "templateData": "<p-menubar [model]=\"menuItems\">\r\n  <ng-template pTemplate=\"start\">\r\n    <h1 class=\"main-nav__logo\">REPOX</h1>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"end\">\r\n    <p-button icon=\"pi pi-download\" [text]=\"true\" severity=\"secondary\"></p-button>\r\n    <p-button icon=\"pi pi-github\" [text]=\"true\" severity=\"secondary\"></p-button>\r\n    <p-button icon=\"pi pi-discord\" [text]=\"true\" severity=\"secondary\"></p-button>\r\n  </ng-template>\r\n</p-menubar>\r\n"
         },
         {
-            "name": "ParagraphComponent",
-            "id": "component-ParagraphComponent-5fb385f68ab13c94fb966fd9a5fd150c1621da0189f299bdb8aab922bef85cb30f9318ee49ed57cdf011b974dbbc44cd7c5c4ec4bbda512f686a5b7fbd652135",
-            "file": "src/app/shared/component/control/paragraph/paragraph.component.ts",
+            "name": "ParagraphDumbComponent",
+            "id": "component-ParagraphDumbComponent-bf9305d933eb18a3770f3d0c6bb504181fad6615977e25b7001bcc673c69e21f93a19d0ae37703ddeb7e8fbeb88a8a56a4c307ee88dfae82730b61fd6919253b",
+            "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-paragraph",
+            "selector": "rw-paragraph-dumb",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./paragraph.component.html"
+                "./paragraph-dumb.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
                     "name": "value",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-paragraph-dumb\",\r\n  templateUrl: \"./paragraph-dumb.component.html\",\r\n  styleUrl: \"./paragraph-dumb.component.scss\"\r\n})\r\nexport class ParagraphDumbComponent {\r\n  @Input()\r\n  value: string = \"\";\r\n}\r\n",
+            "styleUrl": "./paragraph-dumb.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p class=\"paragraph\">{{ value }}</p>\r\n"
+        },
+        {
+            "name": "ParagraphSmartComponent",
+            "id": "component-ParagraphSmartComponent-cc2ebc143eafe0bdc3da313f472919b404504298b12365d50118c4842ef20a8961b60687722538d2b76f3e97c7b202fac0eeaa2608d0d5e9b21a87c3478fce2b",
+            "file": "src/app/shared/component/smart/component/paragraph-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-paragraph-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-paragraph-dumb [value]='value'></rw-paragraph-dumb>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 9,
@@ -2326,13 +2407,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-paragraph',\r\n  templateUrl: './paragraph.component.html',\r\n  styleUrl: './paragraph.component.scss'\r\n})\r\nexport class ParagraphComponent {\r\n  @Input() value?: string;\r\n}\r\n",
-            "styleUrl": "./paragraph.component.scss",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-paragraph-smart\",\r\n  template: \"<rw-paragraph-dumb [value]='value'></rw-paragraph-dumb>\"\r\n})\r\nexport class ParagraphSmartComponent {\r\n  @Input()\r\n  value: string = \"\";\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<p class=\"paragraph\">{{value}}</p>\r\n"
+            "extends": []
         },
         {
             "name": "PluginsComponent",
@@ -3014,13 +3093,13 @@
         },
         {
             "name": "ControlModule",
-            "id": "module-ControlModule-75cb46399096af525a4af409374aa28b26d02a65f5f777c1b1060754efa4df44f7571bd4dd53e9b6b9051b9fe5007ecee271abfea801c4750839d28df0317c30",
+            "id": "module-ControlModule-16958a61758d6d98600eab16959697b15f08e58f21736656528d40a33e39de75afe4d46e46b28e1eb8648e30e8f9bcd75a868fbedc51d1c342b6dc0d13ae49d4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/control/control.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ParagraphComponent} from './paragraph/paragraph.component';\r\nimport { ArgumentsComponent } from './arguments/arguments.component';\r\nimport {TableModule} from \"primeng/table\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ParagraphComponent,\r\n    ArgumentsComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule,\r\n    TableModule\r\n  ],\r\n  exports: [\r\n    ParagraphComponent,\r\n    ArgumentsComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ArgumentsComponent} from './arguments/arguments.component';\r\nimport {TableModule} from \"primeng/table\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ArgumentsComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule,\r\n    TableModule\r\n  ],\r\n  exports: [\r\n    ArgumentsComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3031,9 +3110,6 @@
                     "elements": [
                         {
                             "name": "ArgumentsComponent"
-                        },
-                        {
-                            "name": "ParagraphComponent"
                         }
                     ]
                 },
@@ -3046,9 +3122,6 @@
                     "elements": [
                         {
                             "name": "ArgumentsComponent"
-                        },
-                        {
-                            "name": "ParagraphComponent"
                         }
                     ]
                 },
@@ -3229,13 +3302,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-8382aca20ed34605d6ed8434f235ce98319d25ee7bb3c06e8d10d8bf19c4eed60a7281443c44e06f72cbfb76dee491f8e4dbb1e16094761776d9ded4f1f7cde5",
+            "id": "module-DumbModule-d7ff22d559a447828f1254d8332ced995f73bccac26f13f527bedaee926f192b693a6347025dbb7ff3570e0de2cd3ad71cbd0bd67a11b4a6ea89c269030dda61",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {CommonModule} from \"@angular/common\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {MessagesModule} from \"primeng/messages\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\r\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule,\r\n    MessagesModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {CommonModule} from \"@angular/common\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {MessagesModule} from \"primeng/messages\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\r\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\r\nimport { ParagraphDumbComponent } from './paragraph-dumb/paragraph-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent,\r\n    ParagraphDumbComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule,\r\n    MessagesModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3252,6 +3325,9 @@
                         },
                         {
                             "name": "InfoMessageDumbComponent"
+                        },
+                        {
+                            "name": "ParagraphDumbComponent"
                         },
                         {
                             "name": "TerminalDumbComponent"
@@ -3472,13 +3548,13 @@
         },
         {
             "name": "SmartModule",
-            "id": "module-SmartModule-f141c3a6cbd912e15d8189e152fe385ddcc2608d2906581238a345e9cb42b50e9f2a75328417dc9a4b704bc26dcff190e51f56c032656503af615296a5746942",
+            "id": "module-SmartModule-971d9bea13c96cb12e5707482e08bd190110b098ec82a89e6d32bd6fa34ec50a4c39c29da16a5662bbe7ba272079c8df2d116c02d32d5edd2c9f58ae9dda327f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/smart/smart.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\r\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent\r\n  ],\r\n  providers: [\r\n    MessageService\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\r\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\r\nimport {ParagraphSmartComponent} from \"./component/paragraph-smart.component\";\r\n\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent,\r\n    ParagraphSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent,\r\n    ParagraphSmartComponent\r\n  ],\r\n  providers: [\r\n    MessageService\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3495,6 +3571,9 @@
                         },
                         {
                             "name": "InfoMessageSmartComponent"
+                        },
+                        {
+                            "name": "ParagraphSmartComponent"
                         },
                         {
                             "name": "TerminalSmartComponent"
@@ -3520,6 +3599,9 @@
                         },
                         {
                             "name": "InfoMessageSmartComponent"
+                        },
+                        {
+                            "name": "ParagraphSmartComponent"
                         },
                         {
                             "name": "TerminalSmartComponent"
@@ -3553,31 +3635,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    home: {icon: \"pi pi-home\", routerLink: \"/\"},\r\n    items: [\r\n      {label: \"Link_1\", routerLink: \"/\"},\r\n      {label: \"Link_2\", routerLink: \"/\"},\r\n      {label: \"Link_3\", routerLink: \"/\"},\r\n      {label: \"Link_4\", routerLink: \"/\"},\r\n      {label: \"Link_5\", routerLink: \"/\"},\r\n      {label: \"Link_6\", routerLink: \"/\"}\r\n    ]\r\n  }\r\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    messages: [\r\n      { severity: \"info\", summary: \"Info\", detail: \"Message Content\" }\r\n    ]\r\n  }\r\n}"
             },
             {
                 "name": "Default",
@@ -3593,11 +3655,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    messages: [\r\n      { severity: \"info\", summary: \"Info\", detail: \"Message Content\" }\r\n    ]\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    content: \"repox program --arg1 -a command --arg2 -b\"\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    value: \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nulla non diam vehicula tristique. Suspendisse pulvinar facilisis diam et pharetra. Phasellus nisl elit, eleifend sagittis sagittis at, congue vitae leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt nibh turpis, non fringilla purus interdum eget. Phasellus dolor arcu, rhoncus quis vulputate aliquam, lobortis a mi. In malesuada velit ac massa pharetra, non fermentum justo pharetra. Suspendisse tincidunt consequat mauris vel mattis. Nam et massa pretium, sodales augue vel, egestas diam. Duis massa lectus, pulvinar non mauris ut, aliquam convallis nisi. Sed a ipsum tristique, faucibus ex in, suscipit tellus. Curabitur euismod magna lectus, eu accumsan ante fringilla eget. In hac habitasse platea dictumst. Quisque fringilla lobortis dolor eget blandit. Sed consectetur enim a ante interdum mattis. \"\r\n  }\r\n}"
             },
             {
                 "name": "meta",
@@ -3613,31 +3695,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ParagraphComponent>",
-                "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BreadcrumbDumbComponent>",
                 "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/BreadcrumbDumbComponent\",\r\n  component: BreadcrumbDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BreadcrumbModule,\r\n        RouterTestingModule\r\n      ]\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<InfoMessageDumbComponent>",
-                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ErrorMessageDumbComponent\",\r\n  component: InfoMessageDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        MessagesModule\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -3653,11 +3715,31 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InfoMessageDumbComponent>",
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ErrorMessageDumbComponent\",\r\n  component: InfoMessageDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        MessagesModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TerminalDumbComponent>",
                 "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule,\r\n        ButtonModule,\r\n        ToastModule\r\n      ],\r\n      providers: [\r\n        MessageService\r\n      ]\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ParagraphDumbComponent>",
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ParagraphDumbComponent\",\r\n  component: ParagraphDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
             },
             {
                 "name": "preview",
@@ -3676,7 +3758,7 @@
                 "name": "DocsContentSectionModel",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "DocsContentHeaderLevel1SectionModel | DocsContentH2SectionModel | DocsContentPSectionModel | DocsContentCommandSectionModel | DocsContentArraySectionModel | DocsContentNewlineSectionModel",
+                "rawtype": "DocsContentHeaderLevel1SectionModel | DocsContentH2SectionModel | DocsContentPSectionModel | DocsContentCommandSectionModel | DocsContentArraySectionModel | DocsContentNewlineSectionModel | DocsContentInfoSectionModel",
                 "file": "src/app/shared/component/docs-content/docs-content.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3698,30 +3780,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ParagraphComponent>",
-                "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "StoryObj<BreadcrumbDumbComponent>",
                 "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<InfoMessageDumbComponent>",
-                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3742,8 +3802,30 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<InfoMessageDumbComponent>",
+                "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<TerminalDumbComponent>",
                 "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ParagraphDumbComponent>",
+                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3774,28 +3856,6 @@
                     "defaultValue": "{\r\n  title: \"arguments\",\r\n  component: ArgumentsComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [TableModule]\r\n    })\r\n  ]\r\n}"
                 }
             ],
-            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    value: \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum condimentum iaculis. Quisque scelerisque eget quam at iaculis. Proin eget leo ex. In finibus sed lorem id semper. Nunc commodo, massa sed tempus pellentesque, enim massa placerat lorem, ac pretium odio arcu at purus. Donec fringilla lectus et nisi fringilla, eget porta velit aliquet. Aenean ac condimentum risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tempor mauris nisl, vitae pretium massa ultrices at. Etiam commodo mauris eu lorem rhoncus tempor. Sed ac ante dictum, accumsan est id, accumsan ligula. Duis sed velit tortor. Nam dignissim, purus et elementum consectetur, turpis ipsum hendrerit dui, a eleifend metus nibh eget dui. Nulla facilisi. Morbi ornare ultricies libero, condimentum auctor mauris hendrerit id. Fusce elementum leo non vestibulum posuere. \"\r\n  }\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ParagraphComponent>",
-                    "defaultValue": "{\r\n  title: \"Paragraph\",\r\n  component: ParagraphComponent,\r\n  tags: ['autodocs']\r\n}"
-                }
-            ],
             "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts": [
                 {
                     "name": "Default",
@@ -3816,28 +3876,6 @@
                     "deprecationMessage": "",
                     "type": "Meta<BreadcrumbDumbComponent>",
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/BreadcrumbDumbComponent\",\r\n  component: BreadcrumbDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BreadcrumbModule,\r\n        RouterTestingModule\r\n      ]\r\n    })\r\n  ]\r\n}"
-                }
-            ],
-            "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    messages: [\r\n      { severity: \"info\", summary: \"Info\", detail: \"Message Content\" }\r\n    ]\r\n  }\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<InfoMessageDumbComponent>",
-                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ErrorMessageDumbComponent\",\r\n  component: InfoMessageDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        MessagesModule\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
             "src/app/shared/component/dumb/header-dumb/header-dumb.stories.ts": [
@@ -3862,6 +3900,28 @@
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/HeaderDumbComponent\",\r\n  component: HeaderDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
                 }
             ],
+            "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    messages: [\r\n      { severity: \"info\", summary: \"Info\", detail: \"Message Content\" }\r\n    ]\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InfoMessageDumbComponent>",
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ErrorMessageDumbComponent\",\r\n  component: InfoMessageDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        MessagesModule\r\n      ]\r\n    })\r\n  ]\r\n}"
+                }
+            ],
             "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts": [
                 {
                     "name": "Default",
@@ -3882,6 +3942,28 @@
                     "deprecationMessage": "",
                     "type": "Meta<TerminalDumbComponent>",
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule,\r\n        ButtonModule,\r\n        ToastModule\r\n      ],\r\n      providers: [\r\n        MessageService\r\n      ]\r\n    })\r\n  ]\r\n}"
+                }
+            ],
+            "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    value: \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nulla non diam vehicula tristique. Suspendisse pulvinar facilisis diam et pharetra. Phasellus nisl elit, eleifend sagittis sagittis at, congue vitae leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt nibh turpis, non fringilla purus interdum eget. Phasellus dolor arcu, rhoncus quis vulputate aliquam, lobortis a mi. In malesuada velit ac massa pharetra, non fermentum justo pharetra. Suspendisse tincidunt consequat mauris vel mattis. Nam et massa pretium, sodales augue vel, egestas diam. Duis massa lectus, pulvinar non mauris ut, aliquam convallis nisi. Sed a ipsum tristique, faucibus ex in, suscipit tellus. Curabitur euismod magna lectus, eu accumsan ante fringilla eget. In hac habitasse platea dictumst. Quisque fringilla lobortis dolor eget blandit. Sed consectetur enim a ante interdum mattis. \"\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ParagraphDumbComponent>",
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ParagraphDumbComponent\",\r\n  component: ParagraphDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -3905,7 +3987,7 @@
                     "name": "DocsContentSectionModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "DocsContentHeaderLevel1SectionModel | DocsContentH2SectionModel | DocsContentPSectionModel | DocsContentCommandSectionModel | DocsContentArraySectionModel | DocsContentNewlineSectionModel",
+                    "rawtype": "DocsContentHeaderLevel1SectionModel | DocsContentH2SectionModel | DocsContentPSectionModel | DocsContentCommandSectionModel | DocsContentArraySectionModel | DocsContentNewlineSectionModel | DocsContentInfoSectionModel",
                     "file": "src/app/shared/component/docs-content/docs-content.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -3926,19 +4008,6 @@
                     "kind": 183
                 }
             ],
-            "src/app/shared/component/control/paragraph/paragraph.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ParagraphComponent>",
-                    "file": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts": [
                 {
                     "name": "Story",
@@ -3946,19 +4015,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<BreadcrumbDumbComponent>",
                     "file": "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<InfoMessageDumbComponent>",
-                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3978,6 +4034,19 @@
                     "kind": 183
                 }
             ],
+            "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InfoMessageDumbComponent>",
+                    "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts": [
                 {
                     "name": "Story",
@@ -3985,6 +4054,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TerminalDumbComponent>",
                     "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ParagraphDumbComponent>",
+                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4289,35 +4371,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/component/control/paragraph/paragraph.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ParagraphComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/component/control/paragraph/paragraph.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/shared/component/docs-container/docs-container.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4369,6 +4422,15 @@
                 "name": "DocsContentHeaderLevel1SectionModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/docs-content/docs-content.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DocsContentInfoSectionModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4486,6 +4548,35 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ParagraphDumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4557,6 +4648,15 @@
                 "name": "InfoMessageSmartComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/component/paragraph-smart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ParagraphSmartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

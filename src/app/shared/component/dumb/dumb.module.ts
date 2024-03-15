@@ -11,13 +11,15 @@ import {BreadcrumbDumbComponent} from "./breadcrumb-dumb/breadcrumb-dumb.compone
 import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
 import {HeaderDumbComponent} from "./header-dumb/header-dumb.component";
 import {InfoMessageDumbComponent} from "./info-message-dumb/info-message-dumb.component";
+import { ParagraphDumbComponent } from './paragraph-dumb/paragraph-dumb.component';
 
 @NgModule({
   declarations: [
     BreadcrumbDumbComponent,
     TerminalDumbComponent,
     HeaderDumbComponent,
-    InfoMessageDumbComponent
+    InfoMessageDumbComponent,
+    ParagraphDumbComponent
   ],
   imports: [
     CommonModule,
