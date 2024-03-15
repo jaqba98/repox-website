@@ -29,12 +29,13 @@ import { ParagraphDumbComponent } from './paragraph-dumb/paragraph-dumb.componen
     ToastModule,
     MessagesModule
   ],
-  exports: [
-    BreadcrumbDumbComponent,
-    TerminalDumbComponent,
-    HeaderDumbComponent,
-    InfoMessageDumbComponent
-  ]
+    exports: [
+        BreadcrumbDumbComponent,
+        TerminalDumbComponent,
+        HeaderDumbComponent,
+        InfoMessageDumbComponent,
+        ParagraphDumbComponent
+    ]
 })
 export class DumbModule {
 }
