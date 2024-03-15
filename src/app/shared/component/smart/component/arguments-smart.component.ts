@@ -5,5 +5,11 @@ import {Component, Input} from "@angular/core";
   template: "<rw-arguments-dumb [value]='value'></rw-arguments-dumb>"
 })
 export class ArgumentsSmartComponent {
-  @Input() value: { argument: string, alias: string, description: string, require: boolean, value: string }[] = [];
+  @Input() value: {
+    argument: string,
+    alias: string,
+    description: string,
+    require: boolean,
+    value: string
+  }[] = [];
 }

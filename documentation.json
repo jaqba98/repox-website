@@ -485,25 +485,25 @@
             "templateData": "<repox-website-main-nav></repox-website-main-nav>\r\n<router-outlet></router-outlet>\r\n"
         },
         {
-            "name": "ArgumentsComponent",
-            "id": "component-ArgumentsComponent-8f1c2faf524f7731596d8c1a7d66144cbf33382b941ebf3aff8de1d801ff03ad1ad0c115173e07d99c9875f09afeacda6b3bc6ed7e0c8a03e3f6f0b3a876a5d4",
-            "file": "src/app/shared/component/control/arguments/arguments.component.ts",
+            "name": "ArgumentsDumbComponent",
+            "id": "component-ArgumentsDumbComponent-955d13e4b7913ed6234c9b1633c98ecffeeb05f9f06139eb5d32dd85046a38e44f34cfca5f07f6eba04a7219a98ee36a939ed97e6744336e10ab4c5f0a72d6fe",
+            "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-arguments",
+            "selector": "rw-arguments-dumb",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./arguments.component.html"
+                "./arguments-dumb.component.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "values",
+                    "name": "value",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -524,13 +524,58 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'repox-website-arguments',\r\n  templateUrl: './arguments.component.html',\r\n  styleUrl: './arguments.component.scss'\r\n})\r\nexport class ArgumentsComponent {\r\n  @Input() values: { argument: string, alias: string, description: string, require: boolean, value: string }[] = [];\r\n}\r\n",
-            "styleUrl": "./arguments.component.scss",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-arguments-dumb\",\r\n  templateUrl: \"./arguments-dumb.component.html\",\r\n  styleUrl: \"./arguments-dumb.component.scss\"\r\n})\r\nexport class ArgumentsDumbComponent {\r\n  @Input() value: {\r\n    argument: string,\r\n    alias: string,\r\n    description: string,\r\n    require: boolean,\r\n    value: string\r\n  }[] = [];\r\n}\r\n",
+            "styleUrl": "./arguments-dumb.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p-table [value]=\"values\" styleClass=\"p-datatable-gridlines\" [tableStyle]=\"{ 'min-width': '100%' }\">\r\n  <ng-template pTemplate=\"header\">\r\n    <tr>\r\n      <th class=\"column-center\">Argument</th>\r\n      <th class=\"column-center\">Alias</th>\r\n      <th>Description</th>\r\n      <th class=\"column-center\">Required</th>\r\n      <th class=\"column-center\">Value</th>\r\n    </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-value>\r\n    <tr>\r\n      <td class=\"column-center\">{{ value['argument'] }}</td>\r\n      <td class=\"column-center\">{{ value['alias'] }}</td>\r\n      <td>{{ value['description'] }}</td>\r\n      <td class=\"column-center\">\r\n        <i class=\"pi pi-check\" style=\"font-size: 1rem;\"></i>\r\n      </td>\r\n      <td class=\"column-center\">{{ value['value'] }}</td>\r\n    </tr>\r\n  </ng-template>\r\n</p-table>\r\n"
+            "templateData": "<p-table [value]=\"value\" styleClass=\"p-datatable-gridlines\" [tableStyle]=\"{ 'min-width': '100%' }\">\r\n  <ng-template pTemplate=\"header\">\r\n    <tr>\r\n      <th class=\"column-center\">Argument</th>\r\n      <th class=\"column-center\">Alias</th>\r\n      <th>Description</th>\r\n      <th class=\"column-center\">Required</th>\r\n      <th class=\"column-center\">Value</th>\r\n    </tr>\r\n  </ng-template>\r\n  <ng-template pTemplate=\"body\" let-value>\r\n    <tr>\r\n      <td class=\"column-center\">{{ value['argument'] }}</td>\r\n      <td class=\"column-center\">{{ value['alias'] }}</td>\r\n      <td>{{ value['description'] }}</td>\r\n      <td class=\"column-center\">\r\n        <i class=\"pi pi-check\" style=\"font-size: 1rem;\"></i>\r\n      </td>\r\n      <td class=\"column-center\">{{ value['value'] }}</td>\r\n    </tr>\r\n  </ng-template>\r\n</p-table>\r\n"
+        },
+        {
+            "name": "ArgumentsSmartComponent",
+            "id": "component-ArgumentsSmartComponent-f2a4f822dacd5e46c694a858223a78ae381b23eca6d48b84cb6b715e39736264922938156544590243fb536203d43aebccd85af269c0c72783914b752c47ac01",
+            "file": "src/app/shared/component/smart/component/arguments-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-arguments-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-arguments-dumb [value]='value'></rw-arguments-dumb>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 8,
+                    "type": "literal type[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\r\n\r\n@Component({\r\n  selector: \"rw-arguments-smart\",\r\n  template: \"<rw-arguments-dumb [value]='value'></rw-arguments-dumb>\"\r\n})\r\nexport class ArgumentsSmartComponent {\r\n  @Input() value: {\r\n    argument: string,\r\n    alias: string,\r\n    description: string,\r\n    require: boolean,\r\n    value: string\r\n  }[] = [];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "AsideNavComponent",
@@ -1414,7 +1459,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'firstLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h1'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'secondLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h2'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'paragraph'\">\r\n        <rw-paragraph-smart [value]=\"section.value\"></rw-paragraph-smart>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <rw-terminal-smart [content]=\"section.value\"></rw-terminal-smart>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <repox-website-arguments [values]=\"section.value\"></repox-website-arguments>\r\n      </ng-container>\r\n      <!-- Info -->\r\n      <ng-container *ngIf=\"section.type === 'info'\">\r\n        <rw-info-message-smart [messages]=\"[section.value]\"></rw-info-message-smart>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"docs\">\r\n  <div class=\"docs-content\">\r\n    <ng-container *ngFor=\"let section of content?.sections\">\r\n      <!-- Header h1 -->\r\n      <ng-container *ngIf=\"section.type === 'firstLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h1'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Header h2 -->\r\n      <ng-container *ngIf=\"section.type === 'secondLevelHeader'\">\r\n        <rw-header-smart [headerType]=\"'h2'\" [headerValue]=\"section.value\" [headerLink]=\"section.link\"></rw-header-smart>\r\n      </ng-container>\r\n      <!-- Paragraph p -->\r\n      <ng-container *ngIf=\"section.type === 'paragraph'\">\r\n        <rw-paragraph-smart [value]=\"section.value\"></rw-paragraph-smart>\r\n      </ng-container>\r\n      <!-- Command code -->\r\n      <ng-container *ngIf=\"section.type === 'command'\">\r\n        <rw-terminal-smart [content]=\"section.value\"></rw-terminal-smart>\r\n      </ng-container>\r\n      <!-- Newline -->\r\n      <ng-container *ngIf=\"section.type === 'newline'\">\r\n        <div class=\"docs-content__newline\"></div>\r\n      </ng-container>\r\n      <!-- Array -->\r\n      <ng-container *ngIf=\"section.type === 'arguments'\">\r\n        <rw-arguments-dumb [value]=\"section.value\"></rw-arguments-dumb>\r\n      </ng-container>\r\n      <!-- Info -->\r\n      <ng-container *ngIf=\"section.type === 'info'\">\r\n        <rw-info-message-smart [messages]=\"[section.value]\"></rw-info-message-smart>\r\n      </ng-container>\r\n    </ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "ExtensionComponent",
@@ -3092,50 +3137,6 @@
             ]
         },
         {
-            "name": "ControlModule",
-            "id": "module-ControlModule-16958a61758d6d98600eab16959697b15f08e58f21736656528d40a33e39de75afe4d46e46b28e1eb8648e30e8f9bcd75a868fbedc51d1c342b6dc0d13ae49d4",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/shared/component/control/control.module.ts",
-            "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {ArgumentsComponent} from './arguments/arguments.component';\r\nimport {TableModule} from \"primeng/table\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    ArgumentsComponent\r\n  ],\r\n  imports: [\r\n    PanelModule,\r\n    ToastModule,\r\n    TableModule\r\n  ],\r\n  exports: [\r\n    ArgumentsComponent\r\n  ]\r\n})\r\nexport class ControlModule {\r\n}\r\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "ArgumentsComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "ArgumentsComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
             "name": "CoreModule",
             "id": "module-CoreModule-8c03bb98b28d9907b01ae430ed57c6815cb8cd085854621c451aa078495d417d10116a9077d819fe9f9401b790e9abddeaa2ca0567386de28932e9e9dde90712",
             "description": "",
@@ -3302,13 +3303,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-d7ff22d559a447828f1254d8332ced995f73bccac26f13f527bedaee926f192b693a6347025dbb7ff3570e0de2cd3ad71cbd0bd67a11b4a6ea89c269030dda61",
+            "id": "module-DumbModule-0eb85b7de2aa3d840e6dd5c85b3e398d4a04b534296c28a90f00c084453e0ffe2f064660a841cd2bb6aaeaf1b0b9e3c0e05d117330b328c75f93ba312db37acc",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {CommonModule} from \"@angular/common\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {MessagesModule} from \"primeng/messages\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\r\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\r\nimport { ParagraphDumbComponent } from './paragraph-dumb/paragraph-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent,\r\n    ParagraphDumbComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule,\r\n    MessagesModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {CommonModule} from \"@angular/common\";\r\n\r\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\r\nimport {PanelModule} from \"primeng/panel\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {ToastModule} from \"primeng/toast\";\r\nimport {MessagesModule} from \"primeng/messages\";\r\nimport {TableModule} from \"primeng/table\";\r\n\r\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\r\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\r\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\r\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\r\nimport {ParagraphDumbComponent} from './paragraph-dumb/paragraph-dumb.component';\r\nimport {ArgumentsDumbComponent} from './arguments-dumb/arguments-dumb.component';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent,\r\n    ParagraphDumbComponent,\r\n    ArgumentsDumbComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BreadcrumbModule,\r\n    PanelModule,\r\n    ButtonModule,\r\n    ToastModule,\r\n    MessagesModule,\r\n    TableModule\r\n  ],\r\n  exports: [\r\n    BreadcrumbDumbComponent,\r\n    TerminalDumbComponent,\r\n    HeaderDumbComponent,\r\n    InfoMessageDumbComponent,\r\n    ParagraphDumbComponent,\r\n    ArgumentsDumbComponent\r\n  ]\r\n})\r\nexport class DumbModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3317,6 +3318,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "ArgumentsDumbComponent"
+                        },
                         {
                             "name": "BreadcrumbDumbComponent"
                         },
@@ -3342,6 +3346,9 @@
                     "type": "exports",
                     "elements": [
                         {
+                            "name": "ArgumentsDumbComponent"
+                        },
+                        {
                             "name": "BreadcrumbDumbComponent"
                         },
                         {
@@ -3349,6 +3356,9 @@
                         },
                         {
                             "name": "InfoMessageDumbComponent"
+                        },
+                        {
+                            "name": "ParagraphDumbComponent"
                         },
                         {
                             "name": "TerminalDumbComponent"
@@ -3473,13 +3483,13 @@
         },
         {
             "name": "SharedModule",
-            "id": "module-SharedModule-096cbae77df8775a1dd0a2046b24f4e92dd83465ffa79de148a9a0591d5dc8e51026719a160fc21b2d8b58e677bdb013ef71d697b807604b27d7cd29decba96b",
+            "id": "module-SharedModule-62da9c101316c861102eefad35447e0469e9c45ce6827335950e4f48286c05dbdabf94575fa6aa58567dae5ba299b2ea278724a07b4a5abf710008a9efddf52e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/shared.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterLink} from \"@angular/router\";\r\nimport {CommonModule, NgOptimizedImage} from \"@angular/common\";\r\nimport {BrowserModule} from \"@angular/platform-browser\";\r\n\r\nimport {FontAwesomeModule} from \"@fortawesome/angular-fontawesome\";\r\n\r\nimport {MenubarModule} from 'primeng/menubar';\r\nimport {InputTextModule} from \"primeng/inputtext\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {TreeModule} from 'primeng/tree';\r\nimport {PanelModule} from 'primeng/panel';\r\nimport {BreadcrumbModule} from 'primeng/breadcrumb';\r\n\r\nimport {MainNavComponent} from \"./component/main-nav/main-nav.component\";\r\nimport {AsideNavComponent} from './component/aside-nav/aside-nav.component';\r\nimport {DocsContentComponent} from './component/docs-content/docs-content.component';\r\nimport {DocsContainerComponent} from './component/docs-container/docs-container.component';\r\nimport {FieldsetModule} from \"primeng/fieldset\";\r\nimport {CardModule} from \"primeng/card\";\r\nimport {TableModule} from \"primeng/table\";\r\nimport {ControlModule} from \"./component/control/control.module\";\r\nimport {DumbModule} from \"./component/dumb/dumb.module\";\r\nimport {ComponentModule} from \"./component/component.module\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    RouterLink,\r\n    NgOptimizedImage,\r\n    FontAwesomeModule,\r\n    MenubarModule,\r\n    InputTextModule,\r\n    ButtonModule,\r\n    TreeModule,\r\n    PanelModule,\r\n    BreadcrumbModule,\r\n    FieldsetModule,\r\n    CardModule,\r\n    TableModule,\r\n    ControlModule,\r\n    DumbModule,\r\n    ComponentModule\r\n  ],\r\n  exports: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ]\r\n})\r\nexport class SharedModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\nimport {RouterLink} from \"@angular/router\";\r\nimport {CommonModule, NgOptimizedImage} from \"@angular/common\";\r\nimport {BrowserModule} from \"@angular/platform-browser\";\r\n\r\nimport {FontAwesomeModule} from \"@fortawesome/angular-fontawesome\";\r\n\r\nimport {MenubarModule} from 'primeng/menubar';\r\nimport {InputTextModule} from \"primeng/inputtext\";\r\nimport {ButtonModule} from \"primeng/button\";\r\nimport {TreeModule} from 'primeng/tree';\r\nimport {PanelModule} from 'primeng/panel';\r\nimport {BreadcrumbModule} from 'primeng/breadcrumb';\r\n\r\nimport {MainNavComponent} from \"./component/main-nav/main-nav.component\";\r\nimport {AsideNavComponent} from './component/aside-nav/aside-nav.component';\r\nimport {DocsContentComponent} from './component/docs-content/docs-content.component';\r\nimport {DocsContainerComponent} from './component/docs-container/docs-container.component';\r\nimport {FieldsetModule} from \"primeng/fieldset\";\r\nimport {CardModule} from \"primeng/card\";\r\nimport {TableModule} from \"primeng/table\";\r\nimport {DumbModule} from \"./component/dumb/dumb.module\";\r\nimport {ComponentModule} from \"./component/component.module\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ],\r\n  imports: [\r\n    CommonModule,\r\n    BrowserModule,\r\n    RouterLink,\r\n    NgOptimizedImage,\r\n    FontAwesomeModule,\r\n    MenubarModule,\r\n    InputTextModule,\r\n    ButtonModule,\r\n    TreeModule,\r\n    PanelModule,\r\n    BreadcrumbModule,\r\n    FieldsetModule,\r\n    CardModule,\r\n    TableModule,\r\n    DumbModule,\r\n    ComponentModule\r\n  ],\r\n  exports: [\r\n    MainNavComponent,\r\n    AsideNavComponent,\r\n    DocsContentComponent,\r\n    DocsContainerComponent\r\n  ]\r\n})\r\nexport class SharedModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3505,9 +3515,6 @@
                 {
                     "type": "imports",
                     "elements": [
-                        {
-                            "name": "ControlModule"
-                        },
                         {
                             "name": "DumbModule"
                         },
@@ -3548,13 +3555,13 @@
         },
         {
             "name": "SmartModule",
-            "id": "module-SmartModule-971d9bea13c96cb12e5707482e08bd190110b098ec82a89e6d32bd6fa34ec50a4c39c29da16a5662bbe7ba272079c8df2d116c02d32d5edd2c9f58ae9dda327f",
+            "id": "module-SmartModule-c383e22f6fb1c18c45cf1921fd0a0090011aadfb405055626a36ae2804dc1ca02e552e060e053b754f96827521a7f39574acc001f965914a20e98bf8221c8733",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/smart/smart.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\r\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\r\nimport {ParagraphSmartComponent} from \"./component/paragraph-smart.component\";\r\n\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent,\r\n    ParagraphSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent,\r\n    ParagraphSmartComponent\r\n  ],\r\n  providers: [\r\n    MessageService\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\r\n\r\nimport {DumbModule} from \"../dumb/dumb.module\";\r\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\r\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\r\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\r\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\r\nimport {ParagraphSmartComponent} from \"./component/paragraph-smart.component\";\r\nimport {ArgumentsSmartComponent} from \"./component/arguments-smart.component\";\r\n\r\nimport {MessageService} from \"primeng/api\";\r\n\r\n@NgModule({\r\n  declarations: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent,\r\n    ParagraphSmartComponent,\r\n    ArgumentsSmartComponent\r\n  ],\r\n  imports: [DumbModule],\r\n  exports: [\r\n    BreadcrumbSmartComponent,\r\n    TerminalSmartComponent,\r\n    HeaderSmartComponent,\r\n    InfoMessageSmartComponent,\r\n    ParagraphSmartComponent,\r\n    ArgumentsSmartComponent\r\n  ],\r\n  providers: [\r\n    MessageService\r\n  ]\r\n})\r\nexport class SmartModule {\r\n}\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -3563,6 +3570,9 @@
                 {
                     "type": "declarations",
                     "elements": [
+                        {
+                            "name": "ArgumentsSmartComponent"
+                        },
                         {
                             "name": "BreadcrumbSmartComponent"
                         },
@@ -3591,6 +3601,9 @@
                 {
                     "type": "exports",
                     "elements": [
+                        {
+                            "name": "ArgumentsSmartComponent"
+                        },
                         {
                             "name": "BreadcrumbSmartComponent"
                         },
@@ -3625,11 +3638,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    values: [\r\n      {\r\n        argument: \"--name\",\r\n        alias: \"-n\",\r\n        description: \"Defines the name of the workspace. It specifies the folder name that will be created on the disk.\",\r\n        require: true,\r\n        value: \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
+                "defaultValue": "{\r\n  args: {\r\n    value: [\r\n      {\r\n        argument: \"name\",\r\n        alias: \"n\",\r\n        description: \"The name of the workspace.\",\r\n        require: true,\r\n        value: \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
             },
             {
                 "name": "Default",
@@ -3655,6 +3668,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    value: \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nulla non diam vehicula tristique. Suspendisse pulvinar facilisis diam et pharetra. Phasellus nisl elit, eleifend sagittis sagittis at, congue vitae leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt nibh turpis, non fringilla purus interdum eget. Phasellus dolor arcu, rhoncus quis vulputate aliquam, lobortis a mi. In malesuada velit ac massa pharetra, non fermentum justo pharetra. Suspendisse tincidunt consequat mauris vel mattis. Nam et massa pretium, sodales augue vel, egestas diam. Duis massa lectus, pulvinar non mauris ut, aliquam convallis nisi. Sed a ipsum tristique, faucibus ex in, suscipit tellus. Curabitur euismod magna lectus, eu accumsan ante fringilla eget. In hac habitasse platea dictumst. Quisque fringilla lobortis dolor eget blandit. Sed consectetur enim a ante interdum mattis. \"\r\n  }\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3672,24 +3695,14 @@
                 "defaultValue": "{\r\n  args: {\r\n    content: \"repox program --arg1 -a command --arg2 -b\"\r\n  }\r\n}"
             },
             {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\r\n  args: {\r\n    value: \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nulla non diam vehicula tristique. Suspendisse pulvinar facilisis diam et pharetra. Phasellus nisl elit, eleifend sagittis sagittis at, congue vitae leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt nibh turpis, non fringilla purus interdum eget. Phasellus dolor arcu, rhoncus quis vulputate aliquam, lobortis a mi. In malesuada velit ac massa pharetra, non fermentum justo pharetra. Suspendisse tincidunt consequat mauris vel mattis. Nam et massa pretium, sodales augue vel, egestas diam. Duis massa lectus, pulvinar non mauris ut, aliquam convallis nisi. Sed a ipsum tristique, faucibus ex in, suscipit tellus. Curabitur euismod magna lectus, eu accumsan ante fringilla eget. In hac habitasse platea dictumst. Quisque fringilla lobortis dolor eget blandit. Sed consectetur enim a ante interdum mattis. \"\r\n  }\r\n}"
-            },
-            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<ArgumentsComponent>",
-                "defaultValue": "{\r\n  title: \"arguments\",\r\n  component: ArgumentsComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [TableModule]\r\n    })\r\n  ]\r\n}"
+                "type": "Meta<ArgumentsDumbComponent>",
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ArgumentsDumbComponent\",\r\n  component: ArgumentsDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        TableModule\r\n      ]\r\n    })\r\n  ]\r\n}"
             },
             {
                 "name": "meta",
@@ -3715,6 +3728,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ParagraphDumbComponent>",
+                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ParagraphDumbComponent\",\r\n  component: ParagraphDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3730,16 +3753,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<TerminalDumbComponent>",
                 "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule,\r\n        ButtonModule,\r\n        ToastModule\r\n      ],\r\n      providers: [\r\n        MessageService\r\n      ]\r\n    })\r\n  ]\r\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<ParagraphDumbComponent>",
-                "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ParagraphDumbComponent\",\r\n  component: ParagraphDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
             },
             {
                 "name": "preview",
@@ -3769,8 +3782,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<ArgumentsComponent>",
-                "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                "rawtype": "StoryObj<ArgumentsDumbComponent>",
+                "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3802,6 +3815,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<ParagraphDumbComponent>",
+                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<InfoMessageDumbComponent>",
                 "file": "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts",
                 "deprecated": false,
@@ -3819,41 +3843,30 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<ParagraphDumbComponent>",
-                "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
             }
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/shared/component/control/arguments/arguments.stories.ts": [
+            "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                    "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    values: [\r\n      {\r\n        argument: \"--name\",\r\n        alias: \"-n\",\r\n        description: \"Defines the name of the workspace. It specifies the folder name that will be created on the disk.\",\r\n        require: true,\r\n        value: \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
+                    "defaultValue": "{\r\n  args: {\r\n    value: [\r\n      {\r\n        argument: \"name\",\r\n        alias: \"n\",\r\n        description: \"The name of the workspace.\",\r\n        require: true,\r\n        value: \"string\"\r\n      }\r\n    ]\r\n  }\r\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                    "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<ArgumentsComponent>",
-                    "defaultValue": "{\r\n  title: \"arguments\",\r\n  component: ArgumentsComponent,\r\n  tags: ['autodocs'],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [TableModule]\r\n    })\r\n  ]\r\n}"
+                    "type": "Meta<ArgumentsDumbComponent>",
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ArgumentsDumbComponent\",\r\n  component: ArgumentsDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        TableModule\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
             "src/app/shared/component/dumb/breadcrumb-dumb/breadcrumb-dumb.stories.ts": [
@@ -3900,6 +3913,28 @@
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/HeaderDumbComponent\",\r\n  component: HeaderDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
                 }
             ],
+            "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    value: \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nulla non diam vehicula tristique. Suspendisse pulvinar facilisis diam et pharetra. Phasellus nisl elit, eleifend sagittis sagittis at, congue vitae leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt nibh turpis, non fringilla purus interdum eget. Phasellus dolor arcu, rhoncus quis vulputate aliquam, lobortis a mi. In malesuada velit ac massa pharetra, non fermentum justo pharetra. Suspendisse tincidunt consequat mauris vel mattis. Nam et massa pretium, sodales augue vel, egestas diam. Duis massa lectus, pulvinar non mauris ut, aliquam convallis nisi. Sed a ipsum tristique, faucibus ex in, suscipit tellus. Curabitur euismod magna lectus, eu accumsan ante fringilla eget. In hac habitasse platea dictumst. Quisque fringilla lobortis dolor eget blandit. Sed consectetur enim a ante interdum mattis. \"\r\n  }\r\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ParagraphDumbComponent>",
+                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ParagraphDumbComponent\",\r\n  component: ParagraphDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
+                }
+            ],
             "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
                 {
                     "name": "Default",
@@ -3944,28 +3979,6 @@
                     "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/TerminalDumbComponent\",\r\n  component: TerminalDumbComponent,\r\n  tags: [\"autodocs\"],\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [\r\n        BrowserAnimationsModule,\r\n        PanelModule,\r\n        ButtonModule,\r\n        ToastModule\r\n      ],\r\n      providers: [\r\n        MessageService\r\n      ]\r\n    })\r\n  ]\r\n}"
                 }
             ],
-            "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\r\n  args: {\r\n    value: \" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur nulla non diam vehicula tristique. Suspendisse pulvinar facilisis diam et pharetra. Phasellus nisl elit, eleifend sagittis sagittis at, congue vitae leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec tincidunt nibh turpis, non fringilla purus interdum eget. Phasellus dolor arcu, rhoncus quis vulputate aliquam, lobortis a mi. In malesuada velit ac massa pharetra, non fermentum justo pharetra. Suspendisse tincidunt consequat mauris vel mattis. Nam et massa pretium, sodales augue vel, egestas diam. Duis massa lectus, pulvinar non mauris ut, aliquam convallis nisi. Sed a ipsum tristique, faucibus ex in, suscipit tellus. Curabitur euismod magna lectus, eu accumsan ante fringilla eget. In hac habitasse platea dictumst. Quisque fringilla lobortis dolor eget blandit. Sed consectetur enim a ante interdum mattis. \"\r\n  }\r\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<ParagraphDumbComponent>",
-                    "defaultValue": "{\r\n  title: \"Shared/Component/Dumb/ParagraphDumbComponent\",\r\n  component: ParagraphDumbComponent,\r\n  tags: [\"autodocs\"]\r\n}"
-                }
-            ],
             ".storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -3995,13 +4008,13 @@
                     "kind": 192
                 }
             ],
-            "src/app/shared/component/control/arguments/arguments.stories.ts": [
+            "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<ArgumentsComponent>",
-                    "file": "src/app/shared/component/control/arguments/arguments.stories.ts",
+                    "rawtype": "StoryObj<ArgumentsDumbComponent>",
+                    "file": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4034,6 +4047,19 @@
                     "kind": 183
                 }
             ],
+            "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ParagraphDumbComponent>",
+                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/shared/component/dumb/info-message-dumb/info-message-dumb.stories.ts": [
                 {
                     "name": "Story",
@@ -4054,19 +4080,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<TerminalDumbComponent>",
                     "file": "src/app/shared/component/dumb/terminal-dumb/terminal-dumb.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<ParagraphDumbComponent>",
-                    "file": "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4342,35 +4355,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/component/control/arguments/arguments.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ArgumentsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/component/control/arguments/arguments.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/component/control/arguments/arguments.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/shared/component/docs-container/docs-container.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4458,6 +4442,35 @@
                 "name": "DocsContentPSectionModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ArgumentsDumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/dumb/arguments-dumb/arguments-dumb.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -4612,6 +4625,15 @@
                 "name": "MainNavComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/component/arguments-smart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ArgumentsSmartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
