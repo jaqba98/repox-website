@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DocsContentModel} from "../../../../shared/component/docs-content/docs-content.model";
+import {DocsContentModel} from "../../../../shared/component/form/docs-content/docs-content.model";
 
 @Component({
   selector: 'repox-website-api-home',

@@ -23,7 +23,7 @@
       </ng-container>
       <!-- Array -->
       <ng-container *ngIf="section.type === 'arguments'">
-        <rw-arguments-dumb [value]="section.value"></rw-arguments-dumb>
+        <rw-arguments-smart [value]="section.value"></rw-arguments-smart>
       </ng-container>
       <!-- Info -->
       <ng-container *ngIf="section.type === 'info'">

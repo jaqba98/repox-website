@@ -1,2 +1,2 @@
-export * from "./component/docs-content/docs-content.model";
+export * from "./component/form/docs-content/docs-content.model";
 export * from "./shared.module";

@@ -14,19 +14,18 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 import {MainNavComponent} from "./component/main-nav/main-nav.component";
 import {AsideNavComponent} from './component/aside-nav/aside-nav.component';
-import {DocsContentComponent} from './component/docs-content/docs-content.component';
 import {DocsContainerComponent} from './component/docs-container/docs-container.component';
 import {FieldsetModule} from "primeng/fieldset";
 import {CardModule} from "primeng/card";
 import {TableModule} from "primeng/table";
 import {DumbModule} from "./component/dumb/dumb.module";
 import {ComponentModule} from "./component/component.module";
+import {FormModule} from "./component/form/form.module";
 
 @NgModule({
   declarations: [
     MainNavComponent,
     AsideNavComponent,
-    DocsContentComponent,
     DocsContainerComponent
   ],
   imports: [
@@ -45,12 +44,12 @@ import {ComponentModule} from "./component/component.module";
     CardModule,
     TableModule,
     DumbModule,
-    ComponentModule
+    ComponentModule,
+    FormModule
   ],
   exports: [
     MainNavComponent,
     AsideNavComponent,
-    DocsContentComponent,
     DocsContainerComponent
   ]
 })
