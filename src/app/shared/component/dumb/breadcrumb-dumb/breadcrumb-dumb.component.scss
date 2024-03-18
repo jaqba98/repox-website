@@ -1,8 +1,11 @@
 :host {
   ::ng-deep {
     .p-breadcrumb {
-      margin: 1rem;
       padding: 0;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
 
       &-list {
         padding: 1rem;
