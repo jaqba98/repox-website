@@ -1,13 +1,13 @@
 import {Component} from "@angular/core";
 
-import {DocsContentModel} from "@shared";
+import {DocsContentFormModel} from "@shared";
 
 @Component({
   selector: "rw-regenerate-workspace",
   template: "<repox-website-docs-container [content]='content'></repox-website-docs-container>"
 })
 export class RegenerateWorkspaceComponent {
-  content: DocsContentModel = {
+  content: DocsContentFormModel = {
     sections: [
       {
         type: "firstLevelHeader",

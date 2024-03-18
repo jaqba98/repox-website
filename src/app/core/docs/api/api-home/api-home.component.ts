@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {DocsContentModel} from "../../../../shared/component/form/docs-content/docs-content.model";
+import {DocsContentFormModel} from "@shared";
 
 @Component({
   selector: 'repox-website-api-home',
@@ -7,7 +7,7 @@ import {DocsContentModel} from "../../../../shared/component/form/docs-content/d
   styleUrl: './api-home.component.scss'
 })
 export class ApiHomeComponent {
-  content: DocsContentModel = {
+  content: DocsContentFormModel = {
     // title: "Api",
     sections: []
   };

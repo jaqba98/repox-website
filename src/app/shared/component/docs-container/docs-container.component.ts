@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {DocsContentModel} from "@shared";
+import {DocsContentFormModel} from "@shared";
 
 
 @Component({
@@ -8,5 +8,5 @@ import {DocsContentModel} from "@shared";
   styleUrl: './docs-container.component.scss'
 })
 export class DocsContainerComponent {
-  @Input() content: DocsContentModel | undefined;
+  @Input() content: DocsContentFormModel | undefined;
 }

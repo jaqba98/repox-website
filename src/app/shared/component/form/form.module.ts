@@ -1,19 +1,20 @@
 import {NgModule} from "@angular/core";
-
-import {DocsContentComponent} from "./docs-content/docs-content.component";
-import {SmartModule} from "../smart/smart.module";
 import {CommonModule} from "@angular/common";
+
+import {SmartModule} from "../smart/smart.module";
+
+import {DocsContentFormComponent} from "./docs-content-form/docs-content-form.component";
 
 @NgModule({
   declarations: [
-    DocsContentComponent
+    DocsContentFormComponent
   ],
   imports: [
     CommonModule,
     SmartModule
   ],
   exports: [
-    DocsContentComponent
+    DocsContentFormComponent
   ]
 })
 export class FormModule {

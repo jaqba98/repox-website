@@ -1,5 +1,5 @@
-<section class="docs">
-  <div class="docs-content">
+<section class="docs-content-form">
+  <div class="docs-content-form__content">
     <ng-container *ngFor="let section of content?.sections">
       <!-- Header h1 -->
       <ng-container *ngIf="section.type === 'firstLevelHeader'">
@@ -19,7 +19,7 @@
       </ng-container>
       <!-- Newline -->
       <ng-container *ngIf="section.type === 'newline'">
-        <div class="docs-content__newline"></div>
+        <div class="docs-content-form__newline"></div>
       </ng-container>
       <!-- Array -->
       <ng-container *ngIf="section.type === 'arguments'">
