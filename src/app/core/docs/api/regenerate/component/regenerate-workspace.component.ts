@@ -9,41 +9,84 @@ import {DocsContentModel} from "@shared";
 export class RegenerateWorkspaceComponent {
   content: DocsContentModel = {
     sections: [
-      {type: "firstLevelHeader", value: "Regenerate Workspace", link: "regenerate-workspace"},
-      {type: "newline"},
+      {
+        type: "firstLevelHeader",
+        value: "Regenerate Workspace",
+        link: "generate-workspace"
+      },
+      {
+        type: "newline"
+      },
+      {
+        type: "secondLevelHeader",
+        value: "Description",
+        link: "description"
+      },
       {
         type: "paragraph",
-        value: "The regenerate workspace command is used to regenerate the workspace configuration for a " +
-          "monorepo project managed by Repox. This command is essential for updating the project structure or " +
-          "resolving any inconsistencies within the workspace."
+        value: "The workspace regeneration section in Repox provides users with the capability to regenerate the " +
+          "entire monorepo workspace swiftly and efficiently. Through this feature, users can refresh their " +
+          "development environment, ensuring consistency and reliability across projects within the repository. " +
+          "Workspace regeneration facilitates the seamless integration of changes, dependencies, and configurations " +
+          "across all projects housed within the monorepo. It streamlines the process of updating dependencies or " +
+          "making structural changes, minimizing the risk of inconsistencies or conflicts. Ultimately, this section " +
+          "empowers users to maintain a cohesive and up-to-date development environment for their monorepo projects."
       },
-      {type: "newline"},
-      {type: "secondLevelHeader", value: "Syntax", link: "syntax"},
-      {type: "command", value: "repox regenerate workspace [options]"},
-      {type: "newline"},
-      {type: "secondLevelHeader", value: "Program arguments", link: "program-arguments"},
-      {type: "paragraph", value: "None"},
-      {type: "newline"},
-      {type: "secondLevelHeader", value: "Command arguments", link: "command-arguments"},
+      {
+        type: "newline"
+      },
+      {
+        type: "secondLevelHeader",
+        value: "Syntax",
+        link: "syntax"
+      },
+      {
+        type: "command",
+        value: "repox regenerate workspace [options]"
+      },
+      {
+        type: "newline"
+      },
+      {
+        type: "secondLevelHeader",
+        value: "Program arguments",
+        link: "program-arguments"
+      },
+      {
+        type: "info",
+        value: "No arguments"
+      },
+      {
+        type: "newline"
+      },
+      {
+        type: "secondLevelHeader",
+        value: "Command arguments",
+        link: "command-arguments"
+      },
       {
         type: "arguments",
         value: [
-          {argument: "force", alias: "f", description: "Force mode.", require: true, value: "boolean"}
+          {
+            argument: "force",
+            alias: "f",
+            description: "Run in the force mode.",
+            require: true,
+            value: "boolean"
+          }
         ]
       },
-      {type: "newline"},
-      {type: "secondLevelHeader", value: "Example", link: "example"},
-      {type: "command", value: "repox regenerate workspace --force"},
-      {type: "newline"},
-      {type: "secondLevelHeader", value: "Note", link: "note"},
       {
-        type: "paragraph",
-        value: "Running this command will regenerate the workspace configuration based on the current state of the monorepo project. " +
-          "Use with caution as it may overwrite existing configurations."
+        type: "newline"
       },
       {
-        type: "paragraph",
-        value: "Ensure all changes are committed before executing this command to prevent data loss."
+        type: "secondLevelHeader",
+        value: "Example",
+        link: "example"
+      },
+      {
+        type: "command",
+        value: "repox regenerate workspace --force"
       }
     ]
   };
