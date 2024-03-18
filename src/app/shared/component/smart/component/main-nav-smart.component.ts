@@ -1,12 +1,12 @@
 import {Component} from "@angular/core";
+
 import {MenuItem} from "primeng/api";
 
 @Component({
-  selector: "repox-website-main-nav",
-  templateUrl: "./main-nav.component.html",
-  styleUrls: ["./main-nav.component.scss"]
+  selector: "rw-main-nav-smart",
+  template: "<rw-main-nav-dumb [menuItems]='menuItems'></rw-main-nav-dumb>"
 })
-export class MainNavComponent {
+export class MainNavSmartComponent {
   menuItems: MenuItem[];
 
   constructor() {

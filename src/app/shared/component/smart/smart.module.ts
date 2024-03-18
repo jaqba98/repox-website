@@ -8,6 +8,7 @@ import {HeaderSmartComponent} from "./component/header-smart.component";
 import {InfoMessageSmartComponent} from "./component/info-message-smart.component";
 import {ParagraphSmartComponent} from "./component/paragraph-smart.component";
 import {ArgumentsSmartComponent} from "./component/arguments-smart.component";
+import {MainNavSmartComponent} from "./component/main-nav-smart.component";
 
 import {MessageService} from "primeng/api";
 
@@ -18,7 +19,8 @@ import {MessageService} from "primeng/api";
     HeaderSmartComponent,
     InfoMessageSmartComponent,
     ParagraphSmartComponent,
-    TerminalSmartComponent
+    TerminalSmartComponent,
+    MainNavSmartComponent
   ],
   imports: [DumbModule],
   exports: [
@@ -27,7 +29,8 @@ import {MessageService} from "primeng/api";
     HeaderSmartComponent,
     InfoMessageSmartComponent,
     ParagraphSmartComponent,
-    TerminalSmartComponent
+    TerminalSmartComponent,
+    MainNavSmartComponent
   ],
   providers: [
     MessageService

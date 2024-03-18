@@ -8,6 +8,7 @@ import {TerminalDumbComponent} from "./terminal-dumb/terminal-dumb.component";
 import {HeaderDumbComponent} from "./header-dumb/header-dumb.component";
 import {InfoMessageDumbComponent} from "./info-message-dumb/info-message-dumb.component";
 import {ParagraphDumbComponent} from './paragraph-dumb/paragraph-dumb.component';
+import {MainNavDumbComponent} from "./main-nav-dumb/main-nav-dumb.component";
 
 import {TableModule} from "primeng/table";
 import {BreadcrumbModule} from "primeng/breadcrumb";
@@ -15,6 +16,7 @@ import {MessagesModule} from "primeng/messages";
 import {ToastModule} from "primeng/toast";
 import {PanelModule} from "primeng/panel";
 import {ButtonModule} from "primeng/button";
+import {MenubarModule} from "primeng/menubar";
 
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
@@ -25,7 +27,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     HeaderDumbComponent,
     InfoMessageDumbComponent,
     ParagraphDumbComponent,
-    TerminalDumbComponent
+    TerminalDumbComponent,
+    MainNavDumbComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +39,7 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     ToastModule,
     PanelModule,
     ButtonModule,
+    MenubarModule,
     FontAwesomeModule
   ],
   exports: [
@@ -44,7 +48,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     HeaderDumbComponent,
     InfoMessageDumbComponent,
     ParagraphDumbComponent,
-    TerminalDumbComponent
+    TerminalDumbComponent,
+    MainNavDumbComponent
   ]
 })
 export class DumbModule {
