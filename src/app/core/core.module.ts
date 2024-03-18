@@ -7,6 +7,7 @@ import {CommunityComponent} from "./community/community.component";
 import {HomeComponent} from "./home/home.component";
 import {PluginsRegistryComponent} from "./plugins-registry/plugins-registry.component";
 import {SponsorsComponent} from "./sponsors/sponsors.component";
+import {ActivatedRoute} from "@angular/router";
 
 @NgModule({
   declarations: [
