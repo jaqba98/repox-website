@@ -19,6 +19,7 @@ export class ApiComponent implements OnInit {
         data: "/docs/api/generate",
         children: [
           {key: "0-0-1", label: "Workspace", data: "/docs/api/generate/workspace"},
+          {key: "0-0-2", label: "Project", data: "/docs/api/generate/project"},
         ]
       },
       {

@@ -6,12 +6,14 @@ import {SharedModule} from "../../../../shared/shared.module";
 import {GenerateComponent} from "./component/generate.component";
 import {GenerateIntroductionComponent} from "./component/generate-introduction.component";
 import {GenerateWorkspaceComponent} from "./component/generate-workspace.component";
+import {GenerateProjectComponent} from "./component/generate-project.component";
 
 @NgModule({
   declarations: [
     GenerateComponent,
     GenerateIntroductionComponent,
-    GenerateWorkspaceComponent
+    GenerateWorkspaceComponent,
+    GenerateProjectComponent
   ],
   imports: [
     RouterModule,
