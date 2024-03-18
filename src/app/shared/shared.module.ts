@@ -21,6 +21,9 @@ import {TableModule} from "primeng/table";
 import {DumbModule} from "./component/dumb/dumb.module";
 import {ComponentModule} from "./component/component.module";
 import {FormModule} from "./component/form/form.module";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CoreModule} from "../core/core.module";
+import {AppRoutingModule} from "../app-routing.module";
 
 @NgModule({
   declarations: [
@@ -45,7 +48,12 @@ import {FormModule} from "./component/form/form.module";
     TableModule,
     DumbModule,
     ComponentModule,
-    FormModule
+    FormModule,
+    BrowserAnimationsModule,
+    CommonModule,
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   exports: [
     MainNavComponent,

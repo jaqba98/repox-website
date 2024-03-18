@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
-import {RouterOutlet} from "@angular/router";
+import {RouterModule} from "@angular/router";
 
-import {SharedModule} from "@shared";
+import {SharedModule} from "../../../../shared/shared.module";
 
 import {RegenerateComponent} from "./component/regenerate.component";
 import {RegenerateIntroductionComponent} from "./component/regenerate-introduction.component";
@@ -14,7 +14,7 @@ import {RegenerateWorkspaceComponent} from "./component/regenerate-workspace.com
     RegenerateWorkspaceComponent
   ],
   imports: [
-    RouterOutlet,
+    RouterModule,
     SharedModule
   ]
 })

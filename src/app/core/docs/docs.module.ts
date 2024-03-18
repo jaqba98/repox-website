@@ -1,40 +1,31 @@
 import {NgModule} from "@angular/core";
+import {RouterModule} from "@angular/router";
+
+import {SharedModule} from "../../shared/shared.module";
 
 import {DocsComponent} from "./docs.component";
-import {GettingStartedComponent} from "./getting-started/getting-started.component";
-import {FeaturesComponent} from './features/features.component';
+import {ApiModule} from "./api/api.module";
+import {ChangelogComponent} from './changelog/changelog.component';
 import {ConceptsComponent} from './concepts/concepts.component';
 import {ExtensionComponent} from './extension/extension.component';
+import {FeaturesComponent} from './features/features.component';
+import {GettingStartedComponent} from "./getting-started/getting-started.component";
 import {PluginsComponent} from './plugins/plugins.component';
-import {ChangelogComponent} from './changelog/changelog.component';
-import {ApiModule} from "./api/api.module";
-import {SharedModule} from "@shared";
-import {RouterLink, RouterOutlet} from "@angular/router";
 
 @NgModule({
   declarations: [
     DocsComponent,
-    GettingStartedComponent,
-    FeaturesComponent,
+    ChangelogComponent,
     ConceptsComponent,
     ExtensionComponent,
-    PluginsComponent,
-    ChangelogComponent
+    FeaturesComponent,
+    GettingStartedComponent,
+    PluginsComponent
   ],
   imports: [
-    ApiModule,
+    RouterModule,
     SharedModule,
-    RouterOutlet,
-    RouterLink
-  ],
-  exports: [
-    DocsComponent,
-    GettingStartedComponent,
-    FeaturesComponent,
-    ConceptsComponent,
-    ExtensionComponent,
-    PluginsComponent,
-    ChangelogComponent
+    ApiModule
   ]
 })
 export class DocsModule {
