@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit} from "@angular/core";
 
-import {AsideNavService} from "../../../shared/component/aside-nav/aside-nav.service";
+import {AsideNavService} from "@shared";
 
 @Component({
-  selector: 'repox-website-api',
-  templateUrl: './api.component.html',
-  styleUrl: './api.component.scss'
+  selector: "rw-api",
+  template: "<router-outlet></router-outlet>",
 })
 export class ApiComponent implements OnInit {
   constructor(private readonly asideNav: AsideNavService) {
