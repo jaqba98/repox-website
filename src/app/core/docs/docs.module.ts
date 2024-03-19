@@ -9,8 +9,8 @@ import {ChangelogComponent} from './changelog/changelog.component';
 import {ConceptsComponent} from './concepts/concepts.component';
 import {ExtensionComponent} from './extension/extension.component';
 import {FeaturesComponent} from './features/features.component';
-import {GettingStartedComponent} from "./getting-started/getting-started.component";
 import {PluginsComponent} from './plugins/plugins.component';
+import {GettingStartedModule} from "./getting-started/getting-started.module";
 
 @NgModule({
   declarations: [
@@ -19,13 +19,13 @@ import {PluginsComponent} from './plugins/plugins.component';
     ConceptsComponent,
     ExtensionComponent,
     FeaturesComponent,
-    GettingStartedComponent,
     PluginsComponent
   ],
   imports: [
     RouterModule,
     SharedModule,
-    ApiModule
+    ApiModule,
+    GettingStartedModule
   ]
 })
 export class DocsModule {

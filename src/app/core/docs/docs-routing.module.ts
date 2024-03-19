@@ -8,10 +8,11 @@ import {PluginsComponent} from "./plugins/plugins.component";
 import {ApiComponent} from "./api/api.component";
 import {ChangelogComponent} from "./changelog/changelog.component";
 import {API_ROUTING} from "./api/api-routing.module";
+import {GETTING_STARTED_ROUTING} from "./getting-started/getting-started-routing.module";
 
 export const DOCS_ROUTING: Routes = [
   {path: "", redirectTo: "getting-started", pathMatch: "full"},
-  {path: "getting-started", component: GettingStartedComponent},
+  {path: "getting-started", component: GettingStartedComponent, children: GETTING_STARTED_ROUTING},
   {path: "features", component: FeaturesComponent},
   {path: "concepts", component: ConceptsComponent},
   {path: "extension", component: ExtensionComponent},
