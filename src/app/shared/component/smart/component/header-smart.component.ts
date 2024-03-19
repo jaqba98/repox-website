@@ -23,8 +23,10 @@ export class HeaderSmartComponent {
 
   isHovered: boolean = false;
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-    setTimeout(() => this.goToFragmentInstant(), 1);
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) {
   }
 
   @HostListener("mouseenter")
@@ -39,12 +41,7 @@ export class HeaderSmartComponent {
 
   onClick() {
     this.router.navigate([], {fragment: this.headerLink, relativeTo: this.route});
-    this.goToFragmentInstant();
-  }
-
-  private goToFragmentInstant() {
-    const currentFragment = this.router.url.split("#")[1];
-    const element = document.getElementById(currentFragment);
+    const element = document.getElementById(this.headerLink);
     if (element) {
       element.scrollIntoView({behavior: "smooth"});
     }
