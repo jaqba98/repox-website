@@ -17,6 +17,7 @@ import {ToastModule} from "primeng/toast";
 import {PanelModule} from "primeng/panel";
 import {ButtonModule} from "primeng/button";
 import {MenubarModule} from "primeng/menubar";
+import {ToastDumbComponent} from "./toast-dumb/toast-dumb.component";
 
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
@@ -28,7 +29,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     InfoMessageDumbComponent,
     ParagraphDumbComponent,
     TerminalDumbComponent,
-    MainNavDumbComponent
+    MainNavDumbComponent,
+    ToastDumbComponent
   ],
   imports: [
     CommonModule,
@@ -49,7 +51,8 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     InfoMessageDumbComponent,
     ParagraphDumbComponent,
     TerminalDumbComponent,
-    MainNavDumbComponent
+    MainNavDumbComponent,
+    ToastDumbComponent
   ]
 })
 export class DumbModule {
