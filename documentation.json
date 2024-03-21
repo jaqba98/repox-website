@@ -315,19 +315,18 @@
     "components": [
         {
             "name": "ApiComponent",
-            "id": "component-ApiComponent-5523d62e5380957220426cd6bfb55509e1ec993079b683c45a6175b54738916bd812043fc6f42288f4782c3a781e1e66c1305ac5e0a589304df584532485939e",
+            "id": "component-ApiComponent-9b271a72f55fb12d8800f745d5ce44e25795c086443b63817f7dbfdd730c6c20ab31043bbdf187dd153c3843f2795ec8702541a3fd3833b6396dd5e43b35909b",
             "file": "src/app/core/docs/api/api.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-api",
+            "selector": "rw-api",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./api.component.html"
-            ],
+            "template": "<router-outlet></router-outlet>",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
@@ -340,7 +339,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -354,8 +353,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, OnInit} from '@angular/core';\n\nimport {AsideNavService} from \"../../../shared/component/aside-nav/aside-nav.service\";\n\n@Component({\n  selector: 'repox-website-api',\n  templateUrl: './api.component.html',\n  styleUrl: './api.component.scss'\n})\nexport class ApiComponent implements OnInit {\n  constructor(private readonly asideNav: AsideNavService) {\n  }\n\n  ngOnInit() {\n    this.asideNav.asideNavOptions$.next([\n      {\n        key: \"0-0\",\n        label: \"Generate\",\n        data: \"/docs/api/generate\",\n        children: [\n          {key: \"0-0-1\", label: \"Workspace\", data: \"/docs/api/generate/workspace\"},\n        ]\n      },\n      {\n        key: \"0-1\",\n        label: \"Regenerate\",\n        data: \"/docs/api/regenerate\",\n        children: [\n          {key: \"0-1-1\", label: \"Workspace\", data: \"/docs/api/regenerate/workspace\"},\n        ]\n      }\n    ]);\n  }\n}\n",
-            "styleUrl": "./api.component.scss",
+            "sourceCode": "import {Component, OnInit} from \"@angular/core\";\n\nimport {AsideNavService} from \"@shared\";\n\n@Component({\n  selector: \"rw-api\",\n  template: \"<router-outlet></router-outlet>\",\n})\nexport class ApiComponent implements OnInit {\n  constructor(private readonly asideNav: AsideNavService) {\n  }\n\n  ngOnInit() {\n    this.asideNav.asideNavOptions$.next([\n      {\n        key: \"0-0\",\n        label: \"Generate\",\n        data: \"/docs/api/generate\",\n        children: [\n          {key: \"0-0-1\", label: \"Workspace\", data: \"/docs/api/generate/workspace\"},\n          {key: \"0-0-2\", label: \"Project\", data: \"/docs/api/generate/project\"},\n        ]\n      },\n      {\n        key: \"0-1\",\n        label: \"Regenerate\",\n        data: \"/docs/api/regenerate\",\n        children: [\n          {key: \"0-1-1\", label: \"Workspace\", data: \"/docs/api/regenerate/workspace\"},\n        ]\n      }\n    ]);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -372,7 +370,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 10,
+                "line": 9,
                 "jsdoctags": [
                     {
                         "name": "asideNav",
@@ -388,24 +386,22 @@
             "extends": [],
             "implements": [
                 "OnInit"
-            ],
-            "templateData": "<router-outlet></router-outlet>\n"
+            ]
         },
         {
             "name": "ApiHomeComponent",
-            "id": "component-ApiHomeComponent-b6991401e7fa1c7c7ef34933f188fdb6499ac898cb595a4c60f8af7d3f7c5e06fa5650327a2ff2045811cbdc46698657d15b23a23caf46b0227762106bf419b5",
+            "id": "component-ApiHomeComponent-c24c27438dfc7df216828f90f3416849487489618f7ed409dd91664de44e31812b52e1b2eb72a64cfccf11989a929e3e2f4c566ddf891de3b5333eeb7f1c8f76",
             "file": "src/app/core/docs/api/api-home/api-home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-api-home",
+            "selector": "rw-api-home",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./api-home.component.html"
-            ],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
@@ -413,7 +409,7 @@
             "propertiesClass": [
                 {
                     "name": "content",
-                    "defaultValue": "{\n    // title: \"Api\",\n    sections: []\n  }",
+                    "defaultValue": "{\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Api\",\n        link: \"api\"\n      }\n    ]\n  }",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "DocsContentFormModel",
@@ -432,13 +428,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport {DocsContentFormModel} from \"@shared\";\n\n@Component({\n  selector: 'repox-website-api-home',\n  templateUrl: './api-home.component.html',\n  styleUrl: './api-home.component.scss'\n})\nexport class ApiHomeComponent {\n  content: DocsContentFormModel = {\n    // title: \"Api\",\n    sections: []\n  };\n}\n",
-            "styleUrl": "./api-home.component.scss",
+            "sourceCode": "import {Component} from \"@angular/core\";\n\nimport {DocsContentFormModel} from \"@shared\";\n\n@Component({\n  selector: \"rw-api-home\",\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\n})\nexport class ApiHomeComponent {\n  content: DocsContentFormModel = {\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Api\",\n        link: \"api\"\n      }\n    ]\n  };\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<repox-website-docs-container [content]=\"content\"></repox-website-docs-container>\n"
+            "extends": []
         },
         {
             "name": "AppComponent",
@@ -482,7 +476,7 @@
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<rw-main-nav-smart></rw-main-nav-smart>\n<router-outlet></router-outlet>\n"
+            "templateData": "<rw-toast-smart></rw-toast-smart>\n<rw-main-nav-smart></rw-main-nav-smart>\n<router-outlet></router-outlet>\n"
         },
         {
             "name": "ArgumentsDumbComponent",
@@ -1721,6 +1715,52 @@
             "extends": []
         },
         {
+            "name": "GenerateProjectComponent",
+            "id": "component-GenerateProjectComponent-3077bcbb65097b9462d4bb999a8bcb04f0bad48e1d143be7add8011148a286202c07903c8fcd1ecabbc23be0f306d1e1cea2a2e47fa015a92f95b13db81c39d2",
+            "file": "src/app/core/docs/api/generate/component/generate-project.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-generate-project",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "{\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Generate Project\",\n        link: \"generate-workspace\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Description\",\n        link: \"description\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"The project generation section of Repox facilitates the seamless \" +\n          \"creation of new projects within a monorepo environment. Users can easily \" +\n          \"specify project configurations, dependencies, and folder structures to \" +\n          \"tailor the generated projects to their specific needs. Repox \" +\n          \"streamlines the process by automating common tasks such as \" +\n          \"setting up initial files and configurations, ensuring consistency \" +\n          \"across projects. With support for various project types and frameworks, \" +\n          \"users can efficiently kickstart development without the hassle of \" +\n          \"manual setup. Additionally, Repox provides options for custom \" +\n          \"templates and presets, allowing for further customization and \" +\n          \"flexibility in project generation.\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Syntax\",\n        link: \"syntax\"\n      },\n      {\n        type: \"command\",\n        value: \"repox generate project [options]\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Program arguments\",\n        link: \"program-arguments\"\n      },\n      {\n        type: \"info\",\n        value: \"No arguments\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Command arguments\",\n        link: \"command-arguments\"\n      },\n      {\n        type: \"arguments\",\n        value: [\n          {\n            argument: \"name\",\n            alias: \"n\",\n            description: \"Name of the project.\",\n            require: true,\n            value: \"string\"\n          },\n          {\n            argument: \"path\",\n            alias: \"p\",\n            description: \"Path of the project.\",\n            require: true,\n            value: \"string\"\n          },\n          {\n            argument: \"type\",\n            alias: \"t\",\n            description: \"Type of the project.\",\n            require: true,\n            value: \"string\"\n          }\n        ]\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Example\",\n        link: \"example\"\n      },\n      {\n        type: \"command\",\n        value: \"repox generate project --name=example --path=./projects/apps --type=app\"\n      }\n    ]\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DocsContentFormModel",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\n\nimport {DocsContentFormModel} from \"@shared\";\n\n@Component({\n  selector: \"rw-generate-project\",\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\n})\nexport class GenerateProjectComponent {\n  content: DocsContentFormModel = {\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Generate Project\",\n        link: \"generate-workspace\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Description\",\n        link: \"description\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"The project generation section of Repox facilitates the seamless \" +\n          \"creation of new projects within a monorepo environment. Users can easily \" +\n          \"specify project configurations, dependencies, and folder structures to \" +\n          \"tailor the generated projects to their specific needs. Repox \" +\n          \"streamlines the process by automating common tasks such as \" +\n          \"setting up initial files and configurations, ensuring consistency \" +\n          \"across projects. With support for various project types and frameworks, \" +\n          \"users can efficiently kickstart development without the hassle of \" +\n          \"manual setup. Additionally, Repox provides options for custom \" +\n          \"templates and presets, allowing for further customization and \" +\n          \"flexibility in project generation.\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Syntax\",\n        link: \"syntax\"\n      },\n      {\n        type: \"command\",\n        value: \"repox generate project [options]\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Program arguments\",\n        link: \"program-arguments\"\n      },\n      {\n        type: \"info\",\n        value: \"No arguments\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Command arguments\",\n        link: \"command-arguments\"\n      },\n      {\n        type: \"arguments\",\n        value: [\n          {\n            argument: \"name\",\n            alias: \"n\",\n            description: \"Name of the project.\",\n            require: true,\n            value: \"string\"\n          },\n          {\n            argument: \"path\",\n            alias: \"p\",\n            description: \"Path of the project.\",\n            require: true,\n            value: \"string\"\n          },\n          {\n            argument: \"type\",\n            alias: \"t\",\n            description: \"Type of the project.\",\n            require: true,\n            value: \"string\"\n          }\n        ]\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Example\",\n        link: \"example\"\n      },\n      {\n        type: \"command\",\n        value: \"repox generate project --name=example --path=./projects/apps --type=app\"\n      }\n    ]\n  };\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "GenerateWorkspaceComponent",
             "id": "component-GenerateWorkspaceComponent-e980a17207e5c1dde9da2f11f6cecb4dd772aa53efd9ff22139c73e15f2c224437ac7ce3dda9215e95a0305803aacd1753f5abac5a8971f1be3573e70cb1a17c",
             "file": "src/app/core/docs/api/generate/component/generate-workspace.component.ts",
@@ -1768,35 +1808,23 @@
         },
         {
             "name": "GettingStartedComponent",
-            "id": "component-GettingStartedComponent-2970f10c80f2dab4dfcabfd374ff2245bfef0b7fdddfe68792169205581b0132df10e776b042f989f7ddcbbb3b41a02f8c9f1c1dcbe0e9a74fbeef500f46a02d",
+            "id": "component-GettingStartedComponent-92ec433fd00d8f56d6665015503139db14d37e3829d4ae1e067f55804facacdbb7a1c308ea45bf600417ee7a8432e4f9c4095a5fdd694157f0ff71f20c736b32",
             "file": "src/app/core/docs/getting-started/getting-started.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "repox-website-getting-started",
+            "selector": "rw-getting-started",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./getting-started.component.html"
-            ],
+            "template": "<router-outlet></router-outlet>",
+            "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "title",
-                    "defaultValue": "\"getting-started\"",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
                     "name": "ngOnInit",
@@ -1804,7 +1832,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1818,8 +1846,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, OnInit} from '@angular/core';\n\nimport {AsideNavService} from \"../../../shared/component/aside-nav/aside-nav.service\";\n\n@Component({\n  selector: 'repox-website-getting-started',\n  templateUrl: './getting-started.component.html',\n  styleUrl: './getting-started.component.scss'\n})\nexport class GettingStartedComponent implements OnInit {\n  title = \"getting-started\";\n\n  constructor(private readonly asideNav: AsideNavService) {\n  }\n\n  ngOnInit() {\n    this.asideNav.asideNavOptions$.next([\n      {key: \"0-0\", label: \"GettingStarted Option 0\"},\n      {key: \"0-1\", label: \"GettingStarted Option 1\"},\n      {key: \"0-2\", label: \"GettingStarted Option 2\"},\n      {key: \"0-3\", label: \"GettingStarted Option 3\"},\n      {key: \"0-4\", label: \"GettingStarted Option 4\"}\n    ]);\n  }\n}\n",
-            "styleUrl": "./getting-started.component.scss",
+            "sourceCode": "import {Component, OnInit} from \"@angular/core\";\n\nimport {AsideNavService} from \"@shared\";\n\n@Component({\n  selector: \"rw-getting-started\",\n  template: \"<router-outlet></router-outlet>\",\n})\nexport class GettingStartedComponent implements OnInit {\n  constructor(private readonly asideNav: AsideNavService) {\n  }\n\n  ngOnInit() {\n    this.asideNav.asideNavOptions$.next([\n      {\n        key: \"0-0\",\n        label: \"Introduction\",\n        data: \"/docs/getting-started/\"\n      },\n      {\n        key: \"0-1\",\n        label: \"Installation\",\n        data: \"/docs/getting-started/installation\"\n      },\n      {\n        key: \"0-2\",\n        label: \"Try it\",\n        data: \"/docs/getting-started/try-it\"\n      }\n    ]);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1836,7 +1863,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 11,
+                "line": 9,
                 "jsdoctags": [
                     {
                         "name": "asideNav",
@@ -1852,8 +1879,145 @@
             "extends": [],
             "implements": [
                 "OnInit"
+            ]
+        },
+        {
+            "name": "GettingStartedHomeComponent",
+            "id": "component-GettingStartedHomeComponent-cccbed66ca1ddc81c0b2f8e14c62d32f7fea5a57003c2b7a8996104efe292578b6f3054c109de3fb17067b3e7a364cd3c198a7ff5f1759aa6cf88af012b02a1c",
+            "file": "src/app/core/docs/getting-started/getting-started-home/getting-started-home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-getting-started-home",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "{\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Introduction\",\n        link: \"getting-started\"\n      }\n    ]\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DocsContentFormModel",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
             ],
-            "templateData": "{{title}}\n"
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\n\nimport {DocsContentFormModel} from \"@shared\";\n\n@Component({\n  selector: \"rw-getting-started-home\",\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\n})\nexport class GettingStartedHomeComponent {\n  content: DocsContentFormModel = {\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Introduction\",\n        link: \"getting-started\"\n      }\n    ]\n  };\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "GettingStartedInstallationComponent",
+            "id": "component-GettingStartedInstallationComponent-ba154153106f8c7328361cf517e6d05d675fcccb3da5654a9ac94325dc9c9b0bffe45f0e725958436800f585fe8d5fbef3daebdd309aac2750e3d6fc1655f8db",
+            "file": "src/app/core/docs/getting-started/getting-started-home/getting-started-installation.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-getting-started-installation",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "{\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Installation\",\n        link: \"getting-started\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Prerequisites\",\n        link: \"prerequisites\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"Before installing Repox, ensure you have the following installed:\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"- node.js\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"- npm\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Installation Steps\",\n        link: \"installation-steps\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"To install Repox globally, follow these steps:\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"1. Open your terminal or command prompt.\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"2. Run the following npm command with `-g` flag to install Repox globally:\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"command\",\n        value: \"npm install -g repox\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Verifing the installation\",\n        link: \"verifing-the-installation\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"To verify ther Repox was installed globally succesfully, you can run the following command to check the installed version:\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"command\",\n        value: \"repox --version\"\n      }\n    ]\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DocsContentFormModel",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\n\nimport {DocsContentFormModel} from \"@shared\";\n\n@Component({\n  selector: \"rw-getting-started-installation\",\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\n})\nexport class GettingStartedInstallationComponent {\n  content: DocsContentFormModel = {\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Installation\",\n        link: \"getting-started\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Prerequisites\",\n        link: \"prerequisites\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"Before installing Repox, ensure you have the following installed:\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"- node.js\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"- npm\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Installation Steps\",\n        link: \"installation-steps\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"To install Repox globally, follow these steps:\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"1. Open your terminal or command prompt.\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"2. Run the following npm command with `-g` flag to install Repox globally:\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"command\",\n        value: \"npm install -g repox\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"secondLevelHeader\",\n        value: \"Verifing the installation\",\n        link: \"verifing-the-installation\"\n      },\n      {\n        type: \"paragraph\",\n        value: \"To verify ther Repox was installed globally succesfully, you can run the following command to check the installed version:\"\n      },\n      {\n        type: \"newline\"\n      },\n      {\n        type: \"command\",\n        value: \"repox --version\"\n      }\n    ]\n  };\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "GettingStartedTryItComponent",
+            "id": "component-GettingStartedTryItComponent-9caec350fb149c01417c341454693a4797afacb64f02213a3a3e75641b7a767fb1bcab3e68a797b77c1d9fb0e65c38989ac40795adba21254d54eba09e6ce8fd",
+            "file": "src/app/core/docs/getting-started/getting-started-home/getting-started-try-it.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-getting-started-try-it",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<repox-website-docs-container [content]='content'></repox-website-docs-container>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "content",
+                    "defaultValue": "{\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Try it\",\n        link: \"try-it\"\n      }\n    ]\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "DocsContentFormModel",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\n\nimport {DocsContentFormModel} from \"@shared\";\n\n@Component({\n  selector: \"rw-getting-started-try-it\",\n  template: \"<repox-website-docs-container [content]='content'></repox-website-docs-container>\"\n})\nexport class GettingStartedTryItComponent {\n  content: DocsContentFormModel = {\n    sections: [\n      {\n        type: \"firstLevelHeader\",\n        value: \"Try it\",\n        link: \"try-it\"\n      }\n    ]\n  };\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "HeaderDumbComponent",
@@ -1952,7 +2116,7 @@
         },
         {
             "name": "HeaderSmartComponent",
-            "id": "component-HeaderSmartComponent-20d8706a47d512242bcee21ecdaa436a1caff12f31b4e38cd44f908887281039f00bc864026b2ff2ca9fe95a2800be8997e991e6a547f80fbf8458de6ee70916",
+            "id": "component-HeaderSmartComponent-b99a5f5a8d810468e61d121f3aa226ac51c380bb887611012964816c03a3506d624e73285ef461b2ef3853c2a4224779f1d7e12c339cb62f7a1aa869369fe391",
             "file": "src/app/shared/component/smart/component/header-smart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2010,25 +2174,12 @@
             ],
             "methodsClass": [
                 {
-                    "name": "goToFragmentInstant",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 45,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
                     "name": "onClick",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 40,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2038,7 +2189,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 31,
+                    "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -2057,7 +2208,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "decorators": [
@@ -2081,7 +2232,7 @@
                     "argsDecorator": [],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31
+                    "line": 33
                 },
                 {
                     "name": "mouseleave",
@@ -2089,7 +2240,7 @@
                     "argsDecorator": [],
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36
+                    "line": 38
                 }
             ],
             "standalone": false,
@@ -2097,7 +2248,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, HostListener, Input} from \"@angular/core\";\nimport {ActivatedRoute, Router} from \"@angular/router\";\n\n@Component({\n  selector: \"rw-header-smart\",\n  template: `<rw-header-dumb\n    [headerType]='headerType'\n    [headerValue]='headerValue'\n    [headerLink]='headerLink'\n    [isHovered]=\"isHovered\"\n    (event)=\"onClick()\"\n  ></rw-header-dumb>`\n})\nexport class HeaderSmartComponent {\n  @Input()\n  headerType: \"h1\" | \"h2\" = \"h1\";\n\n  @Input()\n  headerValue: string = \"\";\n\n  @Input()\n  headerLink: string = \"\";\n\n  isHovered: boolean = false;\n\n  constructor(private router: Router, private route: ActivatedRoute) {\n    setTimeout(() => this.goToFragmentInstant(), 1);\n  }\n\n  @HostListener(\"mouseenter\")\n  onMouseEnter() {\n    this.isHovered = true;\n  }\n\n  @HostListener(\"mouseleave\")\n  onMouseLeave() {\n    this.isHovered = false;\n  }\n\n  onClick() {\n    this.router.navigate([], {fragment: this.headerLink, relativeTo: this.route});\n    this.goToFragmentInstant();\n  }\n\n  private goToFragmentInstant() {\n    const currentFragment = this.router.url.split(\"#\")[1];\n    const element = document.getElementById(currentFragment);\n    if (element) {\n      element.scrollIntoView({behavior: \"smooth\"});\n    }\n  }\n}\n",
+            "sourceCode": "import {Component, HostListener, Input} from \"@angular/core\";\nimport {ActivatedRoute, Router} from \"@angular/router\";\n\n@Component({\n  selector: \"rw-header-smart\",\n  template: `<rw-header-dumb\n    [headerType]='headerType'\n    [headerValue]='headerValue'\n    [headerLink]='headerLink'\n    [isHovered]=\"isHovered\"\n    (event)=\"onClick()\"\n  ></rw-header-dumb>`\n})\nexport class HeaderSmartComponent {\n  @Input()\n  headerType: \"h1\" | \"h2\" = \"h1\";\n\n  @Input()\n  headerValue: string = \"\";\n\n  @Input()\n  headerLink: string = \"\";\n\n  isHovered: boolean = false;\n\n  constructor(\n    private router: Router,\n    private route: ActivatedRoute\n  ) {\n  }\n\n  @HostListener(\"mouseenter\")\n  onMouseEnter() {\n    this.isHovered = true;\n  }\n\n  @HostListener(\"mouseleave\")\n  onMouseLeave() {\n    this.isHovered = false;\n  }\n\n  onClick() {\n    this.router.navigate([], {fragment: this.headerLink, relativeTo: this.route});\n    const element = document.getElementById(this.headerLink);\n    if (element) {\n      element.scrollIntoView({behavior: \"smooth\"});\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2895,7 +3046,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\n<p-panel header=\"Terminal\">\n  <p>{{ content }}</p>\n  <ng-template pTemplate=\"icons\">\n    <p-button icon=\"pi pi-copy\" severity=\"secondary\" [text]=\"true\" (click)=\"onClick()\"></p-button>\n  </ng-template>\n</p-panel>\n"
+            "templateData": "<p-panel header=\"Terminal\">\n  <p>{{ content }}</p>\n  <ng-template pTemplate=\"icons\">\n    <p-button icon=\"pi pi-copy\" severity=\"secondary\" [text]=\"true\" (click)=\"onClick()\"></p-button>\n  </ng-template>\n</p-panel>\n"
         },
         {
             "name": "TerminalSmartComponent",
@@ -2977,6 +3128,79 @@
                     }
                 ]
             },
+            "extends": []
+        },
+        {
+            "name": "ToastDumbComponent",
+            "id": "component-ToastDumbComponent-baaec5b66384d476aae037969b886f64186ef83d7224320b9e9962ae6e1bc85dd665361e51759b855e94f9d94689accc6418777f856b11f9eb8ac722a45b2136",
+            "file": "src/app/shared/component/dumb/toast-dumb/toast-dumb.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-toast-dumb",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./toast-dumb.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component} from \"@angular/core\";\n\n@Component({\n  selector: \"rw-toast-dumb\",\n  templateUrl: \"./toast-dumb.component.html\",\n  styleUrl: \"./toast-dumb.component.scss\"\n})\nexport class ToastDumbComponent {\n}\n",
+            "styleUrl": "./toast-dumb.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-toast [breakpoints]=\"{'920px': {width: '90%', left: '5%'}}\"></p-toast>\n"
+        },
+        {
+            "name": "ToastSmartComponent",
+            "id": "component-ToastSmartComponent-3da8a8f0816f9f7113b6c4b10c59121d95b6139a51149bd40f05aa4d3c32bca82acafc8efbde146db8bc038b696130e1932507c70df5e68600a171c0bd74245a",
+            "file": "src/app/shared/component/smart/component/toast-smart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "rw-toast-smart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<rw-toast-dumb></rw-toast-dumb>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from \"@angular/core\";\n\n@Component({\n  selector: \"rw-toast-smart\",\n  template: \"<rw-toast-dumb></rw-toast-dumb>\"\n})\nexport class ToastSmartComponent {\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
             "extends": []
         }
     ],
@@ -3185,13 +3409,13 @@
         },
         {
             "name": "DocsModule",
-            "id": "module-DocsModule-d1dcc4a0fdd462a14e7bf72ee030117c084f65ca678bd60ecb59c705b368e1d4105f0361e5ff8a8c9f42beea58125071912e7859f804fa441dc9eaabcb0237e8",
+            "id": "module-DocsModule-7ae2d2eb25dc9698b8a57b10cf8818cfff0171fc9ac4ea4f0a1c1366a5b175ea0b539b9dfd10d8d9d62558c9497f1bb6fe5566a49f7e4c1f04b638019972cc51",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/core/docs/docs.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {RouterModule} from \"@angular/router\";\n\nimport {SharedModule} from \"../../shared/shared.module\";\n\nimport {DocsComponent} from \"./docs.component\";\nimport {ApiModule} from \"./api/api.module\";\nimport {ChangelogComponent} from './changelog/changelog.component';\nimport {ConceptsComponent} from './concepts/concepts.component';\nimport {ExtensionComponent} from './extension/extension.component';\nimport {FeaturesComponent} from './features/features.component';\nimport {GettingStartedComponent} from \"./getting-started/getting-started.component\";\nimport {PluginsComponent} from './plugins/plugins.component';\n\n@NgModule({\n  declarations: [\n    DocsComponent,\n    ChangelogComponent,\n    ConceptsComponent,\n    ExtensionComponent,\n    FeaturesComponent,\n    GettingStartedComponent,\n    PluginsComponent\n  ],\n  imports: [\n    RouterModule,\n    SharedModule,\n    ApiModule\n  ]\n})\nexport class DocsModule {\n}\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {RouterModule} from \"@angular/router\";\n\nimport {SharedModule} from \"../../shared/shared.module\";\n\nimport {DocsComponent} from \"./docs.component\";\nimport {ApiModule} from \"./api/api.module\";\nimport {ChangelogComponent} from './changelog/changelog.component';\nimport {ConceptsComponent} from './concepts/concepts.component';\nimport {ExtensionComponent} from './extension/extension.component';\nimport {FeaturesComponent} from './features/features.component';\nimport {PluginsComponent} from './plugins/plugins.component';\nimport {GettingStartedModule} from \"./getting-started/getting-started.module\";\n\n@NgModule({\n  declarations: [\n    DocsComponent,\n    ChangelogComponent,\n    ConceptsComponent,\n    ExtensionComponent,\n    FeaturesComponent,\n    PluginsComponent\n  ],\n  imports: [\n    RouterModule,\n    SharedModule,\n    ApiModule,\n    GettingStartedModule\n  ]\n})\nexport class DocsModule {\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3216,9 +3440,6 @@
                             "name": "FeaturesComponent"
                         },
                         {
-                            "name": "GettingStartedComponent"
-                        },
-                        {
                             "name": "PluginsComponent"
                         }
                     ]
@@ -3228,6 +3449,9 @@
                     "elements": [
                         {
                             "name": "ApiModule"
+                        },
+                        {
+                            "name": "GettingStartedModule"
                         },
                         {
                             "name": "SharedModule"
@@ -3250,13 +3474,13 @@
         },
         {
             "name": "DumbModule",
-            "id": "module-DumbModule-d38333c8bab98ef11b0b91268bb12609ee972d487243af33a2295a3b1be8a9ae416dc38088b8ac252f6a404b31b9962b92d2d94f520a45f63c84e4123b2168b8",
+            "id": "module-DumbModule-e7803c12e6b3e3090fa7c6ef1fd0b4a0b31fec9908ca86b5991a7ee366df6b74c3cbfad484591b9cb61984864133042510afa112a1fe7373e3d1a75514782588",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/dumb/dumb.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {CommonModule} from \"@angular/common\";\nimport {BrowserAnimationsModule} from \"@angular/platform-browser/animations\";\n\nimport {ArgumentsDumbComponent} from './arguments-dumb/arguments-dumb.component';\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\nimport {ParagraphDumbComponent} from './paragraph-dumb/paragraph-dumb.component';\nimport {MainNavDumbComponent} from \"./main-nav-dumb/main-nav-dumb.component\";\n\nimport {TableModule} from \"primeng/table\";\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\nimport {MessagesModule} from \"primeng/messages\";\nimport {ToastModule} from \"primeng/toast\";\nimport {PanelModule} from \"primeng/panel\";\nimport {ButtonModule} from \"primeng/button\";\nimport {MenubarModule} from \"primeng/menubar\";\n\nimport {FontAwesomeModule} from \"@fortawesome/angular-fontawesome\";\n\n@NgModule({\n  declarations: [\n    ArgumentsDumbComponent,\n    BreadcrumbDumbComponent,\n    HeaderDumbComponent,\n    InfoMessageDumbComponent,\n    ParagraphDumbComponent,\n    TerminalDumbComponent,\n    MainNavDumbComponent\n  ],\n  imports: [\n    CommonModule,\n    BrowserAnimationsModule,\n    TableModule,\n    BreadcrumbModule,\n    MessagesModule,\n    ToastModule,\n    PanelModule,\n    ButtonModule,\n    MenubarModule,\n    FontAwesomeModule\n  ],\n  exports: [\n    ArgumentsDumbComponent,\n    BreadcrumbDumbComponent,\n    HeaderDumbComponent,\n    InfoMessageDumbComponent,\n    ParagraphDumbComponent,\n    TerminalDumbComponent,\n    MainNavDumbComponent\n  ]\n})\nexport class DumbModule {\n}\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {CommonModule} from \"@angular/common\";\nimport {BrowserAnimationsModule} from \"@angular/platform-browser/animations\";\n\nimport {ArgumentsDumbComponent} from './arguments-dumb/arguments-dumb.component';\nimport {BreadcrumbDumbComponent} from \"./breadcrumb-dumb/breadcrumb-dumb.component\";\nimport {TerminalDumbComponent} from \"./terminal-dumb/terminal-dumb.component\";\nimport {HeaderDumbComponent} from \"./header-dumb/header-dumb.component\";\nimport {InfoMessageDumbComponent} from \"./info-message-dumb/info-message-dumb.component\";\nimport {ParagraphDumbComponent} from './paragraph-dumb/paragraph-dumb.component';\nimport {MainNavDumbComponent} from \"./main-nav-dumb/main-nav-dumb.component\";\n\nimport {TableModule} from \"primeng/table\";\nimport {BreadcrumbModule} from \"primeng/breadcrumb\";\nimport {MessagesModule} from \"primeng/messages\";\nimport {ToastModule} from \"primeng/toast\";\nimport {PanelModule} from \"primeng/panel\";\nimport {ButtonModule} from \"primeng/button\";\nimport {MenubarModule} from \"primeng/menubar\";\nimport {ToastDumbComponent} from \"./toast-dumb/toast-dumb.component\";\n\nimport {FontAwesomeModule} from \"@fortawesome/angular-fontawesome\";\n\n@NgModule({\n  declarations: [\n    ArgumentsDumbComponent,\n    BreadcrumbDumbComponent,\n    HeaderDumbComponent,\n    InfoMessageDumbComponent,\n    ParagraphDumbComponent,\n    TerminalDumbComponent,\n    MainNavDumbComponent,\n    ToastDumbComponent\n  ],\n  imports: [\n    CommonModule,\n    BrowserAnimationsModule,\n    TableModule,\n    BreadcrumbModule,\n    MessagesModule,\n    ToastModule,\n    PanelModule,\n    ButtonModule,\n    MenubarModule,\n    FontAwesomeModule\n  ],\n  exports: [\n    ArgumentsDumbComponent,\n    BreadcrumbDumbComponent,\n    HeaderDumbComponent,\n    InfoMessageDumbComponent,\n    ParagraphDumbComponent,\n    TerminalDumbComponent,\n    MainNavDumbComponent,\n    ToastDumbComponent\n  ]\n})\nexport class DumbModule {\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3285,6 +3509,9 @@
                         },
                         {
                             "name": "TerminalDumbComponent"
+                        },
+                        {
+                            "name": "ToastDumbComponent"
                         }
                     ]
                 },
@@ -3315,6 +3542,9 @@
                         },
                         {
                             "name": "TerminalDumbComponent"
+                        },
+                        {
+                            "name": "ToastDumbComponent"
                         }
                     ]
                 },
@@ -3378,13 +3608,13 @@
         },
         {
             "name": "GenerateModule",
-            "id": "module-GenerateModule-a1e4587fdf5d51e8e71ab91a5706c7bdb81aa07811b44bf48652d91ccf57176adf036caa3b1e1af604dbeda05195fd2c84e3cd95fa696c21a778aba107b1cad9",
+            "id": "module-GenerateModule-53b366f48c327ea1da1ee80eb88c519453d61901e60e41fed7e22d4b5e50efbd0fab08ed0729289d7dc88ffe921de9692b208000e87dff80356376bad6260d10",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/core/docs/api/generate/generate.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {RouterModule} from \"@angular/router\";\n\nimport {SharedModule} from \"../../../../shared/shared.module\";\n\nimport {GenerateComponent} from \"./component/generate.component\";\nimport {GenerateIntroductionComponent} from \"./component/generate-introduction.component\";\nimport {GenerateWorkspaceComponent} from \"./component/generate-workspace.component\";\n\n@NgModule({\n  declarations: [\n    GenerateComponent,\n    GenerateIntroductionComponent,\n    GenerateWorkspaceComponent\n  ],\n  imports: [\n    RouterModule,\n    SharedModule\n  ]\n})\nexport class GenerateModule {\n}\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {RouterModule} from \"@angular/router\";\n\nimport {SharedModule} from \"../../../../shared/shared.module\";\n\nimport {GenerateComponent} from \"./component/generate.component\";\nimport {GenerateIntroductionComponent} from \"./component/generate-introduction.component\";\nimport {GenerateWorkspaceComponent} from \"./component/generate-workspace.component\";\nimport {GenerateProjectComponent} from \"./component/generate-project.component\";\n\n@NgModule({\n  declarations: [\n    GenerateComponent,\n    GenerateIntroductionComponent,\n    GenerateWorkspaceComponent,\n    GenerateProjectComponent\n  ],\n  imports: [\n    RouterModule,\n    SharedModule\n  ]\n})\nexport class GenerateModule {\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3400,7 +3630,63 @@
                             "name": "GenerateIntroductionComponent"
                         },
                         {
+                            "name": "GenerateProjectComponent"
+                        },
+                        {
                             "name": "GenerateWorkspaceComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "GettingStartedModule",
+            "id": "module-GettingStartedModule-37492a7df71bdac806f1bb806a75222c7f926af2b6d577d4bce58a97eb48067071899cfc299476b6797341791eb577b8dc8ba97b69dbd587072bd7586e8e1c3c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/core/docs/getting-started/getting-started.module.ts",
+            "methods": [],
+            "sourceCode": "import {NgModule} from \"@angular/core\";\nimport {RouterModule} from \"@angular/router\";\n\nimport {SharedModule} from \"../../../shared/shared.module\";\n\nimport {GettingStartedHomeComponent} from \"./getting-started-home/getting-started-home.component\";\nimport {GettingStartedComponent} from \"./getting-started.component\";\nimport {GettingStartedInstallationComponent} from \"./getting-started-home/getting-started-installation.component\";\nimport {GettingStartedTryItComponent} from \"./getting-started-home/getting-started-try-it.component\";\n\n@NgModule({\n  declarations: [\n    GettingStartedComponent,\n    GettingStartedHomeComponent,\n    GettingStartedInstallationComponent,\n    GettingStartedTryItComponent\n  ],\n  imports: [\n    RouterModule,\n    SharedModule\n  ]\n})\nexport class GettingStartedModule {\n}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "GettingStartedComponent"
+                        },
+                        {
+                            "name": "GettingStartedHomeComponent"
+                        },
+                        {
+                            "name": "GettingStartedInstallationComponent"
+                        },
+                        {
+                            "name": "GettingStartedTryItComponent"
                         }
                     ]
                 },
@@ -3535,13 +3821,13 @@
         },
         {
             "name": "SmartModule",
-            "id": "module-SmartModule-39c472f7d9541aa453135ff065f1d02c0e887a1812269ed77cc477fa960aa286e636f304d4a2fb7c1460b33c20888dc14d42d0c9b7c48068ce035cbaa687f2c6",
+            "id": "module-SmartModule-0496c50d9812864cc50f53042e57f33331a13c7e240647307c2dbc79a158ef8b324bd66f1c7d807a82a707afa7c2200fbac222fddcfea4638317c7f5de5808a2",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/component/smart/smart.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from \"@angular/core\";\n\nimport {DumbModule} from \"../dumb/dumb.module\";\n\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\nimport {ParagraphSmartComponent} from \"./component/paragraph-smart.component\";\nimport {ArgumentsSmartComponent} from \"./component/arguments-smart.component\";\nimport {MainNavSmartComponent} from \"./component/main-nav-smart.component\";\n\nimport {MessageService} from \"primeng/api\";\n\n@NgModule({\n  declarations: [\n    ArgumentsSmartComponent,\n    BreadcrumbSmartComponent,\n    HeaderSmartComponent,\n    InfoMessageSmartComponent,\n    ParagraphSmartComponent,\n    TerminalSmartComponent,\n    MainNavSmartComponent\n  ],\n  imports: [DumbModule],\n  exports: [\n    ArgumentsSmartComponent,\n    BreadcrumbSmartComponent,\n    HeaderSmartComponent,\n    InfoMessageSmartComponent,\n    ParagraphSmartComponent,\n    TerminalSmartComponent,\n    MainNavSmartComponent\n  ],\n  providers: [\n    MessageService\n  ]\n})\nexport class SmartModule {\n}\n",
+            "sourceCode": "import {NgModule} from \"@angular/core\";\n\nimport {DumbModule} from \"../dumb/dumb.module\";\n\nimport {MessageService} from \"primeng/api\";\n\nimport {BreadcrumbSmartComponent} from \"./component/breadcrumb-smart.component\";\nimport {TerminalSmartComponent} from \"./component/terminal-smart.component\";\nimport {HeaderSmartComponent} from \"./component/header-smart.component\";\nimport {InfoMessageSmartComponent} from \"./component/info-message-smart.component\";\nimport {ParagraphSmartComponent} from \"./component/paragraph-smart.component\";\nimport {ArgumentsSmartComponent} from \"./component/arguments-smart.component\";\nimport {MainNavSmartComponent} from \"./component/main-nav-smart.component\";\nimport {ToastSmartComponent} from \"./component/toast-smart.component\";\n\n@NgModule({\n  declarations: [\n    ArgumentsSmartComponent,\n    BreadcrumbSmartComponent,\n    HeaderSmartComponent,\n    InfoMessageSmartComponent,\n    ParagraphSmartComponent,\n    TerminalSmartComponent,\n    MainNavSmartComponent,\n    ToastSmartComponent\n  ],\n  imports: [DumbModule],\n  exports: [\n    ArgumentsSmartComponent,\n    BreadcrumbSmartComponent,\n    HeaderSmartComponent,\n    InfoMessageSmartComponent,\n    ParagraphSmartComponent,\n    TerminalSmartComponent,\n    MainNavSmartComponent,\n    ToastSmartComponent\n  ],\n  providers: [\n    MessageService\n  ]\n})\nexport class SmartModule {\n}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3570,6 +3856,9 @@
                         },
                         {
                             "name": "TerminalSmartComponent"
+                        },
+                        {
+                            "name": "ToastSmartComponent"
                         }
                     ]
                 },
@@ -3604,6 +3893,9 @@
                         },
                         {
                             "name": "TerminalSmartComponent"
+                        },
+                        {
+                            "name": "ToastSmartComponent"
                         }
                     ]
                 },
@@ -3738,7 +4030,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<MainNavDumbComponent>",
-                "defaultValue": "{\n    title: \"Shared/Component/Dumb/MainNavDumbComponent\",\n    component: MainNavDumbComponent,\n    tags: [\"autodocs\"],\n    decorators: [\n      moduleMetadata({\n        imports: [\n            MenubarModule\n        ]\n      })\n    ]\n}"
+                "defaultValue": "{\n    title: \"Shared/Component/Dumb/MainNavDumbComponent\",\n    component: MainNavDumbComponent,\n    tags: [\"autodocs\"],\n    decorators: [\n      moduleMetadata({\n        imports: [\n            MenubarModule,\n            ButtonModule\n        ]\n      })\n    ]\n}"
             },
             {
                 "name": "meta",
@@ -3971,7 +4263,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<MainNavDumbComponent>",
-                    "defaultValue": "{\n    title: \"Shared/Component/Dumb/MainNavDumbComponent\",\n    component: MainNavDumbComponent,\n    tags: [\"autodocs\"],\n    decorators: [\n      moduleMetadata({\n        imports: [\n            MenubarModule\n        ]\n      })\n    ]\n}"
+                    "defaultValue": "{\n    title: \"Shared/Component/Dumb/MainNavDumbComponent\",\n    component: MainNavDumbComponent,\n    tags: [\"autodocs\"],\n    decorators: [\n      moduleMetadata({\n        imports: [\n            MenubarModule,\n            ButtonModule\n        ]\n      })\n    ]\n}"
                 }
             ],
             "src/app/shared/component/dumb/paragraph-dumb/paragraph-dumb.stories.ts": [
@@ -4254,6 +4546,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/core/docs/api/generate/component/generate-project.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GenerateProjectComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/core/docs/api/generate/component/generate-workspace.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4344,12 +4645,39 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/core/docs/getting-started/getting-started-home/getting-started-home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GettingStartedHomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/docs/getting-started/getting-started-home/getting-started-installation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GettingStartedInstallationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/docs/getting-started/getting-started-home/getting-started-try-it.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GettingStartedTryItComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/core/docs/getting-started/getting-started.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "GettingStartedComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4619,6 +4947,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/component/dumb/toast-dumb/toast-dumb.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToastDumbComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/component/form/docs-content-form/docs-content-form.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4732,7 +5069,7 @@
                 "linktype": "component",
                 "name": "HeaderSmartComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/12",
+                "coverageCount": "0/11",
                 "status": "low"
             },
             {
@@ -4769,6 +5106,15 @@
                 "name": "TerminalSmartComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/component/smart/component/toast-smart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToastSmartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             }
         ]

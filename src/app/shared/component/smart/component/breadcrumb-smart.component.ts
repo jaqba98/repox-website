@@ -36,7 +36,9 @@ export class BreadcrumbSmartComponent {
   }
 
   private getRouterLabel(label: string): string {
-    return label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();
+    let newLabel = label.charAt(0).toUpperCase() + label.slice(1).toLowerCase();
+    newLabel = newLabel.replace(/-/gm, " ");
+    return newLabel;
   }
 
   private getRouterLink(parts: string[], index: number): string {
