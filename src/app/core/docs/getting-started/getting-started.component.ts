@@ -11,6 +11,17 @@ export class GettingStartedComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.asideNav.asideNavOptions$.next([]);
+    this.asideNav.asideNavOptions$.next([
+      {
+        key: "0-0",
+        label: "Introduction",
+        data: "/docs/getting-started/introduction"
+      },
+      {
+        key: "0-1",
+        label: "Installation",
+        data: "/docs/getting-started/installation"
+      }
+    ]);
   }
 }
