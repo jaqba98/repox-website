@@ -15,12 +15,17 @@ export class GettingStartedComponent implements OnInit {
       {
         key: "0-0",
         label: "Introduction",
-        data: "/docs/getting-started/introduction"
+        data: "/docs/getting-started/"
       },
       {
         key: "0-1",
         label: "Installation",
         data: "/docs/getting-started/installation"
+      },
+      {
+        key: "0-2",
+        label: "Try it",
+        data: "/docs/getting-started/try-it"
       }
     ]);
   }
