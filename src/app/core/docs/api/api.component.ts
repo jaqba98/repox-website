@@ -28,6 +28,14 @@ export class ApiComponent implements OnInit {
         children: [
           {key: "0-1-1", label: "Workspace", data: "/docs/api/regenerate/workspace"},
         ]
+      },
+      {
+        key: "0-2",
+        label: "Build",
+        data: "/docs/api/build",
+        children: [
+          {key: "0-2-1", label: "Project", data: "/docs/api/build/project"},
+        ]
       }
     ]);
   }
