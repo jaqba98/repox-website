@@ -8,6 +8,7 @@ import {ApiHomeComponent} from './api-home/api-home.component';
 import {GenerateModule} from "./generate/generate.module";
 import {RegenerateModule} from "./regenerate/regenerate.module";
 import {BuildModule} from "./build/build.module";
+import {LintModule} from "./lint/lint.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {BuildModule} from "./build/build.module";
     SharedModule,
     GenerateModule,
     RegenerateModule,
-    BuildModule
+    BuildModule,
+    LintModule
   ]
 })
 export class ApiModule {

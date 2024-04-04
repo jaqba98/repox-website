@@ -14,7 +14,8 @@
       <td class="column-center">{{ value['alias'] }}</td>
       <td>{{ value['description'] }}</td>
       <td class="column-center">
-        <i class="pi pi-check" style="font-size: 1rem;"></i>
+        <i class="pi pi-check" style="font-size: 1rem;" *ngIf="value['require']"></i>
+        <i class="pi pi-times" style="font-size: 1rem;" *ngIf="!value['require']"></i>
       </td>
       <td class="column-center">{{ value['value'] }}</td>
     </tr>
