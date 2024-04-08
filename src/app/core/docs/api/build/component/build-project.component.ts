@@ -12,7 +12,7 @@ export class BuildProjectComponent {
       {
         type: "firstLevelHeader",
         value: "Build Project",
-        link: "generate-workspace"
+        link: "build-project"
       },
       {
         type: "newline"
@@ -24,13 +24,7 @@ export class BuildProjectComponent {
       },
       {
         type: "paragraph",
-        value: "In the project build section, Repox streamlines the compilation and deployment processes across " +
-               "the monorepo project. Through intuitive configuration settings, developers can define build pipelines " +
-               "tailored to individual projects' needs. Repox automates dependency resolution and management, reducing " +
-               "the complexity of handling inter-project dependencies. With robust error handling and logging capabilities, " +
-               "it facilitates quick identification and resolution of build issues. Additionally, the project build section " + 
-               "offers seamless integration with continuous integration (CI) and continuous deployment (CD) systems, " + 
-               "enabling smooth and efficient deployment pipelines."
+        value: `The "build project" section of Repox facilitates the compilation and assembly of a specific project within the monorepo, employing defined build scripts, configurations, and dependency management to produce executable artifacts or libraries. This section streamlines the development workflow by providing fine-grained control over the build process and ensuring project-specific dependencies are accurately resolved and integrated.`
       },
       {
         type: "newline"
@@ -73,6 +67,13 @@ export class BuildProjectComponent {
             description: "Name of the project.",
             require: true,
             value: "string"
+          },
+          {
+            argument: "prod",
+            alias: "p",
+            description: "Build the project in production mode.",
+            require: false,
+            value: "boolean"
           }
         ]
       },
@@ -86,7 +87,7 @@ export class BuildProjectComponent {
       },
       {
         type: "command",
-        value: "repox build project --name=example"
+        value: "repox build project --name=example --prod"
       }
     ]
   };
