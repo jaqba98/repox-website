@@ -24,7 +24,7 @@ export class BuildProjectComponent {
       },
       {
         type: "paragraph",
-        value: `The "build project" section of Repox facilitates the compilation and assembly of a specific project within the monorepo, employing defined build scripts, configurations, and dependency management to produce executable artifacts or libraries. This section streamlines the development workflow by providing fine-grained control over the build process and ensuring project-specific dependencies are accurately resolved and integrated.`
+        value: `The "build project" section in Repox helps put together a specific project within the monorepo. It uses set instructions and settings to compile code and handle dependencies effectively. This section simplifies the process of creating executable files or libraries for the project. It ensures that the necessary steps are taken to build the project correctly, making development smoother for users.`
       },
       {
         type: "newline"
