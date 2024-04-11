@@ -2,6 +2,9 @@ import {Component} from "@angular/core";
 
 import {DocsContentFormModel} from "@shared";
 
+// >>> Prompt <<<
+// Create a description of the "build project" section. It should contain max 4 sentences. Use b1 English level.
+
 @Component({
   selector: "rw-build-project",
   template: "<repox-website-docs-container [content]='content'></repox-website-docs-container>"

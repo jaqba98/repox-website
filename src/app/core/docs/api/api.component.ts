@@ -32,7 +32,6 @@ export class ApiComponent implements OnInit {
       {
         key: "0-2",
         label: "Build",
-        data: "/docs/api/build",
         children: [
           {key: "0-2-1", label: "Project", data: "/docs/api/build/project"},
         ]

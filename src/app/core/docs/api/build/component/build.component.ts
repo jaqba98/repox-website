@@ -4,5 +4,4 @@ import {Component} from "@angular/core";
   selector: "rw-build",
   template: "<router-outlet></router-outlet>"
 })
-export class BuildComponent {
-}
+export class BuildComponent {}
