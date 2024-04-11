@@ -2,17 +2,20 @@ import {Component} from "@angular/core";
 
 import {DocsContentFormModel} from "@shared";
 
+// >>> Prompt <<<
+// Create a description of the "lint project" program. It should contain max 4 sentences. Use b1 English level.
+
 @Component({
-  selector: "rw-lint",
+  selector: "rw-lint-project",
   template: "<repox-website-docs-container [content]='content'></repox-website-docs-container>"
 })
-export class LintComponent {
+export class LintProjectComponent {
   content: DocsContentFormModel = {
     sections: [
       {
         type: "firstLevelHeader",
-        value: "Lint",
-        link: "lint"
+        value: "Lint Project",
+        link: "lint-project"
       },
       {
         type: "newline"
@@ -24,7 +27,7 @@ export class LintComponent {
       },
       {
         type: "paragraph",
-        value: "Lorem ipsum"
+        value: `The "lint project" program in Repox provides a comprehensive toolset for ensuring code quality within monorepo projects. It scans through the codebase, identifying potential errors, style inconsistencies, and other issues based on predefined rulesets. By flagging problematic areas, it helps maintain a high standard of code cleanliness and readability across all projects within the repository. With its intuitive interface and customizable configurations, the lint project program empowers developers to catch and resolve issues early in the development cycle, promoting robust and maintainable codebases.`
       },
       {
         type: "newline"
@@ -36,7 +39,7 @@ export class LintComponent {
       },
       {
         type: "command",
-        value: "repox lint [options]"
+        value: "repox lint project [options]"
       },
       {
         type: "newline"
@@ -47,23 +50,8 @@ export class LintComponent {
         link: "program-arguments"
       },
       {
-        type: "arguments",
-        value: [
-          {
-            argument: "projects",
-            alias: "p",
-            description: "List of projects to check.",
-            require: false,
-            value: "string[]"
-          },
-          {
-            argument: "fix",
-            alias: "f",
-            description: "Correct simple mistakes automatically.",
-            require: false,
-            value: "boolean"
-          }
-        ]
+        type: "info",
+        value: "No arguments"
       },
       {
         type: "newline"
@@ -74,8 +62,23 @@ export class LintComponent {
         link: "command-arguments"
       },
       {
-        type: "info",
-        value: "No arguments"
+        type: "arguments",
+        value: [
+          {
+            argument: "projects",
+            alias: "p",
+            description: "Projects that are to be fixed.",
+            require: false,
+            value: "string[]"
+          },
+          {
+            argument: "fix",
+            alias: "f",
+            description: "Fix mistakes automatically.",
+            require: false,
+            value: "boolean"
+          }
+        ]
       },
       {
         type: "newline"
@@ -87,7 +90,7 @@ export class LintComponent {
       },
       {
         type: "command",
-        value: "repox lint --projects=example1,example2 --fix"
+        value: "repox lint project --projects=project1,project2 --fix"
       }
     ]
   };

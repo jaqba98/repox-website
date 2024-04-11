@@ -39,7 +39,9 @@ export class ApiComponent implements OnInit {
       {
         key: "0-3",
         label: "Lint",
-        data: "/docs/api/lint"
+        children: [
+          {key: "0-3-1", label: "Project", data: "/docs/api/lint/project"},
+        ]
       }
     ]);
   }
