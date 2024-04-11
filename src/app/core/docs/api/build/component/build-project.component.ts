@@ -3,7 +3,7 @@ import {Component} from "@angular/core";
 import {DocsContentFormModel} from "@shared";
 
 // >>> Prompt <<<
-// Create a description of the "build project" section. It should contain max 4 sentences. Use b1 English level.
+// Create a description of the "build project" program. It should contain max 4 sentences. Use b1 English level.
 
 @Component({
   selector: "rw-build-project",
@@ -27,7 +27,7 @@ export class BuildProjectComponent {
       },
       {
         type: "paragraph",
-        value: `The "build project" section in Repox helps put together a specific project within the monorepo. It uses set instructions and settings to compile code and handle dependencies effectively. This section simplifies the process of creating executable files or libraries for the project. It ensures that the necessary steps are taken to build the project correctly, making development smoother for users.`
+        value: `The "build project" program in Repox automates the compilation process for monorepo projects. It streamlines the workflow by efficiently handling dependencies and ensuring consistency across projects within the repository. With simple commands, users can initiate builds for individual projects or the entire monorepo, facilitating seamless development and deployment processes. Whether it's compiling code, generating artifacts, or running tests, the build project program simplifies the task, enhancing productivity for developers.`
       },
       {
         type: "newline"

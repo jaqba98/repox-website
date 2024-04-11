@@ -1,10 +1,10 @@
 import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 
-import {SharedModule} from "../../../../shared/shared.module";
+import {SharedModule} from "@shared";
 
-import {BuildProjectComponent} from "./component/build-project.component";
 import {BuildComponent} from "./component/build.component";
+import {BuildProjectComponent} from "./component/build-project.component";
 
 @NgModule({
   declarations: [
