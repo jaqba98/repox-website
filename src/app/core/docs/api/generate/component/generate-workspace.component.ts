@@ -2,6 +2,9 @@ import {Component} from "@angular/core";
 
 import {DocsContentFormModel} from "@shared";
 
+// >>> Prompt <<<
+// Create a description of the "generate workspace" program. It should contain max 4 sentences. Use b1 English level.
+
 @Component({
   selector: "rw-generate-workspace",
   template: "<repox-website-docs-container [content]='content'></repox-website-docs-container>"
@@ -24,13 +27,7 @@ export class GenerateWorkspaceComponent {
       },
       {
         type: "paragraph",
-        value: "The workspace generation section of Repox facilitates the creation of monorepo environments for " +
-          "efficient project management. Users can initiate workspace generation with a simple command, " +
-          "specifying project configurations and dependencies. Repox automates the setup process, creating a " +
-          "unified workspace where multiple projects reside within a single Git repository. This streamlines " +
-          "development workflows, allowing teams to manage dependencies, share code, and enforce consistent " +
-          "standards seamlessly. With Repox, generating and maintaining monorepo workspaces becomes a " +
-          "straightforward task, enhancing collaboration and productivity across the development lifecycle."
+        value: `The "generate workspace" program in Repox allows users to quickly set up a new monorepo workspace with predefined configurations. With just a few simple commands, users can create a centralized environment for managing multiple projects within a single git repository. This streamlined process enhances efficiency and organization for development teams working on complex projects.`
       },
       {
         type: "newline"
