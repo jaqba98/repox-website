@@ -2,6 +2,9 @@ import {Component} from "@angular/core";
 
 import {DocsContentFormModel} from "@shared";
 
+// >>> Prompt <<<
+// Create a description of the "regenerate workspace" program. It should contain max 4 sentences. Use b1 English level.
+
 @Component({
   selector: "rw-regenerate-workspace",
   template: "<repox-website-docs-container [content]='content'></repox-website-docs-container>"
@@ -12,7 +15,7 @@ export class RegenerateWorkspaceComponent {
       {
         type: "firstLevelHeader",
         value: "Regenerate Workspace",
-        link: "generate-workspace"
+        link: "regenerate-workspace"
       },
       {
         type: "newline"
@@ -24,13 +27,7 @@ export class RegenerateWorkspaceComponent {
       },
       {
         type: "paragraph",
-        value: "The workspace regeneration section in Repox provides users with the capability to regenerate the " +
-          "entire monorepo workspace swiftly and efficiently. Through this feature, users can refresh their " +
-          "development environment, ensuring consistency and reliability across projects within the repository. " +
-          "Workspace regeneration facilitates the seamless integration of changes, dependencies, and configurations " +
-          "across all projects housed within the monorepo. It streamlines the process of updating dependencies or " +
-          "making structural changes, minimizing the risk of inconsistencies or conflicts. Ultimately, this section " +
-          "empowers users to maintain a cohesive and up-to-date development environment for their monorepo projects."
+        value: `The "regenerate workspace" program is designed to refresh and update the workspace environment in the Repox software. This tool ensures that all dependencies and configurations within the monorepo project are synchronized and up-to-date. By running this program, users can efficiently regenerate their workspace, enabling smoother development workflows and ensuring project integrity.`
       },
       {
         type: "newline"
